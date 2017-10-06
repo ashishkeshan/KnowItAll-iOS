@@ -23,7 +23,7 @@
                         <segue destination="X0g-mc-6S3" kind="relationship" relationship="viewControllers" id="dWz-Bw-Um0"/>
                         <segue destination="fcJ-4L-84H" kind="relationship" relationship="viewControllers" id="N7N-vx-pOK"/>
                         <segue destination="BHc-Q1-0YX" kind="relationship" relationship="viewControllers" id="mFE-9y-Z7W"/>
-                        <segue destination="8KZ-Np-a46" kind="relationship" relationship="viewControllers" id="HUb-U3-ixi"/>
+                        <segue destination="Apb-uj-iKM" kind="relationship" relationship="viewControllers" id="sse-TR-l5f"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fde-rm-YIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -50,6 +50,35 @@
             </objects>
             <point key="canvasLocation" x="180" y="457"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="yrD-aN-NTq">
+            <objects>
+                <tableViewController id="Apb-uj-iKM" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2nY-GT-f7x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DbY-HT-0LO">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DbY-HT-0LO" id="gRT-ns-cA0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Apb-uj-iKM" id="TxQ-vr-cak"/>
+                            <outlet property="delegate" destination="Apb-uj-iKM" id="uKD-Ui-KcW"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="8pk-jl-CCv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XDC-8g-o17" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1095" y="792"/>
+        </scene>
         <!--Search-->
         <scene sceneID="5kc-28-yRP">
             <objects>
@@ -69,16 +98,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvg-lK-gYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="500" y="132"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="0qT-gH-BmV">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="8KZ-Np-a46" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="kqB-8Y-S4o"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1X4-aK-xpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1322" y="777"/>
         </scene>
     </scenes>
 </document>

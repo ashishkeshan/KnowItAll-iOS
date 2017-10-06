@@ -2,34 +2,50 @@
 //  SettingsVC.swift
 //  KnowItAll
 //
-//  Created by Ashish Keshan on 10/5/17.
+//  Created by Toshitaka on 10/6/17.
 //  Copyright © 2017 Ashish Keshan. All rights reserved.
 //
 
 import UIKit
 
-class SettingsVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+class SettingsVC: UITableViewController {
+    
+    var settingOptions = ["Change Password", "Notifications","Rate KnowItAll","Submit Feedback","Sign Out"]
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return settingOptions.count;
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = settingOptions[indexPath.row]
+        
+        return cell
     }
-    */
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+            case 0:
+                performSegue(withIdentifier: "changePasswordSegue", sender: self)
+                break
+            case 1:
+                performSegue(withIdentifier: "notificationSegue", sender: self)
+                break
+            case 2:
+                performSegue(withIdentifier: "rateSegue", sender: self)
+                break
+            case 3:
+                performSegue(withIdentifier: "submitSegue", sender: self)
+                break
+            case 4:
+                //signout TODO
+                break
+            default:
+                break
+        }
+        
+        
+        
+    }
 
 }

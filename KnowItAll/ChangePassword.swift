@@ -1,14 +1,14 @@
 //
-//  SearchVC.swift
+//  ChangePassword.swift
 //  KnowItAll
 //
-//  Created by Ashish Keshan on 10/5/17.
+//  Created by Toshitaka on 10/6/17.
 //  Copyright © 2017 Ashish Keshan. All rights reserved.
 //
 
 import UIKit
 
-class SearchVC: UIViewController {
+class ChangePassword: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,6 @@ class SearchVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
 
     /*

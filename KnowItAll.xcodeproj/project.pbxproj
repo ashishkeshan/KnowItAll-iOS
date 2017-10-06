@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02F2CB161F8802E60013F88D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F2CB151F8802E60013F88D /* Settings.storyboard */; };
+		02F2CB181F8804540013F88D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2CB171F8804540013F88D /* SettingsVC.swift */; };
+		02F2CB1C1F880BA50013F88D /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2CB1B1F880BA50013F88D /* ChangePassword.swift */; };
 		758A329B1F85A4D900838DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A329A1F85A4D900838DDA /* AppDelegate.swift */; };
 		758A32A01F85A4D900838DDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A329E1F85A4D900838DDA /* Main.storyboard */; };
 		758A32A21F85A4D900838DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758A32A11F85A4D900838DDA /* Assets.xcassets */; };
@@ -22,12 +25,13 @@
 		758A32C31F870B4E00838DDA /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32C21F870B4E00838DDA /* SearchVC.swift */; };
 		758A32C51F870BE500838DDA /* CreateNewPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32C41F870BE500838DDA /* CreateNewPost.storyboard */; };
 		758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */; };
-		758A32C91F870CFC00838DDA /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32C81F870CFC00838DDA /* Settings.storyboard */; };
-		758A32CB1F870D0F00838DDA /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32CA1F870D0F00838DDA /* SettingsVC.swift */; };
 		D7F611A08214354BF451E914 /* Pods_KnowItAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C559B9AFC5385A1C0EB1EC /* Pods_KnowItAll.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02F2CB151F8802E60013F88D /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		02F2CB171F8804540013F88D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		02F2CB1B1F880BA50013F88D /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		71C559B9AFC5385A1C0EB1EC /* Pods_KnowItAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnowItAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		758A32971F85A4D900838DDA /* KnowItAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnowItAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		758A329A1F85A4D900838DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,8 +50,6 @@
 		758A32C21F870B4E00838DDA /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		758A32C41F870BE500838DDA /* CreateNewPost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateNewPost.storyboard; sourceTree = "<group>"; };
 		758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPostVC.swift; sourceTree = "<group>"; };
-		758A32C81F870CFC00838DDA /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		758A32CA1F870D0F00838DDA /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		C7095B2DD59AB4AD8E31DA56 /* Pods-KnowItAll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowItAll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll.debug.xcconfig"; sourceTree = "<group>"; };
 		E8332D05C68FC6945330DDEC /* Pods-KnowItAll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowItAll.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +120,7 @@
 			children = (
 				758A329E1F85A4D900838DDA /* Main.storyboard */,
 				758A32B01F87040C00838DDA /* TabBar.storyboard */,
-				758A32C81F870CFC00838DDA /* Settings.storyboard */,
+				02F2CB151F8802E60013F88D /* Settings.storyboard */,
 				758A32C41F870BE500838DDA /* CreateNewPost.storyboard */,
 				758A32C01F870B3300838DDA /* Search.storyboard */,
 				758A32BA1F8709BE00838DDA /* MyPosts.storyboard */,
@@ -130,11 +132,12 @@
 		758A32BF1F870A6900838DDA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				758A32CA1F870D0F00838DDA /* SettingsVC.swift */,
+				02F2CB171F8804540013F88D /* SettingsVC.swift */,
 				758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */,
 				758A32C21F870B4E00838DDA /* SearchVC.swift */,
 				758A32AC1F85A71000838DDA /* LoginViewController.swift */,
 				758A32BC1F8709EC00838DDA /* MyPostsVC.swift */,
+				02F2CB1B1F880BA50013F88D /* ChangePassword.swift */,
 				758A32B61F87068A00838DDA /* HomePage.swift */,
 			);
 			name = ViewControllers;
@@ -209,7 +212,7 @@
 				758A32C51F870BE500838DDA /* CreateNewPost.storyboard in Resources */,
 				758A32A21F85A4D900838DDA /* Assets.xcassets in Resources */,
 				758A32C11F870B3300838DDA /* Search.storyboard in Resources */,
-				758A32C91F870CFC00838DDA /* Settings.storyboard in Resources */,
+				02F2CB161F8802E60013F88D /* Settings.storyboard in Resources */,
 				758A32BB1F8709BE00838DDA /* MyPosts.storyboard in Resources */,
 				758A32A01F85A4D900838DDA /* Main.storyboard in Resources */,
 			);
@@ -271,11 +274,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				758A32C31F870B4E00838DDA /* SearchVC.swift in Sources */,
+				02F2CB1C1F880BA50013F88D /* ChangePassword.swift in Sources */,
 				758A32AD1F85A71000838DDA /* LoginViewController.swift in Sources */,
 				758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */,
 				758A32B71F87068A00838DDA /* HomePage.swift in Sources */,
 				758A32BD1F8709EC00838DDA /* MyPostsVC.swift in Sources */,
-				758A32CB1F870D0F00838DDA /* SettingsVC.swift in Sources */,
+				02F2CB181F8804540013F88D /* SettingsVC.swift in Sources */,
 				758A329B1F85A4D900838DDA /* AppDelegate.swift in Sources */,
 				758A32B91F8708CB00838DDA /* TabBar.swift in Sources */,
 			);
