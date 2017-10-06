@@ -1,18 +1,14 @@
 //
-//  LoginViewController.swift
-//  
+//  SearchVC.swift
+//  KnowItAll
 //
-//  Created by Ashish Keshan on 10/4/17.
-//
+//  Created by Ashish Keshan on 10/5/17.
+//  Copyright © 2017 Ashish Keshan. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    @IBAction func loginPressed(_ sender: Any) {
-    }
-    @IBAction func signupPressed(_ sender: Any) {
-    }
+class SearchVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

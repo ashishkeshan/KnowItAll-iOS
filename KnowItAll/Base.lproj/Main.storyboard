@@ -54,6 +54,9 @@
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginPressed:" destination="rho-cR-Vjn" eventType="touchUpInside" id="zF2-sd-7hz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVI-N6-wdt">
                                 <rect key="frame" x="70" y="390" width="235" height="38"/>
@@ -71,6 +74,9 @@
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signupPressed:" destination="rho-cR-Vjn" eventType="touchUpInside" id="E3G-Ua-4D5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KnowItAll" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrX-u5-PXU">
                                 <rect key="frame" x="52" y="70" width="271" height="88"/>
@@ -102,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mG1-KP-Bzl" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529" y="151"/>
+            <point key="canvasLocation" x="842" y="158"/>
         </scene>
     </scenes>
 </document>

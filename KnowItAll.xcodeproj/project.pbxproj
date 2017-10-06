@@ -12,6 +12,18 @@
 		758A32A21F85A4D900838DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758A32A11F85A4D900838DDA /* Assets.xcassets */; };
 		758A32A51F85A4D900838DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32A31F85A4D900838DDA /* LaunchScreen.storyboard */; };
 		758A32AD1F85A71000838DDA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32AC1F85A71000838DDA /* LoginViewController.swift */; };
+		758A32B11F87040C00838DDA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32B01F87040C00838DDA /* TabBar.storyboard */; };
+		758A32B31F8704D700838DDA /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32B21F8704D700838DDA /* HomePage.storyboard */; };
+		758A32B71F87068A00838DDA /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32B61F87068A00838DDA /* HomePage.swift */; };
+		758A32B91F8708CB00838DDA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32B81F8708CB00838DDA /* TabBar.swift */; };
+		758A32BB1F8709BE00838DDA /* MyPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32BA1F8709BE00838DDA /* MyPosts.storyboard */; };
+		758A32BD1F8709EC00838DDA /* MyPostsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32BC1F8709EC00838DDA /* MyPostsVC.swift */; };
+		758A32C11F870B3300838DDA /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32C01F870B3300838DDA /* Search.storyboard */; };
+		758A32C31F870B4E00838DDA /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32C21F870B4E00838DDA /* SearchVC.swift */; };
+		758A32C51F870BE500838DDA /* CreateNewPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32C41F870BE500838DDA /* CreateNewPost.storyboard */; };
+		758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */; };
+		758A32C91F870CFC00838DDA /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32C81F870CFC00838DDA /* Settings.storyboard */; };
+		758A32CB1F870D0F00838DDA /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32CA1F870D0F00838DDA /* SettingsVC.swift */; };
 		D7F611A08214354BF451E914 /* Pods_KnowItAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C559B9AFC5385A1C0EB1EC /* Pods_KnowItAll.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +36,18 @@
 		758A32A41F85A4D900838DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		758A32A61F85A4D900838DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		758A32AC1F85A71000838DDA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		758A32B01F87040C00838DDA /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		758A32B21F8704D700838DDA /* HomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomePage.storyboard; sourceTree = "<group>"; };
+		758A32B61F87068A00838DDA /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		758A32B81F8708CB00838DDA /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		758A32BA1F8709BE00838DDA /* MyPosts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPosts.storyboard; sourceTree = "<group>"; };
+		758A32BC1F8709EC00838DDA /* MyPostsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsVC.swift; sourceTree = "<group>"; };
+		758A32C01F870B3300838DDA /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		758A32C21F870B4E00838DDA /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		758A32C41F870BE500838DDA /* CreateNewPost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateNewPost.storyboard; sourceTree = "<group>"; };
+		758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPostVC.swift; sourceTree = "<group>"; };
+		758A32C81F870CFC00838DDA /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		758A32CA1F870D0F00838DDA /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		C7095B2DD59AB4AD8E31DA56 /* Pods-KnowItAll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowItAll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll.debug.xcconfig"; sourceTree = "<group>"; };
 		E8332D05C68FC6945330DDEC /* Pods-KnowItAll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowItAll.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,14 +102,42 @@
 		758A32991F85A4D900838DDA /* KnowItAll */ = {
 			isa = PBXGroup;
 			children = (
-				758A32AC1F85A71000838DDA /* LoginViewController.swift */,
+				758A32BF1F870A6900838DDA /* ViewControllers */,
 				758A329A1F85A4D900838DDA /* AppDelegate.swift */,
-				758A329E1F85A4D900838DDA /* Main.storyboard */,
+				758A32BE1F870A5A00838DDA /* StoryBoards */,
+				758A32B81F8708CB00838DDA /* TabBar.swift */,
 				758A32A11F85A4D900838DDA /* Assets.xcassets */,
 				758A32A31F85A4D900838DDA /* LaunchScreen.storyboard */,
 				758A32A61F85A4D900838DDA /* Info.plist */,
 			);
 			path = KnowItAll;
+			sourceTree = "<group>";
+		};
+		758A32BE1F870A5A00838DDA /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				758A329E1F85A4D900838DDA /* Main.storyboard */,
+				758A32B01F87040C00838DDA /* TabBar.storyboard */,
+				758A32C81F870CFC00838DDA /* Settings.storyboard */,
+				758A32C41F870BE500838DDA /* CreateNewPost.storyboard */,
+				758A32C01F870B3300838DDA /* Search.storyboard */,
+				758A32BA1F8709BE00838DDA /* MyPosts.storyboard */,
+				758A32B21F8704D700838DDA /* HomePage.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		758A32BF1F870A6900838DDA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				758A32CA1F870D0F00838DDA /* SettingsVC.swift */,
+				758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */,
+				758A32C21F870B4E00838DDA /* SearchVC.swift */,
+				758A32AC1F85A71000838DDA /* LoginViewController.swift */,
+				758A32BC1F8709EC00838DDA /* MyPostsVC.swift */,
+				758A32B61F87068A00838DDA /* HomePage.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,8 +203,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758A32B31F8704D700838DDA /* HomePage.storyboard in Resources */,
+				758A32B11F87040C00838DDA /* TabBar.storyboard in Resources */,
 				758A32A51F85A4D900838DDA /* LaunchScreen.storyboard in Resources */,
+				758A32C51F870BE500838DDA /* CreateNewPost.storyboard in Resources */,
 				758A32A21F85A4D900838DDA /* Assets.xcassets in Resources */,
+				758A32C11F870B3300838DDA /* Search.storyboard in Resources */,
+				758A32C91F870CFC00838DDA /* Settings.storyboard in Resources */,
+				758A32BB1F8709BE00838DDA /* MyPosts.storyboard in Resources */,
 				758A32A01F85A4D900838DDA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,8 +270,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758A32C31F870B4E00838DDA /* SearchVC.swift in Sources */,
 				758A32AD1F85A71000838DDA /* LoginViewController.swift in Sources */,
+				758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */,
+				758A32B71F87068A00838DDA /* HomePage.swift in Sources */,
+				758A32BD1F8709EC00838DDA /* MyPostsVC.swift in Sources */,
+				758A32CB1F870D0F00838DDA /* SettingsVC.swift in Sources */,
 				758A329B1F85A4D900838DDA /* AppDelegate.swift in Sources */,
+				758A32B91F8708CB00838DDA /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
