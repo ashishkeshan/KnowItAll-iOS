@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Cosmos.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-KnowItAll.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5686B5267C92E3F3A7BB2783CE8EFDBF</key>
+		<key>48A7959B2EE08F2E801A021CE77A945F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8841C136792EB5E1585544E7BE48E84D</key>
+		<key>4FDC533A4360A68ABDCE852F04B30927</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5C4FB06686719C21F31326B2FC0DDC0A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

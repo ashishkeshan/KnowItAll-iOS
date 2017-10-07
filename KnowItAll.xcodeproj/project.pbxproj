@@ -24,6 +24,7 @@
 		758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */; };
 		758A32C91F870CFC00838DDA /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32C81F870CFC00838DDA /* Settings.storyboard */; };
 		758A32CB1F870D0F00838DDA /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32CA1F870D0F00838DDA /* SettingsVC.swift */; };
+		758A32CD1F8836FA00838DDA /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32CC1F8836FA00838DDA /* PostCell.swift */; };
 		D7F611A08214354BF451E914 /* Pods_KnowItAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C559B9AFC5385A1C0EB1EC /* Pods_KnowItAll.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPostVC.swift; sourceTree = "<group>"; };
 		758A32C81F870CFC00838DDA /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		758A32CA1F870D0F00838DDA /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		758A32CC1F8836FA00838DDA /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		C7095B2DD59AB4AD8E31DA56 /* Pods-KnowItAll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowItAll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll.debug.xcconfig"; sourceTree = "<group>"; };
 		E8332D05C68FC6945330DDEC /* Pods-KnowItAll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowItAll.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 				758A329A1F85A4D900838DDA /* AppDelegate.swift */,
 				758A32BE1F870A5A00838DDA /* StoryBoards */,
 				758A32B81F8708CB00838DDA /* TabBar.swift */,
+				758A32CC1F8836FA00838DDA /* PostCell.swift */,
 				758A32A11F85A4D900838DDA /* Assets.xcassets */,
 				758A32A31F85A4D900838DDA /* LaunchScreen.storyboard */,
 				758A32A61F85A4D900838DDA /* Info.plist */,
@@ -275,6 +278,7 @@
 				758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */,
 				758A32B71F87068A00838DDA /* HomePage.swift in Sources */,
 				758A32BD1F8709EC00838DDA /* MyPostsVC.swift in Sources */,
+				758A32CD1F8836FA00838DDA /* PostCell.swift in Sources */,
 				758A32CB1F870D0F00838DDA /* SettingsVC.swift in Sources */,
 				758A329B1F85A4D900838DDA /* AppDelegate.swift in Sources */,
 				758A32B91F8708CB00838DDA /* TabBar.swift in Sources */,

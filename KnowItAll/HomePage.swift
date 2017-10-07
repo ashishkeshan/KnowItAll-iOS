@@ -11,6 +11,8 @@ import UIKit
 class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var topView: UIView!
+    var previousOffset = CGFloat(0.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +26,27 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        cell.starRating.rating = 3.5
+        cell.postTitle.text = "Star Wars"
+        cell.numReviews.text = "30 reviews"
+        return cell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView){
+        var rect = self.topView.frame
+        rect.origin.y += previousOffset - scrollView.contentOffset.y
+        previousOffset = scrollView.contentOffset.y
+        self.topView.frame = rect
     }
     
 
