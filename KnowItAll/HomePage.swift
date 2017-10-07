@@ -18,6 +18,7 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         tableView.dataSource = self;
         tableView.delegate = self;
+        tableView.tableHeaderView = topView
     }
 
     override func didReceiveMemoryWarning() {
