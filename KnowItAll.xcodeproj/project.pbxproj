@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02F2CB161F8802E60013F88D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F2CB151F8802E60013F88D /* Settings.storyboard */; };
+		02D57DF51F88575B0086E002 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D57DF41F88575B0086E002 /* Settings.storyboard */; };
 		02F2CB181F8804540013F88D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2CB171F8804540013F88D /* SettingsVC.swift */; };
 		02F2CB1C1F880BA50013F88D /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2CB1B1F880BA50013F88D /* ChangePassword.swift */; };
 		758A329B1F85A4D900838DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A329A1F85A4D900838DDA /* AppDelegate.swift */; };
@@ -29,7 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02F2CB151F8802E60013F88D /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		02D57DF41F88575B0086E002 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		02F2CB171F8804540013F88D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		02F2CB1B1F880BA50013F88D /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		71C559B9AFC5385A1C0EB1EC /* Pods_KnowItAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnowItAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +120,7 @@
 			children = (
 				758A329E1F85A4D900838DDA /* Main.storyboard */,
 				758A32B01F87040C00838DDA /* TabBar.storyboard */,
-				02F2CB151F8802E60013F88D /* Settings.storyboard */,
+				02D57DF41F88575B0086E002 /* Settings.storyboard */,
 				758A32C41F870BE500838DDA /* CreateNewPost.storyboard */,
 				758A32C01F870B3300838DDA /* Search.storyboard */,
 				758A32BA1F8709BE00838DDA /* MyPosts.storyboard */,
@@ -212,9 +212,9 @@
 				758A32C51F870BE500838DDA /* CreateNewPost.storyboard in Resources */,
 				758A32A21F85A4D900838DDA /* Assets.xcassets in Resources */,
 				758A32C11F870B3300838DDA /* Search.storyboard in Resources */,
-				02F2CB161F8802E60013F88D /* Settings.storyboard in Resources */,
 				758A32BB1F8709BE00838DDA /* MyPosts.storyboard in Resources */,
 				758A32A01F85A4D900838DDA /* Main.storyboard in Resources */,
+				02D57DF51F88575B0086E002 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
