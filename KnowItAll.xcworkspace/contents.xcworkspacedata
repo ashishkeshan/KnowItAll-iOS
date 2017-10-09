@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "container:"
-      name = "Util">
-   </Group>
-   <FileRef
-      location = "group:changePassword.swift">
-   </FileRef>
    <FileRef
       location = "group:KnowItAll.xcodeproj">
    </FileRef>

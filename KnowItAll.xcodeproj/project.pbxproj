@@ -15,7 +15,7 @@
 		02F2CB1C1F880BA50013F88D /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2CB1B1F880BA50013F88D /* ChangePassword.swift */; };
 		758A329B1F85A4D900838DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A329A1F85A4D900838DDA /* AppDelegate.swift */; };
 		758A32A01F85A4D900838DDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A329E1F85A4D900838DDA /* Main.storyboard */; };
-		758A32A21F85A4D900838DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758A32A11F85A4D900838DDA /* Assets.xcassets */; };
+		758A32A21F85A4D900838DDA /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 758A32A11F85A4D900838DDA /* home.png */; };
 		758A32A51F85A4D900838DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32A31F85A4D900838DDA /* LaunchScreen.storyboard */; };
 		758A32AD1F85A71000838DDA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32AC1F85A71000838DDA /* LoginViewController.swift */; };
 		758A32B11F87040C00838DDA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32B01F87040C00838DDA /* TabBar.storyboard */; };
@@ -30,6 +30,7 @@
 		758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */; };
 		758A32CD1F8836FA00838DDA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		758A32D11F8B326E00838DDA /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32D01F8B326E00838DDA /* PostCell.swift */; };
+		75D59E411F8C3A3C00F3C854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75D59E401F8C3A3C00F3C854 /* Assets.xcassets */; };
 		D7F611A08214354BF451E914 /* Pods_KnowItAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C559B9AFC5385A1C0EB1EC /* Pods_KnowItAll.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +46,7 @@
 		758A32971F85A4D900838DDA /* KnowItAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnowItAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		758A329A1F85A4D900838DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		758A329F1F85A4D900838DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		758A32A11F85A4D900838DDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		758A32A11F85A4D900838DDA /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = Assets.xcassets/home.imageset/home.png; sourceTree = "<group>"; };
 		758A32A41F85A4D900838DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		758A32A61F85A4D900838DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		758A32AC1F85A71000838DDA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		758A32C41F870BE500838DDA /* CreateNewPost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateNewPost.storyboard; sourceTree = "<group>"; };
 		758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPostVC.swift; sourceTree = "<group>"; };
 		758A32D01F8B326E00838DDA /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostCell.swift; path = KnowItAll/PostCell.swift; sourceTree = "<group>"; };
+		75D59E401F8C3A3C00F3C854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EBDFBE2BA2E3DA09DA4C697 /* Pods-KnowItAll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowItAll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,9 +128,10 @@
 			children = (
 				758A32BF1F870A6900838DDA /* ViewControllers */,
 				758A329A1F85A4D900838DDA /* AppDelegate.swift */,
+				75D59E401F8C3A3C00F3C854 /* Assets.xcassets */,
 				758A32BE1F870A5A00838DDA /* StoryBoards */,
 				758A32B81F8708CB00838DDA /* TabBar.swift */,
-				758A32A11F85A4D900838DDA /* Assets.xcassets */,
+				758A32A11F85A4D900838DDA /* home.png */,
 				758A32A31F85A4D900838DDA /* LaunchScreen.storyboard */,
 				758A32A61F85A4D900838DDA /* Info.plist */,
 			);
@@ -232,7 +235,8 @@
 				758A32B11F87040C00838DDA /* TabBar.storyboard in Resources */,
 				758A32A51F85A4D900838DDA /* LaunchScreen.storyboard in Resources */,
 				758A32C51F870BE500838DDA /* CreateNewPost.storyboard in Resources */,
-				758A32A21F85A4D900838DDA /* Assets.xcassets in Resources */,
+				75D59E411F8C3A3C00F3C854 /* Assets.xcassets in Resources */,
+				758A32A21F85A4D900838DDA /* home.png in Resources */,
 				758A32C11F870B3300838DDA /* Search.storyboard in Resources */,
 				758A32BB1F8709BE00838DDA /* MyPosts.storyboard in Resources */,
 				758A32A01F85A4D900838DDA /* Main.storyboard in Resources */,
