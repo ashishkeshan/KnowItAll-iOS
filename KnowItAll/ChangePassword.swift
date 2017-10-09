@@ -9,7 +9,12 @@
 import UIKit
 
 class ChangePassword: UIViewController {
-
+    @IBOutlet weak var oldPassword: UITextField!
+    @IBOutlet weak var newPassword: UITextField!
+    @IBOutlet weak var confirmPassword: UITextField!
+    @IBOutlet weak var confirm: UIButton!
+    @IBOutlet weak var logo: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
