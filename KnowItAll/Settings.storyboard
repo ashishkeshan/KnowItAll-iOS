@@ -16,9 +16,10 @@
             <objects>
                 <navigationController storyboardIdentifier="SettingsNav" title="Settings" id="2B3-ZQ-Fds" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" id="YVR-sS-K6L"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Bv-wO-xjI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8Bv-wO-xjI">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.76862745099999996" green="0.1176470588" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="xGI-r1-IV6" kind="relationship" relationship="rootViewController" id="iZM-7Z-SKA"/>

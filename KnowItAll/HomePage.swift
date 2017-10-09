@@ -42,13 +42,6 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource {
         print(indexPath.row)
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView){
-        var rect = self.topView.frame
-        rect.origin.y += previousOffset - scrollView.contentOffset.y
-        previousOffset = scrollView.contentOffset.y
-        self.topView.frame = rect
-    }
-    
 
     /*
     // MARK: - Navigation
