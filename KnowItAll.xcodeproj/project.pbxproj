@@ -151,6 +151,7 @@
 		758A32991F85A4D900838DDA /* KnowItAll */ = {
 			isa = PBXGroup;
 			children = (
+				02D95BC91F8B1FD800E57721 /* Util */,
 				758A32BF1F870A6900838DDA /* ViewControllers */,
 				758A329A1F85A4D900838DDA /* AppDelegate.swift */,
 				75D59E401F8C3A3C00F3C854 /* Assets.xcassets */,
@@ -188,7 +189,6 @@
 				02F2CB1B1F880BA50013F88D /* ChangePassword.swift */,
 				02F181F21F8957F700172C63 /* notificationsVC.swift */,
 				758A32B61F87068A00838DDA /* HomePage.swift */,
-				02D95BC91F8B1FD800E57721 /* Util */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
