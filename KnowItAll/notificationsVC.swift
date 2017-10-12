@@ -10,28 +10,29 @@ import UIKit
 
 class notificationsVC: UITableViewController {
     //array to store all notifications
-    var notifications = [String]()
+    var notifications:[Notification] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        notification = getNotifications(user)
+//        notifications = getNotifications(user)
         
     }
-
+    
+    func getNotification(user: User) -> [Notification] {
+        let temp = [Notification]()
+        
+        return temp
+    }
+    
+    override func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
+        return notifications.count
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = notifications[indexPath.row]
+        let curr = notifications[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "notificationCell") as! NotificationCell
+        cell.fill(n: curr)
         
         return cell
     }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //function used to direct after clicking a cell
-    }
-    
-//    function to get array of notifications to be displayed
-//    func getNotifications(User) -> Array<String> {
-//
-//    }
-
 }

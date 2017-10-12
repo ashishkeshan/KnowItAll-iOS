@@ -14,5 +14,9 @@ class NotificationCell: UITableViewCell {
     @IBOutlet weak var notificationImage: UIImageView!
     @IBOutlet weak var notificationAction: UILabel!
     
-    
+    func fill(n: Notification)  {
+        notificationPost.text = n.postName
+        notificationImage.image = n.image
+        notificationAction.text = n.action
+    }
 }
