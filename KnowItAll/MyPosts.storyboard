@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Posts" id="d6N-IQ-XB9"/>
+                    <tabBarItem key="tabBarItem" title="My Posts" image="myPosts" id="d6N-IQ-XB9"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8QE-yN-M3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -30,4 +30,7 @@
             <point key="canvasLocation" x="180" y="457"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="myPosts" width="30" height="30"/>
+    </resources>
 </document>
