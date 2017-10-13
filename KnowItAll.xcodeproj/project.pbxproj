@@ -10,9 +10,11 @@
 		0245DD801F902916000B26F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245DD7F1F902916000B26F5 /* User.swift */; };
 		0245DD821F902A56000B26F5 /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245DD811F902A56000B26F5 /* Poll.swift */; };
 		0245DD841F902A5F000B26F5 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245DD831F902A5F000B26F5 /* Review.swift */; };
+		026E11A51F9058A50075FF7D /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11A41F9058A50075FF7D /* FeedbackVC.swift */; };
 		02D57DF51F88575B0086E002 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D57DF41F88575B0086E002 /* Settings.storyboard */; };
 		02D95BCD1F8B231400E57721 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D95BCC1F8B231400E57721 /* Notification.swift */; };
 		02D95BCF1F8B232F00E57721 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D95BCE1F8B232F00E57721 /* NotificationCell.swift */; };
+		02E31B751F90494000B4AAF2 /* rateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E31B741F90494000B4AAF2 /* rateVC.swift */; };
 		02F181F31F8957F700172C63 /* notificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F181F21F8957F700172C63 /* notificationsVC.swift */; };
 		02F2CB181F8804540013F88D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2CB171F8804540013F88D /* SettingsVC.swift */; };
 		02F2CB1C1F880BA50013F88D /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2CB1B1F880BA50013F88D /* ChangePassword.swift */; };
@@ -41,9 +43,11 @@
 		0245DD7F1F902916000B26F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0245DD811F902A56000B26F5 /* Poll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
 		0245DD831F902A5F000B26F5 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		026E11A41F9058A50075FF7D /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		02D57DF41F88575B0086E002 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		02D95BCC1F8B231400E57721 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		02D95BCE1F8B232F00E57721 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		02E31B741F90494000B4AAF2 /* rateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rateVC.swift; sourceTree = "<group>"; };
 		02F181F21F8957F700172C63 /* notificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationsVC.swift; sourceTree = "<group>"; };
 		02F2CB171F8804540013F88D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		02F2CB1B1F880BA50013F88D /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 		758A32BF1F870A6900838DDA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				026E11A41F9058A50075FF7D /* FeedbackVC.swift */,
+				02E31B741F90494000B4AAF2 /* rateVC.swift */,
 				02F2CB171F8804540013F88D /* SettingsVC.swift */,
 				758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */,
 				758A32C21F870B4E00838DDA /* SearchVC.swift */,
@@ -278,9 +284,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -308,13 +319,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KnowItAll-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -332,6 +346,8 @@
 				02D95BCF1F8B232F00E57721 /* NotificationCell.swift in Sources */,
 				758A32B71F87068A00838DDA /* HomePage.swift in Sources */,
 				758A32BD1F8709EC00838DDA /* MyPostsVC.swift in Sources */,
+				026E11A51F9058A50075FF7D /* FeedbackVC.swift in Sources */,
+				02E31B751F90494000B4AAF2 /* rateVC.swift in Sources */,
 				758A32CD1F8836FA00838DDA /* (null) in Sources */,
 				0245DD801F902916000B26F5 /* User.swift in Sources */,
 				02F2CB181F8804540013F88D /* SettingsVC.swift in Sources */,
