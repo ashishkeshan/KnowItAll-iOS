@@ -11,10 +11,12 @@ import UIKit
 class Review: Post {
     var rating:Double?
     var comment:String?
+    var topic:String?
     
-    init(id:Int,type:Int,rating:Double,comment:String) {
+    init(id:Int,type:Int,rating:Double,comment:String/*,text:String*/) {
         super.init(id: id,b: type)
         self.rating=rating
         self.comment=comment
+//        self.topic = text
     }
 }
