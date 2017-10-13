@@ -10,7 +10,7 @@ import UIKit
 
 class notificationsVC: UITableViewController {
     //array to store all notifications
-    var notifications:[Notification] = []
+    var notifications:[Notif] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +18,8 @@ class notificationsVC: UITableViewController {
         
     }
     
-    func getNotification(user: User) -> [Notification] {
-        let temp = [Notification]()
+    func getNotification(user: User) -> [Notif] {
+        let temp = [Notif]()
         
         return temp
     }

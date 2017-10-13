@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Notification: NSObject {
+class Notif: NSObject {
     var action:String?
     var postName:String?
     var image:UIImage?
