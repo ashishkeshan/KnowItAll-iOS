@@ -41,7 +41,7 @@
         <scene sceneID="9dT-nh-Kzs">
             <objects>
                 <viewControllerPlaceholder storyboardName="HomePage" id="Qjg-ud-OSm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home Page" id="bdt-ub-TAZ"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="bdt-ub-TAZ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARZ-Ap-IEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

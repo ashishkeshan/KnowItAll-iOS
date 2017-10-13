@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home Page-->
+        <!--Home-->
         <scene sceneID="h2S-n7-7ot">
             <objects>
                 <viewController storyboardIdentifier="HomePage" id="IZw-KB-tqS" customClass="HomePage" customModule="KnowItAll" customModuleProvider="target" sceneMemberID="viewController">
@@ -228,7 +228,7 @@
                             <constraint firstItem="puX-sx-CA2" firstAttribute="top" secondItem="e3P-vB-iSr" secondAttribute="bottom" id="zWR-iE-BEZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home Page" image="home" id="OqG-vs-uPI">
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="OqG-vs-uPI">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
