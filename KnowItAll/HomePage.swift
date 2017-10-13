@@ -38,7 +38,7 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource {
         searchBar.text = "Academic"
         self.tabBarController?.selectedIndex = 1
         let nc = NotificationCenter.default
-        nc.post(name:Notification.postName(rawValue:"MyNotification"),
+        nc.post(name:Notification.Name(rawValue:"MyNotification"),
                 object: nil,
                 userInfo: ["message":"Hello there!", "date":Date()])    }
     
