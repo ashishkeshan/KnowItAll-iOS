@@ -233,6 +233,11 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="academicView" destination="gQa-ah-B4N" id="dGH-ZX-bnk"/>
+                        <outlet property="entertainmentView" destination="gpj-pm-ZTS" id="6vG-OB-PT6"/>
+                        <outlet property="foodView" destination="513-3W-Iro" id="VfT-Df-4DN"/>
+                        <outlet property="locationsView" destination="y5V-m7-ZGm" id="aYd-KQ-igw"/>
+                        <outlet property="searchBar" destination="e3P-vB-iSr" id="318-cX-zIH"/>
                         <outlet property="searchDisplayController" destination="dt6-ck-fHq" id="pJf-hv-vEb"/>
                         <outlet property="tableView" destination="puX-sx-CA2" id="bnT-OO-dDD"/>
                         <outlet property="topView" destination="mh6-h2-ubQ" id="bq2-Dd-d74"/>
