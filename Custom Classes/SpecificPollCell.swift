@@ -10,6 +10,11 @@ import UIKit
 
 class SpecificPollCell: UITableViewCell {
 
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var voteNum: UILabel!
+    @IBOutlet weak var voteChoice: UILabel!
+    @IBOutlet weak var img: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +25,5 @@ class SpecificPollCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

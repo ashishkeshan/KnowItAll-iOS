@@ -17,7 +17,7 @@ class Poll: Post {
     var numVotes:Int?
     
     init(id:Int,type:Int,time:Double,option:[String],distribution:Set<Int>,votes:Int) {
-        super.init(id,type)
+        super.init(id: id,b: type)
         self.timeLeft=time
         self.option = option
         self.optionDistribution = distribution
