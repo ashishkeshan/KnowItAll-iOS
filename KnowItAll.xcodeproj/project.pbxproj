@@ -11,6 +11,9 @@
 		0245DD821F902A56000B26F5 /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245DD811F902A56000B26F5 /* Poll.swift */; };
 		0245DD841F902A5F000B26F5 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245DD831F902A5F000B26F5 /* Review.swift */; };
 		026E11A51F9058A50075FF7D /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11A41F9058A50075FF7D /* FeedbackVC.swift */; };
+		026E11A71F9061E70075FF7D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11A61F9061E70075FF7D /* Post.swift */; };
+		026E11AB1F9069C00075FF7D /* SpecificReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11AA1F9069C00075FF7D /* SpecificReviewCell.swift */; };
+		026E11AF1F906C610075FF7D /* SpecificPollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11AE1F906C610075FF7D /* SpecificPollCell.swift */; };
 		02D57DF51F88575B0086E002 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D57DF41F88575B0086E002 /* Settings.storyboard */; };
 		02D95BCD1F8B231400E57721 /* Notif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D95BCC1F8B231400E57721 /* Notif.swift */; };
 		02D95BCF1F8B232F00E57721 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D95BCE1F8B232F00E57721 /* NotificationCell.swift */; };
@@ -44,6 +47,9 @@
 		0245DD811F902A56000B26F5 /* Poll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
 		0245DD831F902A5F000B26F5 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		026E11A41F9058A50075FF7D /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
+		026E11A61F9061E70075FF7D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		026E11AA1F9069C00075FF7D /* SpecificReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificReviewCell.swift; sourceTree = "<group>"; };
+		026E11AE1F906C610075FF7D /* SpecificPollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificPollCell.swift; sourceTree = "<group>"; };
 		02D57DF41F88575B0086E002 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		02D95BCC1F8B231400E57721 /* Notif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notif.swift; sourceTree = "<group>"; };
 		02D95BCE1F8B232F00E57721 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 				0245DD811F902A56000B26F5 /* Poll.swift */,
 				0245DD831F902A5F000B26F5 /* Review.swift */,
 				0245DD7F1F902916000B26F5 /* User.swift */,
+				026E11A61F9061E70075FF7D /* Post.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -101,6 +108,8 @@
 		0245DD861F9035A5000B26F5 /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
+				026E11AA1F9069C00075FF7D /* SpecificReviewCell.swift */,
+				026E11AE1F906C610075FF7D /* SpecificPollCell.swift */,
 				758A32D01F8B326E00838DDA /* PostCell.swift */,
 				02D95BCE1F8B232F00E57721 /* NotificationCell.swift */,
 			);
@@ -338,10 +347,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026E11AF1F906C610075FF7D /* SpecificPollCell.swift in Sources */,
 				0245DD821F902A56000B26F5 /* Poll.swift in Sources */,
 				758A32C31F870B4E00838DDA /* SearchVC.swift in Sources */,
 				02F2CB1C1F880BA50013F88D /* ChangePassword.swift in Sources */,
 				758A32AD1F85A71000838DDA /* LoginViewController.swift in Sources */,
+				026E11AB1F9069C00075FF7D /* SpecificReviewCell.swift in Sources */,
 				758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */,
 				02D95BCF1F8B232F00E57721 /* NotificationCell.swift in Sources */,
 				758A32B71F87068A00838DDA /* HomePage.swift in Sources */,
@@ -357,6 +368,7 @@
 				758A329B1F85A4D900838DDA /* AppDelegate.swift in Sources */,
 				758A32B91F8708CB00838DDA /* TabBar.swift in Sources */,
 				02F181F31F8957F700172C63 /* notificationsVC.swift in Sources */,
+				026E11A71F9061E70075FF7D /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

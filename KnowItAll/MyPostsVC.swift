@@ -8,11 +8,33 @@
 
 import UIKit
 
-class MyPostsVC: UIViewController {
+class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var tableView: UITableView!
+    var posts = [Post]()
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if(posts[indexPath.row].t==Post.type.Poll) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SpecificReviewCell", for: indexPath) as! SpecificReviewCell
+            cell.stars.rating = 3.5
+            cell.title.text = "Star Wars"
+            cell.comment.text = "I liked this a lot"
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PollCell", for: indexPath) as! SpecificPollCell
+            cell.postTitle.text = "Star Wars"
+            cell.numReviews.text = "30 reviews"
+            return cell
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.register(PollCell, forCellReuseIdentifier: "PollCell")
         // Do any additional setup after loading the view.
     }
 

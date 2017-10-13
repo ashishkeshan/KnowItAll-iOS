@@ -8,16 +8,16 @@
 
 import UIKit
 
-class Poll: NSObject {
-    var pollID:Int?
+class Poll: Post {
+    //type = 1
     var timeLeft:Double?
     var option:[String]?
     var usersVoted:Set<Int>?
     var optionDistribution:Set<Int>?
     var numVotes:Int?
     
-    init(id:Int,time:Double,option:[String],distribution:Set<Int>,votes:Int) {
-        self.pollID=id
+    init(id:Int,type:Int,time:Double,option:[String],distribution:Set<Int>,votes:Int) {
+        super.init(id,type)
         self.timeLeft=time
         self.option = option
         self.optionDistribution = distribution
