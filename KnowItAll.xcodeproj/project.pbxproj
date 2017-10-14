@@ -10,9 +10,10 @@
 		0245DD801F902916000B26F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245DD7F1F902916000B26F5 /* User.swift */; };
 		0245DD821F902A56000B26F5 /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245DD811F902A56000B26F5 /* Poll.swift */; };
 		0245DD841F902A5F000B26F5 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245DD831F902A5F000B26F5 /* Review.swift */; };
+		024FA0291F918C9A0088EABB /* SpecificReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024FA0271F918C9A0088EABB /* SpecificReviewCell.swift */; };
+		024FA02A1F918C9A0088EABB /* SpecificReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024FA0281F918C9A0088EABB /* SpecificReviewCell.xib */; };
 		026E11A51F9058A50075FF7D /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11A41F9058A50075FF7D /* FeedbackVC.swift */; };
 		026E11A71F9061E70075FF7D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11A61F9061E70075FF7D /* Post.swift */; };
-		026E11AB1F9069C00075FF7D /* SpecificReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11AA1F9069C00075FF7D /* SpecificReviewCell.swift */; };
 		026E11B41F90722F0075FF7D /* SpecificPollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11B21F90722F0075FF7D /* SpecificPollCell.swift */; };
 		026E11B51F90722F0075FF7D /* SpecificPollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 026E11B31F90722F0075FF7D /* SpecificPollCell.xib */; };
 		02D57DF51F88575B0086E002 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D57DF41F88575B0086E002 /* Settings.storyboard */; };
@@ -47,9 +48,10 @@
 		0245DD7F1F902916000B26F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0245DD811F902A56000B26F5 /* Poll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
 		0245DD831F902A5F000B26F5 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		024FA0271F918C9A0088EABB /* SpecificReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificReviewCell.swift; sourceTree = "<group>"; };
+		024FA0281F918C9A0088EABB /* SpecificReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecificReviewCell.xib; sourceTree = "<group>"; };
 		026E11A41F9058A50075FF7D /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		026E11A61F9061E70075FF7D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		026E11AA1F9069C00075FF7D /* SpecificReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificReviewCell.swift; sourceTree = "<group>"; };
 		026E11B21F90722F0075FF7D /* SpecificPollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificPollCell.swift; sourceTree = "<group>"; };
 		026E11B31F90722F0075FF7D /* SpecificPollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecificPollCell.xib; sourceTree = "<group>"; };
 		02D57DF41F88575B0086E002 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -110,9 +112,10 @@
 		0245DD861F9035A5000B26F5 /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
+				024FA0271F918C9A0088EABB /* SpecificReviewCell.swift */,
+				024FA0281F918C9A0088EABB /* SpecificReviewCell.xib */,
 				026E11B21F90722F0075FF7D /* SpecificPollCell.swift */,
 				026E11B31F90722F0075FF7D /* SpecificPollCell.xib */,
-				026E11AA1F9069C00075FF7D /* SpecificReviewCell.swift */,
 				758A32D01F8B326E00838DDA /* PostCell.swift */,
 				02D95BCE1F8B232F00E57721 /* NotificationCell.swift */,
 			);
@@ -281,6 +284,7 @@
 				758A32C51F870BE500838DDA /* CreateNewPost.storyboard in Resources */,
 				75D59E411F8C3A3C00F3C854 /* Assets.xcassets in Resources */,
 				758A32A21F85A4D900838DDA /* home.png in Resources */,
+				024FA02A1F918C9A0088EABB /* SpecificReviewCell.xib in Resources */,
 				758A32C11F870B3300838DDA /* Search.storyboard in Resources */,
 				758A32BB1F8709BE00838DDA /* MyPosts.storyboard in Resources */,
 				758A32A01F85A4D900838DDA /* Main.storyboard in Resources */,
@@ -356,7 +360,7 @@
 				758A32C31F870B4E00838DDA /* SearchVC.swift in Sources */,
 				02F2CB1C1F880BA50013F88D /* ChangePassword.swift in Sources */,
 				758A32AD1F85A71000838DDA /* LoginViewController.swift in Sources */,
-				026E11AB1F9069C00075FF7D /* SpecificReviewCell.swift in Sources */,
+				024FA0291F918C9A0088EABB /* SpecificReviewCell.swift in Sources */,
 				758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */,
 				02D95BCF1F8B232F00E57721 /* NotificationCell.swift in Sources */,
 				758A32B71F87068A00838DDA /* HomePage.swift in Sources */,

@@ -10,11 +10,11 @@ import UIKit
 
 class Poll: Post {
 //    var timeLeft:Double?
-    var option:[String]?
+    var option:[String]!
     var usersVoted:Set<Int>?
     var optionDistribution:Set<Int>?
-    var numVotes:Int?
-    var title:String?
+    var numVotes:Int!
+    var title:String!
     
     init(id:Int,type:Int,/*time:Double,option:[String],distribution:Set<Int>,*/votes:Int,text:String) {
         super.init(id: id,b: type)
