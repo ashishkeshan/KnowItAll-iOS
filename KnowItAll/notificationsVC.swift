@@ -39,7 +39,7 @@ class notificationsVC: UITableViewController {
     
     func loadNotificationsFromDB() {
         let urlString = "/myNotifications?username=a@a.com"
-        let json = getJSONFromURL(urlString)
+        let json = getJSONFromURL(urlString, "GET")
         let pollIDs = json["pollID"]
         for notification in json["notifications"].arrayValue {
             let type = notification["type"].stringValue
