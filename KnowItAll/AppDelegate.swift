@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let storyboard =  UIStoryboard(name: "TabBar", bundle: Bundle.main)
         self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "TabBar")
+//        let storyboard =  UIStoryboard(name: "Main", bundle: Bundle.main)
+//        self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
         return true
     }
 
