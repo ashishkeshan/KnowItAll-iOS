@@ -27,7 +27,10 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(segmentedControl.selectedSegmentIndex == 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SpecificReviewCell", for: indexPath) as! SpecificReviewCell
-
+            cell.title.text = "Star Wars"
+//                reviews[indexPath.row].topic
+            cell.comment.text = reviews[indexPath.row].comment
+            cell.stars.rating = reviews[indexPath.row].rating
             return cell
         }
         else {
@@ -58,6 +61,8 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         polls.append(Poll.init(id: 1, type: 2, votes: 60, text: "BYE!"))
         reviews.append(Review.init(id: 1, type: 1, rating: 3.7, comment: "So-so"))
         reviews.append(Review.init(id: 1, type: 1, rating: 5, comment: "Great"))
+        
+        //create function to populate reviews and polls
     }
 
 }
