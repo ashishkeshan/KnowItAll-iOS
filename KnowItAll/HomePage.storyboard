@@ -104,11 +104,11 @@
                                             <rect key="frame" x="281.5" y="0.0" width="93.5" height="123"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Locations" translatesAutoresizingMaskIntoConstraints="NO" id="SOD-X2-ZnD">
-                                                    <rect key="frame" x="25" y="31" width="40" height="40"/>
+                                                    <rect key="frame" x="27" y="31" width="40" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Locations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajb-BN-QxM">
-                                                    <rect key="frame" x="13" y="87" width="64" height="21"/>
+                                                    <rect key="frame" x="15" y="87" width="64" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
