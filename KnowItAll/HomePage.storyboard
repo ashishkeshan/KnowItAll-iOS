@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IZw-KB-tqS">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IZw-KB-tqS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -136,7 +136,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="100" id="k3W-Gr-Zr5" customClass="PostCell" customModule="KnowItAll" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopicReviewCell" rowHeight="100" id="k3W-Gr-Zr5" customClass="TopicReviewCell" customModule="KnowItAll" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="228" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k3W-Gr-Zr5" id="y0d-rJ-HOX">
@@ -195,9 +195,71 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="categoryImage" destination="sBQ-uy-i0M" id="3LD-lG-HfV"/>
                                             <outlet property="numReviews" destination="pE8-SE-qtU" id="bfp-T7-kEZ"/>
                                             <outlet property="postTitle" destination="mLO-bP-C2X" id="5ck-r0-tAd"/>
                                             <outlet property="starRating" destination="zEk-Ua-m2A" id="vTu-yk-jhg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PollCell" rowHeight="100" id="F0y-3q-Wea" customClass="TopicPollCell" customModule="KnowItAll" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="328" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F0y-3q-Wea" id="g3H-R0-Ce9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Star Wars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxg-6s-4hx">
+                                                    <rect key="frame" x="14" y="8" width="125" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30 Votes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7e-8t-vQn">
+                                                    <rect key="frame" x="263" y="69" width="104" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1N-qX-Jae">
+                                                    <rect key="frame" x="0.0" y="89" width="375" height="1"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4N-70-kyy">
+                                                    <rect key="frame" x="0.0" y="89" width="375" height="10"/>
+                                                    <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ri-0B-UiQ">
+                                                    <rect key="frame" x="0.0" y="99" width="375" height="1"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Entertainment" translatesAutoresizingMaskIntoConstraints="NO" id="wpk-Fh-p3g">
+                                                    <rect key="frame" x="317" y="8" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="I4N-70-kyy" firstAttribute="top" secondItem="g3H-R0-Ce9" secondAttribute="top" constant="89" id="4RX-wt-8OW"/>
+                                                <constraint firstItem="1ri-0B-UiQ" firstAttribute="top" secondItem="g3H-R0-Ce9" secondAttribute="top" constant="99" id="7G2-Oq-3bu"/>
+                                                <constraint firstAttribute="trailing" secondItem="I4N-70-kyy" secondAttribute="trailing" id="7dr-YD-YoE"/>
+                                                <constraint firstAttribute="bottom" secondItem="1ri-0B-UiQ" secondAttribute="bottom" id="AcP-nS-3HQ"/>
+                                                <constraint firstItem="I4N-70-kyy" firstAttribute="leading" secondItem="z1N-qX-Jae" secondAttribute="leading" id="Nue-OL-ikO"/>
+                                                <constraint firstItem="1ri-0B-UiQ" firstAttribute="top" secondItem="I4N-70-kyy" secondAttribute="bottom" id="O5l-ko-UVd"/>
+                                                <constraint firstItem="1ri-0B-UiQ" firstAttribute="top" secondItem="z1N-qX-Jae" secondAttribute="bottom" constant="9" id="P92-VE-vXa"/>
+                                                <constraint firstItem="I4N-70-kyy" firstAttribute="leading" secondItem="g3H-R0-Ce9" secondAttribute="leading" id="Ypv-gM-HFh"/>
+                                                <constraint firstItem="I4N-70-kyy" firstAttribute="trailing" secondItem="z1N-qX-Jae" secondAttribute="trailing" id="lPU-kr-8rl"/>
+                                                <constraint firstItem="z1N-qX-Jae" firstAttribute="top" secondItem="I4N-70-kyy" secondAttribute="top" id="uKv-ba-5f8"/>
+                                                <constraint firstItem="I4N-70-kyy" firstAttribute="leading" secondItem="1ri-0B-UiQ" secondAttribute="leading" id="ugX-PE-fvZ"/>
+                                                <constraint firstItem="z1N-qX-Jae" firstAttribute="trailing" secondItem="1ri-0B-UiQ" secondAttribute="trailing" id="urN-QL-Jg6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="numReviews" destination="i7e-8t-vQn" id="nUa-ai-Mi1"/>
+                                            <outlet property="numVotesLabel" destination="i7e-8t-vQn" id="SFX-zO-q5D"/>
+                                            <outlet property="pollCategoryImage" destination="wpk-Fh-p3g" id="XqR-4i-LRj"/>
+                                            <outlet property="pollName" destination="Gxg-6s-4hx" id="mtm-ht-gcf"/>
+                                            <outlet property="postTitle" destination="Gxg-6s-4hx" id="RiE-Wc-l8f"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -239,6 +301,7 @@
                         <outlet property="locationsView" destination="y5V-m7-ZGm" id="aYd-KQ-igw"/>
                         <outlet property="searchBar" destination="e3P-vB-iSr" id="318-cX-zIH"/>
                         <outlet property="searchDisplayController" destination="dt6-ck-fHq" id="pJf-hv-vEb"/>
+                        <outlet property="segmentedControl" destination="zRL-FX-lx3" id="oug-cz-vzU"/>
                         <outlet property="tableView" destination="puX-sx-CA2" id="bnT-OO-dDD"/>
                         <outlet property="topView" destination="mh6-h2-ubQ" id="bq2-Dd-d74"/>
                     </connections>
