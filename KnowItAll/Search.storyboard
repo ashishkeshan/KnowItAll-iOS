@@ -53,7 +53,7 @@
                                     <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="100" id="k1u-C3-pHM" customClass="PostCell" customModule="KnowItAll" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopicReviewCell" rowHeight="100" id="k1u-C3-pHM" customClass="TopicReviewCell" customModule="KnowItAll" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="38" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k1u-C3-pHM" id="dZE-MZ-Fna">
@@ -125,6 +125,7 @@
                     <tabBarItem key="tabBarItem" systemItem="search" id="Rou-Li-5Tk"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="searchBar" destination="OOP-Lg-5Z5" id="iS8-Ws-pG3"/>
                         <outlet property="tableView" destination="sFq-pZ-aId" id="E6t-xF-pJK"/>
                     </connections>
                 </viewController>

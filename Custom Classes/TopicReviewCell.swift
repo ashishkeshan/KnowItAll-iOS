@@ -1,5 +1,5 @@
 //
-//  PostCell.swift
+//  TopicReviewCell.swift
 //  KnowItAll
 //
 //  Created by Ashish Keshan on 10/6/17.
@@ -9,11 +9,12 @@
 import UIKit
 import Cosmos
 
-class PostCell: UITableViewCell {
+class TopicReviewCell: UITableViewCell {
     
     @IBOutlet weak var numReviews: UILabel!
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var starRating: CosmosView!
+    @IBOutlet weak var categoryImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

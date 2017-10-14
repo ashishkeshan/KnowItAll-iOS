@@ -9,21 +9,23 @@
 import UIKit
 import NotificationCenter
 
-class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     @IBOutlet weak var academicView: UIView!
     @IBOutlet weak var foodView: UIView!
     @IBOutlet weak var entertainmentView: UIView!
     @IBOutlet weak var locationsView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
-
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topView: UIView!
-    var previousOffset = CGFloat(0.0)
+    let nc = NotificationCenter.default
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self;
-        tableView.delegate = self;
+        tableView.dataSource = self
+        tableView.delegate = self
+        searchBar.delegate = self
+        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
         let clickAcademic = UITapGestureRecognizer(target: self, action:  #selector (self.academicViewTouched (_:)))
         self.academicView.addGestureRecognizer(clickAcademic)
         let clickFood = UITapGestureRecognizer(target: self, action:  #selector (self.foodViewTouched (_:)))
@@ -34,27 +36,43 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.locationsView.addGestureRecognizer(clickLocations)
     }
     
+    func segmentedControlValueChanged(segment: UISegmentedControl) {
+        tableView.reloadData()
+    }
+    
     func academicViewTouched(_ sender:UITapGestureRecognizer) {
         searchBar.text = "Academic"
-        self.tabBarController?.selectedIndex = 1
-        let nc = NotificationCenter.default
-        nc.post(name:Notification.Name(rawValue:"MyNotification"),
-                object: nil,
-                userInfo: ["message":"Hello there!", "date":Date()])    }
+        executeSearch()
+    }
     
     func foodViewTouched(_ sender:UITapGestureRecognizer) {
         searchBar.text = "Food"
-        self.tabBarController?.selectedIndex = 1
+        executeSearch()
+
     }
     
     func entertainmentViewTouched(_ sender:UITapGestureRecognizer) {
         searchBar.text = "Entertainment"
-        self.tabBarController?.selectedIndex = 1
+        executeSearch()
+
     }
     
     func locationsViewTouched(_ sender:UITapGestureRecognizer) {
         searchBar.text = "Locations"
+        executeSearch()
+
+    }
+    
+    func executeSearch() {
         self.tabBarController?.selectedIndex = 1
+        nc.post(name:Notification.Name(rawValue:"MyNotification"),
+                object: nil,
+                userInfo: ["query": searchBar.text!])
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        executeSearch()
+        searchBar.resignFirstResponder()
     }
     
     
@@ -69,7 +87,7 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TopicReviewCell", for: indexPath) as! TopicReviewCell
         cell.starRating.rating = 3.5
         cell.postTitle.text = "Star Wars"
         cell.numReviews.text = "30 reviews"

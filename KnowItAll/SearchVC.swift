@@ -11,12 +11,24 @@ import UIKit
 class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        let nc = NotificationCenter.default // Note that default is now a property, not a method call
+        nc.addObserver(forName:Notification.Name(rawValue:"MyNotification"),
+                       object:nil, queue:nil,
+                       using:catchNotification)
         // Do any additional setup after loading the view.
+    }
+    
+    func catchNotification(notification:Notification) -> Void {
+        print("Catch notification")
+        let userInfo = notification.userInfo
+        let query = userInfo?["query"] as? String
+        searchBar.text = query
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +42,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TopicReviewCell", for: indexPath) as! TopicReviewCell
         cell.starRating.rating = 3.5
         cell.postTitle.text = "Star Wars"
         cell.numReviews.text = "30 reviews"
