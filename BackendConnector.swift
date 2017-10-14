@@ -14,7 +14,7 @@ func getJSONFromURL(_ urlString: String, _ type: String) -> JSON {
     var json = JSON.null
 
     let request = NSMutableURLRequest(url: URL(string: url)!)
-    request.httpMethod = "POST"
+    request.httpMethod = type
 
     let task = URLSession.shared.dataTask(with: request as URLRequest){ data,response,error in
         if error != nil {
