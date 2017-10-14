@@ -42,7 +42,7 @@ class CreateNewPostVC: UIViewController {
 
     @IBAction func pressed1(_ sender: UIButton) {
         category = 1
-        academic.backgroundColor = UIColor.yellow
+        academic.backgroundColor = UIColor.red
         food.backgroundColor = UIColor.white
         entertain.backgroundColor = UIColor.white
         location.backgroundColor = UIColor.white
@@ -50,7 +50,7 @@ class CreateNewPostVC: UIViewController {
     }
     @IBAction func pressed2(_ sender: UIButton) {
         category = 2
-        food.backgroundColor = UIColor.yellow
+        food.backgroundColor = UIColor.red
         entertain.backgroundColor = UIColor.white
         location.backgroundColor = UIColor.white
         academic.backgroundColor = UIColor.white

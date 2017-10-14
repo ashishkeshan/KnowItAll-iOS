@@ -261,7 +261,7 @@
 				TargetAttributes = {
 					758A32961F85A4D900838DDA = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 44BCGLCVUS;
+						DevelopmentTeam = 38FZD6KTC7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -514,7 +514,7 @@
 			baseConfigurationReference = 7EBDFBE2BA2E3DA09DA4C697 /* Pods-KnowItAll.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 44BCGLCVUS;
+				DEVELOPMENT_TEAM = 38FZD6KTC7;
 				INFOPLIST_FILE = KnowItAll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ashishkeshan.KnowItAll;
@@ -528,7 +528,7 @@
 			baseConfigurationReference = 505B88AA0558E2344579971B /* Pods-KnowItAll.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 44BCGLCVUS;
+				DEVELOPMENT_TEAM = 38FZD6KTC7;
 				INFOPLIST_FILE = KnowItAll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ashishkeshan.KnowItAll;

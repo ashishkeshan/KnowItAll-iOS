@@ -75,18 +75,6 @@
                                             <action selector="pressed2:" destination="dYq-fy-PKg" eventType="touchUpInside" id="qui-sA-goP"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0UT-16-JnK">
-                                        <rect key="frame" x="187.5" y="0.0" width="94" height="120"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <inset key="titleEdgeInsets" minX="-58" minY="80" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="15" minY="13" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Entertainment" image="Entertainment">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pressed3:" destination="dYq-fy-PKg" eventType="touchUpInside" id="N6m-E1-Wbs"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xn-0X-KXG">
                                         <rect key="frame" x="281.5" y="0.0" width="93.5" height="120"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -146,6 +134,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0UT-16-JnK">
+                                        <rect key="frame" x="187" y="0.0" width="94" height="120"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <inset key="titleEdgeInsets" minX="-58" minY="80" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="15" minY="13" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Entertainment" image="Entertainment">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressed3:" destination="dYq-fy-PKg" eventType="touchUpInside" id="N6m-E1-Wbs"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
