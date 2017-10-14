@@ -42,34 +42,34 @@ class CreateNewPostVC: UIViewController {
 
     @IBAction func pressed1(_ sender: UIButton) {
         category = 1
-        academic.backgroundColor = UIColor.red
-        food.backgroundColor = UIColor.white
-        entertain.backgroundColor = UIColor.white
-        location.backgroundColor = UIColor.white
+        academic.alpha = 1.0
+        food.alpha = 0.5
+        entertain.alpha = 0.5
+        location.alpha = 0.5
         print(category)
     }
     @IBAction func pressed2(_ sender: UIButton) {
         category = 2
-        food.backgroundColor = UIColor.red
-        entertain.backgroundColor = UIColor.white
-        location.backgroundColor = UIColor.white
-        academic.backgroundColor = UIColor.white
+        academic.alpha = 0.5
+        food.alpha = 1.0
+        entertain.alpha = 0.5
+        location.alpha = 0.5
         print(category)
     }
     @IBAction func pressed3(_ sender: UIButton) {
         category = 3
-        entertain.backgroundColor = UIColor.yellow
-        food.backgroundColor = UIColor.white
-        location.backgroundColor = UIColor.white
-        academic.backgroundColor = UIColor.white
+        academic.alpha = 0.5
+        food.alpha = 0.5
+        entertain.alpha = 1.0
+        location.alpha = 0.5
         print(category)
     }
     @IBAction func pressed4(_ sender: UIButton) {
         category = 4
-        location.backgroundColor = UIColor.yellow
-        food.backgroundColor = UIColor.white
-        entertain.backgroundColor = UIColor.white
-        academic.backgroundColor = UIColor.white
+        academic.alpha = 0.5
+        food.alpha = 0.5
+        entertain.alpha = 0.5
+        location.alpha = 1.0
         print(category)
     }
     
