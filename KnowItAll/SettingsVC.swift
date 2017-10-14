@@ -38,7 +38,21 @@ class SettingsVC: UITableViewController {
                 performSegue(withIdentifier: "submitSegue", sender: self)
                 break
             case 4:
-                //signout TODO
+                let deleteAlert = UIAlertController(title: "Are you sure you want to sign out?", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+                
+                deleteAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+                    // Sign out
+                    UserDefaults.standard.set(Login.no, forKey: Login.loggedIn)
+                    let storyboard = UIStoryboard(name: "Main", bundle:nil)
+                    let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+                    controller.modalTransitionStyle = .flipHorizontal
+                    self.present(controller, animated: true, completion: nil)
+                }))
+                
+                deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                    return
+                }))
+                present(deleteAlert, animated: true, completion: nil)
                 break
             default:
                 break

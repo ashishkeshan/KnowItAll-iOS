@@ -11,16 +11,125 @@ import UIKit
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    var userDefaults: UserDefaults!
+    
     var emailAddress = ""
-    var password = ""
     var newPassword = ""
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupFields()
+        
+        userDefaults = UserDefaults.standard
+    }
+    
+    func setupFields() {
+        // Check if fields are being edited
+        emailField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
+    }
+    
+    
+    // Check if editing
+    func textFieldDidChange(textField: UITextField) {
+        errorLabel.isHidden = true
+    }
+    
+    
+    // Login
     @IBAction func loginPressed(_ sender: Any) {
+        indicator.isHidden = false
+        // Fields are empty
+        if emailField.text == "" || passwordField.text == "" {
+            errorLabel.text = Login.emailPass
+            errorLabel.isHidden = false
+            indicator.isHidden = true
+            return
+        }
+            
+            // Not USC email
+        else if !(emailField.text?.contains("@usc.edu"))! {
+            errorLabel.text = Login.uscEmailOnly
+            errorLabel.isHidden = false
+            indicator.isHidden = true
+            return
+        }
         
+        let urlString = "/login?username="+emailField.text!+"&password="+passwordField.text!
+        let json = getJSONFromURL(urlString, "POST")
+        let status = json["status"]
+        // Check if status is good
+        if status == 200 {
+            // Store username + password
+            userDefaults.set(emailField.text, forKey: Login.emailKey)
+            userDefaults.set(passwordField.text, forKey: Login.passwordKey)
+            userDefaults.set(Login.yes, forKey: Login.loggedIn)
+            
+            // Segue
+            let storyboard = UIStoryboard(name: "TabBar", bundle:nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "TabBar")
+            controller.modalTransitionStyle = .flipHorizontal
+            self.present(controller, animated: true, completion: nil)
+            
+        } // endif
+        else {
+            errorLabel.text = Login.wrongPass
+            errorLabel.isHidden = false
+            indicator.isHidden = true
+            return
+        }
+        indicator.isHidden = true
     }
+    
+    // Sign Up
     @IBAction func signupPressed(_ sender: Any) {
+        indicator.isHidden = false
+        // Fields are empty
+        if emailField.text == "" || passwordField.text == "" {
+            errorLabel.text = Login.emailPass
+            errorLabel.isHidden = false
+            indicator.isHidden = true
+            return
+        }
         
+        // Not USC email
+        else if !(emailField.text?.contains("@usc.edu"))! {
+            errorLabel.text = Login.uscEmailOnly
+            errorLabel.isHidden = false
+            indicator.isHidden = true
+            return
+        }
+        
+        let urlString = "/register?username="+emailField.text!+"&password="+passwordField.text!
+        let json = getJSONFromURL(urlString, "POST")
+        let status = json["status"]
+        
+        // Check if status is good
+        if status == 200 {
+            // Store username + password
+            userDefaults.set(emailField.text, forKey: Login.emailKey)
+            userDefaults.set(passwordField.text, forKey: Login.passwordKey)
+            userDefaults.set(Login.yes, forKey: Login.loggedIn)
+            
+            // Segue
+            let storyboard = UIStoryboard(name: "TabBar", bundle:nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "TabBar")
+            controller.modalTransitionStyle = .flipHorizontal
+            self.present(controller, animated: true, completion: nil)
+            
+        } // endif
+        else {
+            errorLabel.text = Login.emailExists
+            errorLabel.isHidden = false
+            indicator.isHidden = true
+            return
+        }
+        indicator.isHidden = true
     }
+    
+    // Forgot Password
     @IBAction func forgotPressed(_ sender: Any) {
         // Alert
         let alert = UIAlertController(title: "Reset password", message: "Please type your email address and a new password", preferredStyle: .alert)
@@ -52,10 +161,6 @@ class LoginViewController: UIViewController {
         }))
         
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
     
     func changePassword() {
