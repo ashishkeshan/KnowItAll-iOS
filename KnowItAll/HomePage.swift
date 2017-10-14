@@ -36,6 +36,22 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         self.locationsView.addGestureRecognizer(clickLocations)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    func viewDidDisappear() {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     func segmentedControlValueChanged(segment: UISegmentedControl) {
         tableView.reloadData()
     }
@@ -96,7 +112,17 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+         performSegue(withIdentifier: "showPollPage", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is PollVC {
+            let vc = segue.destination as? PollVC
+//            vc?.poll = poll
+        } else if segue.destination is ReviewVC {
+            let vc = segue.destination as? ReviewVC
+            // vc?.review = review
+        }
     }
     
 
