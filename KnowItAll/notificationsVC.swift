@@ -45,7 +45,7 @@ class notificationsVC: UITableViewController {
             let type = notification["type"].stringValue
             let text = notification["text"].stringValue
             let pollID = notification["pollID"].stringValue
-            notifications.append(Notif.init(image: UIImage(named: "Food")!, action: text, postName: pollIDs[pollID].stringValue))
+            notifications.append(Notif.init(image: UIImage(named: "Poll")!, action: pollIDs[pollID].stringValue, postName: text))
         }
         tableView.reloadData()
     }
