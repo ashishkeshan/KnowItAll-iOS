@@ -63,6 +63,7 @@
 		02F181F21F8957F700172C63 /* notificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationsVC.swift; sourceTree = "<group>"; };
 		02F2CB171F8804540013F88D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		02F2CB1B1F880BA50013F88D /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
+		282DE12C1F91CF9A00EE440D /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BE28711F917E8100557D85 /* BackendConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendConnector.swift; sourceTree = "<group>"; };
 		505B88AA0558E2344579971B /* Pods-KnowItAll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowItAll.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll.release.xcconfig"; sourceTree = "<group>"; };
 		71C559B9AFC5385A1C0EB1EC /* Pods_KnowItAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnowItAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +121,6 @@
 				024FA0281F918C9A0088EABB /* SpecificReviewCell.xib */,
 				026E11B21F90722F0075FF7D /* SpecificPollCell.swift */,
 				026E11B31F90722F0075FF7D /* SpecificPollCell.xib */,
-				758A32D01F8B326E00838DDA /* PostCell.swift */,
 				758A32D01F8B326E00838DDA /* TopicReviewCell.swift */,
 				02D95BCE1F8B232F00E57721 /* NotificationCell.swift */,
 				7537F0D61F906EEC00839AB3 /* TopicPollCell.swift */,
@@ -151,6 +151,7 @@
 		1A35821AC1C75C0F9FBDA444 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				282DE12C1F91CF9A00EE440D /* Alamofire.framework */,
 				71C559B9AFC5385A1C0EB1EC /* Pods_KnowItAll.framework */,
 			);
 			name = Frameworks;
@@ -309,11 +310,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -352,7 +355,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

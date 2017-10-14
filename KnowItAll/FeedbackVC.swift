@@ -65,7 +65,7 @@ extension FeedbackVC: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "Placeholder"
+            textView.text = "Enter feedback here"
             textView.textColor = UIColor.lightGray
         }
     }
