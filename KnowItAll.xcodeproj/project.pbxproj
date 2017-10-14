@@ -45,6 +45,10 @@
 		758A32CD1F8836FA00838DDA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		758A32D11F8B326E00838DDA /* TopicReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32D01F8B326E00838DDA /* TopicReviewCell.swift */; };
 		75D59E411F8C3A3C00F3C854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75D59E401F8C3A3C00F3C854 /* Assets.xcassets */; };
+		75F135391F92BBAD00C07A0F /* PollPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F135381F92BBAD00C07A0F /* PollPage.storyboard */; };
+		75F1353B1F92C1F200C07A0F /* ReviewPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F1353A1F92C1F200C07A0F /* ReviewPage.storyboard */; };
+		75F1353D1F92C81300C07A0F /* PollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F1353C1F92C81300C07A0F /* PollVC.swift */; };
+		75F1353F1F92C85100C07A0F /* ReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F1353E1F92C85100C07A0F /* ReviewVC.swift */; };
 		D7F611A08214354BF451E914 /* Pods_KnowItAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C559B9AFC5385A1C0EB1EC /* Pods_KnowItAll.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +95,10 @@
 		758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPostVC.swift; sourceTree = "<group>"; };
 		758A32D01F8B326E00838DDA /* TopicReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicReviewCell.swift; sourceTree = "<group>"; };
 		75D59E401F8C3A3C00F3C854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		75F135381F92BBAD00C07A0F /* PollPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PollPage.storyboard; sourceTree = "<group>"; };
+		75F1353A1F92C1F200C07A0F /* ReviewPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewPage.storyboard; sourceTree = "<group>"; };
+		75F1353C1F92C81300C07A0F /* PollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollVC.swift; sourceTree = "<group>"; };
+		75F1353E1F92C85100C07A0F /* ReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewVC.swift; sourceTree = "<group>"; };
 		7EBDFBE2BA2E3DA09DA4C697 /* Pods-KnowItAll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowItAll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +215,8 @@
 				758A32C01F870B3300838DDA /* Search.storyboard */,
 				758A32BA1F8709BE00838DDA /* MyPosts.storyboard */,
 				758A32B21F8704D700838DDA /* HomePage.storyboard */,
+				75F1353A1F92C1F200C07A0F /* ReviewPage.storyboard */,
+				75F135381F92BBAD00C07A0F /* PollPage.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -224,6 +234,8 @@
 				02F2CB1B1F880BA50013F88D /* ChangePassword.swift */,
 				02F181F21F8957F700172C63 /* notificationsVC.swift */,
 				758A32B61F87068A00838DDA /* HomePage.swift */,
+				75F1353C1F92C81300C07A0F /* PollVC.swift */,
+				75F1353E1F92C85100C07A0F /* ReviewVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -294,6 +306,7 @@
 				758A32B31F8704D700838DDA /* HomePage.storyboard in Resources */,
 				024FA02E1F91A4980088EABB /* newPoll.xib in Resources */,
 				026E11B51F90722F0075FF7D /* SpecificPollCell.xib in Resources */,
+				75F135391F92BBAD00C07A0F /* PollPage.storyboard in Resources */,
 				758A32B11F87040C00838DDA /* TabBar.storyboard in Resources */,
 				758A32A51F85A4D900838DDA /* LaunchScreen.storyboard in Resources */,
 				758A32C51F870BE500838DDA /* CreateNewPost.storyboard in Resources */,
@@ -301,6 +314,7 @@
 				758A32A21F85A4D900838DDA /* home.png in Resources */,
 				024FA02A1F918C9A0088EABB /* SpecificReviewCell.xib in Resources */,
 				758A32C11F870B3300838DDA /* Search.storyboard in Resources */,
+				75F1353B1F92C1F200C07A0F /* ReviewPage.storyboard in Resources */,
 				758A32BB1F8709BE00838DDA /* MyPosts.storyboard in Resources */,
 				024FA02C1F91A4910088EABB /* newReview.xib in Resources */,
 				758A32A01F85A4D900838DDA /* Main.storyboard in Resources */,
@@ -386,6 +400,7 @@
 				758A32B71F87068A00838DDA /* HomePage.swift in Sources */,
 				758A32BD1F8709EC00838DDA /* MyPostsVC.swift in Sources */,
 				026E11A51F9058A50075FF7D /* FeedbackVC.swift in Sources */,
+				75F1353D1F92C81300C07A0F /* PollVC.swift in Sources */,
 				02E31B751F90494000B4AAF2 /* rateVC.swift in Sources */,
 				758A32CD1F8836FA00838DDA /* (null) in Sources */,
 				0245DD801F902916000B26F5 /* User.swift in Sources */,
@@ -396,6 +411,7 @@
 				758A329B1F85A4D900838DDA /* AppDelegate.swift in Sources */,
 				758A32B91F8708CB00838DDA /* TabBar.swift in Sources */,
 				02F181F31F8957F700172C63 /* notificationsVC.swift in Sources */,
+				75F1353F1F92C85100C07A0F /* ReviewVC.swift in Sources */,
 				026E11A71F9061E70075FF7D /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
