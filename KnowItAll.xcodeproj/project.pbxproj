@@ -29,7 +29,6 @@
 		7537F0D71F906EEC00839AB3 /* TopicPollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537F0D61F906EEC00839AB3 /* TopicPollCell.swift */; };
 		758A329B1F85A4D900838DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A329A1F85A4D900838DDA /* AppDelegate.swift */; };
 		758A32A01F85A4D900838DDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A329E1F85A4D900838DDA /* Main.storyboard */; };
-		758A32A21F85A4D900838DDA /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 758A32A11F85A4D900838DDA /* home.png */; };
 		758A32A51F85A4D900838DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32A31F85A4D900838DDA /* LaunchScreen.storyboard */; };
 		758A32AD1F85A71000838DDA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32AC1F85A71000838DDA /* LoginViewController.swift */; };
 		758A32B11F87040C00838DDA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32B01F87040C00838DDA /* TabBar.storyboard */; };
@@ -80,7 +79,6 @@
 		758A32971F85A4D900838DDA /* KnowItAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnowItAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		758A329A1F85A4D900838DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		758A329F1F85A4D900838DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		758A32A11F85A4D900838DDA /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = Assets.xcassets/home.imageset/home.png; sourceTree = "<group>"; };
 		758A32A41F85A4D900838DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		758A32A61F85A4D900838DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		758A32AC1F85A71000838DDA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 				75D59E401F8C3A3C00F3C854 /* Assets.xcassets */,
 				758A32BE1F870A5A00838DDA /* StoryBoards */,
 				758A32B81F8708CB00838DDA /* TabBar.swift */,
-				758A32A11F85A4D900838DDA /* home.png */,
 				758A32A31F85A4D900838DDA /* LaunchScreen.storyboard */,
 				758A32A61F85A4D900838DDA /* Info.plist */,
 			);
@@ -313,7 +310,6 @@
 				758A32A51F85A4D900838DDA /* LaunchScreen.storyboard in Resources */,
 				758A32C51F870BE500838DDA /* CreateNewPost.storyboard in Resources */,
 				75D59E411F8C3A3C00F3C854 /* Assets.xcassets in Resources */,
-				758A32A21F85A4D900838DDA /* home.png in Resources */,
 				024FA02A1F918C9A0088EABB /* SpecificReviewCell.xib in Resources */,
 				758A32C11F870B3300838DDA /* Search.storyboard in Resources */,
 				75F1353B1F92C1F200C07A0F /* ReviewPage.storyboard in Resources */,

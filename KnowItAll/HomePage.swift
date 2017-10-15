@@ -112,7 +112,7 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         performSegue(withIdentifier: "showPollPage", sender: self)
+         performSegue(withIdentifier: "showReviewPage", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
