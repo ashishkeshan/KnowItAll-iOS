@@ -106,7 +106,8 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
                 //polls dont have this attribute
                 if(r["numReviews"] == JSON.null) {
                     print("poll")
-                    let temp = Poll.init(id: r["id"].intValue, type: 2, time: <#T##Double#>, option: <#T##[String]#>, distribution: <#T##Set<Int>#>, votes: <#T##Int#>, text: <#T##String#>)
+                    
+                    let temp = Poll.init(id: r["id"].intValue, type: 2, time: r["dayLimit"].doubleValue, option: <#T##[String]#>, distribution: <#T##Set<Int>#>, votes: r["numVotes"].intValue, text: r["text"].stringValue)
                     polls.append(temp)
                 }
                 else {

@@ -15,13 +15,15 @@ class Poll: Post {
     var optionDistribution:Set<Int>?
     var numVotes:Int!
     var title:String!
+    var category:Int!
     
-    init(id:Int,type:Int,time:Double,option:[String],distribution:Set<Int>,votes:Int,text:String) {
+    init(id:Int,type:Int,time:Double,option:[String],distribution:Set<Int>,votes:Int,text:String,cat:Int) {
         super.init(id: id,b: type)
         self.timeLeft = time
         self.option = option
         self.optionDistribution = distribution
         self.numVotes = votes
         self.title = text
+        self.category = cat
     }
 }
