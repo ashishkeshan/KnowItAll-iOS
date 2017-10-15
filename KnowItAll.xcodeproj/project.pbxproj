@@ -49,6 +49,7 @@
 		75F1353B1F92C1F200C07A0F /* ReviewPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F1353A1F92C1F200C07A0F /* ReviewPage.storyboard */; };
 		75F1353D1F92C81300C07A0F /* PollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F1353C1F92C81300C07A0F /* PollVC.swift */; };
 		75F1353F1F92C85100C07A0F /* ReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F1353E1F92C85100C07A0F /* ReviewVC.swift */; };
+		75F135411F92E09400C07A0F /* PollOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F135401F92E09400C07A0F /* PollOptionCell.swift */; };
 		D7F611A08214354BF451E914 /* Pods_KnowItAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C559B9AFC5385A1C0EB1EC /* Pods_KnowItAll.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		75F1353A1F92C1F200C07A0F /* ReviewPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewPage.storyboard; sourceTree = "<group>"; };
 		75F1353C1F92C81300C07A0F /* PollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollVC.swift; sourceTree = "<group>"; };
 		75F1353E1F92C85100C07A0F /* ReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewVC.swift; sourceTree = "<group>"; };
+		75F135401F92E09400C07A0F /* PollOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollOptionCell.swift; sourceTree = "<group>"; };
 		7EBDFBE2BA2E3DA09DA4C697 /* Pods-KnowItAll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowItAll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 				02D95BCE1F8B232F00E57721 /* NotificationCell.swift */,
 				7537F0D61F906EEC00839AB3 /* TopicPollCell.swift */,
 				280F1A0E1F92C75C00CFB879 /* Constants.swift */,
+				75F135401F92E09400C07A0F /* PollOptionCell.swift */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				0245DD821F902A56000B26F5 /* Poll.swift in Sources */,
 				758A32C31F870B4E00838DDA /* SearchVC.swift in Sources */,
 				02F2CB1C1F880BA50013F88D /* ChangePassword.swift in Sources */,
+				75F135411F92E09400C07A0F /* PollOptionCell.swift in Sources */,
 				758A32AD1F85A71000838DDA /* LoginViewController.swift in Sources */,
 				024FA0291F918C9A0088EABB /* SpecificReviewCell.swift in Sources */,
 				758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */,
