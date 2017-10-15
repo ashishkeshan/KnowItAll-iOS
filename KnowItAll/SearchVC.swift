@@ -31,6 +31,9 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         // Do any additional setup after loading the view.
     }
     
+    /*
+     * NOTIFICATION FUNCTIONS
+     */
     func catchNotification(notification:Notification) -> Void {
         print("Catch notification")
         let userInfo = notification.userInfo
@@ -44,11 +47,15 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         // Dispose of any resources that can be recreated.
     }
     
+    /*
+     * TABLE DELEGATE/DATASOURCE FUNCTIONS
+     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return polls.count + topics.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //determining which cell to use (poll vs topic)
         if indexPath.row < (topics.count) {
             print("review:" + String(indexPath.row))
             let cell = tableView.dequeueReusableCell(withIdentifier: "TopicReviewCell", for: indexPath) as! TopicReviewCell
@@ -104,24 +111,26 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
 //        TODO
-//        
-//        
-//        
-//        
-//        
-//        
-//        
-//        
-//        
-//        
-//        
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    //SEARCHBAR
+    /*
+     * SEARCHBAR DELEGATE FUNCTIONS
+     */
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true;
     }
@@ -139,7 +148,8 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+        //function used to send search queries whenever the text in searchbar has been edited
+        //can probably be optimized a bit to improve search speed
         search(param: searchBar.text!)
         if(topics.count + polls.count == 0){
             searchActive = false;
