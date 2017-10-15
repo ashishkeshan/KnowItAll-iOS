@@ -49,15 +49,64 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TopicReviewCell", for: indexPath) as! TopicReviewCell
-        cell.starRating.rating = 3.5
-        cell.postTitle.text = "Star Wars"
-        cell.numReviews.text = "30 reviews"
-        return cell
+        if indexPath.row < (topics.count) {
+            print("review:" + String(indexPath.row))
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TopicReviewCell", for: indexPath) as! TopicReviewCell
+            cell.starRating.rating = topics[indexPath.row].rating
+            cell.postTitle.text = topics[indexPath.row].title
+            cell.numReviews.text = "Reviews: " + String(topics[indexPath.row].numReviews)
+            switch topics[indexPath.row].category {
+            case 1:
+                let img = UIImage(named: "Academic")
+                cell.categoryImage = UIImageView(image: img)
+                break
+            case 2:
+                let img = UIImage(named: "Food")
+                cell.categoryImage = UIImageView(image: img)
+                break
+            case 3:
+                let img = UIImage(named: "Entertainment")
+                cell.categoryImage = UIImageView(image: img)
+                break
+            case 4:
+                let img = UIImage(named: "Location")
+                cell.categoryImage = UIImageView(image: img)
+                break
+            default:
+                break
+            }
+            return cell
+        } else {
+            print("poll:" + String(indexPath.row))
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TopicPollCell", for: indexPath) as! TopicPollCell
+            cell.pollName.text = polls[indexPath.row-topics.count].title
+            cell.numVotesLabel.text = String(polls[indexPath.row-topics.count].numVotes)
+            switch polls[indexPath.row-topics.count].category {
+            case 1:
+                cell.pollCategoryImage.image = UIImage(named: "Academics")
+                break
+            case 2:
+                cell.pollCategoryImage.image = UIImage(named: "Food")
+                break
+            case 3:
+                cell.pollCategoryImage.image = UIImage(named: "Entertainment")
+                break
+            case 4:
+                cell.pollCategoryImage.image = UIImage(named: "Location")
+                break
+            default:
+                break
+            }
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
     //SEARCHBAR
@@ -125,6 +174,6 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         }
         
         self.tableView.reloadData()
-        
+        print(param + ":" + String(topics.count+polls.count))
     }
 }

@@ -23,7 +23,7 @@ class CreateNewPostVC: UIViewController {
     @IBOutlet weak var pollPage: UIView!
     
     //fields to send to backend
-    var category:String?
+    var category:Int = -1
     //poll fields
     @IBOutlet weak var question: UITextField!
     @IBOutlet weak var answer: UITextField!
@@ -94,13 +94,13 @@ class CreateNewPostVC: UIViewController {
             let t = typeField.text!
             let c = comment.text!
             
-            if(r==nil) {
+            if(r == "") {
                 let alert = UIAlertController(title: "Warning!", message: "Please select a rating by selecting stars", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
             
-            if(t==nil) {
+            if(t == "") {
                 let alert = UIAlertController(title: "Warning!", message: "Please enter a Topic", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
@@ -143,13 +143,13 @@ class CreateNewPostVC: UIViewController {
                 d = time.text!
             }
             
-            if(category==nil) {
+            if(category == -1) {
                 let alert = UIAlertController(title: "Warning!", message: "Please select a category by pressing one of the images", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
             
-            if(d==nil) {
+            if(d == "") {
                 let alert = UIAlertController(title: "Warning!", message: "Please set a time or select Forever", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
@@ -161,13 +161,13 @@ class CreateNewPostVC: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
             
-            if(q==nil) {
+            if(q == "") {
                 let alert = UIAlertController(title: "Warning!", message: "Please enter a question", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
             
-            var urlString = "/createPoll?username="+email+"&category="+category!+"&text="
+            var urlString = "/createPoll?username="+email+"&category="+String(category)+"&text="
             urlString += q+"&choices="+c+"&openForever="
             urlString += String(f)+"&dayLimit="+d
             
@@ -195,28 +195,28 @@ class CreateNewPostVC: UIViewController {
     
     //button press functions
     func pressed1(_ sender: UIButton) {
-        category = "1"
+        category = 1
         academic.alpha = 1.0
         food.alpha = 0.5
         entertain.alpha = 0.5
         location.alpha = 0.5
     }
     func pressed2(_ sender: UIButton) {
-        category = "2"
+        category = 2
         academic.alpha = 0.5
         food.alpha = 1.0
         entertain.alpha = 0.5
         location.alpha = 0.5
     }
     func pressed3(_ sender: UIButton) {
-        category = "3"
+        category = 3
         academic.alpha = 0.5
         food.alpha = 0.5
         entertain.alpha = 1.0
         location.alpha = 0.5
     }
     func pressed4(_ sender: UIButton) {
-        category = "4"
+        category = 4
         academic.alpha = 0.5
         food.alpha = 0.5
         entertain.alpha = 0.5

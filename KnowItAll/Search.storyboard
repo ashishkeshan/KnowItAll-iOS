@@ -148,6 +148,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="categoryImage" destination="uoc-uy-uTT" id="qcC-0e-9iJ"/>
                                             <outlet property="numReviews" destination="iic-e1-zR2" id="NzK-wf-9d6"/>
                                             <outlet property="postTitle" destination="yEw-C1-UF7" id="juW-F4-Ehq"/>
                                             <outlet property="starRating" destination="35O-2K-ZFR" id="KlJ-hJ-Tl7"/>
@@ -236,11 +237,6 @@
                                                 <constraint firstItem="bZD-yc-Dti" firstAttribute="leading" secondItem="M9Q-4q-eB4" secondAttribute="leading" id="ymB-5t-81t"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="numReviews" destination="SAe-1r-C7D" id="7hA-QK-Ltu"/>
-                                            <outlet property="postTitle" destination="thu-0f-Qws" id="p4d-gN-gNr"/>
-                                            <outlet property="starRating" destination="1dP-bc-Qfw" id="ucM-X8-iwD"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
