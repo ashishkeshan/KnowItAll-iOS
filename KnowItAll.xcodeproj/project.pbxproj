@@ -12,12 +12,11 @@
 		0245DD841F902A5F000B26F5 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245DD831F902A5F000B26F5 /* Review.swift */; };
 		024FA0291F918C9A0088EABB /* SpecificReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024FA0271F918C9A0088EABB /* SpecificReviewCell.swift */; };
 		024FA02A1F918C9A0088EABB /* SpecificReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024FA0281F918C9A0088EABB /* SpecificReviewCell.xib */; };
-		024FA02C1F91A4910088EABB /* newReview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024FA02B1F91A4910088EABB /* newReview.xib */; };
-		024FA02E1F91A4980088EABB /* newPoll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024FA02D1F91A4980088EABB /* newPoll.xib */; };
 		026E11A51F9058A50075FF7D /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11A41F9058A50075FF7D /* FeedbackVC.swift */; };
 		026E11A71F9061E70075FF7D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11A61F9061E70075FF7D /* Post.swift */; };
 		026E11B41F90722F0075FF7D /* SpecificPollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11B21F90722F0075FF7D /* SpecificPollCell.swift */; };
 		026E11B51F90722F0075FF7D /* SpecificPollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 026E11B31F90722F0075FF7D /* SpecificPollCell.xib */; };
+		02B0BF6A1F92D0FF007A159F /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B0BF691F92D0FF007A159F /* AnswerCell.swift */; };
 		02D57DF51F88575B0086E002 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D57DF41F88575B0086E002 /* Settings.storyboard */; };
 		02D95BCD1F8B231400E57721 /* Notif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D95BCC1F8B231400E57721 /* Notif.swift */; };
 		02D95BCF1F8B232F00E57721 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D95BCE1F8B232F00E57721 /* NotificationCell.swift */; };
@@ -54,12 +53,11 @@
 		0245DD831F902A5F000B26F5 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		024FA0271F918C9A0088EABB /* SpecificReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificReviewCell.swift; sourceTree = "<group>"; };
 		024FA0281F918C9A0088EABB /* SpecificReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecificReviewCell.xib; sourceTree = "<group>"; };
-		024FA02B1F91A4910088EABB /* newReview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = newReview.xib; sourceTree = "<group>"; };
-		024FA02D1F91A4980088EABB /* newPoll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = newPoll.xib; sourceTree = "<group>"; };
 		026E11A41F9058A50075FF7D /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		026E11A61F9061E70075FF7D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		026E11B21F90722F0075FF7D /* SpecificPollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificPollCell.swift; sourceTree = "<group>"; };
 		026E11B31F90722F0075FF7D /* SpecificPollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecificPollCell.xib; sourceTree = "<group>"; };
+		02B0BF691F92D0FF007A159F /* AnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
 		02D57DF41F88575B0086E002 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		02D95BCC1F8B231400E57721 /* Notif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notif.swift; sourceTree = "<group>"; };
 		02D95BCE1F8B232F00E57721 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
@@ -121,6 +119,7 @@
 		0245DD861F9035A5000B26F5 /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
+				02B0BF691F92D0FF007A159F /* AnswerCell.swift */,
 				024FA0271F918C9A0088EABB /* SpecificReviewCell.swift */,
 				024FA0281F918C9A0088EABB /* SpecificReviewCell.xib */,
 				026E11B21F90722F0075FF7D /* SpecificPollCell.swift */,
@@ -202,8 +201,6 @@
 				758A32B01F87040C00838DDA /* TabBar.storyboard */,
 				02D57DF41F88575B0086E002 /* Settings.storyboard */,
 				758A32C41F870BE500838DDA /* CreateNewPost.storyboard */,
-				024FA02B1F91A4910088EABB /* newReview.xib */,
-				024FA02D1F91A4980088EABB /* newPoll.xib */,
 				758A32C01F870B3300838DDA /* Search.storyboard */,
 				758A32BA1F8709BE00838DDA /* MyPosts.storyboard */,
 				758A32B21F8704D700838DDA /* HomePage.storyboard */,
@@ -292,7 +289,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				758A32B31F8704D700838DDA /* HomePage.storyboard in Resources */,
-				024FA02E1F91A4980088EABB /* newPoll.xib in Resources */,
 				026E11B51F90722F0075FF7D /* SpecificPollCell.xib in Resources */,
 				758A32B11F87040C00838DDA /* TabBar.storyboard in Resources */,
 				758A32A51F85A4D900838DDA /* LaunchScreen.storyboard in Resources */,
@@ -302,7 +298,6 @@
 				024FA02A1F918C9A0088EABB /* SpecificReviewCell.xib in Resources */,
 				758A32C11F870B3300838DDA /* Search.storyboard in Resources */,
 				758A32BB1F8709BE00838DDA /* MyPosts.storyboard in Resources */,
-				024FA02C1F91A4910088EABB /* newReview.xib in Resources */,
 				758A32A01F85A4D900838DDA /* Main.storyboard in Resources */,
 				02D57DF51F88575B0086E002 /* Settings.storyboard in Resources */,
 			);
@@ -392,6 +387,7 @@
 				02F2CB181F8804540013F88D /* SettingsVC.swift in Sources */,
 				758A32D11F8B326E00838DDA /* TopicReviewCell.swift in Sources */,
 				02D95BCD1F8B231400E57721 /* Notif.swift in Sources */,
+				02B0BF6A1F92D0FF007A159F /* AnswerCell.swift in Sources */,
 				0245DD841F902A5F000B26F5 /* Review.swift in Sources */,
 				758A329B1F85A4D900838DDA /* AppDelegate.swift in Sources */,
 				758A32B91F8708CB00838DDA /* TabBar.swift in Sources */,
