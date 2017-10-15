@@ -28,8 +28,7 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(segmentedControl.selectedSegmentIndex == 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SpecificReviewCell", for: indexPath) as! SpecificReviewCell
-            cell.title.text = "Star Wars"
-//                reviews[indexPath.row].topic
+            cell.title.text = reviewData[indexPath.row].topic
             cell.comment.text = reviewData[indexPath.row].comment
             cell.stars.rating = reviewData[indexPath.row].rating
             return cell
@@ -63,32 +62,35 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func loadFromDB() {
-//        let urlString = "/myPosts?username="+email
-//        let json = getJSONFromURL(urlString, "GET")
-//        let topicIDs = json["topicID"]
-//        let pollIDs = json["pollID"]
-//
-//        let reviews = json["reviews"]
-//        for review in reviews.arrayValue {
-//            let id = review["id"].stringValue
-//            let topicID = review["topicID"].stringValue
-//            let rating = review["rating"].stringValue
-//            let comment = review["comment"].stringValue
-//            reviewData.append(Review.init(id:Int(id)!, type:1, rating:Double(rating)!, comment:comment))
-//        }
-//
-//        let polls = json["polls"]
-//        for poll in polls.arrayValue {
-//            let id = review["id"].stringValue
-//            let topicID = review["topicID"].stringValue
-//            let rating = review["rating"].stringValue
-//            let comment = review["comment"].stringValue
-//            let options = [String:String]()
-        
+        let urlString = "/myPosts?username="+email
+        let json = getJSONFromURL(urlString, "GET")
+        let topicIDs = json["topicID"]
+        let pcs = json["pc"]
+
+        let reviews = json["reviews"]
+        for review in reviews.arrayValue {
+            let id = review["id"].stringValue
+            let topicID = review["topicID"].stringValue
+            let rating = review["rating"].stringValue
+            let comment = review["comment"].stringValue
+            let topic = topicIDs[topicID].stringValue
+            reviewData.append(Review.init(id:Int(id)!, type:1, rating:Double(rating)!, comment:comment, text: topic))
+        }
+
+        let polls = json["polls"]
+        for poll in polls.arrayValue {
+            let id = poll["id"].stringValue
+            let text = poll["text"].stringValue
+            let numVotes = poll["numVotes"].intValue
+            let category = poll["categoryID"].stringValue
+            var options = [String]()
+            for pc in pcs[id].arrayValue {
+                options.append(pc["text"].stringValue)
+            }
             
-//            pollData.append(Poll.init(id:Int(id)!, type:2, time:0, option:, distribution:, votes:, text:, cat:)
-//        }
-//        tableView.reloadData()
+            pollData.append(Poll.init(id:Int(id)!, type:2, time:0.0, option:options, distribution:Set<Int>(), votes:numVotes, text:text, cat:Int(category)!))
+        }
+        tableView.reloadData()
     }
 
 }
