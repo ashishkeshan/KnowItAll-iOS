@@ -23,7 +23,7 @@ class CreateNewPostVC: UIViewController {
     @IBOutlet weak var pollPage: UIView!
     
     //fields to send to backend
-    var category:Int?
+    var category:String?
     //poll fields
     @IBOutlet weak var question: UITextField!
     @IBOutlet weak var answer: UITextField!
@@ -66,10 +66,10 @@ class CreateNewPostVC: UIViewController {
         create.layer.borderColor = UIColor.red.cgColor
         
         //poll buttons set up
-        foreverButton.layer.cornerRadius = 5
+        foreverButton.layer.cornerRadius = 15
         foreverButton.layer.borderWidth = 1
         foreverButton.layer.borderColor = UIColor.red.cgColor
-        addButton.layer.cornerRadius = 5
+        addButton.layer.cornerRadius = 15
         addButton.layer.borderWidth = 1
         addButton.layer.borderColor = UIColor.red.cgColor
         addButton.setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
@@ -90,13 +90,7 @@ class CreateNewPostVC: UIViewController {
         let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
         
         if(segementedControl.selectedSegmentIndex == 0) {
-            //review
-            // http://127.0.0.1:8000/api/createReview?username=a@a.com&topicTitle=CSCI310&rating=3.5&comment=Meh
             let r = String(ratings.rating)
-//            print(email)
-//            print(typeField.text!)
-//            print(r)
-//            print(comment.text!)
             let t = typeField.text!
             let c = comment.text!
             
@@ -107,60 +101,74 @@ class CreateNewPostVC: UIViewController {
             
             // Check if status is good
             if status == 200 {
-                let alert = UIAlertController(title: "Success", message: "Your password has successfully been updated!", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Success", message: "Your review has been successfully submitted", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             } // endif
             else {
-                let alert = UIAlertController(title: "Wrong Email Address", message: "Error, your password could not be successfully updated.", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Data Exists", message: "Error, you've already reviewed this topic.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
         }
         else {
             //poll
-            //            let urlString = "/editProfile?username="+emailAddress+"&newPassword="+newPassword
-            //            let json = getJSONFromURL(urlString, "POST")
-            //            let status = json["status"]
-            //            // Check if status is good
-            //            if status == 200 {
-            //                let alert = UIAlertController(title: "Success", message: "Your password has successfully been updated!", preferredStyle: .alert)
-            //                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
-            //                self.present(alert, animated: true, completion: nil)
-            //            } // endif
-            //            else {
-            //                let alert = UIAlertController(title: "Wrong Email Address", message: "Error, your password could not be successfully updated.", preferredStyle: .alert)
-            //                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
-            //                self.present(alert, animated: true, completion: nil)
-            //            }
+//            http://127.0.0.1:8000/api/createPoll?username=a@a.com&category=1&text=Who is the best teammate?&choices=Nico,Ashish,Jonathon,Sam,Alberto&openForever=1&dayLimit=0
+            let q = question.text!
+            let c = choices.joined(separator: ",")
+            var f:Int
+            if(forever) {
+                f = 1
+            }
+            else {
+                f = 0
+            }
+            let d = time.text!
             
-        }
+            var urlString = "/createPoll?username="+email+"&category="+category!+"&text="
+            urlString += q+"&choices="+c+"&openForever="
+            urlString += String(f)+"&dayLimit="+d
+            
+            let json = getJSONFromURL(urlString, "POST")
+            let status = json["status"]
+            
+            // Check if status is good
+            if status == 200 {
+                let alert = UIAlertController(title: "Success", message: "Your poll has been successfully created", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } // endif
+            else {
+                let alert = UIAlertController(title: "Error!", message: "Error, failed to create poll", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }        }
     }
     
     //button press functions
     func pressed1(_ sender: UIButton) {
-        category = 1
+        category = "1"
         academic.alpha = 1.0
         food.alpha = 0.5
         entertain.alpha = 0.5
         location.alpha = 0.5
     }
     func pressed2(_ sender: UIButton) {
-        category = 2
+        category = "2"
         academic.alpha = 0.5
         food.alpha = 1.0
         entertain.alpha = 0.5
         location.alpha = 0.5
     }
     func pressed3(_ sender: UIButton) {
-        category = 3
+        category = "3"
         academic.alpha = 0.5
         food.alpha = 0.5
         entertain.alpha = 1.0
         location.alpha = 0.5
     }
     func pressed4(_ sender: UIButton) {
-        category = 4
+        category = "4"
         academic.alpha = 0.5
         food.alpha = 0.5
         entertain.alpha = 0.5
