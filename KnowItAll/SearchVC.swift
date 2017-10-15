@@ -113,7 +113,6 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
                 }
                 else {
                     print("review")
-//                    let temp = Review.init(id: r["id"].intValue, type: 1, rating: r["avRating"].doubleValue, comment: r["comment"].stringValue,text:r["title"].stringValue)
                     let temp = Topic.init(votes: r["numReviews"].intValue, title: r["title"].stringValue, rating: r["avRating"].doubleValue, cat: r["category"].intValue)
                     topics.append(temp)
                 }
