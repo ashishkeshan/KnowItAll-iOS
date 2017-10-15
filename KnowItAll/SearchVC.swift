@@ -80,7 +80,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             print("poll:" + String(indexPath.row))
             let cell = tableView.dequeueReusableCell(withIdentifier: "TopicPollCell", for: indexPath) as! TopicPollCell
             cell.pollName.text = polls[indexPath.row-topics.count].title
-            cell.numVotesLabel.text = String(polls[indexPath.row-topics.count].numVotes)
+            cell.numVotesLabel.text = "Votes: " + String(polls[indexPath.row-topics.count].numVotes)
             switch polls[indexPath.row-topics.count].category {
             case 1:
                 cell.pollCategoryImage.image = UIImage(named: "Academics")
@@ -138,6 +138,8 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     func search(param:String) {
         //http://127.0.0.1:8000/api/search?query=Academic
+        topics.removeAll()
+        polls.removeAll()
         
         let urlString = "/search?query="+searchBar.text!
         
