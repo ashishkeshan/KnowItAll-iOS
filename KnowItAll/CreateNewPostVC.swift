@@ -94,6 +94,18 @@ class CreateNewPostVC: UIViewController {
             let t = typeField.text!
             let c = comment.text!
             
+            if(r==nil) {
+                let alert = UIAlertController(title: "Warning!", message: "Please select a rating by selecting stars", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            if(t==nil) {
+                let alert = UIAlertController(title: "Warning!", message: "Please enter a Topic", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            
             let urlString = "/createReview?username="+email+"&topicTitle="+t+"&rating="+r+"&comment="+c
             
             let json = getJSONFromURL(urlString, "POST")
@@ -104,6 +116,10 @@ class CreateNewPostVC: UIViewController {
                 let alert = UIAlertController(title: "Success", message: "Your review has been successfully submitted", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                //clear textfield
+                
+                
+                
             } // endif
             else {
                 let alert = UIAlertController(title: "Data Exists", message: "Error, you've already reviewed this topic.", preferredStyle: .alert)
@@ -117,13 +133,39 @@ class CreateNewPostVC: UIViewController {
             let q = question.text!
             let c = choices.joined(separator: ",")
             var f:Int
+            var d:String
             if(forever) {
                 f = 1
+                d = "0"
             }
             else {
                 f = 0
+                d = time.text!
             }
-            let d = time.text!
+            
+            if(category==nil) {
+                let alert = UIAlertController(title: "Warning!", message: "Please select a category by pressing one of the images", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            if(d==nil) {
+                let alert = UIAlertController(title: "Warning!", message: "Please set a time or select Forever", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            if(choices.count < 2) {
+                let alert = UIAlertController(title: "Warning!", message: "Please create at least 2 choices", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            if(q==nil) {
+                let alert = UIAlertController(title: "Warning!", message: "Please enter a question", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
             
             var urlString = "/createPoll?username="+email+"&category="+category!+"&text="
             urlString += q+"&choices="+c+"&openForever="
@@ -137,12 +179,18 @@ class CreateNewPostVC: UIViewController {
                 let alert = UIAlertController(title: "Success", message: "Your poll has been successfully created", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                //clear textfield
+                
+                
+                
+                
             } // endif
             else {
                 let alert = UIAlertController(title: "Error!", message: "Error, failed to create poll", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-            }        }
+            }
+        }
     }
     
     //button press functions
