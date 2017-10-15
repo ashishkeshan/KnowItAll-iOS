@@ -87,15 +87,51 @@ class CreateNewPostVC: UIViewController {
     }
 
     @IBAction func createPressed(_ sender: Any) {
+        let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
+        
         if(segementedControl.selectedSegmentIndex == 0) {
             //review
+            // http://127.0.0.1:8000/api/createReview?username=a@a.com&topicTitle=CSCI310&rating=3.5&comment=Meh
+            let r = String(ratings.rating)
+            print(email)
+            print(typeField.text!)
+            print(r)
+            print(comment.text!)
             
+            let urlString = "/createReview?username="+email+"&topicTitle="+typeField.text!+"&rating="+r+"&comment="+comment.text!
             
+            print("url:" + urlString)
+            let json = getJSONFromURL(urlString, "POST")
+            let status = json["status"]
+            
+            // Check if status is good
+            if status == 200 {
+                let alert = UIAlertController(title: "Success", message: "Your password has successfully been updated!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } // endif
+            else {
+                let alert = UIAlertController(title: "Wrong Email Address", message: "Error, your password could not be successfully updated.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
         else {
             //poll
-            
-            
+            //            let urlString = "/editProfile?username="+emailAddress+"&newPassword="+newPassword
+            //            let json = getJSONFromURL(urlString, "POST")
+            //            let status = json["status"]
+            //            // Check if status is good
+            //            if status == 200 {
+            //                let alert = UIAlertController(title: "Success", message: "Your password has successfully been updated!", preferredStyle: .alert)
+            //                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+            //                self.present(alert, animated: true, completion: nil)
+            //            } // endif
+            //            else {
+            //                let alert = UIAlertController(title: "Wrong Email Address", message: "Error, your password could not be successfully updated.", preferredStyle: .alert)
+            //                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+            //                self.present(alert, animated: true, completion: nil)
+            //            }
             
         }
     }
