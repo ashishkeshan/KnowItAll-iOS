@@ -93,14 +93,15 @@ class CreateNewPostVC: UIViewController {
             //review
             // http://127.0.0.1:8000/api/createReview?username=a@a.com&topicTitle=CSCI310&rating=3.5&comment=Meh
             let r = String(ratings.rating)
-            print(email)
-            print(typeField.text!)
-            print(r)
-            print(comment.text!)
+//            print(email)
+//            print(typeField.text!)
+//            print(r)
+//            print(comment.text!)
+            let t = typeField.text!
+            let c = comment.text!
             
-            let urlString = "/createReview?username="+email+"&topicTitle="+typeField.text!+"&rating="+r+"&comment="+comment.text!
+            let urlString = "/createReview?username="+email+"&topicTitle="+t+"&rating="+r+"&comment="+c
             
-            print("url:" + urlString)
             let json = getJSONFromURL(urlString, "POST")
             let status = json["status"]
             

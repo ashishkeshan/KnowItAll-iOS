@@ -10,7 +10,8 @@ import Foundation
 import SwiftyJSON
 
 func getJSONFromURL(_ urlString: String, _ type: String) -> JSON {
-    let url = "https://0a79ab09.ngrok.io/api" + urlString
+    var url = "https://0a79ab09.ngrok.io/api" + urlString
+    url = url.replacingOccurrences(of: " ", with: "%20")
     var json = JSON.null
 
     let request = NSMutableURLRequest(url: URL(string: url)!)
