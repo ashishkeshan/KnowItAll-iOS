@@ -31,6 +31,18 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     /*
      * NOTIFICATION FUNCTIONS
      */
@@ -110,18 +122,22 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
-//        TODO
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+        let cell = tableView.cellForRow(at: indexPath)
+        if (cell?.isKind(of: TopicReviewCell.self))! {
+            performSegue(withIdentifier: "showReviewPage", sender: self)
+        } else {
+            performSegue(withIdentifier: "showPollPage", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is PollVC {
+            let vc = segue.destination as? PollVC
+            //            vc?.poll = poll
+        } else if segue.destination is ReviewVC {
+            let vc = segue.destination as? ReviewVC
+            // vc?.review = review
+        }
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
