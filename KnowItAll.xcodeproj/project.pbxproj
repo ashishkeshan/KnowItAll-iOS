@@ -17,6 +17,7 @@
 		026E11B41F90722F0075FF7D /* SpecificPollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11B21F90722F0075FF7D /* SpecificPollCell.swift */; };
 		026E11B51F90722F0075FF7D /* SpecificPollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 026E11B31F90722F0075FF7D /* SpecificPollCell.xib */; };
 		02B0BF6A1F92D0FF007A159F /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B0BF691F92D0FF007A159F /* AnswerCell.swift */; };
+		02B0BF6C1F932BE3007A159F /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B0BF6B1F932BE3007A159F /* Topic.swift */; };
 		02D57DF51F88575B0086E002 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D57DF41F88575B0086E002 /* Settings.storyboard */; };
 		02D95BCD1F8B231400E57721 /* Notif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D95BCC1F8B231400E57721 /* Notif.swift */; };
 		02D95BCF1F8B232F00E57721 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D95BCE1F8B232F00E57721 /* NotificationCell.swift */; };
@@ -63,6 +64,7 @@
 		026E11B21F90722F0075FF7D /* SpecificPollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificPollCell.swift; sourceTree = "<group>"; };
 		026E11B31F90722F0075FF7D /* SpecificPollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecificPollCell.xib; sourceTree = "<group>"; };
 		02B0BF691F92D0FF007A159F /* AnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
+		02B0BF6B1F932BE3007A159F /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		02D57DF41F88575B0086E002 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		02D95BCC1F8B231400E57721 /* Notif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notif.swift; sourceTree = "<group>"; };
 		02D95BCE1F8B232F00E57721 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		0245DD851F903597000B26F5 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				02B0BF6B1F932BE3007A159F /* Topic.swift */,
 				02D95BCC1F8B231400E57721 /* Notif.swift */,
 				0245DD811F902A56000B26F5 /* Poll.swift */,
 				0245DD831F902A5F000B26F5 /* Review.swift */,
@@ -385,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				280F1A0F1F92C75C00CFB879 /* Constants.swift in Sources */,
+				02B0BF6C1F932BE3007A159F /* Topic.swift in Sources */,
 				026E11B41F90722F0075FF7D /* SpecificPollCell.swift in Sources */,
 				28BE28721F917E8100557D85 /* BackendConnector.swift in Sources */,
 				7537F0D71F906EEC00839AB3 /* TopicPollCell.swift in Sources */,

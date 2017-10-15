@@ -14,7 +14,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var reviews = [Review]()
+    var topics = [Topic]()
     var polls = [Poll]()
     var searchActive:Bool = false
     
@@ -45,7 +45,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return polls.count + reviews.count
+        return polls.count + topics.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,7 +80,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         search(param: searchBar.text!)
-        if(reviews.count + polls.count == 0){
+        if(topics.count + polls.count == 0){
             searchActive = false;
         } else {
             searchActive = true;
@@ -106,14 +106,16 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
                 //polls dont have this attribute
                 if(r["numReviews"] == JSON.null) {
                     print("poll")
-                    
-                    let temp = Poll.init(id: r["id"].intValue, type: 2, time: r["dayLimit"].doubleValue, option: <#T##[String]#>, distribution: <#T##Set<Int>#>, votes: r["numVotes"].intValue, text: r["text"].stringValue)
+                    let opts = [String]()
+                    let distribution = Set<Int>()
+                    let temp = Poll.init(id: r["id"].intValue, type: 2, time: r["dayLimit"].doubleValue, option: opts, distribution: distribution, votes: r["numVotes"].intValue, text: r["text"].stringValue, cat: r["categoryID"].intValue)
                     polls.append(temp)
                 }
                 else {
                     print("review")
-                    let temp = Review.init(id: r["id"].intValue, type: 1, rating: r["avRating"].doubleValue, comment: r["comment"].stringValue,text:r["title"].stringValue)
-                    reviews.append(temp)
+//                    let temp = Review.init(id: r["id"].intValue, type: 1, rating: r["avRating"].doubleValue, comment: r["comment"].stringValue,text:r["title"].stringValue)
+                    let temp = Topic.init(votes: r["numReviews"].intValue, title: r["title"].stringValue, rating: r["avRating"].doubleValue, cat: r["category"].intValue)
+                    topics.append(temp)
                 }
             }
         } // endif
