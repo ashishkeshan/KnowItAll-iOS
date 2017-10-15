@@ -26,10 +26,10 @@ class CreateNewPostVC: UIViewController {
     var category:Int?
     //poll fields
     @IBOutlet weak var question: UITextField!
-    @IBOutlet weak var time: UIView!
     @IBOutlet weak var answer: UITextField!
     var choices = [String]()
     var forever = false;
+    @IBOutlet weak var time: UITextField!
     
     //review fields
     @IBOutlet weak var nameField: UITextField!
@@ -171,7 +171,17 @@ class CreateNewPostVC: UIViewController {
     }
 
     @IBAction func foreverButtonPressed(_ sender: Any) {
-        forever = true
+        if(forever == false) {
+            forever = true
+            time.text = "Forever Selected"
+            foreverButton.backgroundColor = UIColor.blue
+            foreverButton.layer.borderColor = UIColor.blue.cgColor
+        } else {
+            forever = false
+            time.text = ""
+            foreverButton.backgroundColor = UIColor.red
+            foreverButton.layer.borderColor = UIColor.red.cgColor
+        }
     }
     
 }

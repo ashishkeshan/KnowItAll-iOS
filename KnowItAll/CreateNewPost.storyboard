@@ -246,7 +246,7 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxk-VW-sIX" customClass="CosmosView" customModule="Cosmos">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rxk-VW-sIX" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="179" y="131" width="120" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -441,7 +441,7 @@
                                                 <rect key="frame" x="0.0" y="228" width="375" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jg2-Zj-VQq" id="PaE-ak-y9h">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ukb-Th-wRC">
@@ -505,7 +505,6 @@
                         <outlet property="entertain" destination="dWs-EJ-cKA" id="4wg-BJ-wRg"/>
                         <outlet property="food" destination="ioZ-z4-g73" id="MbX-BT-57L"/>
                         <outlet property="foreverButton" destination="oW9-20-TsN" id="k6X-wt-s5z"/>
-                        <outlet property="foreverButtonPressed" destination="oW9-20-TsN" id="XSa-iZ-UoM"/>
                         <outlet property="location" destination="WWc-RW-jjP" id="pH5-l9-y96"/>
                         <outlet property="nameField" destination="u5n-B2-NZc" id="Icm-PO-wVz"/>
                         <outlet property="pollPage" destination="SD2-eD-Pb8" id="4hd-rz-GBd"/>
@@ -514,7 +513,7 @@
                         <outlet property="reviewPage" destination="3FK-Sd-ZYm" id="v2c-mY-mA9"/>
                         <outlet property="segementedControl" destination="ecG-0h-lNm" id="RZO-b6-D2y"/>
                         <outlet property="table" destination="nk1-EW-Ydn" id="GRh-7m-TMn"/>
-                        <outlet property="time" destination="gj6-d5-KOD" id="psO-pL-dEh"/>
+                        <outlet property="time" destination="fv9-G4-uZ8" id="7mc-hz-5fy"/>
                         <outlet property="typeField" destination="Pyp-U8-VB3" id="EWZ-Qe-0rx"/>
                     </connections>
                 </viewController>
