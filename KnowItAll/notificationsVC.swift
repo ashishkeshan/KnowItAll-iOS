@@ -12,10 +12,11 @@ import SwiftyJSON
 class notificationsVC: UITableViewController {
     //array to store all notifications
     var notifications:[Notif] = []
+    var email: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        notifications = getNotifications(user)
+        email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
         loadNotificationsFromDB()
     }
     
@@ -38,7 +39,7 @@ class notificationsVC: UITableViewController {
     }
     
     func loadNotificationsFromDB() {
-        let urlString = "/myNotifications?username=a@a.com"
+        let urlString = "/myNotifications?username="+email
         let json = getJSONFromURL(urlString, "GET")
         let pollIDs = json["pollID"]
         for notification in json["notifications"].arrayValue {

@@ -12,7 +12,6 @@ import SwiftyJSON
 func getJSONFromURL(_ urlString: String, _ type: String) -> JSON {
     var url = "https://0a79ab09.ngrok.io/api" + urlString
     url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-    print(url)
     var json = JSON.null
 
     let request = NSMutableURLRequest(url: URL(string: url)!)

@@ -214,10 +214,10 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcF-FM-zTs">
-                                <rect key="frame" x="0.0" y="63" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="83" width="375" height="35"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="n8O-35-tTm">
-                                        <rect key="frame" x="30" y="13" width="314" height="29"/>
+                                        <rect key="frame" x="30" y="3" width="314" height="29"/>
                                         <segments>
                                             <segment title="Review"/>
                                             <segment title="Polls"/>
