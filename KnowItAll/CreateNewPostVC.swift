@@ -32,7 +32,6 @@ class CreateNewPostVC: UIViewController {
     @IBOutlet weak var time: UITextField!
     
     //review fields
-    @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var typeField: UITextField!
     @IBOutlet weak var ratings: CosmosView!
     @IBOutlet weak var comment: UITextView!
@@ -84,6 +83,9 @@ class CreateNewPostVC: UIViewController {
         self.entertain.addGestureRecognizer(clickEntertainment)
         self.location.addGestureRecognizer(clickLocation)
         
+        //disabling question textfield until a category is selected
+        question.isUserInteractionEnabled = false
+        question.isEnabled = false
     }
 
     @IBAction func createPressed(_ sender: Any) {
@@ -117,9 +119,10 @@ class CreateNewPostVC: UIViewController {
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 //clear textfield
-                
-                
-                
+                ratings.rating = 0
+                typeField.text = ""
+                comment.text = ""
+                category = -1
             } // endif
             else {
                 let alert = UIAlertController(title: "Data Exists", message: "Error, you've already reviewed this topic.", preferredStyle: .alert)
@@ -129,7 +132,6 @@ class CreateNewPostVC: UIViewController {
         }
         else {
             //poll
-//            http://127.0.0.1:8000/api/createPoll?username=a@a.com&category=1&text=Who is the best teammate?&choices=Nico,Ashish,Jonathon,Sam,Alberto&openForever=1&dayLimit=0
             let q = question.text!
             let c = choices.joined(separator: ",")
             var f:Int
@@ -180,10 +182,12 @@ class CreateNewPostVC: UIViewController {
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 //clear textfield
-                
-                
-                
-                
+                question.text = ""
+                choices.removeAll()
+                forever = false
+                time.text = ""
+                category = -1
+                table.reloadData()
             } // endif
             else {
                 let alert = UIAlertController(title: "Error!", message: "Error, failed to create poll", preferredStyle: .alert)
@@ -200,6 +204,8 @@ class CreateNewPostVC: UIViewController {
         food.alpha = 0.5
         entertain.alpha = 0.5
         location.alpha = 0.5
+        question.isUserInteractionEnabled = true
+        question.isEnabled = true
     }
     func pressed2(_ sender: UIButton) {
         category = 2
@@ -207,6 +213,8 @@ class CreateNewPostVC: UIViewController {
         food.alpha = 1.0
         entertain.alpha = 0.5
         location.alpha = 0.5
+        question.isUserInteractionEnabled = true
+        question.isEnabled = true
     }
     func pressed3(_ sender: UIButton) {
         category = 3
@@ -214,6 +222,8 @@ class CreateNewPostVC: UIViewController {
         food.alpha = 0.5
         entertain.alpha = 1.0
         location.alpha = 0.5
+        question.isUserInteractionEnabled = true
+        question.isEnabled = true
     }
     func pressed4(_ sender: UIButton) {
         category = 4
@@ -221,6 +231,8 @@ class CreateNewPostVC: UIViewController {
         food.alpha = 0.5
         entertain.alpha = 0.5
         location.alpha = 1.0
+        question.isUserInteractionEnabled = true
+        question.isEnabled = true
     }
     
     @IBAction func indexChanged(_ sender: Any) {
