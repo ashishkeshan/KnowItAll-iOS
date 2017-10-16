@@ -113,16 +113,18 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         performSegue(withIdentifier: "showReviewPage", sender: self)
+//         performSegue(withIdentifier: "showReviewPage", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is PollVC {
             let vc = segue.destination as? PollVC
-//            vc?.poll = poll
+//            vc?.poll = self.polls[self.index]
+//            vc?.getPollInfo()
         } else if segue.destination is ReviewVC {
             let vc = segue.destination as? ReviewVC
-            // vc?.review = review
+//            vc?.topic = self.topics[self.index]
+//            vc?.getReviews()
         }
     }
     

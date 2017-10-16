@@ -10,21 +10,51 @@ import UIKit
 
 class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var pollTitle: UILabel!
+    @IBOutlet weak var timeLeft: UILabel!
+    @IBOutlet weak var numVotes: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var screenWidth = CGFloat(0.0)
     var prevSelected : IndexPath? = nil
     var poll : Poll? = nil
+    var optionsList = [String]()
+    var numVotesList = [Int]()
+    var colorsArray = [UIColor]()
+    var totVotes = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         screenWidth = UIScreen.main.bounds.size.width
-        print("num votes: ", poll?.numVotes)
+        totVotes = (poll?.numVotes)!
+        colorsArray.append(UIColor(red:0.77, green:0.12, blue:0.23, alpha:1.0))
+        colorsArray.append(UIColor(red:0.00, green:0.48, blue:1.00, alpha:1.0))
+        colorsArray.append(UIColor(red:1.00, green:0.80, blue:0.40, alpha:1.0))
+        colorsArray.append(UIColor(red:0.29, green:0.65, blue:0.49, alpha:1.0))
+        colorsArray.append(UIColor(red:1.00, green:0.58, blue:0.00, alpha:1.0))
+        pollTitle.text = poll?.title
+        numVotes.text = String(describing: (poll?.numVotes)!) + " votes"
         // Do any additional setup after loading the view.
     }
     
     func getPollInfo() {
-        print("works")
+//        http://127.0.0.1:8000/api/getPost?type=poll&text=Who is the best teammate?
+        print("see if this works")
+        let urlString = "/getPost?type=poll&text=" + (poll?.title)!
+        print(urlString)
+        
+        let json = getJSONFromURL(urlString, "GET")
+        let status = json["status"]
+        print("status: ", status)
+        // Check if status is good
+        if status == 200 {
+            print("HERE")
+            for option in json["pc"].arrayValue {
+                optionsList.append(option["text"].stringValue)
+                totVotes += option["numVotes"].int!
+                numVotesList.append(option["numVotes"].int!)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,43 +63,19 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return optionsList.count
     }
     
     // change when integrated with backend to use indexPath.row inside data model arrays
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PollOptionCell", for: indexPath) as! PollOptionCell
+        let percent : Double = Double(numVotesList[indexPath.row]) / Double(totVotes)
+        cell.optionName.text = optionsList[indexPath.row]
+        cell.optionPercent.text = String(percent * 100) + "%"
         let frame = cell.percentFilled.frame
-        switch indexPath.row {
-        case 0:
-            cell.optionName.text = "Blaze"
-            cell.optionPercent.text = "50%"
-            cell.percentFilled.backgroundColor = UIColor(red:0.77, green:0.12, blue:0.23, alpha:1.0)
-            cell.percentFilled.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: screenWidth * 0.5, height: frame.size.height)
-        case 1:
-            cell.optionName.text = "Pizza Studio"
-            cell.optionPercent.text = "20%"
-            cell.percentFilled.backgroundColor = UIColor(red:0.00, green:0.48, blue:1.00, alpha:1.0)
-            cell.percentFilled.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: screenWidth * 0.2, height: frame.size.height)
-        case 2:
-            cell.optionName.text = "Domino's"
-            cell.optionPercent.text = "10%"
-            cell.percentFilled.backgroundColor = UIColor(red:1.00, green:0.80, blue:0.40, alpha:1.0)
-            cell.percentFilled.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: screenWidth * 0.1, height: frame.size.height)
-        case 3:
-            cell.optionName.text = "Pizza Hut"
-            cell.optionPercent.text = "15%"
-            cell.percentFilled.backgroundColor = UIColor(red:0.29, green:0.65, blue:0.49, alpha:1.0)
-            cell.percentFilled.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: screenWidth * 0.15, height: frame.size.height)
-        case 4:
-            cell.optionName.text = "California Pizza Kitchen"
-            cell.optionPercent.text = "5%"
-            cell.percentFilled.backgroundColor = UIColor(red:1.00, green:0.58, blue:0.00, alpha:1.0)
-            cell.percentFilled.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: screenWidth * 0.05, height: frame.size.height)
-        default:
-            break
-        }
+        cell.percentFilled.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: CGFloat(Double(screenWidth) * percent), height: frame.size.height)
+        cell.percentFilled.backgroundColor = colorsArray[indexPath.row]
         return cell
     }
     

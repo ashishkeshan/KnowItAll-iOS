@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Cosmos
 
 class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var numReviews: UILabel!
+    @IBOutlet weak var stars: CosmosView!
+    @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     var topic : Topic? = nil
     var comments = [String]()
@@ -20,7 +25,29 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.estimatedRowHeight = 100.0;
         tableView.rowHeight = UITableViewAutomaticDimension
-        print("title: ", (topic?.title)!)
+        titleLabel.text = topic?.title
+        numReviews.text = String(describing: (topic?.numReviews)!) + " review(s)"
+        stars.rating = (topic?.rating)!
+        switch (topic?.category)! {
+        case 1:
+            let img = UIImage(named: "Academic")
+            categoryImage.image = img
+            break
+        case 2:
+            let img = UIImage(named: "Food")
+            categoryImage.image = img
+            break
+        case 3:
+            let img = UIImage(named: "Entertainment")
+            categoryImage.image = img
+            break
+        case 4:
+            let img = UIImage(named: "Locations")
+            categoryImage.image = img
+            break
+        default:
+            break
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -32,12 +59,15 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let json = getJSONFromURL(urlString, "GET")
         let status = json["status"]
-        
+        print("status: ", status)
         // Check if status is good
         if status == 200 {
+            print("HERE")
             for review in json["reviews"].arrayValue {
+                print(review["comment"].string!)
+                print(Double(review["rating"].stringValue)!)
                 comments.append(review["comment"].string!)
-                ratings.append(review["rating"].double!)
+                ratings.append(Double(review["rating"].stringValue)!)
             }
         }
     }
@@ -47,20 +77,14 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableViewAutomaticDimension
-//    }
-//
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableViewAutomaticDimension
-//    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ratings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! TopicPageReviewCell
+        cell.comment.text = comments[indexPath.row]
+        cell.rating.rating = ratings[indexPath.row]
         return cell
     }
     

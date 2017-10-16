@@ -107,7 +107,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="100" id="zGa-YY-YEj" customClass="SpecificReviewCell" customModule="KnowItAll" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="100" id="zGa-YY-YEj" customClass="TopicPageReviewCell" customModule="KnowItAll" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="168" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zGa-YY-YEj" id="eDG-ld-lXk">
@@ -140,7 +140,8 @@
                                         </tableViewCellContentView>
                                         <viewLayoutGuide key="safeArea" id="gew-If-Zdb"/>
                                         <connections>
-                                            <outlet property="stars" destination="T9C-1I-Mwy" id="L4h-Pc-qmG"/>
+                                            <outlet property="comment" destination="ktF-DM-rOg" id="Sax-8Q-na2"/>
+                                            <outlet property="rating" destination="T9C-1I-Mwy" id="bHr-Oc-EF3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -156,7 +157,11 @@
                         <viewLayoutGuide key="safeArea" id="svd-MB-WFY"/>
                     </view>
                     <connections>
+                        <outlet property="categoryImage" destination="8HU-UB-45K" id="0Np-5R-VBd"/>
+                        <outlet property="numReviews" destination="Gps-wz-WNE" id="d8Y-QE-zHY"/>
+                        <outlet property="stars" destination="f4h-ZO-Xz4" id="8BN-5R-Fyp"/>
                         <outlet property="tableView" destination="Sdl-3O-ep4" id="0WB-Ln-STO"/>
+                        <outlet property="titleLabel" destination="qu3-W3-nHj" id="tN8-8q-jUv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4C-Lt-OtS" userLabel="First Responder" sceneMemberID="firstResponder"/>

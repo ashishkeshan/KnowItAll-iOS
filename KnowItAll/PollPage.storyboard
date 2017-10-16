@@ -44,6 +44,15 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 votes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4es-lm-HQr">
+                                            <rect key="frame" x="8" y="110" width="57" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="dn3-lS-Gjj"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.95294117649999999" green="0.94901960780000005" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
@@ -51,7 +60,9 @@
                                         <constraint firstItem="C1L-Vw-Xhu" firstAttribute="top" secondItem="nKx-q9-u0c" secondAttribute="top" id="Qx8-7p-YhW"/>
                                         <constraint firstAttribute="bottom" secondItem="jPk-1N-94a" secondAttribute="bottom" constant="8" id="R72-Df-wui"/>
                                         <constraint firstAttribute="trailing" secondItem="jPk-1N-94a" secondAttribute="trailing" constant="8" id="STR-LF-cxs"/>
+                                        <constraint firstAttribute="bottom" secondItem="4es-lm-HQr" secondAttribute="bottom" constant="8" id="ikm-AK-24Y"/>
                                         <constraint firstItem="C1L-Vw-Xhu" firstAttribute="leading" secondItem="nKx-q9-u0c" secondAttribute="leading" constant="8" id="m6R-F8-laF"/>
+                                        <constraint firstItem="4es-lm-HQr" firstAttribute="leading" secondItem="nKx-q9-u0c" secondAttribute="leading" constant="8" id="wU7-iM-EYh"/>
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="2RE-bU-Pk6">
@@ -252,7 +263,10 @@
                         <viewLayoutGuide key="safeArea" id="b49-7o-yUb"/>
                     </view>
                     <connections>
+                        <outlet property="numVotes" destination="4es-lm-HQr" id="AGY-Mg-31I"/>
+                        <outlet property="pollTitle" destination="C1L-Vw-Xhu" id="TAZ-A8-OR5"/>
                         <outlet property="tableView" destination="8XX-3K-eZW" id="brP-RP-3RB"/>
+                        <outlet property="timeLeft" destination="jPk-1N-94a" id="jJR-2l-nly"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbY-iB-mVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
