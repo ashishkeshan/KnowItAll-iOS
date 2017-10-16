@@ -21,6 +21,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var numVotesList = [Int]()
     var colorsArray = [UIColor]()
     var totVotes = 0
+    var percent = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -70,7 +71,11 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PollOptionCell", for: indexPath) as! PollOptionCell
-        let percent : Double = Double(numVotesList[indexPath.row]) / Double(totVotes)
+        if totVotes == 0 {
+            percent = 0.0
+        } else {
+            percent = Double(numVotesList[indexPath.row]) / Double(totVotes)
+        }
         cell.optionName.text = optionsList[indexPath.row]
         cell.optionPercent.text = String(percent * 100) + "%"
         let frame = cell.percentFilled.frame
