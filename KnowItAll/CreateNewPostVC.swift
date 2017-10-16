@@ -114,22 +114,49 @@ class CreateNewPostVC: UIViewController {
         let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
         
         if(segementedControl.selectedSegmentIndex == 0) {
+            //review
             let r = String(ratings.rating)
             let t = typeField.text!
             let c = comment.text!
+            
+            if(category == -1) {
+                let alert = UIAlertController(title: "Warning!", message: "Please select a category by pressing one of the images", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
             
             if(r == "") {
                 let alert = UIAlertController(title: "Warning!", message: "Please select a rating by selecting stars", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                return
             }
             
             if(t == "") {
                 let alert = UIAlertController(title: "Warning!", message: "Please enter a Topic", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                return
             }
             
+            //checking for topic
+            let topicCheckUrl = "/getPost?type=topic&text="+t
+            let check = getJSONFromURL(topicCheckUrl, "GET")
+            let data = check["topic"]
+            
+            if(data.count == 0 ) {
+                let createTopicUrl = "/createTopic?title="+t+"&category="+String(category)
+                let create = getJSONFromURL(createTopicUrl, "POST")
+                if create["status"] != 200 {
+                    let alert = UIAlertController(title: "Error", message: "Error, failure to create new Topic", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
+            }
+            
+            //making query call to create review
             let urlString = "/createReview?username="+email+"&topicTitle="+t+"&rating="+r+"&comment="+c
             
             let json = getJSONFromURL(urlString, "POST")
@@ -171,24 +198,28 @@ class CreateNewPostVC: UIViewController {
                 let alert = UIAlertController(title: "Warning!", message: "Please select a category by pressing one of the images", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                return
             }
             
             if(d == "") {
                 let alert = UIAlertController(title: "Warning!", message: "Please set a time or select Forever", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                return
             }
             
             if(choices.count < 2) {
                 let alert = UIAlertController(title: "Warning!", message: "Please create at least 2 choices", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                return
             }
             
             if(q == "") {
                 let alert = UIAlertController(title: "Warning!", message: "Please enter a question", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                return
             }
             
             var urlString = "/createPoll?username="+email+"&category="+String(category)+"&text="

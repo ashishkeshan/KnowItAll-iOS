@@ -32,6 +32,26 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             cell.title.text = reviewData[indexPath.row].topic
             cell.comment.text = reviewData[indexPath.row].comment
             cell.stars.rating = reviewData[indexPath.row].rating
+            //getting topic category
+            let topicCheckUrl = "/getPost?type=topic&text="+reviewData[indexPath.row].topic
+            let check = getJSONFromURL(topicCheckUrl, "GET")
+            let data = check["topic"].arrayValue[0]
+            switch data["category"].intValue {
+            case 1:
+                cell.img.image = UIImage(named: "Academic")
+                break
+            case 2:
+                cell.img.image = UIImage(named: "Food")
+                break
+            case 3:
+                cell.img.image = UIImage(named: "Entertainment")
+                break
+            case 4:
+                cell.img.image = UIImage(named: "Locations")
+                break
+            default:
+                break
+            }
             return cell
         }
         else {
@@ -39,13 +59,29 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             cell.title.text = pollData[indexPath.row].title
             cell.voteNum.text = String(pollData[indexPath.row].numVotes) + " Votes"
             cell.voteChoice.text = "You chose:"
+            switch pollData[indexPath.row].category {
+            case 1:
+                cell.img.image = UIImage(named: "Academic")
+                break
+            case 2:
+                cell.img.image = UIImage(named: "Food")
+                break
+            case 3:
+                cell.img.image = UIImage(named: "Entertainment")
+                break
+            case 4:
+                cell.img.image = UIImage(named: "Locations")
+                break
+            default:
+                break
+            }
             return cell
 
         }
     }
     
     func segmentedControlValueChanged(segment: UISegmentedControl) {
-        tableView.reloadData()
+        loadFromDB()
     }
     
     override func viewDidLoad() {
@@ -63,6 +99,8 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func loadFromDB() {
+        reviewData.removeAll()
+        pollData.removeAll()
         let urlString = "/myPosts?username="+email
         let json = getJSONFromURL(urlString, "GET")
         if json["status"] != 200 { return; }
@@ -118,9 +156,7 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.index = indexPath.row
         let cell = tableView.cellForRow(at: indexPath)
-        if (cell?.isKind(of: TopicReviewCell.self))! {
-            
-        } else {
+        if (cell?.isKind(of: SpecificPollCell.self))! {
             performSegue(withIdentifier: "showPollPage", sender: self)
         }
     }
