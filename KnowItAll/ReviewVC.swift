@@ -11,13 +11,30 @@ import UIKit
 class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    var topic : Topic? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 100.0;
         tableView.rowHeight = UITableViewAutomaticDimension
+        print("title: ", (topic?.title)!)
         // Do any additional setup after loading the view.
+    }
+    
+    func getReviews() {
+//        http://127.0.0.1:8000/api/getPost?type=topic&text=CSCI 310
+        print("see if this works")
+        let urlString = "/getPost?type=topic&text=" + (topic?.title)!
+        print(urlString)
+        
+        let json = getJSONFromURL(urlString, "GET")
+        print(json)
+        let status = json["status"]
+        
+        // Check if status is good
+        if status == 200 {
+        }
     }
 
     override func didReceiveMemoryWarning() {

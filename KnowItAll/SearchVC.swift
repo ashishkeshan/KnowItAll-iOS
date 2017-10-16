@@ -17,6 +17,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     var topics = [Topic]()
     var polls = [Poll]()
     var searchActive:Bool = false
+    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,7 +122,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        self.index = indexPath.row
         let cell = tableView.cellForRow(at: indexPath)
         if (cell?.isKind(of: TopicReviewCell.self))! {
             performSegue(withIdentifier: "showReviewPage", sender: self)
@@ -133,10 +134,11 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is PollVC {
             let vc = segue.destination as? PollVC
-            //            vc?.poll = poll
+            vc?.poll = self.polls[self.index - topics.count]
         } else if segue.destination is ReviewVC {
             let vc = segue.destination as? ReviewVC
-            // vc?.review = review
+            vc?.topic = self.topics[self.index]
+            vc?.getReviews()
         }
     }
     
@@ -184,6 +186,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         print(urlString)
         
         let json = getJSONFromURL(urlString, "GET")
+        print(json)
         let status = json["status"]
         
         // Check if status is good

@@ -13,12 +13,13 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var screenWidth = CGFloat(0.0)
     var prevSelected : IndexPath? = nil
-    
+    var poll : Poll? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         screenWidth = UIScreen.main.bounds.size.width
+        print("num votes: ", poll?.numVotes)
         // Do any additional setup after loading the view.
     }
 
