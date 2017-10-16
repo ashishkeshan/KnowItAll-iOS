@@ -182,7 +182,8 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         topics.removeAll()
         polls.removeAll()
         
-        let urlString = "/search?query="+searchBar.text!
+        var urlString = ""
+        urlString = (searchBar.text! == "") ? "/getTrending?type=all": "/search?query=" + searchBar.text!
         
         print(urlString)
         

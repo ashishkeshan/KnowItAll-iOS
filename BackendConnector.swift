@@ -13,6 +13,7 @@ func getJSONFromURL(_ urlString: String, _ type: String) -> JSON {
     var url = "https://0a79ab09.ngrok.io/api" + urlString
     url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
     var json = JSON.null
+    var queryFinished = false
 
     let request = NSMutableURLRequest(url: URL(string: url)!)
     request.httpMethod = type
@@ -24,10 +25,11 @@ func getJSONFromURL(_ urlString: String, _ type: String) -> JSON {
         }
         json = JSON(data: data!)
         print(json)
+        queryFinished = true
     }
     task.resume()
-    // Blocks until json is returned from http request
-    while json == JSON.null {}
+    // Blocks until a query is returned from http request
+    while queryFinished == false {}
     return json
 }
 
