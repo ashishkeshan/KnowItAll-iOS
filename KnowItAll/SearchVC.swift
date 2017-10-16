@@ -13,6 +13,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet var noResultsView: UIView!
     
     var topics = [Topic]()
     var polls = [Poll]()
@@ -24,6 +25,8 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        tableView.backgroundView = noResultsView // Set no results to background view
+        search(param: "") // Load all polls/reviews initially
         
         let nc = NotificationCenter.default // Note that default is now a property, not a method call
         nc.addObserver(forName:Notification.Name(rawValue:"searchQuery"),
