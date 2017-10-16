@@ -22,6 +22,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var colorsArray = [UIColor]()
     var totVotes = 0
     var percent = 0.0
+    var email = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -35,6 +36,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         colorsArray.append(UIColor(red:1.00, green:0.58, blue:0.00, alpha:1.0))
         pollTitle.text = poll?.title
         numVotes.text = String(describing: (poll?.numVotes)!) + " votes"
+        email = UserDefaults.standard.string(forKey: Login.emailKey)!
         // Do any additional setup after loading the view.
     }
     
@@ -74,7 +76,8 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if totVotes == 0 {
             percent = 0.0
         } else {
-            percent = round(100*(Double(numVotesList[indexPath.row]) / Double(totVotes)))/100
+            percent = (Double(numVotesList[indexPath.row]) / Double(totVotes))
+            percent = percent.rounded(toPlaces: 4)
         }
         cell.optionName.text = optionsList[indexPath.row]
         cell.optionPercent.text = String(percent * 100) + "%"
@@ -86,7 +89,16 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let urlString = "/vote?username=\(email)&pollText=" + (poll?.title)! + "&pollChoiceText=\(optionsList[indexPath.row])&deleteVote=0"
+        print(urlString)
+        let json = getJSONFromURL(urlString, "POST")
+        let status = json["status"]
+        print("status: ", status)
         if prevSelected != nil {
+            let urlString = "/vote?username=\(email)&pollText=" + (poll?.title)! + "&pollChoiceText=\(optionsList[(prevSelected?.row)!])&deleteVote=1"
+            _ = getJSONFromURL(urlString, "POST")
+            numVotesList[(prevSelected?.row)!] -= 1
+            totVotes -= 1
             let oldSelectionCell = tableView.cellForRow(at: prevSelected!) as! PollOptionCell
             oldSelectionCell.optionPercent.textColor = UIColor.lightGray
             oldSelectionCell.optionName.textColor = UIColor.lightGray
@@ -95,6 +107,9 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.cellForRow(at: indexPath) as! PollOptionCell
         cell.optionPercent.textColor = UIColor.black
         cell.optionName.textColor = UIColor.black
+        numVotesList[indexPath.row] += 1
+        totVotes += 1
+        tableView.reloadData()
     }
     
     
@@ -109,4 +124,12 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     */
 
+}
+
+extension Double {
+    /// Rounds the double to decimal places value
+    func rounded(toPlaces places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
 }
