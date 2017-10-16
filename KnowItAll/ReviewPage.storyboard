@@ -35,13 +35,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Entertainment" translatesAutoresizingMaskIntoConstraints="NO" id="8HU-UB-45K">
-                                            <rect key="frame" x="267" y="10" width="100" height="100"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="Mh8-fL-PcQ"/>
-                                                <constraint firstAttribute="height" constant="100" id="hNj-ir-G8X"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gps-wz-WNE">
                                             <rect key="frame" x="8" y="60" width="88" height="21"/>
                                             <constraints>
@@ -92,19 +85,41 @@
                                                 <constraint firstItem="Hf8-6V-Nws" firstAttribute="leading" secondItem="G4P-nq-Vva" secondAttribute="leading" id="lu7-6E-nAc"/>
                                             </constraints>
                                         </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Entertainment" translatesAutoresizingMaskIntoConstraints="NO" id="8HU-UB-45K">
+                                            <rect key="frame" x="292" y="0.0" width="75" height="75"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="75" id="Mh8-fL-PcQ"/>
+                                                <constraint firstAttribute="height" constant="75" id="hNj-ir-G8X"/>
+                                            </constraints>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BO5-HK-J0s">
+                                            <rect key="frame" x="267" y="95" width="100" height="30"/>
+                                            <color key="backgroundColor" red="0.81949108839999996" green="0.202750653" blue="0.29063361879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="3jg-2p-cNC"/>
+                                            </constraints>
+                                            <state key="normal" title="Add Review">
+                                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="addReview:" destination="VvM-TC-NrG" eventType="touchUpInside" id="wHx-q0-N7j"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="Gps-wz-WNE" firstAttribute="top" secondItem="qu3-W3-nHj" secondAttribute="bottom" constant="22" id="60I-OD-ALZ"/>
                                         <constraint firstAttribute="bottom" secondItem="G4P-nq-Vva" secondAttribute="bottom" id="Mgz-sH-Tg4"/>
                                         <constraint firstAttribute="trailing" secondItem="G4P-nq-Vva" secondAttribute="trailing" id="Qgk-ox-Iip"/>
-                                        <constraint firstItem="8HU-UB-45K" firstAttribute="top" secondItem="X1q-AO-P9c" secondAttribute="top" constant="10" id="TfY-c6-NFV"/>
+                                        <constraint firstItem="8HU-UB-45K" firstAttribute="top" secondItem="X1q-AO-P9c" secondAttribute="top" id="TfY-c6-NFV"/>
                                         <constraint firstItem="f4h-ZO-Xz4" firstAttribute="top" secondItem="Gps-wz-WNE" secondAttribute="bottom" constant="19" id="Tzc-JB-crn"/>
+                                        <constraint firstAttribute="trailing" secondItem="BO5-HK-J0s" secondAttribute="trailing" constant="8" id="VN8-3g-ni6"/>
                                         <constraint firstItem="G4P-nq-Vva" firstAttribute="top" secondItem="f4h-ZO-Xz4" secondAttribute="bottom" constant="10" id="YOm-Wf-n59"/>
                                         <constraint firstItem="Gps-wz-WNE" firstAttribute="leading" secondItem="X1q-AO-P9c" secondAttribute="leading" constant="8" id="fsB-82-n5F"/>
                                         <constraint firstAttribute="trailing" secondItem="8HU-UB-45K" secondAttribute="trailing" constant="8" id="hh2-rW-JOf"/>
                                         <constraint firstItem="qu3-W3-nHj" firstAttribute="top" secondItem="X1q-AO-P9c" secondAttribute="top" id="jQO-i9-vBz"/>
                                         <constraint firstItem="qu3-W3-nHj" firstAttribute="leading" secondItem="X1q-AO-P9c" secondAttribute="leading" constant="8" id="lkw-VM-JtL"/>
+                                        <constraint firstItem="G4P-nq-Vva" firstAttribute="top" secondItem="BO5-HK-J0s" secondAttribute="bottom" constant="5" id="pVq-8X-Fl1"/>
                                         <constraint firstItem="f4h-ZO-Xz4" firstAttribute="leading" secondItem="X1q-AO-P9c" secondAttribute="leading" constant="8" id="rcY-K2-xz1"/>
                                         <constraint firstItem="G4P-nq-Vva" firstAttribute="leading" secondItem="X1q-AO-P9c" secondAttribute="leading" id="tWL-ev-zNo"/>
                                     </constraints>

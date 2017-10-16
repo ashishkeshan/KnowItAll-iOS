@@ -26,7 +26,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         searchBar.delegate = self
         
         let nc = NotificationCenter.default // Note that default is now a property, not a method call
-        nc.addObserver(forName:Notification.Name(rawValue:"MyNotification"),
+        nc.addObserver(forName:Notification.Name(rawValue:"searchQuery"),
                        object:nil, queue:nil,
                        using:catchNotification)
         // Do any additional setup after loading the view.

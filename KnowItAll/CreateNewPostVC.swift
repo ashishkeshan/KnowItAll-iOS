@@ -86,6 +86,36 @@ class CreateNewPostVC: UIViewController {
         //disabling question textfield until a category is selected
         question.isUserInteractionEnabled = false
         question.isEnabled = false
+        
+        //set up notification for when user clicks addReview on review page
+        let nc = NotificationCenter.default // Note that default is now a property, not a method call
+        nc.addObserver(forName:Notification.Name(rawValue:"reviewInfo"),
+                       object:nil, queue:nil,
+                       using:catchNotification)
+    }
+    
+    func catchNotification(notification:Notification) -> Void {
+        print("Catch notification")
+        let userInfo = notification.userInfo
+        let title = userInfo?["title"] as? String
+        let categoryID = userInfo?["categoryID"] as! Int
+        typeField.text = title
+        switch categoryID {
+        case 1:
+            pressed1(nil)
+            break
+        case 2:
+            pressed2(nil)
+            break
+        case 3:
+            pressed3(nil)
+            break
+        case 4:
+            pressed4(nil)
+            break
+        default:
+            break
+        }
     }
 
     @IBAction func createPressed(_ sender: Any) {
@@ -198,7 +228,7 @@ class CreateNewPostVC: UIViewController {
     }
     
     //button press functions
-    func pressed1(_ sender: UIButton) {
+    func pressed1(_ sender: AnyObject?) {
         category = 1
         academic.alpha = 1.0
         food.alpha = 0.5
@@ -207,7 +237,7 @@ class CreateNewPostVC: UIViewController {
         question.isUserInteractionEnabled = true
         question.isEnabled = true
     }
-    func pressed2(_ sender: UIButton) {
+    func pressed2(_ sender: AnyObject?) {
         category = 2
         academic.alpha = 0.5
         food.alpha = 1.0
@@ -216,7 +246,7 @@ class CreateNewPostVC: UIViewController {
         question.isUserInteractionEnabled = true
         question.isEnabled = true
     }
-    func pressed3(_ sender: UIButton) {
+    func pressed3(_ sender: AnyObject?) {
         category = 3
         academic.alpha = 0.5
         food.alpha = 0.5
@@ -225,7 +255,7 @@ class CreateNewPostVC: UIViewController {
         question.isUserInteractionEnabled = true
         question.isEnabled = true
     }
-    func pressed4(_ sender: UIButton) {
+    func pressed4(_ sender: AnyObject?) {
         category = 4
         academic.alpha = 0.5
         food.alpha = 0.5

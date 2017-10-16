@@ -11,6 +11,7 @@ import Cosmos
 
 class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var numReviews: UILabel!
     @IBOutlet weak var stars: CosmosView!
@@ -19,6 +20,14 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var topic : Topic? = nil
     var comments = [String]()
     var ratings = [Double]()
+    let nc = NotificationCenter.default
+    @IBAction func addReview(_ sender: Any) {
+        nc.post(name:Notification.Name(rawValue:"reviewInfo"),
+                object: nil,
+                userInfo: ["title": (topic?.title)!,
+        "categoryID": (topic?.category)!])
+        self.tabBarController?.selectedIndex = 2
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -28,6 +37,7 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         titleLabel.text = topic?.title
         numReviews.text = String(describing: (topic?.numReviews)!) + " review(s)"
         stars.rating = (topic?.rating)!
+        
         switch (topic?.category)! {
         case 1:
             let img = UIImage(named: "Academic")
