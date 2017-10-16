@@ -77,20 +77,16 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             cell.numReviews.text = "Reviews: " + String(topics[indexPath.row].numReviews)
             switch topics[indexPath.row].category {
             case 1:
-                let img = UIImage(named: "Academic")
-                cell.categoryImage.image = img
+                cell.categoryImage.image = UIImage(named: "Academic")
                 break
             case 2:
-                let img = UIImage(named: "Food")
-                cell.categoryImage.image = img
+                cell.categoryImage.image = UIImage(named: "Food")
                 break
             case 3:
-                let img = UIImage(named: "Entertainment")
-                cell.categoryImage.image = img
+                cell.categoryImage.image = UIImage(named: "Entertainment")
                 break
             case 4:
-                let img = UIImage(named: "Locations")
-                cell.categoryImage.image = img
+                cell.categoryImage.image = UIImage(named: "Locations")
                 break
             default:
                 break

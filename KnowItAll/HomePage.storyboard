@@ -55,7 +55,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="zRL-FX-lx3" secondAttribute="trailing" constant="31" id="vkt-cq-cWC"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQa-ah-B4N">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQa-ah-B4N">
                                             <rect key="frame" x="0.0" y="0.0" width="94" height="123"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Academic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NyV-MX-esW">
@@ -72,7 +72,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gpj-pm-ZTS">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpj-pm-ZTS">
                                             <rect key="frame" x="187.5" y="0.0" width="94" height="123"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Entertainment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3k6-1N-rMz">
@@ -89,7 +89,7 @@
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </view>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="513-3W-Iro">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="513-3W-Iro">
                                             <rect key="frame" x="94" y="0.0" width="93.5" height="123"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2K-Dw-9D2">
@@ -106,7 +106,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y5V-m7-ZGm">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5V-m7-ZGm">
                                             <rect key="frame" x="281.5" y="0.0" width="93.5" height="123"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Locations" translatesAutoresizingMaskIntoConstraints="NO" id="SOD-X2-ZnD">
@@ -122,6 +122,9 @@
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="123" id="PZc-IK-J5O"/>
+                                            </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiI-tX-vYX">
                                             <rect key="frame" x="0.0" y="141" width="375" height="32"/>
@@ -146,8 +149,8 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="250" id="1Gr-0h-23I"/>
-                                        <constraint firstItem="PuB-hs-SzC" firstAttribute="top" secondItem="gQa-ah-B4N" secondAttribute="bottom" id="55S-Yz-GwM"/>
-                                        <constraint firstItem="PuB-hs-SzC" firstAttribute="top" secondItem="gpj-pm-ZTS" secondAttribute="bottom" id="72U-xY-0lX"/>
+                                        <constraint firstItem="PuB-hs-SzC" firstAttribute="top" secondItem="gQa-ah-B4N" secondAttribute="bottom" constant="50" id="55S-Yz-GwM"/>
+                                        <constraint firstItem="PuB-hs-SzC" firstAttribute="top" secondItem="gpj-pm-ZTS" secondAttribute="bottom" constant="50" id="72U-xY-0lX"/>
                                         <constraint firstItem="gpj-pm-ZTS" firstAttribute="leading" secondItem="513-3W-Iro" secondAttribute="trailing" id="751-4g-DZI"/>
                                         <constraint firstItem="gQa-ah-B4N" firstAttribute="leading" secondItem="mh6-h2-ubQ" secondAttribute="leading" id="8Ik-zi-obL"/>
                                         <constraint firstAttribute="trailing" secondItem="PuB-hs-SzC" secondAttribute="trailing" id="Bb8-21-2qo"/>
@@ -168,7 +171,7 @@
                                         <constraint firstItem="PuB-hs-SzC" firstAttribute="top" secondItem="aiI-tX-vYX" secondAttribute="bottom" id="pBK-qx-s8U"/>
                                         <constraint firstAttribute="trailing" secondItem="jYd-vm-ei8" secondAttribute="trailing" id="rBM-UG-gtb"/>
                                         <constraint firstItem="gpj-pm-ZTS" firstAttribute="top" secondItem="mh6-h2-ubQ" secondAttribute="top" id="u46-vq-5Cw"/>
-                                        <constraint firstItem="PuB-hs-SzC" firstAttribute="top" secondItem="513-3W-Iro" secondAttribute="bottom" id="uHd-HT-6l2"/>
+                                        <constraint firstItem="PuB-hs-SzC" firstAttribute="top" secondItem="513-3W-Iro" secondAttribute="bottom" constant="50" id="uHd-HT-6l2"/>
                                         <constraint firstItem="513-3W-Iro" firstAttribute="top" secondItem="mh6-h2-ubQ" secondAttribute="top" id="wLw-cX-qZ4"/>
                                     </constraints>
                                 </view>
@@ -372,7 +375,7 @@
                         <outlet property="academicView" destination="gQa-ah-B4N" id="dGH-ZX-bnk"/>
                         <outlet property="entertainmentView" destination="gpj-pm-ZTS" id="6vG-OB-PT6"/>
                         <outlet property="foodView" destination="513-3W-Iro" id="VfT-Df-4DN"/>
-                        <outlet property="locationsView" destination="y5V-m7-ZGm" id="aYd-KQ-igw"/>
+                        <outlet property="locationsView" destination="y5V-m7-ZGm" id="9Rc-fO-riN"/>
                         <outlet property="searchBar" destination="CQL-vF-DBc" id="16P-vp-t39"/>
                         <outlet property="searchDisplayController" destination="dt6-ck-fHq" id="pJf-hv-vEb"/>
                         <outlet property="segmentedControl" destination="zRL-FX-lx3" id="oug-cz-vzU"/>

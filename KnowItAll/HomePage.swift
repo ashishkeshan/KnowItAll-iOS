@@ -107,22 +107,49 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "TopicReviewCell", for: indexPath) as! TopicReviewCell
-//        cell.starRating.rating = 3.5
-//        cell.postTitle.text = "Star Wars"
-//        cell.numReviews.text = "30 reviews"
-//        return cell
         if(segmentedControl.selectedSegmentIndex == 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TopicReviewCell", for: indexPath) as! TopicReviewCell
             cell.postTitle.text = topicData[indexPath.row].title
             cell.numReviews.text = "Reviews: " + String(topicData[indexPath.row].numReviews)
             cell.starRating.rating = topicData[indexPath.row].rating
+            switch topicData[indexPath.row].category {
+            case 1:
+                cell.categoryImage.image = UIImage(named: "Academic")
+                break
+            case 2:
+                cell.categoryImage.image = UIImage(named: "Food")
+                break
+            case 3:
+                cell.categoryImage.image = UIImage(named: "Entertainment")
+                break
+            case 4:
+                cell.categoryImage.image = UIImage(named: "Locations")
+                break
+            default:
+                break
+            }
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TopicPollCell", for: indexPath) as! TopicPollCell
             cell.pollName.text = pollData[indexPath.row].title
             cell.numVotesLabel.text = String(pollData[indexPath.row].numVotes) + " Votes"
+            switch pollData[indexPath.row].category {
+            case 1:
+                cell.pollCategoryImage.image = UIImage(named: "Academic")
+                break
+            case 2:
+                cell.pollCategoryImage.image = UIImage(named: "Food")
+                break
+            case 3:
+                cell.pollCategoryImage.image = UIImage(named: "Entertainment")
+                break
+            case 4:
+                cell.pollCategoryImage.image = UIImage(named: "Locations")
+                break
+            default:
+                break
+            }
             return cell
         }
     }
