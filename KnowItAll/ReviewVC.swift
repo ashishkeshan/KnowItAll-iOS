@@ -22,11 +22,9 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var ratings = [Double]()
     let nc = NotificationCenter.default
     @IBAction func addReview(_ sender: Any) {
-        nc.post(name:Notification.Name(rawValue:"reviewInfo"),
-                object: nil,
-                userInfo: ["title": (topic?.title)!,
-        "categoryID": (topic?.category)!])
         self.tabBarController?.selectedIndex = 2
+        let createNewPostVC = self.tabBarController?.viewControllers![2] as! CreateNewPostVC
+        createNewPostVC.fillReview(topic: (topic?.title)!, catId: (topic?.category)!)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

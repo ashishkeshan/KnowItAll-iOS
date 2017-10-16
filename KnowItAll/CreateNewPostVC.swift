@@ -40,8 +40,9 @@ class CreateNewPostVC: UIViewController {
     @IBOutlet weak var foreverButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var table: UITableView!
-    
-    
+
+    var topic = ""
+    var catId = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         //tableview set up
@@ -87,20 +88,11 @@ class CreateNewPostVC: UIViewController {
         question.isUserInteractionEnabled = false
         question.isEnabled = false
         
-        //set up notification for when user clicks addReview on review page
-        let nc = NotificationCenter.default // Note that default is now a property, not a method call
-        nc.addObserver(forName:Notification.Name(rawValue:"reviewInfo"),
-                       object:nil, queue:nil,
-                       using:catchNotification)
     }
     
-    func catchNotification(notification:Notification) -> Void {
-        print("Catch notification")
-        let userInfo = notification.userInfo
-        let title = userInfo?["title"] as? String
-        let categoryID = userInfo?["categoryID"] as! Int
-        typeField.text = title
-        switch categoryID {
+    func fillReview(topic:String, catId : Int) {
+        typeField.text = topic
+        switch catId {
         case 1:
             pressed1(nil)
             break
