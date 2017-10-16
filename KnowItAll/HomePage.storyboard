@@ -301,9 +301,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star Wars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gxg-6s-4hx">
-                                                    <rect key="frame" x="8" y="33" width="90" height="21"/>
+                                                    <rect key="frame" x="8" y="33" width="289" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="iGc-wq-NXL"/>
+                                                        <constraint firstAttribute="height" constant="25" id="iGc-wq-NXL"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
                                                     <nil key="textColor"/>
@@ -325,6 +325,7 @@
                                                 <constraint firstItem="i7e-8t-vQn" firstAttribute="trailing" secondItem="g3H-R0-Ce9" secondAttribute="trailingMargin" id="gsj-IS-Z9e"/>
                                                 <constraint firstItem="Gxg-6s-4hx" firstAttribute="leading" secondItem="g3H-R0-Ce9" secondAttribute="leadingMargin" id="iHl-Ob-5fb"/>
                                                 <constraint firstItem="I4N-70-kyy" firstAttribute="trailing" secondItem="z1N-qX-Jae" secondAttribute="trailing" id="lPU-kr-8rl"/>
+                                                <constraint firstItem="wpk-Fh-p3g" firstAttribute="leading" secondItem="Gxg-6s-4hx" secondAttribute="trailing" constant="20" id="met-jm-xB0"/>
                                                 <constraint firstItem="z1N-qX-Jae" firstAttribute="top" secondItem="I4N-70-kyy" secondAttribute="top" id="uKv-ba-5f8"/>
                                                 <constraint firstItem="I4N-70-kyy" firstAttribute="leading" secondItem="1ri-0B-UiQ" secondAttribute="leading" id="ugX-PE-fvZ"/>
                                                 <constraint firstItem="z1N-qX-Jae" firstAttribute="trailing" secondItem="1ri-0B-UiQ" secondAttribute="trailing" id="urN-QL-Jg6"/>
