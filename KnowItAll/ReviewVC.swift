@@ -12,6 +12,8 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     var topic : Topic? = nil
+    var comments = [String]()
+    var ratings = [Double]()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -29,11 +31,14 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         print(urlString)
         
         let json = getJSONFromURL(urlString, "GET")
-        print(json)
         let status = json["status"]
         
         // Check if status is good
         if status == 200 {
+            for review in json["reviews"].arrayValue {
+                comments.append(review["comment"].string!)
+                ratings.append(review["rating"].double!)
+            }
         }
     }
 
@@ -51,7 +56,7 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return ratings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

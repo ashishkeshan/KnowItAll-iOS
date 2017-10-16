@@ -22,6 +22,10 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         print("num votes: ", poll?.numVotes)
         // Do any additional setup after loading the view.
     }
+    
+    func getPollInfo() {
+        print("works")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

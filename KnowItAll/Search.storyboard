@@ -164,7 +164,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="categoryImage" destination="uoc-uy-uTT" id="qcC-0e-9iJ"/>
+                                            <outlet property="categoryImage" destination="uoc-uy-uTT" id="MSb-YS-fNs"/>
                                             <outlet property="numReviews" destination="iic-e1-zR2" id="NzK-wf-9d6"/>
                                             <outlet property="postTitle" destination="yEw-C1-UF7" id="juW-F4-Ehq"/>
                                             <outlet property="starRating" destination="35O-2K-ZFR" id="KlJ-hJ-Tl7"/>

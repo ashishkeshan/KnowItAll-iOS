@@ -80,6 +80,7 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     }
     
     func executeSearch() {
+        print("executing search")
         self.tabBarController?.selectedIndex = 1
         nc.post(name:Notification.Name(rawValue:"MyNotification"),
                 object: nil,

@@ -28,6 +28,7 @@
 		280F1A0F1F92C75C00CFB879 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280F1A0E1F92C75C00CFB879 /* Constants.swift */; };
 		28BE28721F917E8100557D85 /* BackendConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE28711F917E8100557D85 /* BackendConnector.swift */; };
 		7537F0D71F906EEC00839AB3 /* TopicPollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537F0D61F906EEC00839AB3 /* TopicPollCell.swift */; };
+		7578151A1F9442F200D6F1C0 /* TopicPageReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757815191F9442F200D6F1C0 /* TopicPageReviewCell.swift */; };
 		758A329B1F85A4D900838DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A329A1F85A4D900838DDA /* AppDelegate.swift */; };
 		758A32A01F85A4D900838DDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A329E1F85A4D900838DDA /* Main.storyboard */; };
 		758A32A51F85A4D900838DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32A31F85A4D900838DDA /* LaunchScreen.storyboard */; };
@@ -78,6 +79,7 @@
 		505B88AA0558E2344579971B /* Pods-KnowItAll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowItAll.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll.release.xcconfig"; sourceTree = "<group>"; };
 		71C559B9AFC5385A1C0EB1EC /* Pods_KnowItAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnowItAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7537F0D61F906EEC00839AB3 /* TopicPollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicPollCell.swift; sourceTree = "<group>"; };
+		757815191F9442F200D6F1C0 /* TopicPageReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicPageReviewCell.swift; sourceTree = "<group>"; };
 		758A32971F85A4D900838DDA /* KnowItAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnowItAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		758A329A1F85A4D900838DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		758A329F1F85A4D900838DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				7537F0D61F906EEC00839AB3 /* TopicPollCell.swift */,
 				280F1A0E1F92C75C00CFB879 /* Constants.swift */,
 				75F135401F92E09400C07A0F /* PollOptionCell.swift */,
+				757815191F9442F200D6F1C0 /* TopicPageReviewCell.swift */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				0245DD801F902916000B26F5 /* User.swift in Sources */,
 				02F2CB181F8804540013F88D /* SettingsVC.swift in Sources */,
 				758A32D11F8B326E00838DDA /* TopicReviewCell.swift in Sources */,
+				7578151A1F9442F200D6F1C0 /* TopicPageReviewCell.swift in Sources */,
 				02D95BCD1F8B231400E57721 /* Notif.swift in Sources */,
 				02B0BF6A1F92D0FF007A159F /* AnswerCell.swift in Sources */,
 				0245DD841F902A5F000B26F5 /* Review.swift in Sources */,

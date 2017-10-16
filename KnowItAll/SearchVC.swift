@@ -78,19 +78,19 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             switch topics[indexPath.row].category {
             case 1:
                 let img = UIImage(named: "Academic")
-                cell.categoryImage = UIImageView(image: img)
+                cell.categoryImage.image = img
                 break
             case 2:
                 let img = UIImage(named: "Food")
-                cell.categoryImage = UIImageView(image: img)
+                cell.categoryImage.image = img
                 break
             case 3:
                 let img = UIImage(named: "Entertainment")
-                cell.categoryImage = UIImageView(image: img)
+                cell.categoryImage.image = img
                 break
             case 4:
-                let img = UIImage(named: "Location")
-                cell.categoryImage = UIImageView(image: img)
+                let img = UIImage(named: "Locations")
+                cell.categoryImage.image = img
                 break
             default:
                 break
@@ -103,7 +103,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             cell.numVotesLabel.text = "Votes: " + String(polls[indexPath.row-topics.count].numVotes)
             switch polls[indexPath.row-topics.count].category {
             case 1:
-                cell.pollCategoryImage.image = UIImage(named: "Academics")
+                cell.pollCategoryImage.image = UIImage(named: "Academic")
                 break
             case 2:
                 cell.pollCategoryImage.image = UIImage(named: "Food")
@@ -112,7 +112,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
                 cell.pollCategoryImage.image = UIImage(named: "Entertainment")
                 break
             case 4:
-                cell.pollCategoryImage.image = UIImage(named: "Location")
+                cell.pollCategoryImage.image = UIImage(named: "Locations")
                 break
             default:
                 break
@@ -135,6 +135,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         if segue.destination is PollVC {
             let vc = segue.destination as? PollVC
             vc?.poll = self.polls[self.index - topics.count]
+            vc?.getPollInfo()
         } else if segue.destination is ReviewVC {
             let vc = segue.destination as? ReviewVC
             vc?.topic = self.topics[self.index]

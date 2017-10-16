@@ -12,7 +12,7 @@ class TabBar: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewControllers?.forEach { $0.childViewControllers.forEach { $0.view } }
         // Do any additional setup after loading the view.
     }
 
