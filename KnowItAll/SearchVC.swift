@@ -188,7 +188,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         print(urlString)
         
         let json = getJSONFromURL(urlString, "GET")
-        print(json)
+//        print(json)
         let status = json["status"]
         
         // Check if status is good

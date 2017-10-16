@@ -64,6 +64,7 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func loadFromDB() {
         let urlString = "/myPosts?username="+email
         let json = getJSONFromURL(urlString, "GET")
+        if json["status"] != 200 { return; }
         let topicIDs = json["topicID"]
         let pcs = json["pc"]
 

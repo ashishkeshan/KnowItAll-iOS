@@ -20,6 +20,10 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     @IBOutlet weak var topView: UIView!
     let nc = NotificationCenter.default
     
+    var topicData = [Topic]()
+    var pollData = [Poll]()
+    var index = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -34,6 +38,8 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         self.entertainmentView.addGestureRecognizer(clickEntertainment)
         let clickLocations = UITapGestureRecognizer(target: self, action:  #selector (self.locationsViewTouched (_:)))
         self.locationsView.addGestureRecognizer(clickLocations)
+        
+        loadTrending()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,51 +98,81 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         searchBar.resignFirstResponder()
     }
     
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if(segmentedControl.selectedSegmentIndex == 0) {
+            return topicData.count
+        } else {
+            return pollData.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TopicReviewCell", for: indexPath) as! TopicReviewCell
-        cell.starRating.rating = 3.5
-        cell.postTitle.text = "Star Wars"
-        cell.numReviews.text = "30 reviews"
-        return cell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "TopicReviewCell", for: indexPath) as! TopicReviewCell
+//        cell.starRating.rating = 3.5
+//        cell.postTitle.text = "Star Wars"
+//        cell.numReviews.text = "30 reviews"
+//        return cell
+        if(segmentedControl.selectedSegmentIndex == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TopicReviewCell", for: indexPath) as! TopicReviewCell
+            cell.postTitle.text = topicData[indexPath.row].title
+            cell.numReviews.text = "Reviews: " + String(topicData[indexPath.row].numReviews)
+            cell.starRating.rating = topicData[indexPath.row].rating
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TopicPollCell", for: indexPath) as! TopicPollCell
+            cell.pollName.text = pollData[indexPath.row].title
+            cell.numVotesLabel.text = String(pollData[indexPath.row].numVotes) + " Votes"
+            return cell
+        }
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//         performSegue(withIdentifier: "showReviewPage", sender: self)
+        self.index = indexPath.row
+        let cell = tableView.cellForRow(at: indexPath)
+        if (cell?.isKind(of: TopicReviewCell.self))! {
+            performSegue(withIdentifier: "showReviewPage", sender: self)
+        } else {
+            performSegue(withIdentifier: "showPollPage", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is PollVC {
             let vc = segue.destination as? PollVC
-//            vc?.poll = self.polls[self.index]
-//            vc?.getPollInfo()
+            vc?.poll = self.pollData[self.index]
+            vc?.getPollInfo()
         } else if segue.destination is ReviewVC {
             let vc = segue.destination as? ReviewVC
-//            vc?.topic = self.topics[self.index]
-//            vc?.getReviews()
+            vc?.topic = self.topicData[self.index]
+            vc?.getReviews()
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func loadTrending() {
+        // Load Topic
+        let topicURL = "/getTrending?type=topic"
+        var json = getJSONFromURL(topicURL, "GET")
+        if json["status"] != 200 { return; }
+        for data in json["data"].arrayValue {
+            let temp = Topic.init(votes: data["numReviews"].intValue, title: data["title"].stringValue, rating: data["avRating"].doubleValue, cat: data["category"].intValue)
+            topicData.append(temp)
+        }
+        
+        // Load Poll
+        let pollURL = "/getTrending?type=poll"
+        json = getJSONFromURL(pollURL, "GET")
+        if json["status"] != 200 { return; }
+        for data in json["data"].arrayValue {
+            let opts = [String]()
+            let distribution = Set<Int>()
+            let temp = Poll.init(id: data["id"].intValue, type: 2, time: data["dayLimit"].doubleValue, option: opts, distribution: distribution, votes: data["numVotes"].intValue, text: data["text"].stringValue, cat: data["categoryID"].intValue)
+            pollData.append(temp)
+        }
+        print("hi")
+        tableView.reloadData()
     }
-    */
-
+    
+    
 }
