@@ -99,7 +99,6 @@ class LoginViewController: UIViewController {
     
     // Sign Up
     @IBAction func signupPressed(_ sender: Any) {
-        indicator.isHidden = false
         // Fields are empty
         if emailField.text == "" || passwordField.text == "" {
             errorLabel.text = Login.emailPass
@@ -107,8 +106,8 @@ class LoginViewController: UIViewController {
             indicator.isHidden = true
             return
         }
-        
-        // Not USC email
+            
+            // Not USC email
         else if !(emailField.text?.contains("@usc.edu"))! {
             errorLabel.text = Login.uscEmailOnly
             errorLabel.isHidden = false
@@ -116,26 +115,31 @@ class LoginViewController: UIViewController {
             return
         }
         
-        let urlString = "/register?username="+emailField.text!+"&password="+passwordField.text!
-        let json = getJSONFromURL(urlString, "POST")
-        let status = json["status"]
-        
-        // Check if status is good
-        if status == 200 {
-            let alert = UIAlertController(title: "Email Authentication", message: "A verification email has been sent to \(emailField.text!)", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
-                self.emailField.text = ""
-                self.passwordField.text = ""
-            }))
-            self.present(alert, animated: true, completion: nil)
-        } // endif
-        else {
-            errorLabel.text = Login.emailExists
-            errorLabel.isHidden = false
-            indicator.isHidden = true
-            return
+        indicator.isHidden = false
+        indicator.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            let urlString = "/register?username="+self.emailField.text!+"&password="+self.passwordField.text!
+            let json = getJSONFromURL(urlString, "POST")
+            let status = json["status"]
+            
+            // Check if status is good
+            if status == 200 {
+                let alert = UIAlertController(title: "Email Authentication", message: "A verification email has been sent to \(self.emailField.text!)", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+                    self.emailField.text = ""
+                    self.passwordField.text = ""
+                }))
+                self.present(alert, animated: true, completion: nil)
+            } // endif
+            else {
+                self.errorLabel.text = Login.emailExists
+                self.errorLabel.isHidden = false
+                self.indicator.isHidden = true
+                return
+            }
+            self.indicator.stopAnimating()
+            self.indicator.isHidden = true
         }
-        indicator.isHidden = true
     }
     
     // Forgot Password
@@ -173,19 +177,26 @@ class LoginViewController: UIViewController {
     }
     
     func changePassword() {
-        let urlString = "/editProfile?username="+emailAddress+"&newPassword="+newPassword+"&forgot=1"
-        let json = getJSONFromURL(urlString, "POST")
-        let status = json["status"]
-        // Check if status is good
-        if status == 200 {
-            let alert = UIAlertController(title: "Success", message: "Please check your email to confirm your password change.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        } // endif
-        else {
-            let alert = UIAlertController(title: "Wrong Email Address", message: "Error, your password could not be successfully updated.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        indicator.isHidden = false
+        indicator.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            let urlString = "/editProfile?username="+self.emailAddress+"&newPassword="+self.newPassword+"&forgot=1"
+            let json = getJSONFromURL(urlString, "POST")
+            let status = json["status"]
+            // Check if status is good
+            if status == 200 {
+                let alert = UIAlertController(title: "Success", message: "Please check your email to confirm your password change.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } // endif
+            else {
+                let alert = UIAlertController(title: "Wrong Email Address", message: "Error, your password could not be successfully updated.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            self.indicator.isHidden = true
+            self.indicator.stopAnimating()
         }
     }
 }
