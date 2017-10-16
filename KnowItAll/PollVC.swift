@@ -23,6 +23,9 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var totVotes = 0
     var percent = 0.0
     var email = ""
+    var pc = ""
+    var idx = -1
+    var flag = true
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -37,12 +40,23 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         pollTitle.text = poll?.title
         numVotes.text = String(describing: (poll?.numVotes)!) + " votes"
         email = UserDefaults.standard.string(forKey: Login.emailKey)!
+        let urlString = "/vote?username=\(email)&pollText=\((poll?.title)!)"
+        let json = getJSONFromURL(urlString, "POST")
+        let status = json["status"]
+        if status == 200 {
+            pc = json["pc"].string!
+            for i in 0 ... optionsList.count-1 {
+                if pc == optionsList[i] {
+                    idx = i
+                    prevSelected = IndexPath(row: idx, section: 0)
+                }
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
     func getPollInfo() {
 //        http://127.0.0.1:8000/api/getPost?type=poll&text=Who is the best teammate?
-        print("see if this works")
         let urlString = "/getPost?type=poll&text=" + (poll?.title)!
         print(urlString)
         
@@ -73,6 +87,10 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PollOptionCell", for: indexPath) as! PollOptionCell
+        if indexPath.row == idx && flag {
+            cell.optionName.textColor = UIColor.black
+            cell.optionPercent.textColor = UIColor.black
+        }
         if totVotes == 0 {
             percent = 0.0
         } else {
@@ -95,6 +113,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let status = json["status"]
         print("status: ", status)
         if prevSelected != nil {
+            flag = false
             let urlString = "/vote?username=\(email)&pollText=" + (poll?.title)! + "&pollChoiceText=\(optionsList[(prevSelected?.row)!])&deleteVote=1"
             _ = getJSONFromURL(urlString, "POST")
             numVotesList[(prevSelected?.row)!] -= 1
@@ -102,6 +121,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let oldSelectionCell = tableView.cellForRow(at: prevSelected!) as! PollOptionCell
             oldSelectionCell.optionPercent.textColor = UIColor.lightGray
             oldSelectionCell.optionName.textColor = UIColor.lightGray
+            print("GOT TO HERE")
         }
         prevSelected = indexPath
         let cell = tableView.cellForRow(at: indexPath) as! PollOptionCell
@@ -109,9 +129,9 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.optionName.textColor = UIColor.black
         numVotesList[indexPath.row] += 1
         totVotes += 1
+        numVotes.text = String(totVotes) + " votes"
         tableView.reloadData()
     }
-    
     
 
     /*
