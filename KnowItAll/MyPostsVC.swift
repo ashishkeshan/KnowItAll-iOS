@@ -16,6 +16,7 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var reviewData = [Review]()
     var pollData = [Poll]()
     var email: String!
+    var index = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(segmentedControl.selectedSegmentIndex == 0) {
@@ -92,6 +93,36 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             pollData.append(Poll.init(id:Int(id)!, type:2, time:0.0, option:options, distribution:Set<Int>(), votes:numVotes, text:text, cat:Int(category)!))
         }
         tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is PollVC {
+            let vc = segue.destination as? PollVC
+            vc?.poll = self.pollData[self.index]
+            vc?.getPollInfo()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.index = indexPath.row
+        let cell = tableView.cellForRow(at: indexPath)
+        if (cell?.isKind(of: TopicReviewCell.self))! {
+            
+        } else {
+            performSegue(withIdentifier: "showPollPage", sender: self)
+        }
     }
 
 }
