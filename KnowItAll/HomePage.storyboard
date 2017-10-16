@@ -190,7 +190,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star Wars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mLO-bP-C2X">
-                                                    <rect key="frame" x="18" y="18" width="102" height="21"/>
+                                                    <rect key="frame" x="8" y="18" width="102" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="F3G-Xh-Le2"/>
                                                     </constraints>
@@ -220,7 +220,7 @@
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEk-Ua-m2A" customClass="CosmosView" customModule="Cosmos">
-                                                    <rect key="frame" x="18" y="54" width="120" height="20"/>
+                                                    <rect key="frame" x="8" y="54" width="120" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="B0m-DM-SGq"/>
@@ -237,7 +237,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="tWB-nu-NFd" firstAttribute="top" secondItem="Twh-WB-Y0b" secondAttribute="top" id="1Mu-cb-sqf"/>
-                                                <constraint firstItem="zEk-Ua-m2A" firstAttribute="leading" secondItem="y0d-rJ-HOX" secondAttribute="leadingMargin" constant="10" id="4m0-IH-HSh"/>
+                                                <constraint firstItem="zEk-Ua-m2A" firstAttribute="leading" secondItem="y0d-rJ-HOX" secondAttribute="leadingMargin" id="4m0-IH-HSh"/>
                                                 <constraint firstItem="mLO-bP-C2X" firstAttribute="top" secondItem="y0d-rJ-HOX" secondAttribute="topMargin" constant="10" id="68X-gL-9ka"/>
                                                 <constraint firstItem="tWB-nu-NFd" firstAttribute="trailing" secondItem="m5O-Da-EvN" secondAttribute="trailing" id="6Rd-Jb-oU5"/>
                                                 <constraint firstItem="Twh-WB-Y0b" firstAttribute="top" secondItem="y0d-rJ-HOX" secondAttribute="top" constant="89" id="8mT-9F-yzs"/>
@@ -254,7 +254,7 @@
                                                 <constraint firstItem="Twh-WB-Y0b" firstAttribute="leading" secondItem="tWB-nu-NFd" secondAttribute="leading" id="oKG-ta-i0f"/>
                                                 <constraint firstItem="Twh-WB-Y0b" firstAttribute="leading" secondItem="m5O-Da-EvN" secondAttribute="leading" id="pHd-7i-D58"/>
                                                 <constraint firstItem="sBQ-uy-i0M" firstAttribute="trailing" secondItem="y0d-rJ-HOX" secondAttribute="trailingMargin" id="pTz-pj-8mS"/>
-                                                <constraint firstItem="mLO-bP-C2X" firstAttribute="leading" secondItem="y0d-rJ-HOX" secondAttribute="leadingMargin" constant="10" id="qjg-qh-OEv"/>
+                                                <constraint firstItem="mLO-bP-C2X" firstAttribute="leading" secondItem="y0d-rJ-HOX" secondAttribute="leadingMargin" id="qjg-qh-OEv"/>
                                                 <constraint firstItem="zEk-Ua-m2A" firstAttribute="top" secondItem="mLO-bP-C2X" secondAttribute="bottom" constant="15" id="w8B-s2-ub5"/>
                                             </constraints>
                                         </tableViewCellContentView>
