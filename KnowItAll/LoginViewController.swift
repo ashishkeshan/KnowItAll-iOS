@@ -173,12 +173,12 @@ class LoginViewController: UIViewController {
     }
     
     func changePassword() {
-        let urlString = "/editProfile?username="+emailAddress+"&newPassword="+newPassword
+        let urlString = "/editProfile?username="+emailAddress+"&newPassword="+newPassword+"&forgot=1"
         let json = getJSONFromURL(urlString, "POST")
         let status = json["status"]
         // Check if status is good
         if status == 200 {
-            let alert = UIAlertController(title: "Success", message: "Your password has successfully been updated!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Success", message: "Please check your email to confirm your password change.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } // endif
