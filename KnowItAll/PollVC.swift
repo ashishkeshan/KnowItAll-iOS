@@ -74,7 +74,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if totVotes == 0 {
             percent = 0.0
         } else {
-            percent = Double(numVotesList[indexPath.row]) / Double(totVotes)
+            percent = round(100*(Double(numVotesList[indexPath.row]) / Double(totVotes)))/100
         }
         cell.optionName.text = optionsList[indexPath.row]
         cell.optionPercent.text = String(percent * 100) + "%"

@@ -197,7 +197,6 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             let temp = Poll.init(id: data["id"].intValue, type: 2, time: data["dayLimit"].doubleValue, option: opts, distribution: distribution, votes: data["numVotes"].intValue, text: data["text"].stringValue, cat: data["categoryID"].intValue)
             pollData.append(temp)
         }
-        print("hi")
         tableView.reloadData()
     }
     
