@@ -122,23 +122,12 @@ class LoginViewController: UIViewController {
         
         // Check if status is good
         if status == 200 {
-            
             let alert = UIAlertController(title: "Email Authentication", message: "A verification email has been sent to \(emailField.text!)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
                 self.emailField.text = ""
                 self.passwordField.text = ""
             }))
             self.present(alert, animated: true, completion: nil)
-//            userDefaults.set(emailField.text, forKey: Login.emailKey)
-//            userDefaults.set(passwordField.text, forKey: Login.passwordKey)
-//            userDefaults.set(Login.yes, forKey: Login.loggedIn)
-            
-            // Segue
-//            let storyboard = UIStoryboard(name: "TabBar", bundle:nil)
-//            let controller = storyboard.instantiateViewController(withIdentifier: "TabBar")
-//            controller.modalTransitionStyle = .flipHorizontal
-//            self.present(controller, animated: true, completion: nil)
-            
         } // endif
         else {
             errorLabel.text = Login.emailExists
