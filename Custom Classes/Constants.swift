@@ -20,6 +20,7 @@ struct Login {
     static let emailPass = "Sorry, please provide a email and password."
     static let uscEmailOnly = "Sorry, please provide a valid USC email."
     static let emailExists = "Sorry, email already registered. Please login."
+    static let notAuth = "Sorry, please authenticate your email."
     
 
 }
