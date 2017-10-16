@@ -57,30 +57,44 @@ class LoginViewController: UIViewController {
             return
         }
         
-        let urlString = "/login?username="+emailField.text!+"&password="+passwordField.text!
-        let json = getJSONFromURL(urlString, "POST")
-        let status = json["status"]
+        var urlString = "/authenticate?username="+emailField.text! + "&check=true"
+        print(urlString)
+        var json = getJSONFromURL(urlString, "POST")
+        var status = json["status"]
+        let authenticated = json["authenticated"].string
         // Check if status is good
         if status == 200 {
-            // Store username + password
-            userDefaults.set(emailField.text, forKey: Login.emailKey)
-            userDefaults.set(passwordField.text, forKey: Login.passwordKey)
-            userDefaults.set(Login.yes, forKey: Login.loggedIn)
-            
-            // Segue
-            let storyboard = UIStoryboard(name: "TabBar", bundle:nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "TabBar")
-            controller.modalTransitionStyle = .flipHorizontal
-            self.present(controller, animated: true, completion: nil)
-            
-        } // endif
-        else {
-            errorLabel.text = Login.wrongPass
+            if authenticated == "true" {
+                urlString = "/authenticate?username=" + emailField.text! + "&password=" + passwordField.text!
+                print(urlString)
+                json = getJSONFromURL(urlString, "POST")
+                status = json["status"]
+                if status == 200 {
+                    userDefaults.set(emailField.text, forKey: Login.emailKey)
+                    userDefaults.set(passwordField.text, forKey: Login.passwordKey)
+                    userDefaults.set(Login.yes, forKey: Login.loggedIn)
+                    // Segue
+                    let storyboard = UIStoryboard(name: "TabBar", bundle:nil)
+                    let controller = storyboard.instantiateViewController(withIdentifier: "TabBar")
+                    controller.modalTransitionStyle = .flipHorizontal
+                    self.present(controller, animated: true, completion: nil)
+                } else {
+                    errorLabel.text = Login.wrongPass
+                    errorLabel.isHidden = false
+                }
+                
+            } else {
+                errorLabel.text = Login.notAuth
+                errorLabel.isHidden = false
+            }
+        } else {
+            errorLabel.text = "Could not verify email"
             errorLabel.isHidden = false
             indicator.isHidden = true
             return
         }
         indicator.isHidden = true
+        
     }
     
     // Sign Up
@@ -108,17 +122,12 @@ class LoginViewController: UIViewController {
         
         // Check if status is good
         if status == 200 {
-            // Store username + password
-            userDefaults.set(emailField.text, forKey: Login.emailKey)
-            userDefaults.set(passwordField.text, forKey: Login.passwordKey)
-            userDefaults.set(Login.yes, forKey: Login.loggedIn)
-            
-            // Segue
-            let storyboard = UIStoryboard(name: "TabBar", bundle:nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "TabBar")
-            controller.modalTransitionStyle = .flipHorizontal
-            self.present(controller, animated: true, completion: nil)
-            
+            let alert = UIAlertController(title: "Email Authentication", message: "A verification email has been sent to \(emailField.text!)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+                self.emailField.text = ""
+                self.passwordField.text = ""
+            }))
+            self.present(alert, animated: true, completion: nil)
         } // endif
         else {
             errorLabel.text = Login.emailExists
