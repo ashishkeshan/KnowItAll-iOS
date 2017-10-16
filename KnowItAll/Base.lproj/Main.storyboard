@@ -32,9 +32,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KnowItAll" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrX-u5-PXU">
-                                <rect key="frame" x="52" y="70" width="271" height="88"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="64"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kn   wItAll" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrX-u5-PXU">
+                                <rect key="frame" x="41" y="70" width="293" height="88"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="65"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -184,18 +184,27 @@
                                     <constraint firstAttribute="width" constant="50" id="wEa-H4-Rui"/>
                                 </constraints>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BrainWhite" translatesAutoresizingMaskIntoConstraints="NO" id="AFZ-9V-mVh">
+                                <rect key="frame" x="115" y="89" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="LKr-Dq-ieO"/>
+                                    <constraint firstAttribute="height" constant="50" id="d0K-TT-qsu"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.76862745098039209" green="0.11764705882352941" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NhH-Yg-TUz" firstAttribute="top" secondItem="IFe-qa-9vm" secondAttribute="bottom" constant="8" id="7PJ-qD-SFN"/>
+                            <constraint firstItem="AFZ-9V-mVh" firstAttribute="top" secondItem="ay2-lz-VNQ" secondAttribute="bottom" constant="69" id="7nJ-Je-22S"/>
+                            <constraint firstItem="AFZ-9V-mVh" firstAttribute="leading" secondItem="aMe-Ol-lNQ" secondAttribute="leadingMargin" constant="99" id="8DB-0X-FYm"/>
                             <constraint firstItem="NhH-Yg-TUz" firstAttribute="centerX" secondItem="aMe-Ol-lNQ" secondAttribute="centerX" id="9Tu-cl-gae"/>
                             <constraint firstItem="IFe-qa-9vm" firstAttribute="leading" secondItem="aMe-Ol-lNQ" secondAttribute="leadingMargin" constant="10" id="Ad1-oj-wFF"/>
                             <constraint firstItem="nrX-u5-PXU" firstAttribute="top" secondItem="ay2-lz-VNQ" secondAttribute="bottom" constant="50" id="GVU-qM-mbM"/>
                             <constraint firstItem="NhH-Yg-TUz" firstAttribute="centerY" secondItem="aMe-Ol-lNQ" secondAttribute="centerY" id="J3H-91-hmo"/>
                             <constraint firstItem="sLp-2x-cbs" firstAttribute="centerX" secondItem="aMe-Ol-lNQ" secondAttribute="centerX" id="JaA-Nr-Olb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nrX-u5-PXU" secondAttribute="trailing" constant="36" id="LgD-bF-Ert"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nrX-u5-PXU" secondAttribute="trailing" constant="25" id="LgD-bF-Ert"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NhH-Yg-TUz" secondAttribute="trailing" constant="15" id="QQB-1f-xYa"/>
-                            <constraint firstItem="nrX-u5-PXU" firstAttribute="leading" secondItem="aMe-Ol-lNQ" secondAttribute="leadingMargin" constant="36" id="RDs-MT-ING"/>
+                            <constraint firstItem="nrX-u5-PXU" firstAttribute="leading" secondItem="aMe-Ol-lNQ" secondAttribute="leadingMargin" constant="25" id="RDs-MT-ING"/>
                             <constraint firstItem="IFe-qa-9vm" firstAttribute="top" secondItem="nrX-u5-PXU" secondAttribute="bottom" constant="8" id="b5l-tI-8bN"/>
                             <constraint firstItem="sLp-2x-cbs" firstAttribute="top" secondItem="NhH-Yg-TUz" secondAttribute="bottom" constant="8" id="eZo-7B-e9l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IFe-qa-9vm" secondAttribute="trailing" constant="10" id="kCn-MV-glr"/>
@@ -214,4 +223,7 @@
             <point key="canvasLocation" x="840.79999999999995" y="157.87106446776613"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BrainWhite" width="100" height="100"/>
+    </resources>
 </document>
