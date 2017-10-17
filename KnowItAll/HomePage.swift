@@ -48,6 +48,8 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     }
     
     @objc private func refreshPage() {
+        topicData.removeAll()
+        pollData.removeAll()
         loadTrending()
         tableView.reloadData()
         self.refreshControl.endRefreshing()

@@ -12,7 +12,7 @@ import Foundation
 class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
+    private let refreshControl = UIRefreshControl()
     var reviewData = [Review]()
     var pollData = [Poll]()
     var email: String!
@@ -89,6 +89,12 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         //setting up tableView
         tableView.delegate = self
         tableView.dataSource = self
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(refreshPage), for: .valueChanged)
         
         //setting up segmented control
         segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
@@ -96,6 +102,12 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         //create function to populate reviews and polls
         email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
         loadFromDB()
+    }
+    
+    @objc private func refreshPage() {
+        loadFromDB()
+        tableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
     
     func loadFromDB() {
@@ -135,6 +147,8 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        loadFromDB()
+        tableView.reloadData()
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
