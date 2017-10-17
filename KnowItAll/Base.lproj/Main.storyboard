@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Avenir.ttc">
-            <string>Avenir-Light</string>
-        </array>
         <array key="AvenirNext.ttc">
             <string>AvenirNext-DemiBold</string>
             <string>AvenirNext-Medium</string>
@@ -32,12 +29,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kn   wItAll" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrX-u5-PXU">
-                                <rect key="frame" x="41" y="70" width="293" height="88"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="65"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NhH-Yg-TUz">
                                 <rect key="frame" x="31" y="191" width="313" height="285"/>
                                 <subviews>
@@ -127,7 +118,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVI-N6-wdt">
-                                        <rect key="frame" x="98.5" y="246" width="116" height="32"/>
+                                        <rect key="frame" x="99" y="246" width="116" height="32"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                         <state key="normal" title="Forgot password?">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -178,35 +169,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="sLp-2x-cbs">
-                                <rect key="frame" x="162" y="484" width="50" height="50"/>
+                                <rect key="frame" x="162.5" y="484" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ZmU-kE-OaM"/>
                                     <constraint firstAttribute="width" constant="50" id="wEa-H4-Rui"/>
                                 </constraints>
                             </activityIndicatorView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BrainWhite" translatesAutoresizingMaskIntoConstraints="NO" id="AFZ-9V-mVh">
-                                <rect key="frame" x="115" y="89" width="50" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="AFZ-9V-mVh">
+                                <rect key="frame" x="37" y="74" width="300" height="72"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="LKr-Dq-ieO"/>
-                                    <constraint firstAttribute="height" constant="50" id="d0K-TT-qsu"/>
+                                    <constraint firstAttribute="width" constant="300" id="cbg-9H-sW5"/>
+                                    <constraint firstAttribute="height" constant="72" id="fWy-f9-5fI"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.76862745098039209" green="0.11764705882352941" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NhH-Yg-TUz" firstAttribute="top" secondItem="IFe-qa-9vm" secondAttribute="bottom" constant="8" id="7PJ-qD-SFN"/>
-                            <constraint firstItem="AFZ-9V-mVh" firstAttribute="top" secondItem="ay2-lz-VNQ" secondAttribute="bottom" constant="69" id="7nJ-Je-22S"/>
-                            <constraint firstItem="AFZ-9V-mVh" firstAttribute="leading" secondItem="aMe-Ol-lNQ" secondAttribute="leadingMargin" constant="99" id="8DB-0X-FYm"/>
                             <constraint firstItem="NhH-Yg-TUz" firstAttribute="centerX" secondItem="aMe-Ol-lNQ" secondAttribute="centerX" id="9Tu-cl-gae"/>
                             <constraint firstItem="IFe-qa-9vm" firstAttribute="leading" secondItem="aMe-Ol-lNQ" secondAttribute="leadingMargin" constant="10" id="Ad1-oj-wFF"/>
-                            <constraint firstItem="nrX-u5-PXU" firstAttribute="top" secondItem="ay2-lz-VNQ" secondAttribute="bottom" constant="50" id="GVU-qM-mbM"/>
                             <constraint firstItem="NhH-Yg-TUz" firstAttribute="centerY" secondItem="aMe-Ol-lNQ" secondAttribute="centerY" id="J3H-91-hmo"/>
                             <constraint firstItem="sLp-2x-cbs" firstAttribute="centerX" secondItem="aMe-Ol-lNQ" secondAttribute="centerX" id="JaA-Nr-Olb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nrX-u5-PXU" secondAttribute="trailing" constant="25" id="LgD-bF-Ert"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NhH-Yg-TUz" secondAttribute="trailing" constant="15" id="QQB-1f-xYa"/>
-                            <constraint firstItem="nrX-u5-PXU" firstAttribute="leading" secondItem="aMe-Ol-lNQ" secondAttribute="leadingMargin" constant="25" id="RDs-MT-ING"/>
-                            <constraint firstItem="IFe-qa-9vm" firstAttribute="top" secondItem="nrX-u5-PXU" secondAttribute="bottom" constant="8" id="b5l-tI-8bN"/>
+                            <constraint firstItem="AFZ-9V-mVh" firstAttribute="centerX" secondItem="aMe-Ol-lNQ" secondAttribute="centerX" id="SRJ-A6-9EV"/>
                             <constraint firstItem="sLp-2x-cbs" firstAttribute="top" secondItem="NhH-Yg-TUz" secondAttribute="bottom" constant="8" id="eZo-7B-e9l"/>
+                            <constraint firstItem="IFe-qa-9vm" firstAttribute="top" secondItem="AFZ-9V-mVh" secondAttribute="bottom" constant="20" id="gNh-me-8Vl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IFe-qa-9vm" secondAttribute="trailing" constant="10" id="kCn-MV-glr"/>
                             <constraint firstItem="NhH-Yg-TUz" firstAttribute="leading" secondItem="aMe-Ol-lNQ" secondAttribute="leadingMargin" constant="15" id="u3J-7o-RmY"/>
                         </constraints>
@@ -224,6 +211,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BrainWhite" width="100" height="100"/>
+        <image name="Logo" width="616" height="156"/>
     </resources>
 </document>
