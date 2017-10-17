@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
     
     // Login
     @IBAction func loginPressed(_ sender: Any) {
+        errorLabel.isHidden = true
         indicator.isHidden = false
         // Fields are empty
         if emailField.text == "" || passwordField.text == "" {
@@ -99,6 +100,7 @@ class LoginViewController: UIViewController {
     
     // Sign Up
     @IBAction func signupPressed(_ sender: Any) {
+        errorLabel.isHidden = true
         // Fields are empty
         if emailField.text == "" || passwordField.text == "" {
             errorLabel.text = Login.emailPass
@@ -144,6 +146,7 @@ class LoginViewController: UIViewController {
     
     // Forgot Password
     @IBAction func forgotPressed(_ sender: Any) {
+        errorLabel.isHidden = true
         // Alert
         let alert = UIAlertController(title: "Reset password", message: "Please type your email address and a new password", preferredStyle: .alert)
         
