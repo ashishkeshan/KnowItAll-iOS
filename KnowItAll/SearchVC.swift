@@ -19,12 +19,17 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     var polls = [Poll]()
     var searchActive:Bool = false
     var index = 0
-    
+    private let refreshControl = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
         tableView.backgroundView = noResultsView // Set no results to background view
         search(param: "") // Load all polls/reviews initially
         
@@ -32,12 +37,21 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         nc.addObserver(forName:Notification.Name(rawValue:"searchQuery"),
                        object:nil, queue:nil,
                        using:catchNotification)
+        refreshControl.addTarget(self, action: #selector(refreshPage), for: .valueChanged)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc private func refreshPage() {
+        search(param: searchBar.text!)
+        tableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Hide the navigation bar on the this view controller
+        search(param: searchBar.text!)
+        tableView.reloadData()
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
@@ -67,6 +81,11 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
      * TABLE DELEGATE/DATASOURCE FUNCTIONS
      */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if polls.count + topics.count == 0 {
+            tableView.backgroundView?.isHidden = false
+        } else {
+            tableView.backgroundView?.isHidden = true
+        }
         return polls.count + topics.count
     }
     
