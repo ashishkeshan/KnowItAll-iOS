@@ -26,6 +26,7 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let createNewPostVC = self.tabBarController?.viewControllers![2] as! CreateNewPostVC
         createNewPostVC.fillReview(topic: (topic?.title)!, catId: (topic?.category)!)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
