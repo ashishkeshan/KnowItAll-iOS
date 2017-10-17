@@ -19,7 +19,7 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topView: UIView!
     let nc = NotificationCenter.default
-    
+    private let refreshControl = UIRefreshControl()
     var topicData = [Topic]()
     var pollData = [Poll]()
     var index = 0
@@ -28,6 +28,11 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
         searchBar.delegate = self
         segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
         let clickAcademic = UITapGestureRecognizer(target: self, action:  #selector (self.academicViewTouched (_:)))
@@ -38,14 +43,26 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         self.entertainmentView.addGestureRecognizer(clickEntertainment)
         let clickLocations = UITapGestureRecognizer(target: self, action:  #selector (self.locationsViewTouched (_:)))
         self.locationsView.addGestureRecognizer(clickLocations)
-        
+        refreshControl.addTarget(self, action: #selector(refreshPage), for: .valueChanged)
         loadTrending()
+    }
+    
+    @objc private func refreshPage() {
+        loadTrending()
+        tableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        print("VIEW APPEARED")
+        searchBar.text = ""
+        topicData.removeAll()
+        pollData.removeAll()
+        loadTrending()
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

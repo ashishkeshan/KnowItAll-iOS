@@ -15,7 +15,7 @@ class TabBar: UITabBarController {
         viewControllers?.forEach { $0.childViewControllers.forEach { $0.view } }
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
