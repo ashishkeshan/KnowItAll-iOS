@@ -8,16 +8,18 @@
 
 import Foundation
 import SwiftyJSON
+//var host = "https://0a79ab09.ngrok.io/api"
+var host = "http://127.0.0.1:8000/api"
 
 func getJSONFromURL(_ urlString: String, _ type: String) -> JSON {
-    var url = "https://0a79ab09.ngrok.io/api" + urlString
+    var url = host + urlString
     url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
     var json = JSON.null
     var queryFinished = false
 
     let request = NSMutableURLRequest(url: URL(string: url)!)
     request.httpMethod = type
-
+    
     let task = URLSession.shared.dataTask(with: request as URLRequest){ data,response,error in
         if error != nil {
             print(error?.localizedDescription ?? "")
