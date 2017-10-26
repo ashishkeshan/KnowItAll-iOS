@@ -92,6 +92,12 @@ class CreateNewPostVC: UIViewController {
         typeField.text = "Please select a category first"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        pressed1(nil)
+        typeField.text = ""
+        ratings.rating = 0
+    }
+    
     func fillReview(topic:String, catId : Int) {
         typeField.text = topic
         switch catId {
@@ -261,7 +267,6 @@ class CreateNewPostVC: UIViewController {
         location.alpha = 0.5
         question.isUserInteractionEnabled = true
         question.isEnabled = true
-        typeField.text = ""
     }
     func pressed2(_ sender: AnyObject?) {
         category = 2
@@ -271,7 +276,6 @@ class CreateNewPostVC: UIViewController {
         location.alpha = 0.5
         question.isUserInteractionEnabled = true
         question.isEnabled = true
-        typeField.text = ""
     }
     func pressed3(_ sender: AnyObject?) {
         category = 3
@@ -281,7 +285,6 @@ class CreateNewPostVC: UIViewController {
         location.alpha = 0.5
         question.isUserInteractionEnabled = true
         question.isEnabled = true
-        typeField.text = ""
     }
     func pressed4(_ sender: AnyObject?) {
         category = 4
@@ -291,7 +294,6 @@ class CreateNewPostVC: UIViewController {
         location.alpha = 1.0
         question.isUserInteractionEnabled = true
         question.isEnabled = true
-        typeField.text = ""
     }
     
     @IBAction func indexChanged(_ sender: Any) {
