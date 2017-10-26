@@ -331,7 +331,7 @@
 				TargetAttributes = {
 					758A32961F85A4D900838DDA = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 38FZD6KTC7;
+						DevelopmentTeam = U8849KWVAR;
 						ProvisioningStyle = Automatic;
 					};
 					75C838351FA16D5000643EFF = {
@@ -622,10 +622,10 @@
 			baseConfigurationReference = 7EBDFBE2BA2E3DA09DA4C697 /* Pods-KnowItAll.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 38FZD6KTC7;
+				DEVELOPMENT_TEAM = U8849KWVAR;
 				INFOPLIST_FILE = KnowItAll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ashishkeshan.KnowItAll;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knowItAll.KnowItAll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -636,10 +636,10 @@
 			baseConfigurationReference = 505B88AA0558E2344579971B /* Pods-KnowItAll.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 38FZD6KTC7;
+				DEVELOPMENT_TEAM = U8849KWVAR;
 				INFOPLIST_FILE = KnowItAll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ashishkeshan.KnowItAll;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knowItAll.KnowItAll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
