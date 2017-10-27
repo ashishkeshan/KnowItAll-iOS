@@ -89,7 +89,7 @@ class LoginViewController: UIViewController {
                 errorLabel.isHidden = false
             }
         } else {
-            errorLabel.text = "Could not verify email"
+            errorLabel.text = "Sorry, email not found. Please sign up first."
             errorLabel.isHidden = false
             indicator.isHidden = true
             return
