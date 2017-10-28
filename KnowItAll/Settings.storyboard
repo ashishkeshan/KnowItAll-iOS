@@ -322,7 +322,11 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNK-I1-3rD">
                                 <rect key="frame" x="160" y="335" width="55" height="30"/>
-                                <state key="normal" title="Confirm"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" label="Confirm"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="confirm:" destination="ys0-k5-rX0" eventType="touchUpInside" id="y72-0V-Xb7"/>
                                 </connections>
@@ -339,6 +343,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="confirmButton" destination="qNK-I1-3rD" id="RQg-Qr-tmQ"/>
                         <outlet property="stars" destination="Lp4-x6-NB4" id="jQS-8l-r53"/>
                     </connections>
                 </viewController>
@@ -360,7 +365,10 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMf-iA-ATa">
                                 <rect key="frame" x="160" y="315" width="55" height="30"/>
-                                <state key="normal" title="Confirm"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="confirm:" destination="ys0-k5-rX0" eventType="touchUpInside" id="gAk-jS-g5F"/>
                                     <action selector="confirm:" destination="HLP-d9-dXO" eventType="touchUpInside" id="slX-YJ-xMP"/>
@@ -390,6 +398,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="confirmButton" destination="vMf-iA-ATa" id="pUA-xM-v2M"/>
                         <outlet property="feedback" destination="LRb-Yf-5pN" id="jgY-g8-Nlg"/>
                     </connections>
                 </viewController>

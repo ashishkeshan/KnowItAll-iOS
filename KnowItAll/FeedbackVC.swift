@@ -9,7 +9,8 @@
 import UIKit
 
 class FeedbackVC: UIViewController {
-
+    
+    @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var feedback: UITextView!
     @IBAction func confirm(_ sender: Any) {
         let alert = UIAlertController(title: "Feedback Confirmed", message: "Feedback has been sent", preferredStyle: UIAlertControllerStyle.alert)
@@ -28,6 +29,10 @@ class FeedbackVC: UIViewController {
         feedback.text = "Enter feedback here"
         feedback.textColor = UIColor.lightGray
         
+        confirmButton.layer.cornerRadius = 15
+        confirmButton.layer.borderWidth = 1
+        confirmButton.layer.borderColor = UIColor.red.cgColor
+        confirmButton.setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
         // Do any additional setup after loading the view.
     }
 

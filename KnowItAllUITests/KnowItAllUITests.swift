@@ -247,6 +247,54 @@ class KnowItAllUITests: XCTestCase {
         tabBarsQuery.buttons["Settings"].tap()
         app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
+    }
+    
+    func testSendFeedback() {
         
+        let app = XCUIApplication()
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("12345")
+        app.buttons["Login"].tap()
+        app.tabBars.buttons["Settings"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Submit Feedback"]/*[[".cells.staticTexts[\"Submit Feedback\"]",".staticTexts[\"Submit Feedback\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let textView = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textView).element
+        textView.tap()
+        textView.typeText("TEST")
+        app.buttons["Confirm"].tap()
+        app.alerts["Feedback Confirmed"].buttons["Ok"].tap()
+        app.navigationBars["Submit Feedback"].buttons["Settings"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
+    }
+    
+    func testRateKnowItAll() {
+        
+        let app = XCUIApplication()
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("12345")
+        app.buttons["Login"].tap()
+        app.tabBars.buttons["Settings"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Rate KnowItAll"]/*[[".cells.staticTexts[\"Rate KnowItAll\"]",".staticTexts[\"Rate KnowItAll\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.otherElements["Rating"].tap()
+        app.buttons["Confirm"].tap()
+        app.alerts["Rating Confirmed"].buttons["Ok"].tap()
+        app.navigationBars["Rate KnowItAll!"].buttons["Settings"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
     }
 }

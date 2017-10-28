@@ -10,6 +10,7 @@ import UIKit
 import Cosmos
 
 class rateVC: UIViewController {
+    @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var stars: CosmosView!
     
     @IBAction func confirm(_ sender: Any) {
@@ -27,6 +28,11 @@ class rateVC: UIViewController {
         stars.settings.fillMode = .full
         stars.settings.starSize = 50
         stars.rating = 0
+        
+        confirmButton.layer.cornerRadius = 15
+        confirmButton.layer.borderWidth = 1
+        confirmButton.layer.borderColor = UIColor.red.cgColor
+        confirmButton.setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
         // Do any additional setup after loading the view.
     }
     
