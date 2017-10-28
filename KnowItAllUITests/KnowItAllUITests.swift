@@ -297,4 +297,55 @@ class KnowItAllUITests: XCTestCase {
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
     }
+    
+    func testHomepageDisplaysPollsAndReviews() {
+        
+        let app = XCUIApplication()
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("12345")
+        app.buttons["Login"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Polls"]/*[[".segmentedControls.buttons[\"Polls\"]",".buttons[\"Polls\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Review"]/*[[".segmentedControls.buttons[\"Review\"]",".buttons[\"Review\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Polls"]/*[[".segmentedControls.buttons[\"Polls\"]",".buttons[\"Polls\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Review"]/*[[".segmentedControls.buttons[\"Review\"]",".buttons[\"Review\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.tabBars.buttons["Settings"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
+    }
+    
+    func testMyPostDisplaysPollsAndReviews() {
+        
+        let app = XCUIApplication()
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("12345")
+        app.buttons["Login"].tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["My Posts"].tap()
+        
+        let pollsButton = app/*@START_MENU_TOKEN@*/.buttons["Polls"]/*[[".segmentedControls.buttons[\"Polls\"]",".buttons[\"Polls\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        pollsButton.tap()
+        
+        let reviewButton = app/*@START_MENU_TOKEN@*/.buttons["Review"]/*[[".segmentedControls.buttons[\"Review\"]",".buttons[\"Review\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        reviewButton.tap()
+        pollsButton.tap()
+        reviewButton.tap()
+        tabBarsQuery.buttons["Settings"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
+        
+    }
 }
