@@ -117,4 +117,136 @@ class KnowItAllUITests: XCTestCase {
         yesButton.tap()
     }
     
+    func testCreateNewReview() {
+        
+        let app = XCUIApplication()
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("12345")
+        app.buttons["Login"].tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Create New Post"].tap()
+        
+        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 1)
+        element.tap()
+        
+        let topicTextField = app.textFields["Topic"]
+        topicTextField.tap()
+        topicTextField.typeText("TEST")
+        app.otherElements["Rating"].tap()
+        
+        let textView = element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 3).children(matching: .textView).element
+        textView.tap()
+        textView.tap()
+        textView.typeText("for testing purposes only")
+        app.buttons["Create"].tap()
+        app.alerts["Success"].buttons["Done"]/*@START_MENU_TOKEN@*/.press(forDuration: 0.5);/*[[".tap()",".press(forDuration: 0.5);"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        
+        app.tabBars.buttons["Settings"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
+    }
+    
+    func testCreateNewPoll() {
+        
+        let app2 = XCUIApplication()
+        let emailTextField = app2.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
+        
+        let passwordSecureTextField = app2.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("12345")
+        
+        let app = app2
+        app.buttons["Login"].tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Create New Post"].tap()
+        app2/*@START_MENU_TOKEN@*/.buttons["Polls"]/*[[".segmentedControls.buttons[\"Polls\"]",".buttons[\"Polls\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let emptyListTable = app.tables["Empty list"]
+        let questionTextField = emptyListTable.textFields["Question"]
+        questionTextField.tap()
+        questionTextField.typeText("FOR TESTING PURPOSES")
+        emptyListTable.buttons["Forever"].tap()
+        
+        let answerChoicesTextField = emptyListTable.textFields["Answer Choices"]
+        answerChoicesTextField.tap()
+        answerChoicesTextField.tap()
+        answerChoicesTextField.typeText("a")
+        
+        let addButton = emptyListTable.buttons["Add"]
+        addButton.tap()
+        
+        let tablesQuery = app2.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["a"]/*[[".cells.staticTexts[\"a\"]",".staticTexts[\"a\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeLeft()
+        
+        let tablesQuery2 = app.tables
+        tablesQuery2.buttons["Delete"].tap()
+        emptyListTable.tap()
+        emptyListTable.tap()
+        answerChoicesTextField.tap()
+        answerChoicesTextField.typeText("b")
+        addButton.tap()
+        
+        let answerChoicesTextField2 = tablesQuery2.textFields["Answer Choices"]
+        answerChoicesTextField2.tap()
+        answerChoicesTextField2.typeText("c")
+        
+        let addButton2 = tablesQuery2.buttons["Add"]
+        addButton2.tap()
+        answerChoicesTextField2.tap()
+        answerChoicesTextField2.typeText("d")
+        addButton2.tap()
+        app.buttons["Create"].tap()
+        app.alerts["Success"].buttons["Done"].tap()
+        tabBarsQuery.buttons["Settings"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
+    }
+    
+    func testCreateNewTopic() {
+        
+        let app = XCUIApplication()
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("12345")
+        app.buttons["Login"].tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Create New Post"].tap()
+        
+        let topicTextField = app.textFields["Topic"]
+        topicTextField.tap()
+        topicTextField.typeText("NEW TOPIC")
+        
+        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element
+        element.tap()
+        element.tap()
+        
+        let ratingElement = app.otherElements["Rating"]
+        ratingElement.tap()
+        ratingElement.tap()
+        
+        let textView = element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 3).children(matching: .textView).element
+        textView.tap()
+        textView.tap()
+        textView.typeText("TESTING PURPOSES ONLY")
+        app.buttons["Create"].tap()
+        app.alerts["Success"].buttons["Done"].tap()
+        tabBarsQuery.buttons["Settings"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
+        
+    }
 }
