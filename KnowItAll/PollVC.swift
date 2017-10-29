@@ -55,6 +55,10 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationController?.popViewController(animated: false)
+    }
+    
     func getPollInfo() {
 //        http://127.0.0.1:8000/api/getPost?type=poll&text=Who is the best teammate?
         let urlString = "/getPost?type=poll&text=" + (poll?.title)!
@@ -121,7 +125,6 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let oldSelectionCell = tableView.cellForRow(at: prevSelected!) as! PollOptionCell
             oldSelectionCell.optionPercent.textColor = UIColor.lightGray
             oldSelectionCell.optionName.textColor = UIColor.lightGray
-            print("GOT TO HERE")
         }
         prevSelected = indexPath
         let cell = tableView.cellForRow(at: indexPath) as! PollOptionCell

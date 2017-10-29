@@ -346,6 +346,97 @@ class KnowItAllUITests: XCTestCase {
         tabBarsQuery.buttons["Settings"].tap()
         app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
+    }
+    
+    func testSearch() {
         
+        let app = XCUIApplication()
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("12345")
+        app.buttons["Login"].tap()
+        
+        let searchKnowitallSearchField = app.searchFields["Search KnowItAll..."]
+        searchKnowitallSearchField.tap()
+        searchKnowitallSearchField.typeText("csci")
+        app.typeText("\r")
+        app.tabBars.buttons["Settings"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
+        
+    }
+    
+    func testClickOnTopic() {
+        let app = XCUIApplication()
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("12345")
+        app.buttons["Login"].tap()
+        
+        let cells = app.tables.cells
+        cells.element(boundBy: 0).tap()
+    
+        app.tabBars.buttons["Settings"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
+        
+    }
+    
+    func testVoteOnPoll() {
+        
+        let app = XCUIApplication()
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("12345")
+        app.buttons["Login"].tap()
+        
+        app.tables/*@START_MENU_TOKEN@*/.buttons["Polls"]/*[[".segmentedControls.buttons[\"Polls\"]",".buttons[\"Polls\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        var cells = app.tables.cells
+        cells.element(boundBy: 0).tap()
+        
+        cells = app.tables.cells
+        cells.element(boundBy: 1).tap()
+
+        app.tabBars.buttons["Settings"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
+        
+    }
+    
+    func testChangeVoteOnPoll() {
+        let app = XCUIApplication()
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("12345")
+        app.buttons["Login"].tap()
+        
+        app.tables/*@START_MENU_TOKEN@*/.buttons["Polls"]/*[[".segmentedControls.buttons[\"Polls\"]",".buttons[\"Polls\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        var cells = app.tables.cells
+        cells.element(boundBy: 1).tap()
+        
+        cells = app.tables.cells
+        cells.element(boundBy: 0).tap()
+        cells.element(boundBy: 1).tap()
+        cells.element(boundBy: 0).tap()
+        
+        app.tabBars.buttons["Settings"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
     }
 }

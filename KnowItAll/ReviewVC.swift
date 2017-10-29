@@ -60,6 +60,10 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationController?.popViewController(animated: false)
+    }
+    
     func getReviews() {
 //        http://127.0.0.1:8000/api/getPost?type=topic&text=CSCI 310
         print("see if this works")
