@@ -601,36 +601,7 @@ class KnowItAllUITests: XCTestCase {
                 
     }
     
-    func testAddReviewAsGuest() {
-        
-//        let app = XCUIApplication()
-//        app.buttons["Continue as Guest"].tap()
-//
-//        let tabBarsQuery = app.tabBars
-//        tabBarsQuery.buttons["Create New Post"].tap()
-//
-//        let topicTextField = app.textFields["Topic"]
-//        topicTextField.tap()
-//        topicTextField.typeText("test")
-//        app.otherElements["Rating"].tap()
-//        app.buttons["Create"].tap()
-//        app.alerts["Error!"].buttons["Done"].tap()
-//        tabBarsQuery.buttons["Settings"].tap()
-//        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Log In"]/*[[".cells.staticTexts[\"Log In\"]",".staticTexts[\"Log In\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        
-        
-//        let app = XCUIApplication()
-//        app.buttons["Continue as Guest"].tap()
-//
-//        let tablesQuery = app.tables
-//
-//        let tabBarsQuery = app.tabBars
-//        tabBarsQuery.buttons["Create New Post"].tap()
-//        app.buttons["Create"].tap()
-//        app.alerts["Error!"].buttons["Done"].tap()
-//        tabBarsQuery.buttons["Settings"].tap()
-//        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Log In"]/*[[".cells.staticTexts[\"Log In\"]",".staticTexts[\"Log In\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        
+    func testCreateTopicAsGuest() {
         
         let app = XCUIApplication()
         app.buttons["Continue as Guest"].tap()
@@ -652,6 +623,87 @@ class KnowItAllUITests: XCTestCase {
         element.tap()
         tabBarsQuery.buttons["Settings"].tap()
         app.tables/*@START_MENU_TOKEN@*/.staticTexts["Log In"]/*[[".cells.staticTexts[\"Log In\"]",".staticTexts[\"Log In\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+    }
+    
+    func testAddPollAsGuest() {
+        
+        let app = XCUIApplication()
+        app.buttons["Continue as Guest"].tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Create New Post"].tap()
+        
+        app/*@START_MENU_TOKEN@*/.buttons["Polls"]/*[[".segmentedControls.buttons[\"Polls\"]",".buttons[\"Polls\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let emptyListTable = app.tables["Empty list"]
+        let questionTextField = emptyListTable.textFields["Question"]
+        questionTextField.tap()
+        questionTextField.typeText("Will this work?")
+        emptyListTable.buttons["Forever"].tap()
+        emptyListTable.tap()
+        
+        let answerChoicesTextField = emptyListTable.textFields["Answer Choices"]
+        answerChoicesTextField.tap()
+        answerChoicesTextField.tap()
+        answerChoicesTextField.typeText("a")
+        emptyListTable.buttons["Add"].tap()
+        
+        let questionTable = app/*@START_MENU_TOKEN@*/.tables.containing(.textField, identifier:"Question").element/*[[".tables.containing(.textField, identifier:\"Days\").element",".tables.containing(.button, identifier:\"Forever\").element",".tables.containing(.textField, identifier:\"Answer Choices\").element",".tables.containing(.button, identifier:\"Add\").element",".tables.containing(.textField, identifier:\"Question\").element"],[[[-1,4],[-1,3],[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        questionTable.tap()
+        questionTable.tap()
+        
+        let tablesQuery = app.tables
+        let answerChoicesTextField2 = tablesQuery.textFields["Answer Choices"]
+        answerChoicesTextField2.tap()
+        answerChoicesTextField2.tap()
+        answerChoicesTextField2.typeText("b")
+        tablesQuery.buttons["Add"].tap()
+        app.buttons["Create"].tap()
+        app.alerts["Error!"].buttons["Done"].tap()
+        tabBarsQuery.buttons["Settings"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Log In"]/*[[".cells.staticTexts[\"Log In\"]",".staticTexts[\"Log In\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+    }
+    
+    func testAddReviewToExistingTopicAsGuest() {
+        let app = XCUIApplication()
+        let tabBarsQuery = app.tabBars
+        app.buttons["Continue as Guest"].tap()
+        let cells = app.tables.cells
+        cells.element(boundBy: 0).tap()
+        app.buttons["Add Review"].tap()
+        app.alerts["Error!"].buttons["Done"].tap()
+        tabBarsQuery.buttons["Settings"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Log In"]/*[[".cells.staticTexts[\"Log In\"]",".staticTexts[\"Log In\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+    }
+    
+    func testAddVoteAsGuest() {
+        
+        let app = XCUIApplication()
+        let tabBarsQuery = app.tabBars
+        app.buttons["Continue as Guest"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.buttons["Polls"]/*[[".segmentedControls.buttons[\"Polls\"]",".buttons[\"Polls\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        var cells = app.tables.cells
+        cells.element(boundBy: 0).tap()
+        cells = app.tables.cells
+        cells.element(boundBy: 1).tap()
+        app.alerts["Error!"].buttons["Done"].tap()
+        tabBarsQuery.buttons["Settings"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Log In"]/*[[".cells.staticTexts[\"Log In\"]",".staticTexts[\"Log In\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+    }
+    
+    func testChangePasswordAsGuest() {
+        
+        let app = XCUIApplication()
+        app.buttons["Continue as Guest"].tap()
+        app.tabBars.buttons["Settings"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Change Password"]/*[[".cells.staticTexts[\"Change Password\"]",".staticTexts[\"Change Password\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.alerts["Error!"].buttons["Done"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Log In"]/*[[".cells.staticTexts[\"Log In\"]",".staticTexts[\"Log In\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         
     }
 }
