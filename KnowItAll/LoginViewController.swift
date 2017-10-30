@@ -39,6 +39,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func guestLoginPressed(_ sender: Any) {
+        errorLabel.alpha = 0
         userDefaults.set("", forKey: Login.emailKey)
         let storyboard = UIStoryboard(name: "TabBar", bundle:nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "TabBar")

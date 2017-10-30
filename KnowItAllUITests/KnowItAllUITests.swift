@@ -591,4 +591,33 @@ class KnowItAllUITests: XCTestCase {
         app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
     }
+    
+    func testContinueAsGuest() {
+        
+        let app = XCUIApplication()
+        app.buttons["Continue as Guest"].tap()
+        app.tabBars.buttons["Settings"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Log In"]/*[[".cells.staticTexts[\"Log In\"]",".staticTexts[\"Log In\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+                
+    }
+    
+    func testAddReviewAsGuest() {
+        
+        let app = XCUIApplication()
+        app.buttons["Continue as Guest"].tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Create New Post"].tap()
+        
+        let topicTextField = app.textFields["Topic"]
+        topicTextField.tap()
+        topicTextField.typeText("test")
+        app.otherElements["Rating"].tap()
+        app.buttons["Create"].tap()
+        app.alerts["Error!"].buttons["Done"].tap()
+        tabBarsQuery.buttons["Settings"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Log In"]/*[[".cells.staticTexts[\"Log In\"]",".staticTexts[\"Log In\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        
+    }
 }
