@@ -220,7 +220,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
                     print("poll")
                     let opts = [String]()
                     let distribution = Set<Int>()
-                    let temp = Poll.init(id: r["id"].intValue, type: 2, time: r["dayLimit"].doubleValue, option: opts, distribution: distribution, votes: r["numVotes"].intValue, text: r["text"].stringValue, cat: r["categoryID"].intValue)
+                    let temp = Poll.init(id: r["id"].intValue, type: 2, time: r["dayLimit"].intValue, option: opts, distribution: distribution, votes: r["numVotes"].intValue, text: r["text"].stringValue, cat: r["categoryID"].intValue)
                     polls.append(temp)
                 }
                 else {

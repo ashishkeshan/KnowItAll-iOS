@@ -213,7 +213,7 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         for data in json["data"].arrayValue {
             let opts = [String]()
             let distribution = Set<Int>()
-            let temp = Poll.init(id: data["id"].intValue, type: 2, time: data["dayLimit"].doubleValue, option: opts, distribution: distribution, votes: data["numVotes"].intValue, text: data["text"].stringValue, cat: data["categoryID"].intValue)
+            let temp = Poll.init(id: data["id"].intValue, type: 2, time: data["dayLimit"].intValue, option: opts, distribution: distribution, votes: data["numVotes"].intValue, text: data["text"].stringValue, cat: data["categoryID"].intValue)
             pollData.append(temp)
         }
         tableView.reloadData()

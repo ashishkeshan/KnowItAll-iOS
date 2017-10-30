@@ -139,8 +139,9 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             for pc in pcs[id].arrayValue {
                 options.append(pc["text"].stringValue)
             }
+            let time = poll["dayLimit"].intValue
             
-            pollData.append(Poll.init(id:Int(id)!, type:2, time:0.0, option:options, distribution:Set<Int>(), votes:numVotes, text:text, cat:Int(category)!))
+            pollData.append(Poll.init(id:Int(id)!, type:2, time: time, option:options, distribution:Set<Int>(), votes:numVotes, text:text, cat:Int(category)!))
         }
         tableView.reloadData()
     }

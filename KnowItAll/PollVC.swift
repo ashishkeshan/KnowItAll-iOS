@@ -26,6 +26,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var pc = ""
     var idx = -1
     var flag = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -39,6 +40,11 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         colorsArray.append(UIColor(red:1.00, green:0.58, blue:0.00, alpha:1.0))
         pollTitle.text = poll?.title
         numVotes.text = String(describing: (poll?.numVotes)!) + " votes"
+        if(poll?.timeLeft != 0) {
+            timeLeft.text = String(describing: (poll?.timeLeft)!) + " Days Left"
+        } else {
+            timeLeft.text = "Poll lasts forever"
+        }
         email = UserDefaults.standard.string(forKey: Login.emailKey)!
         let urlString = "/vote?username=\(email)&pollText=\((poll?.title)!)"
         let json = getJSONFromURL(urlString, "POST")
