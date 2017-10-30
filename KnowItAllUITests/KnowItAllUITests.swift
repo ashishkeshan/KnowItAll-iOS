@@ -439,4 +439,112 @@ class KnowItAllUITests: XCTestCase {
         app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
     }
+    
+    func testInvalidPollCreation() {
+        
+        let app = XCUIApplication()
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("12345")
+        app.buttons["Login"].tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Create New Post"].tap()
+        
+        let app2 = app
+        app2/*@START_MENU_TOKEN@*/.buttons["Polls"]/*[[".segmentedControls.buttons[\"Polls\"]",".buttons[\"Polls\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let emptyListTable = app.tables["Empty list"]
+        let questionTextField = emptyListTable.textFields["Question"]
+        questionTextField.tap()
+        questionTextField.typeText("What's your favorite color?")
+        emptyListTable.buttons["Forever"].tap()
+        
+        let addButton = emptyListTable.buttons["Add"]
+        addButton.tap()
+        emptyListTable.tap()
+        
+        let answerChoicesTextField = emptyListTable.textFields["Answer Choices"]
+        answerChoicesTextField.tap()
+        answerChoicesTextField.tap()
+        answerChoicesTextField.typeText("blue")
+        addButton.tap()
+        app.buttons["Create"].tap()
+        app.alerts["Warning!"].buttons["Done"].tap()
+        tabBarsQuery.buttons["Settings"].tap()
+        app2.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
+        
+    }
+    
+    func testInavlidTopicCreation() {
+        
+        let app = XCUIApplication()
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("12345")
+        app.buttons["Login"].tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Create New Post"].tap()
+        
+        let createButton = app.buttons["Create"]
+        createButton.tap()
+        
+        let doneButton = app.alerts["Warning!"].buttons["Done"]
+        doneButton.tap()
+        app.otherElements["Rating"].tap()
+        
+        let textView = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 3).children(matching: .textView).element
+        textView.tap()
+        textView.typeText("test")
+        createButton.tap()
+        doneButton.tap()
+        tabBarsQuery.buttons["Settings"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
+        
+    }
+    
+    func testInvalidTopicNoRating() {
+        
+        let app = XCUIApplication()
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("12345")
+        app.buttons["Login"].tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Create New Post"].tap()
+        
+        let topicTextField = app.textFields["Topic"]
+        topicTextField.tap()
+        topicTextField.typeText("error post")
+        
+        let textView = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 3).children(matching: .textView).element
+        textView.tap()
+        textView.typeText("give a warning")
+        let createButton = app.buttons["Create"]
+        createButton.tap()
+        
+        let doneButton = app.alerts["Warning!"].buttons["Done"]
+        doneButton.tap()
+        tabBarsQuery.buttons["My Posts"].tap()
+        tabBarsQuery.buttons["Settings"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
+        
+    }
 }

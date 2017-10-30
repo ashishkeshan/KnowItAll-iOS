@@ -124,6 +124,7 @@ class CreateNewPostVC: UIViewController {
         if(segementedControl.selectedSegmentIndex == 0) {
             //review
             let r = String(ratings.rating)
+            print("rating: " , r)
             let t = typeField.text!
             let c = comment.text!
             
@@ -134,8 +135,8 @@ class CreateNewPostVC: UIViewController {
                 return
             }
             
-            if(r == "") {
-                let alert = UIAlertController(title: "Warning!", message: "Please select a rating by selecting stars", preferredStyle: .alert)
+            if(r == "0.0") {
+                let alert = UIAlertController(title: "Warning!", message: "Please select a rating between 1-5 stars", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 return
