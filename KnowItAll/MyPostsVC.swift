@@ -58,7 +58,6 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SpecificPollCell", for: indexPath) as! SpecificPollCell
             cell.title.text = pollData[indexPath.row].title
             cell.voteNum.text = String(pollData[indexPath.row].numVotes) + " Votes"
-            cell.voteChoice.text = "You chose:"
             switch pollData[indexPath.row].category {
             case 1:
                 cell.img.image = UIImage(named: "Academic")
