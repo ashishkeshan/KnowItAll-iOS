@@ -332,11 +332,11 @@ class CreateNewPostVC: UIViewController {
         view.endEditing(true)
         
         answer.text = ""
-        if(choices.count == 5) {
-            answer.text = "5 Choices Max"
-            addButton.isEnabled = false
-            addButton.backgroundColor = UIColor.lightGray
-        }
+//        if(choices.count == 5) {
+//            answer.text = "5 Choices Max"
+//            addButton.isEnabled = false
+//            addButton.backgroundColor = UIColor.lightGray
+//        }
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
