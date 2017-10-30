@@ -26,6 +26,13 @@ class SettingsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
             case 0:
+                let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
+                if email == "" {
+                    let alert = UIAlertController(title: "Error!", message: "You must be logged in to perform this action!", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
                 performSegue(withIdentifier: "changePasswordSegue", sender: self)
                 break
             case 1:
