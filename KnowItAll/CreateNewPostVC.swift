@@ -120,6 +120,12 @@ class CreateNewPostVC: UIViewController {
 
     @IBAction func createPressed(_ sender: Any) {
         let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
+        if email == "" {
+            let alert = UIAlertController(title: "Error!", message: "You must be logged in to perform this action!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
         
         if(segementedControl.selectedSegmentIndex == 0) {
             //review

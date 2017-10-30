@@ -22,6 +22,13 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var ratings = [Double]()
     let nc = NotificationCenter.default
     @IBAction func addReview(_ sender: Any) {
+        let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
+        if email == "" {
+            let alert = UIAlertController(title: "Error!", message: "You must be logged in to perform this action!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
         self.tabBarController?.selectedIndex = 2
         let createNewPostVC = self.tabBarController?.viewControllers![2] as! CreateNewPostVC
         createNewPostVC.fillReview(topic: (topic?.title)!, catId: (topic?.category)!)

@@ -10,11 +10,9 @@ import UIKit
 
 class User: NSObject {
     var email: String?
-    var password: String?
     
-    init(_ email: String, _ password: String) {
+    init(_ email: String) {
         super.init()
         self.email = email
-        self.password = password
     }
 }

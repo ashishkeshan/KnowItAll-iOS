@@ -117,6 +117,13 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
+        if email == "" {
+            let alert = UIAlertController(title: "Error!", message: "You must be logged in to perform this action!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
         let urlString = "/vote?username=\(email)&pollText=" + (poll?.title)! + "&pollChoiceText=\(optionsList[indexPath.row])&deleteVote=0"
         print(urlString)
         let json = getJSONFromURL(urlString, "POST")
