@@ -11,6 +11,7 @@ import Cosmos
 
 class CreateNewPostVC: UIViewController {
 
+    @IBOutlet weak var anonymousButton: UIButton!
     @IBOutlet weak var segementedControl: UISegmentedControl!
     
     @IBOutlet weak var academic: UIView!
@@ -24,6 +25,7 @@ class CreateNewPostVC: UIViewController {
     
     //fields to send to backend
     var category:Int = -1
+    var anonymous:Bool = false;
     //poll fields
     @IBOutlet weak var question: UITextField!
     @IBOutlet weak var answer: UITextField!
@@ -73,6 +75,10 @@ class CreateNewPostVC: UIViewController {
         addButton.layer.borderWidth = 1
         addButton.layer.borderColor = UIColor.red.cgColor
         addButton.setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
+        anonymousButton.layer.cornerRadius = 5
+        anonymousButton.layer.borderWidth = 1
+        anonymousButton.layer.borderColor = UIColor.red.cgColor
+        anonymousButton.setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
         
         //setting up button press actions
         let clickAcademic = UITapGestureRecognizer(target: self, action: #selector(self.pressed1(_:)))
@@ -352,11 +358,23 @@ class CreateNewPostVC: UIViewController {
         } else {
             forever = false
             time.text = ""
-            foreverButton.backgroundColor = UIColor.red
-            foreverButton.layer.borderColor = UIColor.red.cgColor
+            foreverButton.backgroundColor = create.backgroundColor
+            foreverButton.layer.borderColor = create.backgroundColor?.cgColor
         }
     }
     
+    @IBAction func anonymousButtonPressed(_ sender: Any) {
+        if(anonymous == false) {
+            anonymousButton.backgroundColor = UIColor.blue
+            anonymousButton.layer.borderColor = UIColor.blue.cgColor
+            anonymous = true
+        }
+        else {
+            anonymousButton.backgroundColor = create.backgroundColor
+            anonymousButton.layer.borderColor = create.backgroundColor?.cgColor
+            anonymous = false
+        }
+    }
 }
 
 extension CreateNewPostVC: UITextViewDelegate, UITableViewDataSource, UITableViewDelegate {
