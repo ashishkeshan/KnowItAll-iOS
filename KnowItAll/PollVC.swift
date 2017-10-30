@@ -107,7 +107,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             percent = (Double(numVotesList[indexPath.row]) / Double(totVotes))
             percent = percent.rounded(toPlaces: 4)
         }
-        cell.optionName.text = optionsList[indexPath.row]
+        cell.optionName.text = optionsList[indexPath.row % colorsArray.count]
         cell.optionPercent.text = String(percent * 100) + "%"
         let frame = cell.percentFilled.frame
         cell.percentFilled.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: CGFloat(Double(screenWidth) * percent), height: frame.size.height)
