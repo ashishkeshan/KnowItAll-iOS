@@ -603,6 +603,35 @@ class KnowItAllUITests: XCTestCase {
     
     func testAddReviewAsGuest() {
         
+//        let app = XCUIApplication()
+//        app.buttons["Continue as Guest"].tap()
+//
+//        let tabBarsQuery = app.tabBars
+//        tabBarsQuery.buttons["Create New Post"].tap()
+//
+//        let topicTextField = app.textFields["Topic"]
+//        topicTextField.tap()
+//        topicTextField.typeText("test")
+//        app.otherElements["Rating"].tap()
+//        app.buttons["Create"].tap()
+//        app.alerts["Error!"].buttons["Done"].tap()
+//        tabBarsQuery.buttons["Settings"].tap()
+//        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Log In"]/*[[".cells.staticTexts[\"Log In\"]",".staticTexts[\"Log In\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        
+//        let app = XCUIApplication()
+//        app.buttons["Continue as Guest"].tap()
+//
+//        let tablesQuery = app.tables
+//
+//        let tabBarsQuery = app.tabBars
+//        tabBarsQuery.buttons["Create New Post"].tap()
+//        app.buttons["Create"].tap()
+//        app.alerts["Error!"].buttons["Done"].tap()
+//        tabBarsQuery.buttons["Settings"].tap()
+//        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Log In"]/*[[".cells.staticTexts[\"Log In\"]",".staticTexts[\"Log In\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        
         let app = XCUIApplication()
         app.buttons["Continue as Guest"].tap()
         
@@ -611,13 +640,18 @@ class KnowItAllUITests: XCTestCase {
         
         let topicTextField = app.textFields["Topic"]
         topicTextField.tap()
-        topicTextField.typeText("test")
+        topicTextField.typeText("Test")
         app.otherElements["Rating"].tap()
+        
+        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element
+        let textView = element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 3).children(matching: .textView).element
+        textView.tap()
+        textView.tap()
         app.buttons["Create"].tap()
         app.alerts["Error!"].buttons["Done"].tap()
+        element.tap()
         tabBarsQuery.buttons["Settings"].tap()
         app.tables/*@START_MENU_TOKEN@*/.staticTexts["Log In"]/*[[".cells.staticTexts[\"Log In\"]",".staticTexts[\"Log In\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        
         
     }
 }
