@@ -172,6 +172,9 @@
                                                     <state key="normal" title="Edit">
                                                         <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="editPressed:" destination="dXq-cm-hfk" eventType="touchUpInside" id="Y9e-C4-wKO"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

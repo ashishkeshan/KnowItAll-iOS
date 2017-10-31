@@ -165,6 +165,11 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             vc?.poll = self.pollData[self.index]
             vc?.getPollInfo()
         }
+        else if segue.destination is EditReviewPageVC {
+            let vc = segue.destination as? EditReviewPageVC
+            vc?.review = self.reviewData[self.index]
+            vc?.getReviewInfo()
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -175,4 +180,8 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
 
+    @IBAction func editPressed(_ sender: Any) {
+        //use prepare for segue to edit the data
+        performSegue(withIdentifier: "editReviewSegue", sender: self)
+    }
 }
