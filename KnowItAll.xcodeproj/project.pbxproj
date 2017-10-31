@@ -45,6 +45,7 @@
 		758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */; };
 		758A32CD1F8836FA00838DDA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		758A32D11F8B326E00838DDA /* TopicReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32D01F8B326E00838DDA /* TopicReviewCell.swift */; };
+		758BC7E61FA830DC000E2BFB /* CreateReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758BC7E51FA830DC000E2BFB /* CreateReviewVC.swift */; };
 		75C838391FA16D5000643EFF /* KnowItAllUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C838381FA16D5000643EFF /* KnowItAllUITests.swift */; };
 		75D59E411F8C3A3C00F3C854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75D59E401F8C3A3C00F3C854 /* Assets.xcassets */; };
 		75F135391F92BBAD00C07A0F /* PollPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F135381F92BBAD00C07A0F /* PollPage.storyboard */; };
@@ -108,6 +109,7 @@
 		758A32C41F870BE500838DDA /* CreateNewPost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateNewPost.storyboard; sourceTree = "<group>"; };
 		758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPostVC.swift; sourceTree = "<group>"; };
 		758A32D01F8B326E00838DDA /* TopicReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicReviewCell.swift; sourceTree = "<group>"; };
+		758BC7E51FA830DC000E2BFB /* CreateReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateReviewVC.swift; path = /Users/ashish/Documents/KnowItAll/KnowItAll/KnowItAll/CreateReviewVC.swift; sourceTree = "<absolute>"; };
 		75C838361FA16D5000643EFF /* KnowItAllUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnowItAllUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C838381FA16D5000643EFF /* KnowItAllUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowItAllUITests.swift; sourceTree = "<group>"; };
 		75C8383A1FA16D5000643EFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 		758A32BF1F870A6900838DDA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				758BC7E51FA830DC000E2BFB /* CreateReviewVC.swift */,
 				026E11A41F9058A50075FF7D /* FeedbackVC.swift */,
 				02E31B741F90494000B4AAF2 /* rateVC.swift */,
 				02F2CB171F8804540013F88D /* SettingsVC.swift */,
@@ -331,7 +334,7 @@
 				TargetAttributes = {
 					758A32961F85A4D900838DDA = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = U8849KWVAR;
+						DevelopmentTeam = 44BCGLCVUS;
 						ProvisioningStyle = Automatic;
 					};
 					75C838351FA16D5000643EFF = {
@@ -468,6 +471,7 @@
 				758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */,
 				02D95BCF1F8B232F00E57721 /* NotificationCell.swift in Sources */,
 				758A32B71F87068A00838DDA /* HomePage.swift in Sources */,
+				758BC7E61FA830DC000E2BFB /* CreateReviewVC.swift in Sources */,
 				758A32BD1F8709EC00838DDA /* MyPostsVC.swift in Sources */,
 				026E11A51F9058A50075FF7D /* FeedbackVC.swift in Sources */,
 				75F1353D1F92C81300C07A0F /* PollVC.swift in Sources */,
@@ -622,10 +626,10 @@
 			baseConfigurationReference = 7EBDFBE2BA2E3DA09DA4C697 /* Pods-KnowItAll.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U8849KWVAR;
+				DEVELOPMENT_TEAM = 44BCGLCVUS;
 				INFOPLIST_FILE = KnowItAll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.knowItAll.KnowItAll;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knowItAll.KnowItAll2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -636,10 +640,10 @@
 			baseConfigurationReference = 505B88AA0558E2344579971B /* Pods-KnowItAll.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U8849KWVAR;
+				DEVELOPMENT_TEAM = 44BCGLCVUS;
 				INFOPLIST_FILE = KnowItAll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.knowItAll.KnowItAll;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knowItAll.KnowItAll2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

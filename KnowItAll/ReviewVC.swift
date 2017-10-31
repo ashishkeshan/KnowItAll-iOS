@@ -20,6 +20,7 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var topic : Topic? = nil
     var comments = [String]()
     var ratings = [Double]()
+    var segueFlag = false
     let nc = NotificationCenter.default
     @IBAction func addReview(_ sender: Any) {
         let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
@@ -28,10 +29,24 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
+        } else {
+            performSegue(withIdentifier: "popoverSegue", sender: self)
         }
-        self.tabBarController?.selectedIndex = 2
-        let createNewPostVC = self.tabBarController?.viewControllers![2] as! CreateNewPostVC
-        createNewPostVC.fillReview(topic: (topic?.title)!, catId: (topic?.category)!)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        segueFlag = true
+        print("seguing")
+//        if segue.destination is PollVC {
+//            let vc = segue.destination as? PollVC
+//            vc?.poll = self.pollData[self.index]
+//            vc?.getPollInfo()
+//        } else if segue.destination is ReviewVC {
+//            let vc = segue.destination as? ReviewVC
+//            vc?.topic = self.topicData[self.index]
+//            vc?.getReviews()
+//        }
     }
     
     override func viewDidLoad() {
@@ -68,7 +83,12 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        self.navigationController?.popViewController(animated: false)
+        if !segueFlag {
+           self.navigationController?.popViewController(animated: false)
+        } else {
+            segueFlag = false
+        }
+        
     }
     
     func getReviews() {
