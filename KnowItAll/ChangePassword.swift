@@ -58,7 +58,6 @@ class ChangePassword: UIViewController {
         
         // Check old password
         let authString = "/login?username="+email+"&password="+op!
-        print(authString)
         let json = getJSONFromURL(authString, "POST")
         
         // Old password is incorrect

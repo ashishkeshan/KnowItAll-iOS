@@ -136,7 +136,6 @@ class CreateNewPostVC: UIViewController {
         if(segementedControl.selectedSegmentIndex == 0) {
             //review
             let r = String(ratings.rating)
-            print("rating: " , r)
             let t = typeField.text!
             let c = comment.text!
             

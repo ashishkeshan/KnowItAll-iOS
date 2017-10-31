@@ -65,7 +65,6 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
      * NOTIFICATION FUNCTIONS
      */
     func catchNotification(notification:Notification) -> Void {
-        print("Catch notification")
         let userInfo = notification.userInfo
         let query = userInfo?["query"] as? String
         searchBar.text = query
@@ -92,7 +91,6 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //determining which cell to use (poll vs topic)
         if indexPath.row < (topics.count) {
-            print("review:" + String(indexPath.row))
             let cell = tableView.dequeueReusableCell(withIdentifier: "TopicReviewCell", for: indexPath) as! TopicReviewCell
             cell.starRating.rating = topics[indexPath.row].rating
             cell.postTitle.text = topics[indexPath.row].title
@@ -115,7 +113,6 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             }
             return cell
         } else {
-            print("poll:" + String(indexPath.row))
             let cell = tableView.dequeueReusableCell(withIdentifier: "TopicPollCell", for: indexPath) as! TopicPollCell
             cell.pollName.text = polls[indexPath.row-topics.count].title
             cell.numVotesLabel.text = "Votes: " + String(polls[indexPath.row-topics.count].numVotes)
@@ -203,7 +200,6 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         var urlString = ""
         urlString = (searchBar.text! == "") ? "/getTrending?type=all": "/search?query=" + searchBar.text!
         
-        print(urlString)
         
         let json = getJSONFromURL(urlString, "GET")
 //        print(json)
@@ -211,20 +207,17 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         
         // Check if status is good
         if status == 200 {
-            print("good status")
             for r in json["data"].arrayValue {
                 
                 //returns null if its poll
                 //polls dont have this attribute
                 if(r["numReviews"] == JSON.null) {
-                    print("poll")
                     let opts = [String]()
                     let distribution = Set<Int>()
                     let temp = Poll.init(id: r["id"].intValue, type: 2, time: r["dayLimit"].intValue, option: opts, distribution: distribution, votes: r["numVotes"].intValue, text: r["text"].stringValue, cat: r["categoryID"].intValue)
                     polls.append(temp)
                 }
                 else {
-                    print("review")
                     let temp = Topic.init(votes: r["numReviews"].intValue, title: r["title"].stringValue, rating: r["avRating"].doubleValue, cat: r["category"].intValue)
                     topics.append(temp)
                 }
@@ -237,6 +230,5 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         }
         
         self.tableView.reloadData()
-        print(param + ":" + String(topics.count+polls.count))
     }
 }

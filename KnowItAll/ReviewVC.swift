@@ -73,19 +73,13 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func getReviews() {
 //        http://127.0.0.1:8000/api/getPost?type=topic&text=CSCI 310
-        print("see if this works")
         let urlString = "/getPost?type=topic&text=" + (topic?.title)!
-        print(urlString)
         
         let json = getJSONFromURL(urlString, "GET")
         let status = json["status"]
-        print("status: ", status)
         // Check if status is good
         if status == 200 {
-            print("HERE")
             for review in json["reviews"].arrayValue {
-                print(review["comment"].string!)
-                print(Double(review["rating"].stringValue)!)
                 comments.append(review["comment"].string!)
                 ratings.append(Double(review["rating"].stringValue)!)
             }

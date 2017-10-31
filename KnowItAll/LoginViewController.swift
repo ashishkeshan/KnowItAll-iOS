@@ -67,7 +67,6 @@ class LoginViewController: UIViewController {
         }
         
         var urlString = "/authenticate?username="+emailField.text! + "&check=true"
-        print(urlString)
         var json = getJSONFromURL(urlString, "POST")
         var status = json["status"]
         let authenticated = json["authenticated"].string
@@ -75,7 +74,6 @@ class LoginViewController: UIViewController {
         if status == 200 {
             if authenticated == "true" {
                 urlString = "/authenticate?username=" + emailField.text! + "&password=" + passwordField.text!
-                print(urlString)
                 json = getJSONFromURL(urlString, "POST")
                 status = json["status"]
                 if status == 200 {

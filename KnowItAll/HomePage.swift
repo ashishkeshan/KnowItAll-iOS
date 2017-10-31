@@ -59,7 +59,6 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         super.viewWillAppear(animated)
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        print("VIEW APPEARED")
         searchBar.text = ""
         topicData.removeAll()
         pollData.removeAll()
@@ -105,7 +104,6 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     }
     
     func executeSearch() {
-        print("executing search")
         self.tabBarController?.selectedIndex = 1
         nc.post(name:Notification.Name(rawValue:"searchQuery"),
                 object: nil,

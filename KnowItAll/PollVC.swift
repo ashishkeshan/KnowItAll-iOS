@@ -68,14 +68,11 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func getPollInfo() {
 //        http://127.0.0.1:8000/api/getPost?type=poll&text=Who is the best teammate?
         let urlString = "/getPost?type=poll&text=" + (poll?.title)!
-        print(urlString)
         
         let json = getJSONFromURL(urlString, "GET")
         let status = json["status"]
-        print("status: ", status)
         // Check if status is good
         if status == 200 {
-            print("HERE")
             for option in json["pc"].arrayValue {
                 optionsList.append(option["text"].stringValue)
                 totVotes += option["numVotes"].int!
@@ -125,10 +122,8 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             return
         }
         let urlString = "/vote?username=\(email)&pollText=" + (poll?.title)! + "&pollChoiceText=\(optionsList[indexPath.row])&deleteVote=0"
-        print(urlString)
         let json = getJSONFromURL(urlString, "POST")
         let status = json["status"]
-        print("status: ", status)
         if prevSelected != nil {
             flag = false
             let urlString = "/vote?username=\(email)&pollText=" + (poll?.title)! + "&pollChoiceText=\(optionsList[(prevSelected?.row)!])&deleteVote=1"
