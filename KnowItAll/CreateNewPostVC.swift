@@ -62,10 +62,14 @@ class CreateNewPostVC: UIViewController {
         comment.text = "Optional Comments"
         comment.textColor = UIColor.lightGray
         
-        //rounded edges for create button
+        //rounded edges for create and anonymous button
         create.layer.cornerRadius = 5
         create.layer.borderWidth = 1
         create.layer.borderColor = UIColor.red.cgColor
+        anonymousButton.layer.cornerRadius = 5
+        anonymousButton.layer.borderWidth = 1
+        anonymousButton.layer.borderColor = UIColor.red.cgColor
+        anonymousButton.setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
         
         //poll buttons set up
         foreverButton.layer.cornerRadius = 15
@@ -75,10 +79,6 @@ class CreateNewPostVC: UIViewController {
         addButton.layer.borderWidth = 1
         addButton.layer.borderColor = UIColor.red.cgColor
         addButton.setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
-        anonymousButton.layer.cornerRadius = 5
-        anonymousButton.layer.borderWidth = 1
-        anonymousButton.layer.borderColor = UIColor.red.cgColor
-        anonymousButton.setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
         
         //setting up button press actions
         let clickAcademic = UITapGestureRecognizer(target: self, action: #selector(self.pressed1(_:)))
