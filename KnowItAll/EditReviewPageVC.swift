@@ -46,8 +46,10 @@ class EditReviewPageVC: UIViewController {
         topic.text = review!.topic
         topic.isUserInteractionEnabled = false
         
+        reviewField.delegate = self
         if review!.comment == "" {
             reviewField.text = "Optional Comments"
+            reviewField.textColor = UIColor.lightGray
         }
         else {
             reviewField.text = review!.comment
@@ -88,4 +90,82 @@ class EditReviewPageVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func updatePressed(_ sender: Any) {
+        //…/editPost?username=shenjona@usc.edu&type=review&topicTitle=Wonder Woman&rating=4.5&comment=Good movie
+        let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
+        let r = String(ratings.rating)
+        let t = review!.topic
+        var c = ""
+        if reviewField.text! != "Optional Comments" {
+            c = reviewField.text!
+        }
+        
+        if(category == -1) {
+            let alert = UIAlertController(title: "Warning!", message: "Please select a category by pressing one of the images", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if(r == "0.0") {
+            let alert = UIAlertController(title: "Warning!", message: "Please select a rating between 1-5 stars", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if(t == "") {
+            let alert = UIAlertController(title: "Warning!", message: "Please enter a Topic", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        //making query call to create review
+        var urlString = "/editPost?username="+email+"&type=review&topicTitle="
+        urlString += t!+"&rating="+r+"&comment="+c
+        
+        let json = getJSONFromURL(urlString, "POST")
+        let status = json["status"]
+        
+        // Check if status is good
+        if status == 200 {
+            let alert = UIAlertController(title: "Success", message: "Your review has been successfully updated", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+//            navigationController?.popViewController(animated: true)
+            //add code to jump back on the navigationController
+        }
+        else {
+            let alert = UIAlertController(title: "Failed!", message: "Error, failed to update review.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+}
+
+extension EditReviewPageVC: UITextViewDelegate{
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n")
+        {
+            self.view.endEditing(true);
+            return false;
+        }
+        return true
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Optional Comments"
+            textView.textColor = UIColor.lightGray
+        }
+    }
 }

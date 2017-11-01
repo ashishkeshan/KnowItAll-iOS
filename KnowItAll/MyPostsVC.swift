@@ -171,6 +171,7 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             vc?.getPollInfo()
         }
         else if segue.destination is EditReviewPageVC {
+            print(self.index)
             let vc = segue.destination as? EditReviewPageVC
             vc?.review = self.reviewData[self.index]
             vc?.category = reviewCategory[self.index]
@@ -185,8 +186,12 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
 
-    @IBAction func editPressed(_ sender: Any) {
+    @IBAction func editPressed(_ sender: UIButton) {
         //use prepare for segue to edit the data
+        if let cell = sender.superview?.superview as? SpecificReviewCell {
+            let indexPath = tableView.indexPath(for: cell)
+            self.index = indexPath!.row
+        }
         performSegue(withIdentifier: "editReviewSegue", sender: self)
     }
 }

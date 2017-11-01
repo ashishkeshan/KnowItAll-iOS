@@ -137,7 +137,10 @@ class CreateNewPostVC: UIViewController {
             //review
             let r = String(ratings.rating)
             let t = typeField.text!
-            let c = comment.text!
+            var c = ""
+            if comment.text! != "Optional Comments" {
+                c = comment.text!
+            }
             
             if(category == -1) {
                 let alert = UIAlertController(title: "Warning!", message: "Please select a category by pressing one of the images", preferredStyle: .alert)

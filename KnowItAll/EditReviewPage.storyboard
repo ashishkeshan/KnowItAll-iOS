@@ -240,6 +240,9 @@
                                 <state key="normal" title="Update">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="updatePressed:" destination="uAP-EV-EUO" eventType="touchUpInside" id="OJz-B5-yyF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvZ-ra-zvp">
                                 <rect key="frame" x="56" y="594" width="120" height="30"/>
