@@ -90,7 +90,7 @@ class KnowItAllUITests: XCTestCase {
         let settingsButton2 = app.navigationBars["Change Password"].buttons["Settings"]
         settingsButton2.tap()
         
-        let signOutStaticText = tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        let signOutStaticText = tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ 
         signOutStaticText.tap()
         
         let yesButton = app.sheets["Are you sure you want to sign out?"].buttons["Yes"]
@@ -122,6 +122,7 @@ class KnowItAllUITests: XCTestCase {
         let app = XCUIApplication()
         let emailTextField = app.textFields["Email"]
         emailTextField.tap()
+        emailTextField.tap()
         emailTextField.typeText("shuzawa@usc.edu")
         
         let passwordSecureTextField = app.secureTextFields["Password"]
@@ -130,24 +131,15 @@ class KnowItAllUITests: XCTestCase {
         app.buttons["Login"].tap()
         
         let tabBarsQuery = app.tabBars
-        tabBarsQuery.buttons["Create New Post"].tap()
+        let cells = app.tables.cells
+        cells.element(boundBy: 0).tap()
+        app.buttons["Add Review"].tap()
         
-        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 1)
-        element.tap()
-        
-        let topicTextField = app.textFields["Topic"]
-        topicTextField.tap()
-        topicTextField.typeText("TEST")
         app.otherElements["Rating"].tap()
         
-        let textView = element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 3).children(matching: .textView).element
-        textView.tap()
-        textView.tap()
-        textView.typeText("for testing purposes only")
         app.buttons["Create"].tap()
-        app.alerts["Success"].buttons["Done"]/*@START_MENU_TOKEN@*/.press(forDuration: 0.5);/*[[".tap()",".press(forDuration: 0.5);"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        
-        app.tabBars.buttons["Settings"].tap()
+        app.alerts["Success"].buttons["Done"].tap()
+        tabBarsQuery.buttons["Settings"].tap()
         app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.sheets["Are you sure you want to sign out?"].buttons["Yes"].tap()
     }
@@ -573,13 +565,14 @@ class KnowItAllUITests: XCTestCase {
     func testEmptyStringSearchFromSearchPage() {
         
         let app = XCUIApplication()
-        app.textFields["Email"].typeText("shuzawa@usc.edu")
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText("shuzawa@usc.edu")
         
         let passwordSecureTextField = app.secureTextFields["Password"]
         passwordSecureTextField.tap()
         passwordSecureTextField.typeText("12345")
         app.buttons["Login"].tap()
-        passwordSecureTextField.tap()
         
         let tabBarsQuery = app.tabBars
         tabBarsQuery.buttons["Search"].tap()
