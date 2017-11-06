@@ -9,8 +9,11 @@
 import UIKit
 import Cosmos
 
-class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol ReviewVCDelegate {
+    func refreshPage()
+}
 
+class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, ReviewVCDelegate {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var numReviews: UILabel!
@@ -21,6 +24,7 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var comments = [String]()
     var ratings = [Double]()
     var segueFlag = false
+    var category = -1
     let nc = NotificationCenter.default
     @IBAction func addReview(_ sender: Any) {
         let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
@@ -38,15 +42,12 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         segueFlag = true
         print("seguing")
-//        if segue.destination is PollVC {
-//            let vc = segue.destination as? PollVC
-//            vc?.poll = self.pollData[self.index]
-//            vc?.getPollInfo()
-//        } else if segue.destination is ReviewVC {
-//            let vc = segue.destination as? ReviewVC
-//            vc?.topic = self.topicData[self.index]
-//            vc?.getReviews()
-//        }
+        if segue.destination is CreateReviewVC {
+            let vc = segue.destination as? CreateReviewVC
+            vc?.category = category
+            vc?.topicName = (topic?.title)!
+            vc?.delegate = self
+        }
     }
     
     override func viewDidLoad() {
@@ -61,18 +62,22 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         switch (topic?.category)! {
         case 1:
+            category = 1
             let img = UIImage(named: "Academic")
             categoryImage.image = img
             break
         case 2:
+            category = 2
             let img = UIImage(named: "Food")
             categoryImage.image = img
             break
         case 3:
+            category = 3
             let img = UIImage(named: "Entertainment")
             categoryImage.image = img
             break
         case 4:
+            category = 4
             let img = UIImage(named: "Locations")
             categoryImage.image = img
             break
@@ -88,11 +93,18 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         } else {
             segueFlag = false
         }
-        
+    }
+    
+    func refreshPage() {
+        print("REVIEWVC DID APPEAR")
+        getReviews()
+        tableView.reloadData()
     }
     
     func getReviews() {
 //        http://127.0.0.1:8000/api/getPost?type=topic&text=CSCI 310
+        comments.removeAll()
+        ratings.removeAll()
         let urlString = "/getPost?type=topic&text=" + (topic?.title)!
         
         let json = getJSONFromURL(urlString, "GET")
