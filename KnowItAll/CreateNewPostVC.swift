@@ -140,6 +140,8 @@ class CreateNewPostVC: UIViewController {
             let r = String(ratings.rating)
             let t = typeField.text!
             var c = ""
+            var tag = reviewTag.text!.lowercased()
+            tag = t.replacingOccurrences(of: " ", with: "")
             if comment.text! != "Optional Comments" {
                 c = comment.text!
             }
@@ -165,6 +167,13 @@ class CreateNewPostVC: UIViewController {
                 return
             }
             
+            if(tag == "") {
+                let alert = UIAlertController(title: "Warning!", message: "Please enter at least 1 Tag", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            
             //checking for topic
             let topicCheckUrl = "/getPost?type=topic&text="+t
             let check = getJSONFromURL(topicCheckUrl, "GET")
@@ -182,7 +191,7 @@ class CreateNewPostVC: UIViewController {
             }
             
             //making query call to create review
-            let urlString = "/createReview?username="+email+"&topicTitle="+t+"&rating="+r+"&comment="+c
+            let urlString = "/createReview?username="+email+"&topicTitle="+t+"&rating="+r+"&comment="+c+"&tags="+tag
             
             let json = getJSONFromURL(urlString, "POST")
             let status = json["status"]
@@ -209,6 +218,8 @@ class CreateNewPostVC: UIViewController {
             let q = question.text!
             let c = choices.joined(separator: ",")
             var f:Int
+            var t = pollTag.text!.lowercased()
+            t = t.replacingOccurrences(of: " ", with: "")
             var d:String
             if(forever) {
                 f = 1
@@ -247,9 +258,16 @@ class CreateNewPostVC: UIViewController {
                 return
             }
             
+            if(t == "") {
+                let alert = UIAlertController(title: "Warning!", message: "Please enter at least 1 Tag", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            
             var urlString = "/createPoll?username="+email+"&category="+String(category)+"&text="
             urlString += q+"&choices="+c+"&openForever="
-            urlString += String(f)+"&dayLimit="+d
+            urlString += String(f)+"&dayLimit="+d+"&tags="+t
             
             let json = getJSONFromURL(urlString, "POST")
             let status = json["status"]
@@ -342,11 +360,6 @@ class CreateNewPostVC: UIViewController {
         view.endEditing(true)
         
         answer.text = ""
-//        if(choices.count == 5) {
-//            answer.text = "5 Choices Max"
-//            addButton.isEnabled = false
-//            addButton.backgroundColor = UIColor.lightGray
-//        }
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
