@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XPX-li-SW0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XPX-li-SW0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -56,13 +56,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star Wars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bja-aC-YmL">
-                                                    <rect key="frame" x="8" y="18" width="104" height="30"/>
+                                                    <rect key="frame" x="15" y="21" width="104" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 Votes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8S1-VG-Fww">
-                                                    <rect key="frame" x="8" y="56" width="54" height="16"/>
+                                                    <rect key="frame" x="15" y="59" width="54" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="qov-vW-v4x"/>
                                                     </constraints>
@@ -111,7 +111,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You voted for &quot;Good&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONi-tp-rdF">
-                                                    <rect key="frame" x="8" y="67" width="276" height="18"/>
+                                                    <rect key="frame" x="15" y="67" width="262" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="Eid-Sn-NVn"/>
                                                     </constraints>
@@ -120,7 +120,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star Wars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npz-hB-QZ1">
-                                                    <rect key="frame" x="8" y="8" width="290" height="30"/>
+                                                    <rect key="frame" x="15" y="11" width="276" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="D4P-t0-Isi"/>
                                                     </constraints>
@@ -148,7 +148,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHR-nv-bBe" customClass="CosmosView" customModule="Cosmos">
-                                                    <rect key="frame" x="8" y="39" width="120" height="20"/>
+                                                    <rect key="frame" x="15" y="42" width="120" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="GZ1-K4-1h3"/>
@@ -156,14 +156,14 @@
                                                     </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Academic" translatesAutoresizingMaskIntoConstraints="NO" id="V53-np-R9a">
-                                                    <rect key="frame" x="302" y="11" width="50" height="50"/>
+                                                    <rect key="frame" x="295" y="14" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="3Uf-1A-bxQ"/>
                                                         <constraint firstAttribute="height" constant="50" id="B9S-jt-TFF"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxn-Wu-exc">
-                                                    <rect key="frame" x="294" y="63" width="66" height="25"/>
+                                                    <rect key="frame" x="287" y="63" width="66" height="25"/>
                                                     <color key="backgroundColor" red="0.81949108839999996" green="0.202750653" blue="0.29063361879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="QIG-3G-OFm"/>

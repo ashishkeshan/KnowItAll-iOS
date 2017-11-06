@@ -13,6 +13,7 @@ class EditReviewPageVC: UIViewController {
 
     var review:Review?
     var category:Int!
+    var parentVC:UIViewController!
     
     @IBOutlet weak var reviewName: UILabel!
     @IBOutlet weak var academic: UIView!
@@ -132,10 +133,11 @@ class EditReviewPageVC: UIViewController {
         // Check if status is good
         if status == 200 {
             let alert = UIAlertController(title: "Success", message: "Your review has been successfully updated", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+            let doneAction = UIAlertAction(title: "Done", style: .default) { (action: UIAlertAction!) -> Void in
+                self.navigationController!.popToRootViewController(animated: true);
+            }
+            alert.addAction(doneAction)
             self.present(alert, animated: true, completion: nil)
-//            navigationController?.popViewController(animated: true)
-            //add code to jump back on the navigationController
         }
         else {
             let alert = UIAlertController(title: "Failed!", message: "Error, failed to update review.", preferredStyle: .alert)

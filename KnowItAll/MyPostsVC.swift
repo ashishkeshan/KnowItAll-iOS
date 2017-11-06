@@ -175,6 +175,7 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let vc = segue.destination as? EditReviewPageVC
             vc?.review = self.reviewData[self.index]
             vc?.category = reviewCategory[self.index]
+            vc?.parentVC = self
         }
     }
     
