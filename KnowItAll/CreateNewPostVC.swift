@@ -32,11 +32,13 @@ class CreateNewPostVC: UIViewController {
     var choices = [String]()
     var forever = false;
     @IBOutlet weak var time: UITextField!
+    @IBOutlet weak var pollTag: UITextField!
     
     //review fields
     @IBOutlet weak var typeField: UITextField!
     @IBOutlet weak var ratings: CosmosView!
     @IBOutlet weak var comment: UITextView!
+    @IBOutlet weak var reviewTag: UITextField!
     
     //poll set up
     @IBOutlet weak var foreverButton: UIButton!
