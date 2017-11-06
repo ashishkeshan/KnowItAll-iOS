@@ -75,13 +75,13 @@ class CreateReviewVC: UIViewController, UITextViewDelegate {
             commentsView.text = ""
             category = -1
             delegate?.refreshPage()
+            dismiss(animated: true, completion: nil)
         } // endif
         else {
             let alert = UIAlertController(title: "Data Exists", message: "Error, you've already reviewed this topic.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        dismiss(animated: true, completion: nil)
         // sent request to backend to submit the review
     }
     override func viewDidLoad() {

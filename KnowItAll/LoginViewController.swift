@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BCryptSwift
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
@@ -17,11 +18,11 @@ class LoginViewController: UIViewController {
     
     var emailAddress = ""
     var newPassword = ""
+    var salt = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFields()
-        
         userDefaults = UserDefaults.standard
     }
     
@@ -122,7 +123,9 @@ class LoginViewController: UIViewController {
             indicator.isHidden = true
             return
         }
-        
+        let salt = BCryptSwift.generateSaltWithNumberOfRounds(4)
+        let password = BCryptSwift.hashPassword(self.passwordField.text!, withSalt: salt)
+        print("PASSWORD: ", password)
         indicator.isHidden = false
         indicator.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
