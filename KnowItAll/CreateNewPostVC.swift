@@ -141,7 +141,8 @@ class CreateNewPostVC: UIViewController {
             let t = typeField.text!
             var c = ""
             var tag = reviewTag.text!.lowercased()
-            tag = t.replacingOccurrences(of: " ", with: "")
+            tag = tag.replacingOccurrences(of: " ", with: "")
+            
             if comment.text! != "Optional Comments" {
                 c = comment.text!
             }
@@ -168,7 +169,7 @@ class CreateNewPostVC: UIViewController {
             }
             
             if(tag == "") {
-                let alert = UIAlertController(title: "Warning!", message: "Please enter at least 1 Tag", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Warning!", message: "Please enter at least 1 Tag for this New Topic", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 return
@@ -180,7 +181,7 @@ class CreateNewPostVC: UIViewController {
             let data = check["topic"]
             
             if(data.count == 0 ) {
-                let createTopicUrl = "/createTopic?title="+t+"&category="+String(category)
+                let createTopicUrl = "/createTopic?title="+t+"&category="+String(category)+"&tags="+tag
                 let create = getJSONFromURL(createTopicUrl, "POST")
                 if create["status"] != 200 {
                     let alert = UIAlertController(title: "Error", message: "Error, failure to create new Topic", preferredStyle: .alert)
@@ -191,7 +192,7 @@ class CreateNewPostVC: UIViewController {
             }
             
             //making query call to create review
-            let urlString = "/createReview?username="+email+"&topicTitle="+t+"&rating="+r+"&comment="+c+"&tags="+tag
+            let urlString = "/createReview?username="+email+"&topicTitle="+t+"&rating="+r+"&comment="+c
             
             let json = getJSONFromURL(urlString, "POST")
             let status = json["status"]
@@ -205,7 +206,8 @@ class CreateNewPostVC: UIViewController {
                 ratings.rating = 0
                 typeField.text = ""
                 comment.text = ""
-                category = -1
+                category = 1
+                reviewTag.text = ""
             } // endif
             else {
                 let alert = UIAlertController(title: "Data Exists", message: "Error, you've already reviewed this topic.", preferredStyle: .alert)
@@ -282,8 +284,9 @@ class CreateNewPostVC: UIViewController {
                 choices.removeAll()
                 forever = false
                 time.text = ""
-                category = -1
+                category = 1
                 table.reloadData()
+                pollTag.text = ""
             } // endif
             else {
                 let alert = UIAlertController(title: "Error!", message: "Error, failed to create poll", preferredStyle: .alert)
