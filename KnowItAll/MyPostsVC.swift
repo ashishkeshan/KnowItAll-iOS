@@ -15,6 +15,7 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     private let refreshControl = UIRefreshControl()
     var reviewData = [Review]()
     var pollData = [Poll]()
+    var reviewCategory = [Int]()
     var email: String!
     var index = 0
     
@@ -39,14 +40,18 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             switch data["category"].intValue {
             case 1:
                 cell.img.image = UIImage(named: "Academic")
+                reviewCategory.append(1)
                 break
             case 2:
                 cell.img.image = UIImage(named: "Food")
+                reviewCategory.append(2)
                 break
             case 3:
                 cell.img.image = UIImage(named: "Entertainment")
+                reviewCategory.append(3)
                 break
             case 4:
+                reviewCategory.append(4)
                 cell.img.image = UIImage(named: "Locations")
                 break
             default:
@@ -165,6 +170,13 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             vc?.poll = self.pollData[self.index]
             vc?.getPollInfo()
         }
+        else if segue.destination is EditReviewPageVC {
+            print(self.index)
+            let vc = segue.destination as? EditReviewPageVC
+            vc?.review = self.reviewData[self.index]
+            vc?.category = reviewCategory[self.index]
+            vc?.parentVC = self
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -175,4 +187,12 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
 
+    @IBAction func editPressed(_ sender: UIButton) {
+        //use prepare for segue to edit the data
+        if let cell = sender.superview?.superview as? SpecificReviewCell {
+            let indexPath = tableView.indexPath(for: cell)
+            self.index = indexPath!.row
+        }
+        performSegue(withIdentifier: "editReviewSegue", sender: self)
+    }
 }

@@ -26,7 +26,7 @@ class CreateReviewVC: UIViewController, UITextViewDelegate {
     
     //fields to send to backend
     var category:Int = -1
-    var anonymous:Bool = false
+    var anonymous:Int = 0
     var topicName = ""
     
     // set alpha for all non-selected views as .5
@@ -36,15 +36,15 @@ class CreateReviewVC: UIViewController, UITextViewDelegate {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func anonymousTapped(_ sender: Any) {
-        if(anonymous == false) {
+        if(anonymous == 0) {
             anonButton.backgroundColor = UIColor.blue
             anonButton.layer.borderColor = UIColor.blue.cgColor
-            anonymous = true
+            anonymous = 1
         }
         else {
             anonButton.backgroundColor = createButton.backgroundColor
             anonButton.layer.borderColor = createButton.backgroundColor?.cgColor
-            anonymous = false
+            anonymous = 0
         }
     }
     
@@ -59,7 +59,7 @@ class CreateReviewVC: UIViewController, UITextViewDelegate {
             self.present(alert, animated: true, completion: nil)
             return
         }
-        let urlString = "/createReview?username="+email+"&topicTitle="+t+"&rating="+r+"&comment="+c
+        let urlString = "/createReview?username=\(email)&topicTitle=\(t)&rating=\(r)&comment=\(c)&anonymous=\(anonymous)"
         
         let json = getJSONFromURL(urlString, "POST")
         let status = json["status"]

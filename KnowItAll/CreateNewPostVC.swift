@@ -32,11 +32,13 @@ class CreateNewPostVC: UIViewController {
     var choices = [String]()
     var forever = false;
     @IBOutlet weak var time: UITextField!
+    @IBOutlet weak var pollTag: UITextField!
     
     //review fields
     @IBOutlet weak var typeField: UITextField!
     @IBOutlet weak var ratings: CosmosView!
     @IBOutlet weak var comment: UITextView!
+    @IBOutlet weak var reviewTag: UITextField!
     
     //poll set up
     @IBOutlet weak var foreverButton: UIButton!
@@ -62,10 +64,14 @@ class CreateNewPostVC: UIViewController {
         comment.text = "Optional Comments"
         comment.textColor = UIColor.lightGray
         
-        //rounded edges for create button
+        //rounded edges for create and anonymous button
         create.layer.cornerRadius = 5
         create.layer.borderWidth = 1
         create.layer.borderColor = UIColor.red.cgColor
+        anonymousButton.layer.cornerRadius = 5
+        anonymousButton.layer.borderWidth = 1
+        anonymousButton.layer.borderColor = UIColor.red.cgColor
+        anonymousButton.setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
         
         //poll buttons set up
         foreverButton.layer.cornerRadius = 15
@@ -75,10 +81,6 @@ class CreateNewPostVC: UIViewController {
         addButton.layer.borderWidth = 1
         addButton.layer.borderColor = UIColor.red.cgColor
         addButton.setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
-        anonymousButton.layer.cornerRadius = 5
-        anonymousButton.layer.borderWidth = 1
-        anonymousButton.layer.borderColor = UIColor.red.cgColor
-        anonymousButton.setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
         
         //setting up button press actions
         let clickAcademic = UITapGestureRecognizer(target: self, action: #selector(self.pressed1(_:)))
@@ -137,7 +139,13 @@ class CreateNewPostVC: UIViewController {
             //review
             let r = String(ratings.rating)
             let t = typeField.text!
-            let c = comment.text!
+            var c = ""
+            var tag = reviewTag.text!.lowercased()
+            tag = tag.replacingOccurrences(of: " ", with: "")
+            
+            if comment.text! != "Optional Comments" {
+                c = comment.text!
+            }
             
             if(category == -1) {
                 let alert = UIAlertController(title: "Warning!", message: "Please select a category by pressing one of the images", preferredStyle: .alert)
@@ -160,13 +168,20 @@ class CreateNewPostVC: UIViewController {
                 return
             }
             
+            if(tag == "") {
+                let alert = UIAlertController(title: "Warning!", message: "Please enter at least 1 Tag for this New Topic", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            
             //checking for topic
             let topicCheckUrl = "/getPost?type=topic&text="+t
             let check = getJSONFromURL(topicCheckUrl, "GET")
             let data = check["topic"]
             
             if(data.count == 0 ) {
-                let createTopicUrl = "/createTopic?title="+t+"&category="+String(category)
+                let createTopicUrl = "/createTopic?title="+t+"&category="+String(category)+"&tags="+tag
                 let create = getJSONFromURL(createTopicUrl, "POST")
                 if create["status"] != 200 {
                     let alert = UIAlertController(title: "Error", message: "Error, failure to create new Topic", preferredStyle: .alert)
@@ -191,7 +206,8 @@ class CreateNewPostVC: UIViewController {
                 ratings.rating = 0
                 typeField.text = ""
                 comment.text = ""
-                category = -1
+                category = 1
+                reviewTag.text = ""
             } // endif
             else {
                 let alert = UIAlertController(title: "Data Exists", message: "Error, you've already reviewed this topic.", preferredStyle: .alert)
@@ -204,6 +220,8 @@ class CreateNewPostVC: UIViewController {
             let q = question.text!
             let c = choices.joined(separator: ",")
             var f:Int
+            var t = pollTag.text!.lowercased()
+            t = t.replacingOccurrences(of: " ", with: "")
             var d:String
             if(forever) {
                 f = 1
@@ -242,9 +260,16 @@ class CreateNewPostVC: UIViewController {
                 return
             }
             
+            if(t == "") {
+                let alert = UIAlertController(title: "Warning!", message: "Please enter at least 1 Tag", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            
             var urlString = "/createPoll?username="+email+"&category="+String(category)+"&text="
             urlString += q+"&choices="+c+"&openForever="
-            urlString += String(f)+"&dayLimit="+d
+            urlString += String(f)+"&dayLimit="+d+"&tags="+t
             
             let json = getJSONFromURL(urlString, "POST")
             let status = json["status"]
@@ -259,8 +284,9 @@ class CreateNewPostVC: UIViewController {
                 choices.removeAll()
                 forever = false
                 time.text = ""
-                category = -1
+                category = 1
                 table.reloadData()
+                pollTag.text = ""
             } // endif
             else {
                 let alert = UIAlertController(title: "Error!", message: "Error, failed to create poll", preferredStyle: .alert)
@@ -337,11 +363,6 @@ class CreateNewPostVC: UIViewController {
         view.endEditing(true)
         
         answer.text = ""
-//        if(choices.count == 5) {
-//            answer.text = "5 Choices Max"
-//            addButton.isEnabled = false
-//            addButton.backgroundColor = UIColor.lightGray
-//        }
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
