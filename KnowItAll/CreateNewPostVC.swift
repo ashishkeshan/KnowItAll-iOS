@@ -25,7 +25,7 @@ class CreateNewPostVC: UIViewController {
     
     //fields to send to backend
     var category:Int = -1
-    var anonymous:Bool = false;
+    var anonymous:Int = 1;
     //poll fields
     @IBOutlet weak var question: UITextField!
     @IBOutlet weak var answer: UITextField!
@@ -181,7 +181,8 @@ class CreateNewPostVC: UIViewController {
             let data = check["topic"]
             
             if(data.count == 0 ) {
-                let createTopicUrl = "/createTopic?title="+t+"&category="+String(category)+"&tags="+tag
+                let createTopicUrl = "/createTopic?title="+t+"&category="+String(category)+"&tags="+tag+"&username="+email+"&anonymous="+String(anonymous)
+                print("create:" + createTopicUrl)
                 let create = getJSONFromURL(createTopicUrl, "POST")
                 if create["status"] != 200 {
                     let alert = UIAlertController(title: "Error", message: "Error, failure to create new Topic", preferredStyle: .alert)
@@ -192,7 +193,7 @@ class CreateNewPostVC: UIViewController {
             }
             
             //making query call to create review
-            let urlString = "/createReview?username="+email+"&topicTitle="+t+"&rating="+r+"&comment="+c
+            let urlString = "/createReview?username="+email+"&topicTitle="+t+"&rating="+r+"&comment="+c+"&anonymous="+String(anonymous)
             
             let json = getJSONFromURL(urlString, "POST")
             let status = json["status"]
@@ -269,7 +270,8 @@ class CreateNewPostVC: UIViewController {
             
             var urlString = "/createPoll?username="+email+"&category="+String(category)+"&text="
             urlString += q+"&choices="+c+"&openForever="
-            urlString += String(f)+"&dayLimit="+d+"&tags="+t
+            urlString += String(f)+"&dayLimit="+d
+            urlString += "&anonymous="+String(anonymous)+"&tags="+t
             
             let json = getJSONFromURL(urlString, "POST")
             let status = json["status"]
@@ -384,15 +386,15 @@ class CreateNewPostVC: UIViewController {
     }
     
     @IBAction func anonymousButtonPressed(_ sender: Any) {
-        if(anonymous == false) {
+        if(anonymous == 0) {
             anonymousButton.backgroundColor = UIColor.blue
             anonymousButton.layer.borderColor = UIColor.blue.cgColor
-            anonymous = true
+            anonymous = 1
         }
         else {
             anonymousButton.backgroundColor = create.backgroundColor
             anonymousButton.layer.borderColor = create.backgroundColor?.cgColor
-            anonymous = false
+            anonymous = 0
         }
     }
 }
