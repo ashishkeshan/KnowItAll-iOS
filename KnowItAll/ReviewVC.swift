@@ -145,7 +145,7 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Re
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! TopicPageReviewCell
         cell.comment.text = comments[indexPath.row]
         cell.rating.rating = ratings[indexPath.row]
-        cell.author.text = "By " + usernames[indexPath.row]
+        cell.author.text = usernames[indexPath.row]
         return cell
     }
     
