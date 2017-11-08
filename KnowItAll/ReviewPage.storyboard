@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +39,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="30 Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gps-wz-WNE">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gps-wz-WNE">
                                             <rect key="frame" x="15" y="64" width="88" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="F9C-5P-1cm"/>
@@ -50,7 +49,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4h-ZO-Xz4" customClass="CosmosView" customModule="Cosmos">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4h-ZO-Xz4" customClass="CosmosView" customModule="Cosmos">
                                             <rect key="frame" x="15" y="100" width="120" height="20"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -143,25 +142,38 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T9C-1I-Mwy" customClass="CosmosView" customModule="Cosmos">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9C-1I-Mwy" customClass="CosmosView" customModule="Cosmos">
                                                     <rect key="frame" x="7" y="11" width="120" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="wOv-UX-lFO"/>
+                                                        <constraint firstAttribute="height" constant="20" id="dC6-HC-uoM"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XZ-Ij-4qR">
+                                                    <rect key="frame" x="142" y="11" width="225" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="vj9-gQ-TOw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="T9C-1I-Mwy" firstAttribute="top" secondItem="eDG-ld-lXk" secondAttribute="topMargin" id="IQP-Rk-jqm"/>
+                                                <constraint firstItem="ktF-DM-rOg" firstAttribute="top" secondItem="T9C-1I-Mwy" secondAttribute="bottom" constant="11" id="8Th-w6-MBG"/>
+                                                <constraint firstItem="T9C-1I-Mwy" firstAttribute="leading" secondItem="eDG-ld-lXk" secondAttribute="leading" constant="7" id="EZb-uq-jRV"/>
                                                 <constraint firstItem="ktF-DM-rOg" firstAttribute="leading" secondItem="eDG-ld-lXk" secondAttribute="leading" constant="8" id="LEd-6J-tv0"/>
-                                                <constraint firstItem="ktF-DM-rOg" firstAttribute="top" secondItem="T9C-1I-Mwy" secondAttribute="bottom" constant="11" id="YUT-od-M8F"/>
-                                                <constraint firstItem="T9C-1I-Mwy" firstAttribute="leading" secondItem="eDG-ld-lXk" secondAttribute="leadingMargin" constant="-8" id="ZgS-bN-0Bl"/>
+                                                <constraint firstItem="8XZ-Ij-4qR" firstAttribute="leading" secondItem="eDG-ld-lXk" secondAttribute="leading" constant="142" id="ftU-HA-RQH"/>
+                                                <constraint firstItem="T9C-1I-Mwy" firstAttribute="top" secondItem="eDG-ld-lXk" secondAttribute="top" constant="11" id="h3l-5a-6K3"/>
+                                                <constraint firstAttribute="trailing" secondItem="8XZ-Ij-4qR" secondAttribute="trailing" constant="8" id="jNo-9J-pqp"/>
                                                 <constraint firstAttribute="trailing" secondItem="ktF-DM-rOg" secondAttribute="trailing" constant="8" id="ojT-H0-Ide"/>
+                                                <constraint firstItem="8XZ-Ij-4qR" firstAttribute="top" secondItem="eDG-ld-lXk" secondAttribute="top" constant="11" id="p75-Bl-UcP"/>
                                                 <constraint firstAttribute="bottom" secondItem="ktF-DM-rOg" secondAttribute="bottom" constant="7.5" id="ylm-FH-Ix8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <viewLayoutGuide key="safeArea" id="gew-If-Zdb"/>
                                         <connections>
+                                            <outlet property="author" destination="8XZ-Ij-4qR" id="n7X-mM-u72"/>
                                             <outlet property="comment" destination="ktF-DM-rOg" id="Sax-8Q-na2"/>
                                             <outlet property="rating" destination="T9C-1I-Mwy" id="bHr-Oc-EF3"/>
                                         </connections>

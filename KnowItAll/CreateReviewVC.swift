@@ -68,10 +68,10 @@ class CreateReviewVC: UIViewController, UITextViewDelegate {
         // Check if status is good
         if status == 200 {
             let alert = UIAlertController(title: "Success", message: "Your review has been successfully submitted", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: {
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { (handler) in
                 self.dismiss(animated: true, completion: nil)
-            })
+            }))
+            self.present(alert, animated: true, completion: nil)
             //clear textfield
             ratingView.rating = 0
             topicField.text = ""
@@ -81,11 +81,14 @@ class CreateReviewVC: UIViewController, UITextViewDelegate {
         } // endif
         else {
             let alert = UIAlertController(title: "Data Exists", message: "Error, you've already reviewed this topic.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { (handler) in
+                self.dismiss(animated: true, completion: nil)
+            }))
             self.present(alert, animated: true, completion: nil)
         }
         // sent request to backend to submit the review
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

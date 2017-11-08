@@ -13,6 +13,7 @@ class TopicPageReviewCell: UITableViewCell {
 
     @IBOutlet weak var rating: CosmosView!
     @IBOutlet weak var comment: UILabel!
+    @IBOutlet weak var author: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.rating.settings.updateOnTouch = false

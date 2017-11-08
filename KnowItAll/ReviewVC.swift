@@ -23,6 +23,7 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Re
     var topic : Topic? = nil
     var comments = [String]()
     var ratings = [Double]()
+    var usernames = [String]()
     var segueFlag = false
     var category = -1
     let nc = NotificationCenter.default
@@ -96,8 +97,8 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Re
     }
     
     func refreshPage() {
-        numReviews.text = String(describing: (topic?.numReviews)!) + " review(s)"
         getReviews()
+        self.viewDidLoad()
         tableView.reloadData()
     }
     
@@ -105,15 +106,21 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Re
 //        http://127.0.0.1:8000/api/getPost?type=topic&text=CSCI 310
         comments.removeAll()
         ratings.removeAll()
+        usernames.removeAll()
         let urlString = "/getPost?type=topic&text=" + (topic?.title)!
         
         let json = getJSONFromURL(urlString, "GET")
         let status = json["status"]
         // Check if status is good
         if status == 200 {
+            for topicArr in json["topic"].arrayValue {
+                topic?.rating = Double(topicArr["avRating"].stringValue)
+                topic?.numReviews = topicArr["numReviews"].int
+            }
             for review in json["reviews"].arrayValue {
                 comments.append(review["comment"].string!)
                 ratings.append(Double(review["rating"].stringValue)!)
+                usernames.append(review["username"].string!)
             }
         }
     }
@@ -131,6 +138,7 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Re
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! TopicPageReviewCell
         cell.comment.text = comments[indexPath.row]
         cell.rating.rating = ratings[indexPath.row]
+        cell.author.text = "by " + usernames[indexPath.row]
         return cell
     }
     
