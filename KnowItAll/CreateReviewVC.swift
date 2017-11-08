@@ -59,7 +59,8 @@ class CreateReviewVC: UIViewController, UITextViewDelegate {
             self.present(alert, animated: true, completion: nil)
             return
         }
-        let urlString = "/createReview?username=\(email)&topicTitle=\(t)&rating=\(r)&comment=\(c)&anonymous=\(anonymous)"
+        let stringAnon = String(anonymous)
+        let urlString = "/createReview?username=\(email)&topicTitle=\(t)&rating=\(r)&comment=\(c)&anonymous=\(stringAnon)"
         
         let json = getJSONFromURL(urlString, "POST")
         let status = json["status"]
@@ -68,14 +69,15 @@ class CreateReviewVC: UIViewController, UITextViewDelegate {
         if status == 200 {
             let alert = UIAlertController(title: "Success", message: "Your review has been successfully submitted", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: {
+                self.dismiss(animated: true, completion: nil)
+            })
             //clear textfield
             ratingView.rating = 0
             topicField.text = ""
             commentsView.text = ""
             category = -1
             delegate?.refreshPage()
-            dismiss(animated: true, completion: nil)
         } // endif
         else {
             let alert = UIAlertController(title: "Data Exists", message: "Error, you've already reviewed this topic.", preferredStyle: .alert)

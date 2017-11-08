@@ -59,7 +59,7 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Re
         titleLabel.text = topic?.title
         numReviews.text = String(describing: (topic?.numReviews)!) + " review(s)"
         stars.rating = (topic?.rating)!
-        
+        stars.settings.fillMode = .half
         switch (topic?.category)! {
         case 1:
             category = 1
@@ -96,7 +96,7 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Re
     }
     
     func refreshPage() {
-        print("REVIEWVC DID APPEAR")
+        numReviews.text = String(describing: (topic?.numReviews)!) + " review(s)"
         getReviews()
         tableView.reloadData()
     }

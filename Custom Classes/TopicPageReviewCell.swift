@@ -16,7 +16,7 @@ class TopicPageReviewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.rating.settings.updateOnTouch = false
-        self.rating.settings.fillMode = .precise
+        self.rating.settings.fillMode = .half
         self.selectionStyle = UITableViewCellSelectionStyle.none
     }
 

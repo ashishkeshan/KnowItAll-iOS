@@ -19,7 +19,7 @@ class TopicReviewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         starRating.settings.updateOnTouch = false
-        starRating.settings.fillMode = .precise
+        starRating.settings.fillMode = .half
         self.selectionStyle = UITableViewCellSelectionStyle.none
         // Initialization code
     }
