@@ -250,7 +250,7 @@
                                             <constraint firstAttribute="height" constant="1" id="IDx-FY-QgX"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tag (Seperate With Commas)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o7T-5c-clO">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tag (Separate With Commas)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o7T-5c-clO">
                                         <rect key="frame" x="31" y="95" width="313" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <accessibility key="accessibilityConfiguration">
@@ -338,7 +338,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="pDi-SG-egz"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tag (Seperate With Commas)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qfY-YH-1rD">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tag (Separate With Commas)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qfY-YH-1rD">
                                                     <rect key="frame" x="31" y="56" width="313" height="50"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
