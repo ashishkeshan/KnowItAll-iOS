@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BCryptSwift
 
 class ChangePassword: UIViewController {
     @IBOutlet weak var oldPassword: UITextField!
@@ -57,18 +58,22 @@ class ChangePassword: UIViewController {
         }
         
         // Check old password
-        let authString = "/login?username="+email+"&password="+op!
-        let json = getJSONFromURL(authString, "POST")
-        
+        let urlString = "/authenticate?username="+email+"&check=true"
+        var json = getJSONFromURL(urlString, "GET")
+        let status = json["status"]
+        let hashedPassword = json["password"].stringValue
         // Old password is incorrect
-        if json["status"] != 200 {
+        let verify = BCryptSwift.verifyPassword(op!, matchesHash: hashedPassword)!
+        if status != 200 || !verify  {
             errorLabel.text = "Sorry, old password is incorrect."
             errorLabel.isHidden = false
             return
         }
         else {
             // Update password
-            let urlString = "/editProfile?username="+email+"&newPassword="+np!
+            let salt = BCryptSwift.generateSaltWithNumberOfRounds(4)
+            let password = BCryptSwift.hashPassword(np!, withSalt: salt)
+            let urlString = "/editProfile?username="+email+"&newPassword="+password!
             let json = getJSONFromURL(urlString, "POST")
             let status = json["status"]
             // Check if status is good
