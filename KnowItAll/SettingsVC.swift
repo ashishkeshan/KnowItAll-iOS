@@ -14,6 +14,10 @@ class SettingsVC: UITableViewController {
     var settingOptions2 = ["Change Password", "Notifications","Rate KnowItAll","Submit Feedback","Log In"]
     let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
     
+    override func viewDidLoad() {
+        tableView.tableFooterView = UIView()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settingOptions.count;
     }
