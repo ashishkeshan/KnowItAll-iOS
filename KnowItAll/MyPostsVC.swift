@@ -132,7 +132,10 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let topic = topicIDs[topicID].stringValue
             
             let temp = Review.init(id:Int(id)!, type:1, rating:Double(rating)!, comment:comment, text: topic)
-            temp.anonymous = review["anonymous"].intValue
+            temp.anonymous = 1
+            if review["anonymous"].stringValue == "false" {
+                temp.anonymous = 0
+            }
             reviewData.append(temp)
         }
 

@@ -157,6 +157,19 @@ class EditReviewPageVC: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func anonymousPressed(_ sender: Any) {
+        if anonymousButton.backgroundColor != UIColor.blue {
+            anonymousButton.backgroundColor = UIColor.blue
+            anonymousButton.layer.borderColor = UIColor.blue.cgColor
+        }
+        else {
+            anonymousButton.backgroundColor = create.backgroundColor
+            anonymousButton.layer.borderColor = create.backgroundColor?.cgColor
+        }
+    }
+    
+    
 }
 
 extension EditReviewPageVC: UITextViewDelegate{
