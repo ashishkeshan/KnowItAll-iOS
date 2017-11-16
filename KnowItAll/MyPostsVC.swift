@@ -130,7 +130,13 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let rating = review["rating"].stringValue
             let comment = review["comment"].stringValue
             let topic = topicIDs[topicID].stringValue
-            reviewData.append(Review.init(id:Int(id)!, type:1, rating:Double(rating)!, comment:comment, text: topic))
+            
+            let temp = Review.init(id:Int(id)!, type:1, rating:Double(rating)!, comment:comment, text: topic)
+            temp.anonymous = 1
+            if review["anonymous"].stringValue == "false" {
+                temp.anonymous = 0
+            }
+            reviewData.append(temp)
         }
 
         let polls = json["polls"]

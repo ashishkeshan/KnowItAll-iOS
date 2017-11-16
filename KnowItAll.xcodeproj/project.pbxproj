@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02184E481FBA7D0F000F431B /* CreateReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02184E471FBA7D0F000F431B /* CreateReviewVC.swift */; };
 		022B7B841FA82F6500BD8103 /* EditReviewPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 022B7B831FA82F6500BD8103 /* EditReviewPage.storyboard */; };
 		022B7B861FA8307E00BD8103 /* EditReviewPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B7B851FA8307E00BD8103 /* EditReviewPageVC.swift */; };
 		0245DD801F902916000B26F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245DD7F1F902916000B26F5 /* User.swift */; };
@@ -47,7 +48,6 @@
 		758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */; };
 		758A32CD1F8836FA00838DDA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		758A32D11F8B326E00838DDA /* TopicReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32D01F8B326E00838DDA /* TopicReviewCell.swift */; };
-		758BC7E61FA830DC000E2BFB /* CreateReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758BC7E51FA830DC000E2BFB /* CreateReviewVC.swift */; };
 		75C838391FA16D5000643EFF /* KnowItAllUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C838381FA16D5000643EFF /* KnowItAllUITests.swift */; };
 		75D59E411F8C3A3C00F3C854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75D59E401F8C3A3C00F3C854 /* Assets.xcassets */; };
 		75F135391F92BBAD00C07A0F /* PollPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F135381F92BBAD00C07A0F /* PollPage.storyboard */; };
@@ -69,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02184E471FBA7D0F000F431B /* CreateReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReviewVC.swift; sourceTree = "<group>"; };
 		022B7B831FA82F6500BD8103 /* EditReviewPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = EditReviewPage.storyboard; path = KnowItAll/EditReviewPage.storyboard; sourceTree = SOURCE_ROOT; };
 		022B7B851FA8307E00BD8103 /* EditReviewPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReviewPageVC.swift; sourceTree = "<group>"; };
 		0245DD7F1F902916000B26F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		758A32C41F870BE500838DDA /* CreateNewPost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateNewPost.storyboard; sourceTree = "<group>"; };
 		758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPostVC.swift; sourceTree = "<group>"; };
 		758A32D01F8B326E00838DDA /* TopicReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicReviewCell.swift; sourceTree = "<group>"; };
-		758BC7E51FA830DC000E2BFB /* CreateReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateReviewVC.swift; path = /Users/ashish/Documents/KnowItAll/KnowItAll/KnowItAll/CreateReviewVC.swift; sourceTree = "<absolute>"; };
 		75C838361FA16D5000643EFF /* KnowItAllUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnowItAllUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C838381FA16D5000643EFF /* KnowItAllUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowItAllUITests.swift; sourceTree = "<group>"; };
 		75C8383A1FA16D5000643EFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 		758A32BF1F870A6900838DDA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				758BC7E51FA830DC000E2BFB /* CreateReviewVC.swift */,
+				02184E471FBA7D0F000F431B /* CreateReviewVC.swift */,
 				022B7B851FA8307E00BD8103 /* EditReviewPageVC.swift */,
 				026E11A41F9058A50075FF7D /* FeedbackVC.swift */,
 				02E31B741F90494000B4AAF2 /* rateVC.swift */,
@@ -409,13 +409,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BCryptSwift/BCryptSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BCryptSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -454,7 +454,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -472,13 +472,13 @@
 				0245DD821F902A56000B26F5 /* Poll.swift in Sources */,
 				758A32C31F870B4E00838DDA /* SearchVC.swift in Sources */,
 				02F2CB1C1F880BA50013F88D /* ChangePassword.swift in Sources */,
+				02184E481FBA7D0F000F431B /* CreateReviewVC.swift in Sources */,
 				75F135411F92E09400C07A0F /* PollOptionCell.swift in Sources */,
 				758A32AD1F85A71000838DDA /* LoginViewController.swift in Sources */,
 				024FA0291F918C9A0088EABB /* SpecificReviewCell.swift in Sources */,
 				758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */,
 				02D95BCF1F8B232F00E57721 /* NotificationCell.swift in Sources */,
 				758A32B71F87068A00838DDA /* HomePage.swift in Sources */,
-				758BC7E61FA830DC000E2BFB /* CreateReviewVC.swift in Sources */,
 				758A32BD1F8709EC00838DDA /* MyPostsVC.swift in Sources */,
 				026E11A51F9058A50075FF7D /* FeedbackVC.swift in Sources */,
 				75F1353D1F92C81300C07A0F /* PollVC.swift in Sources */,

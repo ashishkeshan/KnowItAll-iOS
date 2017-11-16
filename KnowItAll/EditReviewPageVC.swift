@@ -41,8 +41,15 @@ class EditReviewPageVC: UIViewController {
         create.layer.borderColor = UIColor.red.cgColor
         anonymousButton.layer.cornerRadius = 5
         anonymousButton.layer.borderWidth = 1
-        anonymousButton.layer.borderColor = UIColor.red.cgColor
-        anonymousButton.setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
+        
+        if(review?.anonymous == 0) {
+            anonymousButton.layer.borderColor = UIColor.red.cgColor
+            anonymousButton.setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
+        }
+        else {
+            anonymousButton.backgroundColor = UIColor.blue
+            anonymousButton.layer.borderColor = UIColor.blue.cgColor
+        }
         
         topic.text = review!.topic
         topic.isUserInteractionEnabled = false
@@ -101,6 +108,10 @@ class EditReviewPageVC: UIViewController {
         if reviewField.text! != "Optional Comments" {
             c = reviewField.text!
         }
+        var anonymous = "0"
+        if anonymousButton.backgroundColor == UIColor.blue {
+            anonymous = "1"
+        }
         
         if(category == -1) {
             let alert = UIAlertController(title: "Warning!", message: "Please select a category by pressing one of the images", preferredStyle: .alert)
@@ -125,7 +136,8 @@ class EditReviewPageVC: UIViewController {
         
         //making query call to create review
         var urlString = "/editPost?username="+email+"&type=review&topicTitle="
-        urlString += t!+"&rating="+r+"&comment="+c
+        urlString += t!+"&rating="+r+"&comment="+c+"&anonymous="+anonymous
+        
         
         let json = getJSONFromURL(urlString, "POST")
         let status = json["status"]
@@ -145,6 +157,19 @@ class EditReviewPageVC: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func anonymousPressed(_ sender: Any) {
+        if anonymousButton.backgroundColor != UIColor.blue {
+            anonymousButton.backgroundColor = UIColor.blue
+            anonymousButton.layer.borderColor = UIColor.blue.cgColor
+        }
+        else {
+            anonymousButton.backgroundColor = create.backgroundColor
+            anonymousButton.layer.borderColor = create.backgroundColor?.cgColor
+        }
+    }
+    
+    
 }
 
 extension EditReviewPageVC: UITextViewDelegate{
