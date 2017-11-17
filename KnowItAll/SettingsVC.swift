@@ -10,8 +10,8 @@ import UIKit
 
 class SettingsVC: UITableViewController {
     
-    var settingOptions = ["Change Password", "Notifications","Rate KnowItAll","Submit Feedback","Sign Out"]
-    var settingOptions2 = ["Change Password", "Notifications","Rate KnowItAll","Submit Feedback","Log In"]
+    var settingOptions = ["Change Password", "Notifications","Rate KnowItAll","Submit Feedback","Report","Sign Out"]
+    var settingOptions2 = ["Change Password", "Notifications","Rate KnowItAll","Submit Feedback","Report","Log In"]
     let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
     
     override func viewDidLoad() {
@@ -64,6 +64,27 @@ class SettingsVC: UITableViewController {
                 performSegue(withIdentifier: "submitSegue", sender: self)
                 break
             case 4:
+                if email == "" {
+                    let errorAlert = UIAlertController(title: "Please log in to report", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+                    
+                    errorAlert.addAction(UIAlertAction(title: "Log In", style: .default, handler: { (action: UIAlertAction!) in
+                        // Sign out
+                        UserDefaults.standard.set(Login.no, forKey: Login.loggedIn)
+                        let storyboard = UIStoryboard(name: "Main", bundle:nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+                        controller.modalTransitionStyle = .flipHorizontal
+                        self.present(controller, animated: true, completion: nil)
+                    }))
+                    
+                    errorAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                        return
+                    }))
+                    
+                    present(errorAlert, animated: true, completion: nil)
+                }
+                performSegue(withIdentifier: "reportSegue", sender: self)
+                break;
+            case 5:
                 let storyboard = UIStoryboard(name: "Main", bundle:nil)
                 let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
                 controller.modalTransitionStyle = .flipHorizontal
