@@ -351,10 +351,10 @@
             </objects>
             <point key="canvasLocation" x="-924" y="599.55022488755628"/>
         </scene>
-        <!--ReportVC-->
+        <!--Report-->
         <scene sceneID="Zeq-ce-xRA">
             <objects>
-                <viewController id="t70-MZ-TOf" customClass="ReportVC" customModule="KnowItAll" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Report" id="t70-MZ-TOf" customClass="ReportVC" customModule="KnowItAll" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bjv-V9-1wt"/>
                         <viewControllerLayoutGuide type="bottom" id="SdM-6y-phF"/>
