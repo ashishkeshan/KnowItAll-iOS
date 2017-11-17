@@ -62,6 +62,9 @@
                                                         <constraint firstAttribute="height" constant="30" id="3yV-En-h7c"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="tagButtonPressed:" destination="IZw-KB-tqS" eventType="touchUpInside" id="zdn-bn-IBF"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8h-3T-F7f">
                                                     <rect key="frame" x="94" y="45" width="93.5" height="30"/>
@@ -69,6 +72,9 @@
                                                         <constraint firstAttribute="height" constant="30" id="kEb-Zh-lT5"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="tagButtonPressed:" destination="IZw-KB-tqS" eventType="touchUpInside" id="T0x-b0-6DL"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN8-bL-wIs">
                                                     <rect key="frame" x="281.5" y="45" width="93.5" height="30"/>
@@ -76,6 +82,9 @@
                                                         <constraint firstAttribute="height" constant="30" id="RbX-ud-3py"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="tagButtonPressed:" destination="IZw-KB-tqS" eventType="touchUpInside" id="yBh-UF-7L1"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlR-Rq-rRN">
                                                     <rect key="frame" x="187.5" y="45" width="94" height="30"/>
@@ -83,6 +92,9 @@
                                                         <constraint firstAttribute="height" constant="30" id="cXU-Ut-6rY"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="tagButtonPressed:" destination="IZw-KB-tqS" eventType="touchUpInside" id="KFo-IQ-z3J"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="0.59764423076923079" colorSpace="calibratedRGB"/>
@@ -414,6 +426,10 @@
                         <outlet property="segmentedControl" destination="zRL-FX-lx3" id="oug-cz-vzU"/>
                         <outlet property="tableView" destination="puX-sx-CA2" id="bnT-OO-dDD"/>
                         <outlet property="topView" destination="mh6-h2-ubQ" id="bq2-Dd-d74"/>
+                        <outlet property="trendingButton1" destination="aRL-iM-VSZ" id="oLu-Vo-MVt"/>
+                        <outlet property="trendingButton2" destination="g8h-3T-F7f" id="YR0-Un-Tob"/>
+                        <outlet property="trendingButton3" destination="JlR-Rq-rRN" id="Jq9-fV-wdv"/>
+                        <outlet property="trendingButton4" destination="qN8-bL-wIs" id="mbm-uM-fef"/>
                         <segue destination="qgM-qd-bD4" kind="show" identifier="showPollPage" id="593-sT-lwC"/>
                         <segue destination="8LD-2y-b75" kind="show" identifier="showReviewPage" id="Ss9-dR-4ET"/>
                     </connections>
