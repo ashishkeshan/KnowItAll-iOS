@@ -190,7 +190,7 @@ class LoginViewController: UIViewController {
         indicator.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
             let urlString = "/editProfile?username="+self.emailAddress+"&newPassword="+self.newPassword+"&forgot=1"
-            let json = getJSONFromURL(urlString, "POST")
+            let json = getJSONFromURL(urlString, "GET")
             let status = json["status"]
             // Check if status is good
             if status == 200 {
