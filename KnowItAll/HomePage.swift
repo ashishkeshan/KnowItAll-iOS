@@ -52,6 +52,7 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         refreshControl.addTarget(self, action: #selector(refreshPage), for: .valueChanged)
         loadTrending()
         loadTrendingTags()
+        buttonSetup()
     }
     
     @objc private func refreshPage() {
@@ -261,5 +262,23 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             searchBar.text = tags[3]
             executeSearch()
         }
+    }
+    
+    func buttonSetup() {
+        trendingButton1.layer.cornerRadius = 15
+        trendingButton1.layer.borderWidth = 1
+        trendingButton1.layer.borderColor = UIColor.blue.cgColor
+        
+        trendingButton2.layer.cornerRadius = 15
+        trendingButton2.layer.borderWidth = 1
+        trendingButton2.layer.borderColor = UIColor.blue.cgColor
+        
+        trendingButton3.layer.cornerRadius = 15
+        trendingButton3.layer.borderWidth = 1
+        trendingButton3.layer.borderColor = UIColor.blue.cgColor
+        
+        trendingButton4.layer.cornerRadius = 15
+        trendingButton4.layer.borderWidth = 1
+        trendingButton4.layer.borderColor = UIColor.blue.cgColor
     }
 }
