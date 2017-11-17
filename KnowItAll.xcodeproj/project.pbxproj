@@ -31,6 +31,7 @@
 		280F1A0F1F92C75C00CFB879 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280F1A0E1F92C75C00CFB879 /* Constants.swift */; };
 		28BE28721F917E8100557D85 /* BackendConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE28711F917E8100557D85 /* BackendConnector.swift */; };
 		7537F0D71F906EEC00839AB3 /* TopicPollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537F0D61F906EEC00839AB3 /* TopicPollCell.swift */; };
+		755915E11FBF927600F5C773 /* PollPageCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755915E01FBF927600F5C773 /* PollPageCommentCell.swift */; };
 		7578151A1F9442F200D6F1C0 /* TopicPageReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757815191F9442F200D6F1C0 /* TopicPageReviewCell.swift */; };
 		758A329B1F85A4D900838DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A329A1F85A4D900838DDA /* AppDelegate.swift */; };
 		758A32A01F85A4D900838DDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A329E1F85A4D900838DDA /* Main.storyboard */; };
@@ -96,6 +97,7 @@
 		505B88AA0558E2344579971B /* Pods-KnowItAll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowItAll.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll.release.xcconfig"; sourceTree = "<group>"; };
 		71C559B9AFC5385A1C0EB1EC /* Pods_KnowItAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnowItAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7537F0D61F906EEC00839AB3 /* TopicPollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicPollCell.swift; sourceTree = "<group>"; };
+		755915E01FBF927600F5C773 /* PollPageCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollPageCommentCell.swift; sourceTree = "<group>"; };
 		757815191F9442F200D6F1C0 /* TopicPageReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicPageReviewCell.swift; sourceTree = "<group>"; };
 		758A32971F85A4D900838DDA /* KnowItAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnowItAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		758A329A1F85A4D900838DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				280F1A0E1F92C75C00CFB879 /* Constants.swift */,
 				75F135401F92E09400C07A0F /* PollOptionCell.swift */,
 				757815191F9442F200D6F1C0 /* TopicPageReviewCell.swift */,
+				755915E01FBF927600F5C773 /* PollPageCommentCell.swift */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				758A32B91F8708CB00838DDA /* TabBar.swift in Sources */,
 				02F181F31F8957F700172C63 /* notificationsVC.swift in Sources */,
 				75F1353F1F92C85100C07A0F /* ReviewVC.swift in Sources */,
+				755915E11FBF927600F5C773 /* PollPageCommentCell.swift in Sources */,
 				026E11A71F9061E70075FF7D /* Post.swift in Sources */,
 				022B7B861FA8307E00BD8103 /* EditReviewPageVC.swift in Sources */,
 			);

@@ -55,8 +55,8 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Re
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.estimatedRowHeight = 100.0;
-        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 100.0;
+//        tableView.rowHeight = UITableViewAutomaticDimension
         titleLabel.text = topic?.title
         numReviews.text = String(describing: (topic?.numReviews)!) + " review(s)"
         stars.rating = (topic?.rating)!

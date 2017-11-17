@@ -31,6 +31,8 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.estimatedRowHeight = 100.0;
+        tableView.rowHeight = UITableViewAutomaticDimension
         screenWidth = UIScreen.main.bounds.size.width
         totVotes = (poll?.numVotes)!
         colorsArray.append(UIColor(red:0.77, green:0.12, blue:0.23, alpha:1.0))
@@ -87,29 +89,41 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return optionsList.count
+        return optionsList.count + 2
     }
     
     // change when integrated with backend to use indexPath.row inside data model arrays
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PollOptionCell", for: indexPath) as! PollOptionCell
-        if indexPath.row == idx && flag {
-            cell.optionName.textColor = UIColor.black
-            cell.optionPercent.textColor = UIColor.black
+        if indexPath.row < optionsList.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PollOptionCell", for: indexPath) as! PollOptionCell
+            if indexPath.row == idx && flag {
+                cell.optionName.textColor = UIColor.black
+                cell.optionPercent.textColor = UIColor.black
+            }
+            if totVotes == 0 {
+                percent = 0.0
+            } else {
+                percent = (Double(numVotesList[indexPath.row]) / Double(totVotes))
+                percent = percent.rounded(toPlaces: 4)
+            }
+            cell.optionName.text = optionsList[indexPath.row % colorsArray.count]
+            cell.optionPercent.text = String(percent * 100) + "%"
+            let frame = cell.percentFilled.frame
+            cell.percentFilled.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: CGFloat(Double(screenWidth) * percent), height: 75)
+            cell.percentFilled.backgroundColor = colorsArray[indexPath.row]
+            return cell
         }
-        if totVotes == 0 {
-            percent = 0.0
-        } else {
-            percent = (Double(numVotesList[indexPath.row]) / Double(totVotes))
-            percent = percent.rounded(toPlaces: 4)
+        else if indexPath.row == optionsList.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Divider", for: indexPath)
+            return cell
         }
-        cell.optionName.text = optionsList[indexPath.row % colorsArray.count]
-        cell.optionPercent.text = String(percent * 100) + "%"
-        let frame = cell.percentFilled.frame
-        cell.percentFilled.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: CGFloat(Double(screenWidth) * percent), height: frame.size.height)
-        cell.percentFilled.backgroundColor = colorsArray[indexPath.row]
-        return cell
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! PollPageCommentCell
+            return cell
+        }
+        
+       
     }
     
     
