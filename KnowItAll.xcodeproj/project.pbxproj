@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02184E481FBA7D0F000F431B /* CreateReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02184E471FBA7D0F000F431B /* CreateReviewVC.swift */; };
 		022B7B841FA82F6500BD8103 /* EditReviewPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 022B7B831FA82F6500BD8103 /* EditReviewPage.storyboard */; };
 		022B7B861FA8307E00BD8103 /* EditReviewPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B7B851FA8307E00BD8103 /* EditReviewPageVC.swift */; };
 		0245DD801F902916000B26F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245DD7F1F902916000B26F5 /* User.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02184E471FBA7D0F000F431B /* CreateReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReviewVC.swift; sourceTree = "<group>"; };
 		022B7B831FA82F6500BD8103 /* EditReviewPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = EditReviewPage.storyboard; path = KnowItAll/EditReviewPage.storyboard; sourceTree = SOURCE_ROOT; };
 		022B7B851FA8307E00BD8103 /* EditReviewPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReviewPageVC.swift; sourceTree = "<group>"; };
 		0245DD7F1F902916000B26F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 		758A32BF1F870A6900838DDA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				02184E471FBA7D0F000F431B /* CreateReviewVC.swift */,
 				022B7B851FA8307E00BD8103 /* EditReviewPageVC.swift */,
 				026E11A41F9058A50075FF7D /* FeedbackVC.swift */,
 				02E31B741F90494000B4AAF2 /* rateVC.swift */,
@@ -406,13 +409,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BCryptSwift/BCryptSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BCryptSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -451,7 +454,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -469,6 +472,7 @@
 				0245DD821F902A56000B26F5 /* Poll.swift in Sources */,
 				758A32C31F870B4E00838DDA /* SearchVC.swift in Sources */,
 				02F2CB1C1F880BA50013F88D /* ChangePassword.swift in Sources */,
+				02184E481FBA7D0F000F431B /* CreateReviewVC.swift in Sources */,
 				75F135411F92E09400C07A0F /* PollOptionCell.swift in Sources */,
 				758A32AD1F85A71000838DDA /* LoginViewController.swift in Sources */,
 				024FA0291F918C9A0088EABB /* SpecificReviewCell.swift in Sources */,
@@ -633,7 +637,7 @@
 				DEVELOPMENT_TEAM = 38FZD6KTC7;
 				INFOPLIST_FILE = KnowItAll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.knowItAll.KnowItAll;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knowItAll.KnowItAll2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -647,7 +651,7 @@
 				DEVELOPMENT_TEAM = 38FZD6KTC7;
 				INFOPLIST_FILE = KnowItAll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.knowItAll.KnowItAll;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knowItAll.KnowItAll2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

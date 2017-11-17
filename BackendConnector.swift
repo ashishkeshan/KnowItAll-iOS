@@ -26,6 +26,7 @@ func getJSONFromURL(_ urlString: String, _ type: String) -> JSON {
             return
         }
         json = JSON(data: data!)
+        print(json)
         queryFinished = true
     }
     task.resume()

@@ -12,6 +12,7 @@ class Review: Post {
     var rating:Double!
     var comment:String!
     var topic:String!
+    var anonymous:Int?
     
     init(id:Int,type:Int,rating:Double,comment:String,text:String) {
         super.init(id: id,b: type)

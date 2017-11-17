@@ -9,8 +9,11 @@
 import UIKit
 import Cosmos
 
-class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol ReviewVCDelegate {
+    func refreshPage()
+}
 
+class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, ReviewVCDelegate {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var numReviews: UILabel!
@@ -20,6 +23,9 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var topic : Topic? = nil
     var comments = [String]()
     var ratings = [Double]()
+    var usernames = [String]()
+    var segueFlag = false
+    var category = -1
     let nc = NotificationCenter.default
     @IBAction func addReview(_ sender: Any) {
         let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
@@ -28,10 +34,21 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
+        } else {
+            performSegue(withIdentifier: "popoverSegue", sender: self)
         }
-        self.tabBarController?.selectedIndex = 2
-        let createNewPostVC = self.tabBarController?.viewControllers![2] as! CreateNewPostVC
-        createNewPostVC.fillReview(topic: (topic?.title)!, catId: (topic?.category)!)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        segueFlag = true
+        print("seguing")
+        if segue.destination is CreateReviewVC {
+            let vc = segue.destination as? CreateReviewVC
+            vc?.category = category
+            vc?.topicName = (topic?.title)!
+            vc?.delegate = self
+        }
     }
     
     override func viewDidLoad() {
@@ -43,21 +60,25 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         titleLabel.text = topic?.title
         numReviews.text = String(describing: (topic?.numReviews)!) + " review(s)"
         stars.rating = (topic?.rating)!
-        
+        stars.settings.fillMode = .half
         switch (topic?.category)! {
         case 1:
+            category = 1
             let img = UIImage(named: "Academic")
             categoryImage.image = img
             break
         case 2:
+            category = 2
             let img = UIImage(named: "Food")
             categoryImage.image = img
             break
         case 3:
+            category = 3
             let img = UIImage(named: "Entertainment")
             categoryImage.image = img
             break
         case 4:
+            category = 4
             let img = UIImage(named: "Locations")
             categoryImage.image = img
             break
@@ -68,20 +89,45 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        self.navigationController?.popViewController(animated: false)
+        if !segueFlag {
+           self.navigationController?.popViewController(animated: false)
+        } else {
+            segueFlag = false
+        }
+    }
+    
+    func refreshPage() {
+        getReviews()
+        self.viewDidLoad()
+        tableView.reloadData()
     }
     
     func getReviews() {
 //        http://127.0.0.1:8000/api/getPost?type=topic&text=CSCI 310
+        comments.removeAll()
+        ratings.removeAll()
+        usernames.removeAll()
         let urlString = "/getPost?type=topic&text=" + (topic?.title)!
         
         let json = getJSONFromURL(urlString, "GET")
         let status = json["status"]
         // Check if status is good
         if status == 200 {
+            for topicArr in json["topic"].arrayValue {
+                topic?.rating = Double(topicArr["avRating"].stringValue)
+                topic?.numReviews = topicArr["numReviews"].int
+            }
             for review in json["reviews"].arrayValue {
                 comments.append(review["comment"].string!)
                 ratings.append(Double(review["rating"].stringValue)!)
+                if review["anonymous"].bool == true {
+                    usernames.append("Anonymous")
+                } else {
+                    let newstr = review["username"].string!
+                    var token = newstr.components(separatedBy: "@")
+                    usernames.append(token[0])
+                }
+                
             }
         }
     }
@@ -99,6 +145,7 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! TopicPageReviewCell
         cell.comment.text = comments[indexPath.row]
         cell.rating.rating = ratings[indexPath.row]
+        cell.author.text = usernames[indexPath.row]
         return cell
     }
     

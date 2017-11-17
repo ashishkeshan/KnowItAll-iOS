@@ -20,7 +20,7 @@ class SpecificReviewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.stars.settings.updateOnTouch = false
-        self.stars.settings.fillMode = .precise
+        self.stars.settings.fillMode = .half
         self.selectionStyle = UITableViewCellSelectionStyle.none
     }
     

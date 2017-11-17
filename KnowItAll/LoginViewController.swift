@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BCryptSwift
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
@@ -17,11 +18,11 @@ class LoginViewController: UIViewController {
     
     var emailAddress = ""
     var newPassword = ""
+    var salt = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFields()
-        
         userDefaults = UserDefaults.standard
     }
     
@@ -66,19 +67,17 @@ class LoginViewController: UIViewController {
             return
         }
         
-        var urlString = "/authenticate?username="+emailField.text! + "&check=true"
-        var json = getJSONFromURL(urlString, "POST")
-        var status = json["status"]
+        let urlString = "/authenticate?username="+emailField.text! + "&check=true"
+        var json = getJSONFromURL(urlString, "GET")
+        let status = json["status"]
         let authenticated = json["authenticated"].string
+        let hashedPassword = json["password"].stringValue
         // Check if status is good
         if status == 200 {
             if authenticated == "true" {
-                urlString = "/authenticate?username=" + emailField.text! + "&password=" + passwordField.text!
-                json = getJSONFromURL(urlString, "POST")
-                status = json["status"]
-                if status == 200 {
+                let verify = BCryptSwift.verifyPassword(passwordField.text!, matchesHash: hashedPassword)!
+                if verify == true {
                     userDefaults.set(emailField.text, forKey: Login.emailKey)
-                    userDefaults.set(passwordField.text, forKey: Login.passwordKey)
                     userDefaults.set(Login.yes, forKey: Login.loggedIn)
                     // Segue
                     let storyboard = UIStoryboard(name: "TabBar", bundle:nil)
@@ -122,11 +121,12 @@ class LoginViewController: UIViewController {
             indicator.isHidden = true
             return
         }
-        
+        let salt = BCryptSwift.generateSaltWithNumberOfRounds(4)
+        let password = BCryptSwift.hashPassword(self.passwordField.text!, withSalt: salt)
         indicator.isHidden = false
         indicator.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            let urlString = "/register?username="+self.emailField.text!+"&password="+self.passwordField.text!
+            let urlString = "/register?username="+self.emailField.text!+"&password="+password!
             let json = getJSONFromURL(urlString, "POST")
             let status = json["status"]
             

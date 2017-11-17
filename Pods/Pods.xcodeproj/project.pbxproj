@@ -7,94 +7,115 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		015C902B9C0E63DA0519A0D34E10F739 /* CosmosSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444FF7B1822C9E9EB647AD04155A9EB4 /* CosmosSettings.swift */; };
-		0EC88D04EAE0CD3EFD3C3C89C1B9F45F /* CosmosLocalizedRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01D8B3D83799FF44FB740A60E5D050 /* CosmosLocalizedRating.swift */; };
-		25DFA72039CBA011EBA738AA73084A8E /* CosmosSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1E6E0B3B99199958C95FE012097BCB /* CosmosSize.swift */; };
-		371F422D050761A63F0156F537B8902D /* CosmosDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DC94AD717213E25AA0FF2D798C10AF /* CosmosDefaultSettings.swift */; };
-		3D669140150B746BD6EB8259A839BE47 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A88AC0798626EDE00BF9FEC9BD02E7 /* SwiftyJSON-dummy.m */; };
-		3DF6ECF23D38E7DA5B5B2B43707F2F4D /* Cosmos-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 914D5CE004EB2ECF2C422A92BD52772C /* Cosmos-dummy.m */; };
-		424AD9605CBDCD867083B9820784E0AC /* CosmosText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F60BCC0DE6033BB4EDB8EC4FDB71452 /* CosmosText.swift */; };
-		45F546D14166EDEE46371951EC705C03 /* CosmosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B59A27FCD51060638F8ADFF367633D0 /* CosmosView.swift */; };
-		4D6488A0F913499FBD9822D8DA199A7B /* Pods-KnowItAll-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E37E735C5A8FD068619360EB873AE60 /* Pods-KnowItAll-dummy.m */; };
-		4F40A9CBB316E7100828F0C6F5714946 /* CosmosTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5501D78562EEAD1A1ED83C02D37217 /* CosmosTouch.swift */; };
-		523E13DED3B09D3C93F8702AA9938D1F /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F4EC18E0D670938CF336BF9DEB517AA /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5708D01773BF6382179BA7C24B7EFA94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		6F7D13B6B97CD3B1867331F05433FFF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		7CC5A43D7E1372EB6292FCBC0151A36E /* CosmosAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38AE38DE1105AB68B153B32C934ACC /* CosmosAccessibility.swift */; };
-		88BA9FFC474BD7B995A0CEA06FF431F7 /* StarFillMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33588870894D847DD2DE91DB2146F8B2 /* StarFillMode.swift */; };
-		99F08F6FE2B165EEBD5E01EDDA176620 /* CosmosRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B134A0B1C7ACCA35D6A22C226CF98B /* CosmosRating.swift */; };
-		AA971D9492DD9B9E288045C2C0CC9A99 /* CosmosLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8AD89C9E0F374ED0072EBB0159D672 /* CosmosLayers.swift */; };
-		B4158CA6DA45A6D17804CD93C4F03C37 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98CB0417091CCE6A68E74D88C514ABC /* SwiftyJSON.swift */; };
-		C79D2F2FCE3EF9B31D1222E0C4A59DC5 /* RightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B316A6FC2CBFF666BB84833FDEF6325 /* RightToLeft.swift */; };
-		C95B658D689425ED9DAA95EB479B44A6 /* StarLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213EF0E84F38E7B4B6AFA2617778CFFF /* StarLayer.swift */; };
-		DE5E91A47C1BF6869DF17747D61C2FF1 /* Cosmos-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B86EAE183F60348AA4625ED07EF40BD4 /* Cosmos-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E2D8D1AA0D41C73C4B570DE682C05D72 /* CosmosTouchTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEFBC2CEAD19A241A23E265016DB8C4 /* CosmosTouchTarget.swift */; };
-		E98583B4633025F814DA94D13B16541F /* Pods-KnowItAll-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B7DB909CA5DCF6BB4522903580985D6 /* Pods-KnowItAll-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F37DDDC2660EB17E1BE35429C1C58AD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		F66DE3EF01408C42C115587B201CB541 /* CosmosLayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FEB928B6301BB04C74A239BBDB521B /* CosmosLayerHelper.swift */; };
+		015C902B9C0E63DA0519A0D34E10F739 /* CosmosSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55900E5F091698B75BF757E3D33EEA /* CosmosSettings.swift */; };
+		0EC88D04EAE0CD3EFD3C3C89C1B9F45F /* CosmosLocalizedRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1DBF3D51580DECBDBDF6646C2BCF9 /* CosmosLocalizedRating.swift */; };
+		25DFA72039CBA011EBA738AA73084A8E /* CosmosSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42547A2583A9DF527984EBE937459363 /* CosmosSize.swift */; };
+		371F422D050761A63F0156F537B8902D /* CosmosDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E44C71D38C3ACF84684983CB883435 /* CosmosDefaultSettings.swift */; };
+		3808A7734B13F08521C80174628E1F06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		3DF6ECF23D38E7DA5B5B2B43707F2F4D /* Cosmos-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A6CB34DE2E679F8C46C8CD9650A3B8 /* Cosmos-dummy.m */; };
+		4227E2DA0B45CCCC703387C26745BC59 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F721A824DA89E2F86E1FA12D6B2B2E /* SwiftyJSON-dummy.m */; };
+		424AD9605CBDCD867083B9820784E0AC /* CosmosText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC63C3881235529258E18C5E02B98E06 /* CosmosText.swift */; };
+		45F546D14166EDEE46371951EC705C03 /* CosmosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D47B1B9161CCFF9D062A3C2308DC22 /* CosmosView.swift */; };
+		4F40A9CBB316E7100828F0C6F5714946 /* CosmosTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89DB6F614556F89B92440F308DCC908 /* CosmosTouch.swift */; };
+		5488F6BB4CB707823920DCFD8907FB00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		6896B9402B1C4473E3E30E05ED53EFE6 /* Pods-KnowItAll-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E37E735C5A8FD068619360EB873AE60 /* Pods-KnowItAll-dummy.m */; };
+		68FB20A993AB325B503AC65BF5329C3B /* BCryptSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5693FA75FF1F5962DC81E8B67A0CC08 /* BCryptSwift-dummy.m */; };
+		7CC5A43D7E1372EB6292FCBC0151A36E /* CosmosAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5644463A6A4F1F6014D7D4508A01C /* CosmosAccessibility.swift */; };
+		865CC14756EE133455F07BE6536058DD /* Pods-KnowItAll-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B7DB909CA5DCF6BB4522903580985D6 /* Pods-KnowItAll-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88BA9FFC474BD7B995A0CEA06FF431F7 /* StarFillMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1166FA1B4ADBBCED4C9608EE65B1C9D /* StarFillMode.swift */; };
+		981F57CA906273FB1C9972FEB47C9CAE /* BCryptSwiftRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DA781E120CDDC7AF1FD5F9A82BD483 /* BCryptSwiftRandom.swift */; };
+		99F08F6FE2B165EEBD5E01EDDA176620 /* CosmosRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF3CD63EDD5D2557A6F95D541EACAB /* CosmosRating.swift */; };
+		9E41E3829E356DD641C06DBA561E22F0 /* BCryptSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617E1E506E338C18C2020825DF494642 /* BCryptSwift.swift */; };
+		A01214A0E44D0242014BDFD5DD30D8AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		A8D0F1C3405DD1451822DBEDCB4925BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		AA971D9492DD9B9E288045C2C0CC9A99 /* CosmosLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC39953D4FB0FE4DE9181C8291961BF /* CosmosLayers.swift */; };
+		BB51B7D2B0E92885EE26F9DC34171446 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F60BE81B9F8CC7C6E3C6D6CAE5DB0626 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C79D2F2FCE3EF9B31D1222E0C4A59DC5 /* RightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADABF5F70E3A4A71571171E5CB2BBB2 /* RightToLeft.swift */; };
+		C95B658D689425ED9DAA95EB479B44A6 /* StarLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E097B9D1CCC9A164D8F29E9DE2048C8A /* StarLayer.swift */; };
+		DE5E91A47C1BF6869DF17747D61C2FF1 /* Cosmos-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B69EDC7F3F28BDC7DB98730781F2A6D /* Cosmos-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2D8D1AA0D41C73C4B570DE682C05D72 /* CosmosTouchTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50E80AF582F9102B780DE652A058B9 /* CosmosTouchTarget.swift */; };
+		E45CF143C768EE11D3C0C07CB5860460 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3671F7911D94C779340CF71DF49FC3 /* SwiftyJSON.swift */; };
+		F66DE3EF01408C42C115587B201CB541 /* CosmosLayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF9902904650D9E058CCDCD066A49F4 /* CosmosLayerHelper.swift */; };
+		F6BD1D5923A57EDF24DDF50E22CDDAD0 /* BCryptSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AB6D420EA5F20EECCE6BA415C854889 /* BCryptSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5269ADC97F0F68F7F934FC2171FFDCF1 /* PBXContainerItemProxy */ = {
+		82B544B59FC05A17A0F8D5010058E72E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4FDC533A4360A68ABDCE852F04B30927;
 			remoteInfo = Cosmos;
 		};
-		EE096C40C35FD36D3078178998FDC305 /* PBXContainerItemProxy */ = {
+		9D1F90D663625D9E559A4EACCD454837 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5C4FB06686719C21F31326B2FC0DDC0A;
+			remoteGlobalIDString = 151C98441B35C90CAC49B68393DAD0ED;
+			remoteInfo = BCryptSwift;
+		};
+		B7C21ED71A6B8C2E8D0944938365AB67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6B97C76847B2B20B826547BBD165292;
 			remoteInfo = SwiftyJSON;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0437214DF8A33043BBBEFC83877EBF26 /* Pods-KnowItAll-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KnowItAll-acknowledgements.plist"; sourceTree = "<group>"; };
-		07DC94AD717213E25AA0FF2D798C10AF /* CosmosDefaultSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosDefaultSettings.swift; path = Cosmos/CosmosDefaultSettings.swift; sourceTree = "<group>"; };
-		096B73E9D346F30725F596B62B293403 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
-		0F4EC18E0D670938CF336BF9DEB517AA /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
-		15636A4E7CF98AA92918BB0A8D252A56 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
+		0A27B50B6DE705708DBBABBE65F91A5E /* Cosmos.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cosmos.xcconfig; sourceTree = "<group>"; };
+		0DB1DBF3D51580DECBDBDF6646C2BCF9 /* CosmosLocalizedRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLocalizedRating.swift; path = Cosmos/CosmosLocalizedRating.swift; sourceTree = "<group>"; };
 		16C1C00B6F7BC6B4A2488AEF6DA495C8 /* Pods-KnowItAll-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KnowItAll-resources.sh"; sourceTree = "<group>"; };
-		1B59A27FCD51060638F8ADFF367633D0 /* CosmosView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosView.swift; path = Cosmos/CosmosView.swift; sourceTree = "<group>"; };
-		1B78A8027EB2274A220B2761EB3DC674 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		213EF0E84F38E7B4B6AFA2617778CFFF /* StarLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarLayer.swift; path = Cosmos/StarLayer.swift; sourceTree = "<group>"; };
-		2272DBA071BDD3CB37AD578FE3808A61 /* Cosmos.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Cosmos.modulemap; sourceTree = "<group>"; };
-		31770506C4853C919C68D5696FFA3A1D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33588870894D847DD2DE91DB2146F8B2 /* StarFillMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarFillMode.swift; path = Cosmos/StarFillMode.swift; sourceTree = "<group>"; };
-		3C98E29322B6C2A1180217BD2124ED92 /* Pods_KnowItAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KnowItAll.framework; path = "Pods-KnowItAll.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D01D8B3D83799FF44FB740A60E5D050 /* CosmosLocalizedRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLocalizedRating.swift; path = Cosmos/CosmosLocalizedRating.swift; sourceTree = "<group>"; };
+		17FEDD4BFBB36BDCA2BBBEFE10593E1B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1ADABF5F70E3A4A71571171E5CB2BBB2 /* RightToLeft.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RightToLeft.swift; path = Cosmos/Helpers/RightToLeft.swift; sourceTree = "<group>"; };
+		1E001D8B15D3DB70A441776EA458C2D7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CF9172D64DFAC6A4CB6ECA4008EC6E3 /* BCryptSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BCryptSwift.framework; path = BCryptSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30CEC301C7C721018FDD6AA7870A8ADA /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		39D47B1B9161CCFF9D062A3C2308DC22 /* CosmosView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosView.swift; path = Cosmos/CosmosView.swift; sourceTree = "<group>"; };
 		3EF74F99E3DA4238A524147512E3B252 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		444FF7B1822C9E9EB647AD04155A9EB4 /* CosmosSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSettings.swift; path = Cosmos/CosmosSettings.swift; sourceTree = "<group>"; };
-		4B316A6FC2CBFF666BB84833FDEF6325 /* RightToLeft.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RightToLeft.swift; path = Cosmos/Helpers/RightToLeft.swift; sourceTree = "<group>"; };
-		4C8AD89C9E0F374ED0072EBB0159D672 /* CosmosLayers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayers.swift; path = Cosmos/CosmosLayers.swift; sourceTree = "<group>"; };
-		5F1E6E0B3B99199958C95FE012097BCB /* CosmosSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSize.swift; path = Cosmos/CosmosSize.swift; sourceTree = "<group>"; };
+		42547A2583A9DF527984EBE937459363 /* CosmosSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSize.swift; path = Cosmos/CosmosSize.swift; sourceTree = "<group>"; };
+		4B55900E5F091698B75BF757E3D33EEA /* CosmosSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSettings.swift; path = Cosmos/CosmosSettings.swift; sourceTree = "<group>"; };
+		5795227E19578A4F35C5345667337DE4 /* BCryptSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BCryptSwift-prefix.pch"; sourceTree = "<group>"; };
+		5C6284548302A034EF3BB902D8A8185E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E3671F7911D94C779340CF71DF49FC3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		617E1E506E338C18C2020825DF494642 /* BCryptSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BCryptSwift.swift; path = BCryptSwift/Classes/BCryptSwift.swift; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		66A6CB34DE2E679F8C46C8CD9650A3B8 /* Cosmos-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cosmos-dummy.m"; sourceTree = "<group>"; };
+		69BF3CD63EDD5D2557A6F95D541EACAB /* CosmosRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosRating.swift; path = Cosmos/CosmosRating.swift; sourceTree = "<group>"; };
+		6AB6D420EA5F20EECCE6BA415C854889 /* BCryptSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BCryptSwift-umbrella.h"; sourceTree = "<group>"; };
 		6B7DB909CA5DCF6BB4522903580985D6 /* Pods-KnowItAll-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KnowItAll-umbrella.h"; sourceTree = "<group>"; };
-		6F60BCC0DE6033BB4EDB8EC4FDB71452 /* CosmosText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosText.swift; path = Cosmos/CosmosText.swift; sourceTree = "<group>"; };
-		71FEB928B6301BB04C74A239BBDB521B /* CosmosLayerHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayerHelper.swift; path = Cosmos/CosmosLayerHelper.swift; sourceTree = "<group>"; };
-		7B5501D78562EEAD1A1ED83C02D37217 /* CosmosTouch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouch.swift; path = Cosmos/CosmosTouch.swift; sourceTree = "<group>"; };
-		829E2FE1829B436896A140C01F62166F /* Cosmos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cosmos.framework; path = Cosmos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		90B134A0B1C7ACCA35D6A22C226CF98B /* CosmosRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosRating.swift; path = Cosmos/CosmosRating.swift; sourceTree = "<group>"; };
-		914D5CE004EB2ECF2C422A92BD52772C /* Cosmos-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cosmos-dummy.m"; sourceTree = "<group>"; };
+		747B74541A969175F03121B53588FF15 /* Cosmos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cosmos.framework; path = Cosmos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76AD319B70FC71F685E5BBEC19A126F2 /* BCryptSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = BCryptSwift.modulemap; sourceTree = "<group>"; };
+		7B69EDC7F3F28BDC7DB98730781F2A6D /* Cosmos-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-umbrella.h"; sourceTree = "<group>"; };
+		7F649715F42AC828602967E2A011BAF4 /* Cosmos-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-prefix.pch"; sourceTree = "<group>"; };
+		8479DD5712A5C9938F57BB8849A44E1B /* Pods_KnowItAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KnowItAll.framework; path = "Pods-KnowItAll.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		953E92D29B4A785AA20B02539C662848 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 		976A5961611273BF34506A5777B61C80 /* Pods-KnowItAll-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KnowItAll-frameworks.sh"; sourceTree = "<group>"; };
-		98A88AC0798626EDE00BF9FEC9BD02E7 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		9AC39953D4FB0FE4DE9181C8291961BF /* CosmosLayers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayers.swift; path = Cosmos/CosmosLayers.swift; sourceTree = "<group>"; };
 		9AED1C29115447F0F4CDBD85AC06665A /* Pods-KnowItAll.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-KnowItAll.modulemap"; sourceTree = "<group>"; };
 		9E37E735C5A8FD068619360EB873AE60 /* Pods-KnowItAll-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KnowItAll-dummy.m"; sourceTree = "<group>"; };
-		A2016DC8B2A74F9FDCE33482EB459DF1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADEFBC2CEAD19A241A23E265016DB8C4 /* CosmosTouchTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouchTarget.swift; path = Cosmos/Helpers/CosmosTouchTarget.swift; sourceTree = "<group>"; };
+		A9F721A824DA89E2F86E1FA12D6B2B2E /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		AC63C3881235529258E18C5E02B98E06 /* CosmosText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosText.swift; path = Cosmos/CosmosText.swift; sourceTree = "<group>"; };
+		AF50E80AF582F9102B780DE652A058B9 /* CosmosTouchTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouchTarget.swift; path = Cosmos/Helpers/CosmosTouchTarget.swift; sourceTree = "<group>"; };
 		B67FD1C34278531EA51E168E731F81FC /* Pods-KnowItAll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KnowItAll.release.xcconfig"; sourceTree = "<group>"; };
-		B86EAE183F60348AA4625ED07EF40BD4 /* Cosmos-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-umbrella.h"; sourceTree = "<group>"; };
+		BF66F7BFCA04014D1BC8387087A7D6AA /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 		C0020ED36FA3B2C1CDBC5752577EEA58 /* Pods-KnowItAll-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KnowItAll-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C1166FA1B4ADBBCED4C9608EE65B1C9D /* StarFillMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarFillMode.swift; path = Cosmos/StarFillMode.swift; sourceTree = "<group>"; };
+		C89DB6F614556F89B92440F308DCC908 /* CosmosTouch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouch.swift; path = Cosmos/CosmosTouch.swift; sourceTree = "<group>"; };
+		CADC0C1395DD797F91A6AAC48AC6998D /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
+		D3A5644463A6A4F1F6014D7D4508A01C /* CosmosAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosAccessibility.swift; path = Cosmos/CosmosAccessibility.swift; sourceTree = "<group>"; };
+		D5693FA75FF1F5962DC81E8B67A0CC08 /* BCryptSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BCryptSwift-dummy.m"; sourceTree = "<group>"; };
+		D6DA781E120CDDC7AF1FD5F9A82BD483 /* BCryptSwiftRandom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BCryptSwiftRandom.swift; path = BCryptSwift/Classes/BCryptSwiftRandom.swift; sourceTree = "<group>"; };
 		D946972D7CFAA4DC15D42DDBF42D3F1C /* Pods-KnowItAll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KnowItAll.debug.xcconfig"; sourceTree = "<group>"; };
-		DC38AE38DE1105AB68B153B32C934ACC /* CosmosAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosAccessibility.swift; path = Cosmos/CosmosAccessibility.swift; sourceTree = "<group>"; };
-		E7EA2CCCBA5777CB15DD854FCD7B8B41 /* Cosmos-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-prefix.pch"; sourceTree = "<group>"; };
-		E98CB0417091CCE6A68E74D88C514ABC /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
-		EB66699EE4E023307B72589560B8B9CA /* Cosmos.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cosmos.xcconfig; sourceTree = "<group>"; };
+		DDF9902904650D9E058CCDCD066A49F4 /* CosmosLayerHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayerHelper.swift; path = Cosmos/CosmosLayerHelper.swift; sourceTree = "<group>"; };
+		DE20AE78E8B03F9402949437BCA3D022 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0027FF0EDCE57B5D3F3C34C8C2BB1E6 /* Cosmos.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Cosmos.modulemap; sourceTree = "<group>"; };
+		E097B9D1CCC9A164D8F29E9DE2048C8A /* StarLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarLayer.swift; path = Cosmos/StarLayer.swift; sourceTree = "<group>"; };
+		E5E44C71D38C3ACF84684983CB883435 /* CosmosDefaultSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosDefaultSettings.swift; path = Cosmos/CosmosDefaultSettings.swift; sourceTree = "<group>"; };
+		F5D26FFC24EE309EB4A24CC28406861A /* BCryptSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BCryptSwift.xcconfig; sourceTree = "<group>"; };
+		F60BE81B9F8CC7C6E3C6D6CAE5DB0626 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,44 +123,63 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F37DDDC2660EB17E1BE35429C1C58AD4 /* Foundation.framework in Frameworks */,
+				A8D0F1C3405DD1451822DBEDCB4925BC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		74930022DAEB43F625A4DB1D4FB696DE /* Frameworks */ = {
+		5ACC26F0942294966D1C9C74091FF618 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5708D01773BF6382179BA7C24B7EFA94 /* Foundation.framework in Frameworks */,
+				A01214A0E44D0242014BDFD5DD30D8AB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E37001B99A4A1263C974DC149D5EDCEF /* Frameworks */ = {
+		A29A7DF746BC2378EBB23820F54A967A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F7D13B6B97CD3B1867331F05433FFF5 /* Foundation.framework in Frameworks */,
+				5488F6BB4CB707823920DCFD8907FB00 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F540DF82844170F1B518613D57B90043 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3808A7734B13F08521C80174628E1F06 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0BF7EC7C64F05758DFB16EB2B4EE4826 /* Products */ = {
+		16880E1BB7B565C381884A4766573BF5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				829E2FE1829B436896A140C01F62166F /* Cosmos.framework */,
-				3C98E29322B6C2A1180217BD2124ED92 /* Pods_KnowItAll.framework */,
-				A2016DC8B2A74F9FDCE33482EB459DF1 /* SwiftyJSON.framework */,
+				A9899E1CB79203654F7FAF9C392F4154 /* BCryptSwift */,
+				68D1A97EB19D5D9CE117DBAFEA3CD972 /* Cosmos */,
+				47BD6F86983275F343368B6F608ED248 /* SwiftyJSON */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2E02A9CA3ECA9313A5960867B8CF07A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CF9172D64DFAC6A4CB6ECA4008EC6E3 /* BCryptSwift.framework */,
+				747B74541A969175F03121B53588FF15 /* Cosmos.framework */,
+				8479DD5712A5C9938F57BB8849A44E1B /* Pods_KnowItAll.framework */,
+				5C6284548302A034EF3BB902D8A8185E /* SwiftyJSON.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		41FCBBD6A177873DB9E03391949E0D38 /* SwiftyJSON */ = {
+		47BD6F86983275F343368B6F608ED248 /* SwiftyJSON */ = {
 			isa = PBXGroup;
 			children = (
-				E98CB0417091CCE6A68E74D88C514ABC /* SwiftyJSON.swift */,
-				D949227C0CFC45E64AA9F77B1C6ACB97 /* Support Files */,
+				5E3671F7911D94C779340CF71DF49FC3 /* SwiftyJSON.swift */,
+				AA725865BA5994868279E2553033D452 /* Support Files */,
 			);
 			name = SwiftyJSON;
 			path = SwiftyJSON;
@@ -153,12 +193,28 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+		68D1A97EB19D5D9CE117DBAFEA3CD972 /* Cosmos */ = {
 			isa = PBXGroup;
 			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+				D3A5644463A6A4F1F6014D7D4508A01C /* CosmosAccessibility.swift */,
+				E5E44C71D38C3ACF84684983CB883435 /* CosmosDefaultSettings.swift */,
+				DDF9902904650D9E058CCDCD066A49F4 /* CosmosLayerHelper.swift */,
+				9AC39953D4FB0FE4DE9181C8291961BF /* CosmosLayers.swift */,
+				0DB1DBF3D51580DECBDBDF6646C2BCF9 /* CosmosLocalizedRating.swift */,
+				69BF3CD63EDD5D2557A6F95D541EACAB /* CosmosRating.swift */,
+				4B55900E5F091698B75BF757E3D33EEA /* CosmosSettings.swift */,
+				42547A2583A9DF527984EBE937459363 /* CosmosSize.swift */,
+				AC63C3881235529258E18C5E02B98E06 /* CosmosText.swift */,
+				C89DB6F614556F89B92440F308DCC908 /* CosmosTouch.swift */,
+				AF50E80AF582F9102B780DE652A058B9 /* CosmosTouchTarget.swift */,
+				39D47B1B9161CCFF9D062A3C2308DC22 /* CosmosView.swift */,
+				1ADABF5F70E3A4A71571171E5CB2BBB2 /* RightToLeft.swift */,
+				C1166FA1B4ADBBCED4C9608EE65B1C9D /* StarFillMode.swift */,
+				E097B9D1CCC9A164D8F29E9DE2048C8A /* StarLayer.swift */,
+				C61462DBB19659E657CB29F6E4587EBD /* Support Files */,
 			);
-			name = iOS;
+			name = Cosmos;
+			path = Cosmos;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -166,8 +222,8 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				BAF35F4D51C55B032443917F481757D6 /* Pods */,
-				0BF7EC7C64F05758DFB16EB2B4EE4826 /* Products */,
+				16880E1BB7B565C381884A4766573BF5 /* Pods */,
+				2E02A9CA3ECA9313A5960867B8CF07A4 /* Products */,
 				679991DDC870A159F7704C138663AEA8 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -190,83 +246,99 @@
 			path = "Target Support Files/Pods-KnowItAll";
 			sourceTree = "<group>";
 		};
-		BAF35F4D51C55B032443917F481757D6 /* Pods */ = {
+		A9899E1CB79203654F7FAF9C392F4154 /* BCryptSwift */ = {
 			isa = PBXGroup;
 			children = (
-				D2E61C951A574E6649D23F1C695F08AB /* Cosmos */,
-				41FCBBD6A177873DB9E03391949E0D38 /* SwiftyJSON */,
+				617E1E506E338C18C2020825DF494642 /* BCryptSwift.swift */,
+				D6DA781E120CDDC7AF1FD5F9A82BD483 /* BCryptSwiftRandom.swift */,
+				BBCDC01AB78E5EA37531ED9C546CCF0D /* Support Files */,
 			);
-			name = Pods;
+			name = BCryptSwift;
+			path = BCryptSwift;
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		AA725865BA5994868279E2553033D452 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D2E61C951A574E6649D23F1C695F08AB /* Cosmos */ = {
-			isa = PBXGroup;
-			children = (
-				DC38AE38DE1105AB68B153B32C934ACC /* CosmosAccessibility.swift */,
-				07DC94AD717213E25AA0FF2D798C10AF /* CosmosDefaultSettings.swift */,
-				71FEB928B6301BB04C74A239BBDB521B /* CosmosLayerHelper.swift */,
-				4C8AD89C9E0F374ED0072EBB0159D672 /* CosmosLayers.swift */,
-				3D01D8B3D83799FF44FB740A60E5D050 /* CosmosLocalizedRating.swift */,
-				90B134A0B1C7ACCA35D6A22C226CF98B /* CosmosRating.swift */,
-				444FF7B1822C9E9EB647AD04155A9EB4 /* CosmosSettings.swift */,
-				5F1E6E0B3B99199958C95FE012097BCB /* CosmosSize.swift */,
-				6F60BCC0DE6033BB4EDB8EC4FDB71452 /* CosmosText.swift */,
-				7B5501D78562EEAD1A1ED83C02D37217 /* CosmosTouch.swift */,
-				ADEFBC2CEAD19A241A23E265016DB8C4 /* CosmosTouchTarget.swift */,
-				1B59A27FCD51060638F8ADFF367633D0 /* CosmosView.swift */,
-				4B316A6FC2CBFF666BB84833FDEF6325 /* RightToLeft.swift */,
-				33588870894D847DD2DE91DB2146F8B2 /* StarFillMode.swift */,
-				213EF0E84F38E7B4B6AFA2617778CFFF /* StarLayer.swift */,
-				F890442788D3AE82136F6B4330F4E0F6 /* Support Files */,
-			);
-			name = Cosmos;
-			path = Cosmos;
-			sourceTree = "<group>";
-		};
-		D949227C0CFC45E64AA9F77B1C6ACB97 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1B78A8027EB2274A220B2761EB3DC674 /* Info.plist */,
-				096B73E9D346F30725F596B62B293403 /* SwiftyJSON.modulemap */,
-				15636A4E7CF98AA92918BB0A8D252A56 /* SwiftyJSON.xcconfig */,
-				98A88AC0798626EDE00BF9FEC9BD02E7 /* SwiftyJSON-dummy.m */,
-				953E92D29B4A785AA20B02539C662848 /* SwiftyJSON-prefix.pch */,
-				0F4EC18E0D670938CF336BF9DEB517AA /* SwiftyJSON-umbrella.h */,
+				17FEDD4BFBB36BDCA2BBBEFE10593E1B /* Info.plist */,
+				30CEC301C7C721018FDD6AA7870A8ADA /* SwiftyJSON.modulemap */,
+				CADC0C1395DD797F91A6AAC48AC6998D /* SwiftyJSON.xcconfig */,
+				A9F721A824DA89E2F86E1FA12D6B2B2E /* SwiftyJSON-dummy.m */,
+				BF66F7BFCA04014D1BC8387087A7D6AA /* SwiftyJSON-prefix.pch */,
+				F60BE81B9F8CC7C6E3C6D6CAE5DB0626 /* SwiftyJSON-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftyJSON";
 			sourceTree = "<group>";
 		};
-		F890442788D3AE82136F6B4330F4E0F6 /* Support Files */ = {
+		BBCDC01AB78E5EA37531ED9C546CCF0D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2272DBA071BDD3CB37AD578FE3808A61 /* Cosmos.modulemap */,
-				EB66699EE4E023307B72589560B8B9CA /* Cosmos.xcconfig */,
-				914D5CE004EB2ECF2C422A92BD52772C /* Cosmos-dummy.m */,
-				E7EA2CCCBA5777CB15DD854FCD7B8B41 /* Cosmos-prefix.pch */,
-				B86EAE183F60348AA4625ED07EF40BD4 /* Cosmos-umbrella.h */,
-				31770506C4853C919C68D5696FFA3A1D /* Info.plist */,
+				76AD319B70FC71F685E5BBEC19A126F2 /* BCryptSwift.modulemap */,
+				F5D26FFC24EE309EB4A24CC28406861A /* BCryptSwift.xcconfig */,
+				D5693FA75FF1F5962DC81E8B67A0CC08 /* BCryptSwift-dummy.m */,
+				5795227E19578A4F35C5345667337DE4 /* BCryptSwift-prefix.pch */,
+				6AB6D420EA5F20EECCE6BA415C854889 /* BCryptSwift-umbrella.h */,
+				1E001D8B15D3DB70A441776EA458C2D7 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BCryptSwift";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C61462DBB19659E657CB29F6E4587EBD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E0027FF0EDCE57B5D3F3C34C8C2BB1E6 /* Cosmos.modulemap */,
+				0A27B50B6DE705708DBBABBE65F91A5E /* Cosmos.xcconfig */,
+				66A6CB34DE2E679F8C46C8CD9650A3B8 /* Cosmos-dummy.m */,
+				7F649715F42AC828602967E2A011BAF4 /* Cosmos-prefix.pch */,
+				7B69EDC7F3F28BDC7DB98730781F2A6D /* Cosmos-umbrella.h */,
+				DE20AE78E8B03F9402949437BCA3D022 /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Cosmos";
 			sourceTree = "<group>";
 		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A8AFD839DA1808021D5797CA91AA1C78 /* Headers */ = {
+		23C650B80D919700EB78F0B12B324E23 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				523E13DED3B09D3C93F8702AA9938D1F /* SwiftyJSON-umbrella.h in Headers */,
+				F6BD1D5923A57EDF24DDF50E22CDDAD0 /* BCryptSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E632323CEE2C68AE1E8C5AF6F7522B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB51B7D2B0E92885EE26F9DC34171446 /* SwiftyJSON-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92D55616E6B1E2156B400CAA96D42521 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				865CC14756EE133455F07BE6536058DD /* Pods-KnowItAll-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,34 +350,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D020FB1C925A4D01FD271631DB663B47 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E98583B4633025F814DA94D13B16541F /* Pods-KnowItAll-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		48A7959B2EE08F2E801A021CE77A945F /* Pods-KnowItAll */ = {
+		151C98441B35C90CAC49B68393DAD0ED /* BCryptSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 156AF2008DA343AE1F46F9F506365BA7 /* Build configuration list for PBXNativeTarget "Pods-KnowItAll" */;
+			buildConfigurationList = 9F1EA2C15C44E38A4C120481322984BA /* Build configuration list for PBXNativeTarget "BCryptSwift" */;
 			buildPhases = (
-				89A8BCEF716DEE5F09B01C10FA0208AB /* Sources */,
-				74930022DAEB43F625A4DB1D4FB696DE /* Frameworks */,
-				D020FB1C925A4D01FD271631DB663B47 /* Headers */,
+				C72DF0A3188523B3ACA3949FEA110328 /* Sources */,
+				A29A7DF746BC2378EBB23820F54A967A /* Frameworks */,
+				23C650B80D919700EB78F0B12B324E23 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A44C173EB77D47C0B54A37182ACCFDBC /* PBXTargetDependency */,
-				9F505D8FD4E9CC364385EB33A612A6D8 /* PBXTargetDependency */,
 			);
-			name = "Pods-KnowItAll";
-			productName = "Pods-KnowItAll";
-			productReference = 3C98E29322B6C2A1180217BD2124ED92 /* Pods_KnowItAll.framework */;
+			name = BCryptSwift;
+			productName = BCryptSwift;
+			productReference = 2CF9172D64DFAC6A4CB6ECA4008EC6E3 /* BCryptSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4FDC533A4360A68ABDCE852F04B30927 /* Cosmos */ = {
@@ -322,16 +384,36 @@
 			);
 			name = Cosmos;
 			productName = Cosmos;
-			productReference = 829E2FE1829B436896A140C01F62166F /* Cosmos.framework */;
+			productReference = 747B74541A969175F03121B53588FF15 /* Cosmos.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5C4FB06686719C21F31326B2FC0DDC0A /* SwiftyJSON */ = {
+		9F23857497DDD13C2ACF2DD828E95275 /* Pods-KnowItAll */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C39E562B5D1FCBBE546650F1F8CED933 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
+			buildConfigurationList = BFBBE841278E42D87E7710478AB8080A /* Build configuration list for PBXNativeTarget "Pods-KnowItAll" */;
 			buildPhases = (
-				8B97F40769D352D14599A662D3B7E358 /* Sources */,
-				E37001B99A4A1263C974DC149D5EDCEF /* Frameworks */,
-				A8AFD839DA1808021D5797CA91AA1C78 /* Headers */,
+				CEC774B97CE5C3277449A86F4B78BD98 /* Sources */,
+				5ACC26F0942294966D1C9C74091FF618 /* Frameworks */,
+				92D55616E6B1E2156B400CAA96D42521 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F74EF60001C3ACF57DDEF68F4865843 /* PBXTargetDependency */,
+				F0888581B31965DD9E2D025B12904FB6 /* PBXTargetDependency */,
+				21FF70CD7FCC6DC9F62DFC47D116F926 /* PBXTargetDependency */,
+			);
+			name = "Pods-KnowItAll";
+			productName = "Pods-KnowItAll";
+			productReference = 8479DD5712A5C9938F57BB8849A44E1B /* Pods_KnowItAll.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A6B97C76847B2B20B826547BBD165292 /* SwiftyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF6B76036C0F2FA43C3CA33E4CDF2F37 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
+			buildPhases = (
+				E908B3D3B8814DD10CA9B0B0AE446BC7 /* Sources */,
+				F540DF82844170F1B518613D57B90043 /* Frameworks */,
+				34E632323CEE2C68AE1E8C5AF6F7522B /* Headers */,
 			);
 			buildRules = (
 			);
@@ -339,7 +421,7 @@
 			);
 			name = SwiftyJSON;
 			productName = SwiftyJSON;
-			productReference = A2016DC8B2A74F9FDCE33482EB459DF1 /* SwiftyJSON.framework */;
+			productReference = 5C6284548302A034EF3BB902D8A8185E /* SwiftyJSON.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -348,7 +430,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -359,13 +441,14 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 0BF7EC7C64F05758DFB16EB2B4EE4826 /* Products */;
+			productRefGroup = 2E02A9CA3ECA9313A5960867B8CF07A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				151C98441B35C90CAC49B68393DAD0ED /* BCryptSwift */,
 				4FDC533A4360A68ABDCE852F04B30927 /* Cosmos */,
-				48A7959B2EE08F2E801A021CE77A945F /* Pods-KnowItAll */,
-				5C4FB06686719C21F31326B2FC0DDC0A /* SwiftyJSON */,
+				9F23857497DDD13C2ACF2DD828E95275 /* Pods-KnowItAll */,
+				A6B97C76847B2B20B826547BBD165292 /* SwiftyJSON */,
 			);
 		};
 /* End PBXProject section */
@@ -394,283 +477,389 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		89A8BCEF716DEE5F09B01C10FA0208AB /* Sources */ = {
+		C72DF0A3188523B3ACA3949FEA110328 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D6488A0F913499FBD9822D8DA199A7B /* Pods-KnowItAll-dummy.m in Sources */,
+				68FB20A993AB325B503AC65BF5329C3B /* BCryptSwift-dummy.m in Sources */,
+				9E41E3829E356DD641C06DBA561E22F0 /* BCryptSwift.swift in Sources */,
+				981F57CA906273FB1C9972FEB47C9CAE /* BCryptSwiftRandom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B97F40769D352D14599A662D3B7E358 /* Sources */ = {
+		CEC774B97CE5C3277449A86F4B78BD98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D669140150B746BD6EB8259A839BE47 /* SwiftyJSON-dummy.m in Sources */,
-				B4158CA6DA45A6D17804CD93C4F03C37 /* SwiftyJSON.swift in Sources */,
+				6896B9402B1C4473E3E30E05ED53EFE6 /* Pods-KnowItAll-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E908B3D3B8814DD10CA9B0B0AE446BC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4227E2DA0B45CCCC703387C26745BC59 /* SwiftyJSON-dummy.m in Sources */,
+				E45CF143C768EE11D3C0C07CB5860460 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9F505D8FD4E9CC364385EB33A612A6D8 /* PBXTargetDependency */ = {
+		21FF70CD7FCC6DC9F62DFC47D116F926 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftyJSON;
-			target = 5C4FB06686719C21F31326B2FC0DDC0A /* SwiftyJSON */;
-			targetProxy = EE096C40C35FD36D3078178998FDC305 /* PBXContainerItemProxy */;
+			target = A6B97C76847B2B20B826547BBD165292 /* SwiftyJSON */;
+			targetProxy = B7C21ED71A6B8C2E8D0944938365AB67 /* PBXContainerItemProxy */;
 		};
-		A44C173EB77D47C0B54A37182ACCFDBC /* PBXTargetDependency */ = {
+		3F74EF60001C3ACF57DDEF68F4865843 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BCryptSwift;
+			target = 151C98441B35C90CAC49B68393DAD0ED /* BCryptSwift */;
+			targetProxy = 9D1F90D663625D9E559A4EACCD454837 /* PBXContainerItemProxy */;
+		};
+		F0888581B31965DD9E2D025B12904FB6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Cosmos;
 			target = 4FDC533A4360A68ABDCE852F04B30927 /* Cosmos */;
-			targetProxy = 5269ADC97F0F68F7F934FC2171FFDCF1 /* PBXContainerItemProxy */;
+			targetProxy = 82B544B59FC05A17A0F8D5010058E72E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
+		062514723598675CEF31532585078A99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D946972D7CFAA4DC15D42DDBF42D3F1C /* Pods-KnowItAll.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-KnowItAll/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KnowItAll/Pods-KnowItAll.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_KnowItAll;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1B49544F2806BDC1C4D1CF0966B501B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5D26FFC24EE309EB4A24CC28406861A /* BCryptSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BCryptSwift/BCryptSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BCryptSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BCryptSwift/BCryptSwift.modulemap";
+				PRODUCT_NAME = BCryptSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5907DABE0E85931FA970BAAD758861A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B67FD1C34278531EA51E168E731F81FC /* Pods-KnowItAll.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-KnowItAll/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KnowItAll/Pods-KnowItAll.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_KnowItAll;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6A455224F32636F4AE5799E1BD505FA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CADC0C1395DD797F91A6AAC48AC6998D /* SwiftyJSON.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6F9224530522DD3C735EC96CF142642E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B57951D085A1B98A97F8A1062A5E5C5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		7BC2CEFDB9F3BBA5BAC3BF89B49DC6D7 /* Release */ = {
+		C97A5464410E9641874FBBE0B4D1B44E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15636A4E7CF98AA92918BB0A8D252A56 /* SwiftyJSON.xcconfig */;
+			baseConfigurationReference = F5D26FFC24EE309EB4A24CC28406861A /* BCryptSwift.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/BCryptSwift/BCryptSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BCryptSwift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SwiftyJSON;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		800F7E55ACC7D6BF6D039A9179237C2F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15636A4E7CF98AA92918BB0A8D252A56 /* SwiftyJSON.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SwiftyJSON;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BCryptSwift/BCryptSwift.modulemap";
+				PRODUCT_NAME = BCryptSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		BA8696EABAC33EC3EC91DCF6A464396A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D946972D7CFAA4DC15D42DDBF42D3F1C /* Pods-KnowItAll.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-KnowItAll/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-KnowItAll/Pods-KnowItAll.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_KnowItAll;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		D328BF5AC7A27E80E5214F7E51F21B4A /* Release */ = {
+		F3E1B505791046A8D7501463AF02344A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB66699EE4E023307B72589560B8B9CA /* Cosmos.xcconfig */;
+			baseConfigurationReference = 0A27B50B6DE705708DBBABBE65F91A5E /* Cosmos.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Cosmos/Cosmos-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Cosmos/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Cosmos/Cosmos.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Cosmos;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		E8FFBAAF3F155FD16002C12A1DC0EF0E /* Debug */ = {
+		FC7C6A18604F24E348327041802B61E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB66699EE4E023307B72589560B8B9CA /* Cosmos.xcconfig */;
+			baseConfigurationReference = 0A27B50B6DE705708DBBABBE65F91A5E /* Cosmos.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Cosmos/Cosmos-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Cosmos/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Cosmos/Cosmos.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Cosmos;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -679,36 +868,33 @@
 			};
 			name = Debug;
 		};
-		EFB35BA13EE60FEAC968C9D7F584A180 /* Release */ = {
+		FD6B637D4D0E198137E8D2816FE7FC69 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B67FD1C34278531EA51E168E731F81FC /* Pods-KnowItAll.release.xcconfig */;
+			baseConfigurationReference = CADC0C1395DD797F91A6AAC48AC6998D /* SwiftyJSON.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-KnowItAll/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-KnowItAll/Pods-KnowItAll.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_KnowItAll;
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_NAME = SwiftyJSON;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -717,20 +903,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		156AF2008DA343AE1F46F9F506365BA7 /* Build configuration list for PBXNativeTarget "Pods-KnowItAll" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BA8696EABAC33EC3EC91DCF6A464396A /* Debug */,
-				EFB35BA13EE60FEAC968C9D7F584A180 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */,
-				B7324857C38B065FEB1EEE3105C2367A /* Release */,
+				B57951D085A1B98A97F8A1062A5E5C5B /* Debug */,
+				6F9224530522DD3C735EC96CF142642E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -738,17 +915,35 @@
 		38CA41A3E689F135BAEECE91B63D9EA0 /* Build configuration list for PBXNativeTarget "Cosmos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E8FFBAAF3F155FD16002C12A1DC0EF0E /* Debug */,
-				D328BF5AC7A27E80E5214F7E51F21B4A /* Release */,
+				FC7C6A18604F24E348327041802B61E0 /* Debug */,
+				F3E1B505791046A8D7501463AF02344A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C39E562B5D1FCBBE546650F1F8CED933 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+		9F1EA2C15C44E38A4C120481322984BA /* Build configuration list for PBXNativeTarget "BCryptSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				800F7E55ACC7D6BF6D039A9179237C2F /* Debug */,
-				7BC2CEFDB9F3BBA5BAC3BF89B49DC6D7 /* Release */,
+				1B49544F2806BDC1C4D1CF0966B501B7 /* Debug */,
+				C97A5464410E9641874FBBE0B4D1B44E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFBBE841278E42D87E7710478AB8080A /* Build configuration list for PBXNativeTarget "Pods-KnowItAll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				062514723598675CEF31532585078A99 /* Debug */,
+				5907DABE0E85931FA970BAAD758861A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF6B76036C0F2FA43C3CA33E4CDF2F37 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A455224F32636F4AE5799E1BD505FA8 /* Debug */,
+				FD6B637D4D0E198137E8D2816FE7FC69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
