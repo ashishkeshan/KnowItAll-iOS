@@ -8,7 +8,11 @@
 
 import UIKit
 
-class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol PollVCDelegate {
+    func refreshPage()
+}
+
+class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, PollVCDelegate {
 
     @IBOutlet weak var pollTitle: UILabel!
     @IBOutlet weak var timeLeft: UILabel!
@@ -20,13 +24,28 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var optionsList = [String]()
     var numVotesList = [Int]()
     var colorsArray = [UIColor]()
+    var commentsList = [String]()
+    var usernameList = [String]()
     var totVotes = 0
     var percent = 0.0
     var email = ""
     var pc = ""
     var idx = -1
     var flag = true
-    
+    var segueFlag = false
+
+    @IBAction func addComment(_ sender: Any) {
+        let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
+        if email == "" {
+            let alert = UIAlertController(title: "Error!", message: "You must be logged in to perform this action!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        } else {
+            performSegue(withIdentifier: "presentAddCommentVC", sender: self)
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -45,7 +64,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if(poll?.timeLeft != 0) {
             timeLeft.text = String(describing: (poll?.timeLeft)!) + " Days Left"
         } else {
-            timeLeft.text = "Poll lasts forever"
+            timeLeft.text = "Lasts forever"
         }
         email = UserDefaults.standard.string(forKey: Login.emailKey)!
         let urlString = "/vote?username=\(email)&pollText=\((poll?.title)!)"
@@ -63,16 +82,33 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        segueFlag = true
+        if segue.destination is AddCommentVC {
+            let vc = segue.destination as? AddCommentVC
+            vc?.pollTitle = pollTitle.text!
+            vc?.delegate = self
+        }
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
-        self.navigationController?.popViewController(animated: false)
+        if !segueFlag {
+            self.navigationController?.popViewController(animated: false)
+        } else {
+            segueFlag = false
+        }
     }
     
     func getPollInfo() {
 //        http://127.0.0.1:8000/api/getPost?type=poll&text=Who is the best teammate?
-        let urlString = "/getPost?type=poll&text=" + (poll?.title)!
+        optionsList.removeAll()
+        totVotes = 0
+        numVotesList.removeAll()
+        commentsList.removeAll()
+        var urlString = "/getPost?type=poll&text=" + (poll?.title)!
         
-        let json = getJSONFromURL(urlString, "GET")
-        let status = json["status"]
+        var json = getJSONFromURL(urlString, "GET")
+        var status = json["status"]
         // Check if status is good
         if status == 200 {
             for option in json["pc"].arrayValue {
@@ -81,6 +117,27 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 numVotesList.append(option["numVotes"].int!)
             }
         }
+        urlString = "/getComments?type=poll&pollText=" + (poll?.title)!
+        json = getJSONFromURL(urlString, "GET")
+        status = json["status"]
+        if status == 200 {
+            for comment in json["comments"].arrayValue {
+                commentsList.append(comment["text"].stringValue)
+                if comment["anonymous"] == true {
+                    usernameList.append("Anonymous")
+                } else {
+                    let newstr = comment["username"].string!
+                    var token = newstr.components(separatedBy: "@")
+                    usernameList.append(token[0])
+                }
+            }
+        }
+    }
+    
+    func refreshPage() {
+        getPollInfo()
+        self.numVotes.setNeedsLayout()
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,7 +146,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return optionsList.count + 2
+        return optionsList.count + commentsList.count + 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -134,6 +191,8 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! PollPageCommentCell
             cell.selectionStyle = UITableViewCellSelectionStyle.none
+            cell.commentLabel.text = commentsList[indexPath.row - (optionsList.count+1)]
+            cell.authorLabel.text = usernameList[indexPath.row - (optionsList.count+1)]
             return cell
         }
         
