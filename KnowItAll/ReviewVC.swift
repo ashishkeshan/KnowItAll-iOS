@@ -146,6 +146,7 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Re
         cell.comment.text = comments[indexPath.row]
         cell.rating.rating = ratings[indexPath.row]
         cell.author.text = usernames[indexPath.row]
+        cell.reviewTitle = (topic?.title)!
         return cell
     }
     

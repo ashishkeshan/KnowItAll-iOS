@@ -136,7 +136,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktF-DM-rOg">
-                                                    <rect key="frame" x="8" y="42" width="359" height="50"/>
+                                                    <rect key="frame" x="8" y="42" width="300" height="50"/>
                                                     <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. </string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -149,8 +149,8 @@
                                                         <constraint firstAttribute="height" constant="20" id="dC6-HC-uoM"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XZ-Ij-4qR">
-                                                    <rect key="frame" x="142" y="11" width="225" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XZ-Ij-4qR">
+                                                    <rect key="frame" x="135" y="11" width="100" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="vj9-gQ-TOw"/>
                                                     </constraints>
@@ -158,16 +158,58 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCE-Iw-48H">
+                                                    <rect key="frame" x="327" y="24" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="PjR-r6-pBA"/>
+                                                        <constraint firstAttribute="width" constant="42" id="rVl-tE-bHn"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bu-7i-APA">
+                                                    <rect key="frame" x="332" y="-3" width="33" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="RyQ-l7-NMI"/>
+                                                        <constraint firstAttribute="width" constant="33" id="uYz-4i-KIE"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="Upvote"/>
+                                                    <state key="selected" image="UpvotePressed"/>
+                                                    <state key="highlighted" image="UpvotePressed"/>
+                                                    <connections>
+                                                        <action selector="upvotePressed:" destination="zGa-YY-YEj" eventType="touchUpInside" id="nHy-jK-dYx"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7g-xc-n4V">
+                                                    <rect key="frame" x="332" y="38" width="33" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="33" id="GH1-mN-121"/>
+                                                        <constraint firstAttribute="height" constant="33" id="gcT-sS-Ykd"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="Downvote"/>
+                                                    <state key="selected" image="DownvotePressed"/>
+                                                    <state key="highlighted" image="DownvotePressed"/>
+                                                    <connections>
+                                                        <action selector="downvotePressed:" destination="zGa-YY-YEj" eventType="touchUpInside" id="3Kw-lh-rvM"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="6bu-7i-APA" secondAttribute="trailing" constant="10" id="26F-87-A3U"/>
                                                 <constraint firstItem="ktF-DM-rOg" firstAttribute="top" secondItem="T9C-1I-Mwy" secondAttribute="bottom" constant="11" id="8Th-w6-MBG"/>
                                                 <constraint firstItem="T9C-1I-Mwy" firstAttribute="leading" secondItem="eDG-ld-lXk" secondAttribute="leading" constant="7" id="EZb-uq-jRV"/>
                                                 <constraint firstItem="ktF-DM-rOg" firstAttribute="leading" secondItem="eDG-ld-lXk" secondAttribute="leading" constant="8" id="LEd-6J-tv0"/>
-                                                <constraint firstItem="8XZ-Ij-4qR" firstAttribute="leading" secondItem="eDG-ld-lXk" secondAttribute="leading" constant="142" id="ftU-HA-RQH"/>
+                                                <constraint firstItem="6bu-7i-APA" firstAttribute="top" secondItem="eDG-ld-lXk" secondAttribute="top" constant="-3" id="RGK-Fo-Ths"/>
+                                                <constraint firstItem="uCE-Iw-48H" firstAttribute="top" secondItem="eDG-ld-lXk" secondAttribute="top" constant="24" id="TX7-GC-Guc"/>
+                                                <constraint firstItem="8XZ-Ij-4qR" firstAttribute="leading" secondItem="eDG-ld-lXk" secondAttribute="leading" constant="135" id="ftU-HA-RQH"/>
+                                                <constraint firstItem="P7g-xc-n4V" firstAttribute="top" secondItem="6bu-7i-APA" secondAttribute="bottom" constant="8" id="g7s-10-pSP"/>
                                                 <constraint firstItem="T9C-1I-Mwy" firstAttribute="top" secondItem="eDG-ld-lXk" secondAttribute="top" constant="11" id="h3l-5a-6K3"/>
-                                                <constraint firstAttribute="trailing" secondItem="8XZ-Ij-4qR" secondAttribute="trailing" constant="8" id="jNo-9J-pqp"/>
-                                                <constraint firstAttribute="trailing" secondItem="ktF-DM-rOg" secondAttribute="trailing" constant="8" id="ojT-H0-Ide"/>
+                                                <constraint firstAttribute="trailing" secondItem="8XZ-Ij-4qR" secondAttribute="trailing" constant="140" id="jNo-9J-pqp"/>
+                                                <constraint firstAttribute="trailing" secondItem="ktF-DM-rOg" secondAttribute="trailing" constant="67" id="ojT-H0-Ide"/>
                                                 <constraint firstItem="8XZ-Ij-4qR" firstAttribute="top" secondItem="eDG-ld-lXk" secondAttribute="top" constant="11" id="p75-Bl-UcP"/>
+                                                <constraint firstAttribute="trailing" secondItem="uCE-Iw-48H" secondAttribute="trailing" constant="6" id="pOy-WO-tsJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="P7g-xc-n4V" secondAttribute="trailing" constant="10" id="yad-bO-mD5"/>
                                                 <constraint firstAttribute="bottom" secondItem="ktF-DM-rOg" secondAttribute="bottom" constant="7.5" id="ylm-FH-Ix8"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -175,7 +217,10 @@
                                         <connections>
                                             <outlet property="author" destination="8XZ-Ij-4qR" id="n7X-mM-u72"/>
                                             <outlet property="comment" destination="ktF-DM-rOg" id="Sax-8Q-na2"/>
+                                            <outlet property="downvoteButton" destination="P7g-xc-n4V" id="f43-Xu-5W7"/>
                                             <outlet property="rating" destination="T9C-1I-Mwy" id="bHr-Oc-EF3"/>
+                                            <outlet property="ratingLabel" destination="uCE-Iw-48H" id="HgS-9F-kaM"/>
+                                            <outlet property="upvoteButton" destination="6bu-7i-APA" id="kTh-cV-Rru"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -500,8 +545,12 @@
     </scenes>
     <resources>
         <image name="Academic" width="64" height="64"/>
+        <image name="Downvote" width="33" height="33"/>
+        <image name="DownvotePressed" width="33" height="33"/>
         <image name="Entertainment" width="64" height="64"/>
         <image name="Food" width="40" height="40"/>
         <image name="Locations" width="40" height="40"/>
+        <image name="Upvote" width="33" height="33"/>
+        <image name="UpvotePressed" width="33" height="33"/>
     </resources>
 </document>
