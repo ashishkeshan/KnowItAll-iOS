@@ -39,7 +39,6 @@ class AddCommentVC: UIViewController, UITextViewDelegate {
             let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
             let c = textView.text!
             let urlString = "/createComment?username=\(email)&pollText=\(pollTitle)&comment=\(c)&anonymous=\(anonymous)"
-            print("anonymous: ", anonymous)
             let json = getJSONFromURL(urlString, "POST")
             let status = json["status"]
             if status == 200 {
