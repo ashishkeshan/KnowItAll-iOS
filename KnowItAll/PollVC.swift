@@ -92,6 +92,18 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return optionsList.count + 2
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row < optionsList.count {
+            return 75.0
+        }
+        else if indexPath.row == optionsList.count {
+            return 50.0
+        }
+        else {
+            return UITableViewAutomaticDimension
+        }
+    }
+    
     // change when integrated with backend to use indexPath.row inside data model arrays
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -110,16 +122,18 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             cell.optionName.text = optionsList[indexPath.row % colorsArray.count]
             cell.optionPercent.text = String(percent * 100) + "%"
             let frame = cell.percentFilled.frame
-            cell.percentFilled.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: CGFloat(Double(screenWidth) * percent), height: 75)
+            cell.percentFilled.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: CGFloat(Double(screenWidth) * percent), height: frame.size.height)
             cell.percentFilled.backgroundColor = colorsArray[indexPath.row]
             return cell
         }
         else if indexPath.row == optionsList.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Divider", for: indexPath)
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! PollPageCommentCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell
         }
         
@@ -128,34 +142,37 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
-        if email == "" {
-            let alert = UIAlertController(title: "Error!", message: "You must be logged in to perform this action!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            return
+        if indexPath.row < optionsList.count {
+            let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
+            if email == "" {
+                let alert = UIAlertController(title: "Error!", message: "You must be logged in to perform this action!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            let urlString = "/vote?username=\(email)&pollText=" + (poll?.title)! + "&pollChoiceText=\(optionsList[indexPath.row])&deleteVote=0"
+            let json = getJSONFromURL(urlString, "POST")
+            let status = json["status"]
+            if prevSelected != nil {
+                flag = false
+                let urlString = "/vote?username=\(email)&pollText=" + (poll?.title)! + "&pollChoiceText=\(optionsList[(prevSelected?.row)!])&deleteVote=1"
+                _ = getJSONFromURL(urlString, "POST")
+                numVotesList[(prevSelected?.row)!] -= 1
+                totVotes -= 1
+                let oldSelectionCell = tableView.cellForRow(at: prevSelected!) as! PollOptionCell
+                oldSelectionCell.optionPercent.textColor = UIColor.lightGray
+                oldSelectionCell.optionName.textColor = UIColor.lightGray
+            }
+            prevSelected = indexPath
+            let cell = tableView.cellForRow(at: indexPath) as! PollOptionCell
+            cell.optionPercent.textColor = UIColor.black
+            cell.optionName.textColor = UIColor.black
+            numVotesList[indexPath.row] += 1
+            totVotes += 1
+            numVotes.text = String(totVotes) + " votes"
+            tableView.reloadData()
         }
-        let urlString = "/vote?username=\(email)&pollText=" + (poll?.title)! + "&pollChoiceText=\(optionsList[indexPath.row])&deleteVote=0"
-        let json = getJSONFromURL(urlString, "POST")
-        let status = json["status"]
-        if prevSelected != nil {
-            flag = false
-            let urlString = "/vote?username=\(email)&pollText=" + (poll?.title)! + "&pollChoiceText=\(optionsList[(prevSelected?.row)!])&deleteVote=1"
-            _ = getJSONFromURL(urlString, "POST")
-            numVotesList[(prevSelected?.row)!] -= 1
-            totVotes -= 1
-            let oldSelectionCell = tableView.cellForRow(at: prevSelected!) as! PollOptionCell
-            oldSelectionCell.optionPercent.textColor = UIColor.lightGray
-            oldSelectionCell.optionName.textColor = UIColor.lightGray
-        }
-        prevSelected = indexPath
-        let cell = tableView.cellForRow(at: indexPath) as! PollOptionCell
-        cell.optionPercent.textColor = UIColor.black
-        cell.optionName.textColor = UIColor.black
-        numVotesList[indexPath.row] += 1
-        totVotes += 1
-        numVotes.text = String(totVotes) + " votes"
-        tableView.reloadData()
+        
     }
     
 
