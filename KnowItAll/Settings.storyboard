@@ -76,6 +76,7 @@
                         </segue>
                         <segue destination="HLP-d9-dXO" kind="show" identifier="submitSegue" id="XTX-kQ-rFE"/>
                         <segue destination="yxY-WR-RnW" kind="show" identifier="notificationSegue" id="YPb-bz-NJ4"/>
+                        <segue destination="t70-MZ-TOf" kind="show" identifier="reportSegue" id="QC6-qn-lvY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guf-g3-U0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -322,10 +323,9 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNK-I1-3rD">
                                 <rect key="frame" x="160" y="335" width="55" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="Confirm"/>
                                 <state key="normal" title="Confirm">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="confirm:" destination="ys0-k5-rX0" eventType="touchUpInside" id="y72-0V-Xb7"/>
@@ -351,6 +351,63 @@
             </objects>
             <point key="canvasLocation" x="-924" y="599.55022488755628"/>
         </scene>
+        <!--Report-->
+        <scene sceneID="Zeq-ce-xRA">
+            <objects>
+                <viewController title="Report" id="t70-MZ-TOf" customClass="ReportVC" customModule="KnowItAll" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bjv-V9-1wt"/>
+                        <viewControllerLayoutGuide type="bottom" id="SdM-6y-phF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pXf-Jz-cx8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eiW-x2-a4P">
+                                <rect key="frame" x="67" y="235" width="240" height="210"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjz-vC-mq1">
+                                <rect key="frame" x="0.0" y="63" width="375" height="84"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuF-cL-1g3">
+                                <rect key="frame" x="149" y="476" width="77" height="30"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmPressed:" destination="t70-MZ-TOf" eventType="touchUpInside" id="JsN-Ja-aua"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QuF-cL-1g3" firstAttribute="top" secondItem="eiW-x2-a4P" secondAttribute="bottom" constant="31" id="IU7-bG-POw"/>
+                            <constraint firstItem="pjz-vC-mq1" firstAttribute="leading" secondItem="pXf-Jz-cx8" secondAttribute="leading" id="SlZ-Z1-7PH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eiW-x2-a4P" secondAttribute="trailing" constant="52" id="Spo-Eo-Zmh"/>
+                            <constraint firstItem="SdM-6y-phF" firstAttribute="top" secondItem="QuF-cL-1g3" secondAttribute="bottom" constant="97" id="Zi2-M4-XBY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QuF-cL-1g3" secondAttribute="trailing" constant="133" id="cbG-zn-8By"/>
+                            <constraint firstItem="eiW-x2-a4P" firstAttribute="top" secondItem="bjv-V9-1wt" secondAttribute="bottom" constant="235" id="eaK-Vb-IYH"/>
+                            <constraint firstAttribute="trailing" secondItem="pjz-vC-mq1" secondAttribute="trailing" id="i9z-wp-0i3"/>
+                            <constraint firstItem="QuF-cL-1g3" firstAttribute="leading" secondItem="pXf-Jz-cx8" secondAttribute="leadingMargin" constant="133" id="jaF-QL-Re9"/>
+                            <constraint firstItem="eiW-x2-a4P" firstAttribute="top" secondItem="pjz-vC-mq1" secondAttribute="bottom" constant="88" id="l3w-GA-5Rh"/>
+                            <constraint firstItem="pjz-vC-mq1" firstAttribute="top" secondItem="bjv-V9-1wt" secondAttribute="bottom" constant="63" id="mZG-Xx-kou"/>
+                            <constraint firstItem="eiW-x2-a4P" firstAttribute="leading" secondItem="pXf-Jz-cx8" secondAttribute="leadingMargin" constant="51" id="rUP-Pq-ZYN"/>
+                            <constraint firstItem="SdM-6y-phF" firstAttribute="top" secondItem="eiW-x2-a4P" secondAttribute="bottom" constant="158" id="yUn-2h-HFl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="comments" destination="eiW-x2-a4P" id="HoF-pV-ZYd"/>
+                        <outlet property="confirm" destination="QuF-cL-1g3" id="oMC-tY-LsA"/>
+                        <outlet property="picker" destination="pjz-vC-mq1" id="kp1-Zm-GUl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HL0-WM-fJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1924" y="1700.5997001499252"/>
+        </scene>
         <!--Submit Feedback-->
         <scene sceneID="pxD-5O-sZQ">
             <objects>
@@ -365,9 +422,8 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMf-iA-ATa">
                                 <rect key="frame" x="160" y="315" width="55" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Confirm">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="confirm:" destination="ys0-k5-rX0" eventType="touchUpInside" id="gAk-jS-g5F"/>

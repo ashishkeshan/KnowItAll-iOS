@@ -18,11 +18,17 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var trendingButton1: UIButton!
+    @IBOutlet weak var trendingButton2: UIButton!
+    @IBOutlet weak var trendingButton3: UIButton!
+    @IBOutlet weak var trendingButton4: UIButton!
+    
     let nc = NotificationCenter.default
     private let refreshControl = UIRefreshControl()
     var topicData = [Topic]()
     var pollData = [Poll]()
     var index = 0
+    var tags = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +51,8 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         self.locationsView.addGestureRecognizer(clickLocations)
         refreshControl.addTarget(self, action: #selector(refreshPage), for: .valueChanged)
         loadTrending()
+        loadTrendingTags()
+        buttonSetup()
     }
     
     @objc private func refreshPage() {
@@ -217,5 +225,60 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         tableView.reloadData()
     }
     
+    func loadTrendingTags() {
+        let trendingTag = "/getTrending?type=tags&number=4"
+        var json = getJSONFromURL(trendingTag, "GET")
+        if json["status"] != 200 { return; }
+        for data in json["data"].arrayValue {
+            tags.append(data["title"].stringValue)
+        }
+        
+        trendingButton1.setTitle(tags[0], for: .normal)
+        trendingButton2.setTitle(tags[1], for: .normal)
+        trendingButton3.setTitle(tags[2], for: .normal)
+        trendingButton4.setTitle(tags[3], for: .normal)
+        
+        trendingButton1.setTitleColor(UIColor.red, for: .selected)
+        trendingButton2.setTitleColor(UIColor.red, for: .selected)
+        trendingButton3.setTitleColor(UIColor.red, for: .selected)
+        trendingButton4.setTitleColor(UIColor.red, for: .selected)
+    }
     
+    @IBAction func tagButtonPressed(_ sender: UIButton) {
+        print("pressed")
+        if(sender.title(for: .normal) == tags[0]) {
+            searchBar.text = tags[0]
+            executeSearch()
+        }
+        else if(sender.title(for: .normal) == tags[1]) {
+            searchBar.text = tags[1]
+            executeSearch()
+        }
+        else if(sender.title(for: .normal) == tags[2]) {
+            searchBar.text = tags[2]
+            executeSearch()
+        }
+        else if(sender.title(for: .normal) == tags[3]) {
+            searchBar.text = tags[3]
+            executeSearch()
+        }
+    }
+    
+    func buttonSetup() {
+        trendingButton1.layer.cornerRadius = 15
+        trendingButton1.layer.borderWidth = 1
+        trendingButton1.layer.borderColor = UIColor.blue.cgColor
+        
+        trendingButton2.layer.cornerRadius = 15
+        trendingButton2.layer.borderWidth = 1
+        trendingButton2.layer.borderColor = UIColor.blue.cgColor
+        
+        trendingButton3.layer.cornerRadius = 15
+        trendingButton3.layer.borderWidth = 1
+        trendingButton3.layer.borderColor = UIColor.blue.cgColor
+        
+        trendingButton4.layer.cornerRadius = 15
+        trendingButton4.layer.borderWidth = 1
+        trendingButton4.layer.borderColor = UIColor.blue.cgColor
+    }
 }
