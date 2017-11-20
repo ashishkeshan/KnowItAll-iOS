@@ -17,6 +17,7 @@ class TopicPageReviewCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var upvoteButton: UIButton!
     @IBOutlet weak var downvoteButton: UIButton!
+    var reviewUsername = ""
     var reviewTitle = ""
     var upvoteSelected = false
     var downvoteSelected = false
@@ -24,30 +25,30 @@ class TopicPageReviewCell: UITableViewCell {
     var email = ""
     @IBAction func upvotePressed(_ sender: Any) {
         if email == "" {
-            let alert = UIAlertController(title: "Error!", message: "You must be logged in to perform this action!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
-            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil) // hacky solution
             return
+            // can create delegate method if we want to show the alert
         }
 //        /opinion?username=keshan@usc.edu&type=poll&pollText=Best pizza place?&upvote=1
         if !downvoteSelected && !upvoteSelected {
-            let urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&upvote=1"
+            let urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&reviewUsername=\(reviewUsername)&upvote=1"
+            print("URLSTRING: ", urlString)
             _ = getJSONFromURL(urlString, "POST")
             upvoteSelected = true
             upvoteButton.setImage(UIImage(named: "UpvotePressed"), for: [])
             ratingVal += 1
         }
         else if upvoteSelected {
-            let urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&deleteFlag=1"
+            let urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&reviewUsername=\(reviewUsername)&upvote=1&deleteFlag=1"
+            print("URLSTRING: ", urlString)
             _ = getJSONFromURL(urlString, "POST")
             upvoteSelected = false
             upvoteButton.setImage(UIImage(named: "Upvote"), for: [])
             ratingVal -= 1
         }
         else {
-            var urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&deleteFlag=1"
+            var urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&reviewUsername=\(reviewUsername)&upvote=0&deleteFlag=1"
             _ = getJSONFromURL(urlString, "POST")
-            urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&upvote=1"
+            urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&reviewUsername=\(reviewUsername)&upvote=1"
             _ = getJSONFromURL(urlString, "POST")
             downvoteSelected = false
             downvoteButton.setImage(UIImage(named: "Downvote"), for: [])
@@ -60,29 +61,27 @@ class TopicPageReviewCell: UITableViewCell {
     }
     @IBAction func downvotePressed(_ sender: Any) {
         if email == "" {
-            let alert = UIAlertController(title: "Error!", message: "You must be logged in to perform this action!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
-            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil) // hacky solution
             return
+            // can create delegate method if we want to show the alert
         }
         if !downvoteSelected && !upvoteSelected {
-            let urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&upvote=0"
+            let urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&reviewUsername=\(reviewUsername)&upvote=0"
             _ = getJSONFromURL(urlString, "POST")
             downvoteSelected = true
             downvoteButton.setImage(UIImage(named: "DownvotePressed"), for: [])
             ratingVal -= 1
         }
         else if downvoteSelected {
-            let urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&deleteFlag=1"
+            let urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&reviewUsername=\(reviewUsername)&upvote=0&deleteFlag=1"
             _ = getJSONFromURL(urlString, "POST")
             downvoteSelected = false
             downvoteButton.setImage(UIImage(named: "Downvote"), for: [])
             ratingVal += 1
         }
         else {
-            var urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&deleteFlag=1"
+            var urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&reviewUsername=\(reviewUsername)&upvote=1&deleteFlag=1"
             _ = getJSONFromURL(urlString, "POST")
-            urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&upvote=0"
+            urlString = "/opinion?username=\(email)&type=review&reviewTopic=\(reviewTitle)&reviewUsername=\(reviewUsername)&upvote=0"
             _ = getJSONFromURL(urlString, "POST")
             upvoteSelected = false
             upvoteButton.setImage(UIImage(named: "Upvote"), for: [])
