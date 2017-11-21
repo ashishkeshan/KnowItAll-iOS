@@ -14,12 +14,18 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var noResultsView: UIView!
+    @IBOutlet weak var trendingButton1: UIButton!
+    @IBOutlet weak var trendingButton2: UIButton!
+    @IBOutlet weak var trendingButton3: UIButton!
+    @IBOutlet weak var trendingButton4: UIButton!
     
     var topics = [Topic]()
     var polls = [Poll]()
     var searchActive:Bool = false
     var index = 0
     private let refreshControl = UIRefreshControl()
+    var tags = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -39,6 +45,9 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
                        using:catchNotification)
         refreshControl.addTarget(self, action: #selector(refreshPage), for: .valueChanged)
         // Do any additional setup after loading the view.
+        
+        loadTrendingTags()
+        buttonSetup()
     }
     
     @objc private func refreshPage() {
@@ -231,4 +240,80 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         
         self.tableView.reloadData()
     }
-}
+    
+    func loadTrendingTags() {
+        let trendingTag = "/getTrending?type=tags&number=4"
+        var json = getJSONFromURL(trendingTag, "GET")
+        if json["status"] != 200 { return; }
+        for data in json["data"].arrayValue {
+            tags.append(data["title"].stringValue)
+        }
+        
+        trendingButton1.setTitle(tags[0], for: .normal)
+        trendingButton2.setTitle(tags[1], for: .normal)
+        trendingButton3.setTitle(tags[2], for: .normal)
+        trendingButton4.setTitle(tags[3], for: .normal)
+        
+        trendingButton1.setTitleColor(UIColor.red, for: .selected)
+        trendingButton2.setTitleColor(UIColor.red, for: .selected)
+        trendingButton3.setTitleColor(UIColor.red, for: .selected)
+        trendingButton4.setTitleColor(UIColor.red, for: .selected)
+    }
+    
+    @IBAction func tagButtonPressed(_ sender: UIButton) {
+        print("pressed")
+        if(sender.title(for: .normal) == tags[0]) {
+            searchBar.text = tags[0]
+            search(param: tags[0])
+            if(topics.count + polls.count == 0){
+                searchActive = false;
+            } else {
+                searchActive = true;
+            }
+        }
+        else if(sender.title(for: .normal) == tags[1]) {
+            searchBar.text = tags[1]
+            search(param: tags[1])
+            if(topics.count + polls.count == 0){
+                searchActive = false;
+            } else {
+                searchActive = true;
+            }
+        }
+        else if(sender.title(for: .normal) == tags[2]) {
+            searchBar.text = tags[2]
+            search(param: tags[2])
+            if(topics.count + polls.count == 0){
+                searchActive = false;
+            } else {
+                searchActive = true;
+            }
+        }
+        else if(sender.title(for: .normal) == tags[3]) {
+            searchBar.text = tags[3]
+            search(param: tags[3])
+            if(topics.count + polls.count == 0){
+                searchActive = false;
+            } else {
+                searchActive = true;
+            }
+        }
+    }
+    
+    func buttonSetup() {
+        trendingButton1.layer.cornerRadius = 15
+        trendingButton1.layer.borderWidth = 1
+        trendingButton1.layer.borderColor = UIColor.blue.cgColor
+        
+        trendingButton2.layer.cornerRadius = 15
+        trendingButton2.layer.borderWidth = 1
+        trendingButton2.layer.borderColor = UIColor.blue.cgColor
+        
+        trendingButton3.layer.cornerRadius = 15
+        trendingButton3.layer.borderWidth = 1
+        trendingButton3.layer.borderColor = UIColor.blue.cgColor
+        
+        trendingButton4.layer.cornerRadius = 15
+        trendingButton4.layer.borderWidth = 1
+        trendingButton4.layer.borderColor = UIColor.blue.cgColor
+    }}
