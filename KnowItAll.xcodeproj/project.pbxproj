@@ -52,6 +52,7 @@
 		758A32D11F8B326E00838DDA /* TopicReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32D01F8B326E00838DDA /* TopicReviewCell.swift */; };
 		75C838391FA16D5000643EFF /* KnowItAllUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C838381FA16D5000643EFF /* KnowItAllUITests.swift */; };
 		75D59E411F8C3A3C00F3C854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75D59E401F8C3A3C00F3C854 /* Assets.xcassets */; };
+		75E3AFE21FC274370033AEBC /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3AFE11FC274370033AEBC /* AddCommentVC.swift */; };
 		75F135391F92BBAD00C07A0F /* PollPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F135381F92BBAD00C07A0F /* PollPage.storyboard */; };
 		75F1353B1F92C1F200C07A0F /* ReviewPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F1353A1F92C1F200C07A0F /* ReviewPage.storyboard */; };
 		75F1353D1F92C81300C07A0F /* PollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F1353C1F92C81300C07A0F /* PollVC.swift */; };
@@ -122,6 +123,7 @@
 		75C838381FA16D5000643EFF /* KnowItAllUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowItAllUITests.swift; sourceTree = "<group>"; };
 		75C8383A1FA16D5000643EFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75D59E401F8C3A3C00F3C854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		75E3AFE11FC274370033AEBC /* AddCommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentVC.swift; sourceTree = "<group>"; };
 		75F135381F92BBAD00C07A0F /* PollPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PollPage.storyboard; sourceTree = "<group>"; };
 		75F1353A1F92C1F200C07A0F /* ReviewPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewPage.storyboard; sourceTree = "<group>"; };
 		75F1353C1F92C81300C07A0F /* PollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollVC.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				758A32B61F87068A00838DDA /* HomePage.swift */,
 				75F1353C1F92C81300C07A0F /* PollVC.swift */,
 				75F1353E1F92C85100C07A0F /* ReviewVC.swift */,
+				75E3AFE11FC274370033AEBC /* AddCommentVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				0245DD841F902A5F000B26F5 /* Review.swift in Sources */,
 				758A329B1F85A4D900838DDA /* AppDelegate.swift in Sources */,
 				758A32B91F8708CB00838DDA /* TabBar.swift in Sources */,
+				75E3AFE21FC274370033AEBC /* AddCommentVC.swift in Sources */,
 				02F181F31F8957F700172C63 /* notificationsVC.swift in Sources */,
 				75F1353F1F92C85100C07A0F /* ReviewVC.swift in Sources */,
 				755915E11FBF927600F5C773 /* PollPageCommentCell.swift in Sources */,
