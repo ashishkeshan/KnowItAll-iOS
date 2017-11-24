@@ -189,7 +189,9 @@ class LoginViewController: UIViewController {
         indicator.isHidden = false
         indicator.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            let urlString = "/editProfile?username="+self.emailAddress+"&newPassword="+self.newPassword+"&forgot=1"
+            let salt = BCryptSwift.generateSaltWithNumberOfRounds(4)
+            let password = BCryptSwift.hashPassword(self.newPassword, withSalt: salt)!
+            let urlString = "/editProfile?username="+self.emailAddress+"&newPassword="+password+"&forgot=1"
             let json = getJSONFromURL(urlString, "GET")
             let status = json["status"]
             // Check if status is good
