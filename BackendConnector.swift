@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 //var host = "https://0a79ab09.ngrok.io/api"
 //var host = "https://4f3fe20d.ngrok.io/api"
-var host = "http://knowitalllive-dev.us-west-1.elasticbeanstalk.com/api"
+var host = "http://knowitalllive2-dev.us-west-1.elasticbeanstalk.com/api"
 
 func getJSONFromURL(_ urlString: String, _ type: String) -> JSON {
     var url = host + urlString

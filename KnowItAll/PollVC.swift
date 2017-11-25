@@ -18,6 +18,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
     @IBOutlet weak var timeLeft: UILabel!
     @IBOutlet weak var numVotes: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addCommentButton: UIButton!
     var screenWidth = CGFloat(0.0)
     var prevSelected : IndexPath? = nil
     var poll : Poll? = nil
@@ -26,6 +27,8 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
     var colorsArray = [UIColor]()
     var commentsList = [String]()
     var usernameList = [String]()
+    var dateString = ""
+    var dayLimit = 0
     var totVotes = 0
     var percent = 0.0
     var email = ""
@@ -33,6 +36,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
     var idx = -1
     var flag = true
     var segueFlag = false
+    var pollClosed = false
 
     @IBAction func addComment(_ sender: Any) {
         let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
@@ -61,11 +65,12 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
         colorsArray.append(UIColor(red:1.00, green:0.58, blue:0.00, alpha:1.0))
         pollTitle.text = poll?.title
         numVotes.text = String(describing: (poll?.numVotes)!) + " votes"
-        if(poll?.timeLeft != 0) {
-            timeLeft.text = String(describing: (poll?.timeLeft)!) + " Days Left"
-        } else {
-            timeLeft.text = "Lasts forever"
-        }
+        setupPollTimeRemaining()
+        determineUserVote()
+        // Do any additional setup after loading the view.
+    }
+    
+    func determineUserVote() {
         email = UserDefaults.standard.string(forKey: Login.emailKey)!
         let urlString = "/vote?username=\(email)&pollText=\((poll?.title)!)"
         let json = getJSONFromURL(urlString, "POST")
@@ -79,7 +84,30 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
                 }
             }
         }
-        // Do any additional setup after loading the view.
+    }
+    
+    func setupPollTimeRemaining() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let currDate = Date()
+        let datePublished = dateFormatter.date(from: dateString)
+        let timeInterval = currDate.timeIntervalSince(datePublished!)
+        if (poll?.timeLeft == 0) {
+            timeLeft.text = "Lasts forever"
+        } else {
+            let hours = getHoursElapsed(seconds: Int(timeInterval))
+            let hoursRem = (dayLimit * 24) - hours
+            if (hoursRem >= 1) {
+                timeLeft.text = String(describing: hoursRem) + " Hours Left"
+            } else {
+                let alert = UIAlertController(title: "Alert!", message: "This poll is closed! You will not be able to vote or comment on this poll.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                self.addCommentButton.alpha = 0
+                pollClosed = true
+                timeLeft.text = "Poll Closed"
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -99,6 +127,11 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
         }
     }
     
+    func getHoursElapsed(seconds: Int) -> Int {
+        print("seconds: ", seconds)
+        return seconds / 3600
+    }
+    
     func getPollInfo() {
 //        http://127.0.0.1:8000/api/getPost?type=poll&text=Who is the best teammate?
         optionsList.removeAll()
@@ -111,6 +144,11 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
         var status = json["status"]
         // Check if status is good
         if status == 200 {
+            for poll in json["poll"].arrayValue {
+                dateString = poll["dateCreated"].stringValue
+                dayLimit = poll["dayLimit"].intValue
+                print("DATE CREATED: ", dateString)
+            }
             for option in json["pc"].arrayValue {
                 optionsList.append(option["text"].stringValue)
                 totVotes += option["numVotes"].int!
@@ -201,7 +239,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row < optionsList.count {
+        if indexPath.row < optionsList.count && !pollClosed {
             let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
             if email == "" {
                 let alert = UIAlertController(title: "Error!", message: "You must be logged in to perform this action!", preferredStyle: .alert)
@@ -211,7 +249,6 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
             }
             let urlString = "/vote?username=\(email)&pollText=" + (poll?.title)! + "&pollChoiceText=\(optionsList[indexPath.row])&deleteVote=0"
             let json = getJSONFromURL(urlString, "POST")
-            let status = json["status"]
             if prevSelected != nil {
                 flag = false
                 let urlString = "/vote?username=\(email)&pollText=" + (poll?.title)! + "&pollChoiceText=\(optionsList[(prevSelected?.row)!])&deleteVote=1"
@@ -231,7 +268,6 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
             numVotes.text = String(totVotes) + " votes"
             tableView.reloadData()
         }
-        
     }
     
 

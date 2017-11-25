@@ -316,6 +316,7 @@
                         <viewLayoutGuide key="safeArea" id="b49-7o-yUb"/>
                     </view>
                     <connections>
+                        <outlet property="addCommentButton" destination="EA0-93-Euo" id="0qx-xn-dxs"/>
                         <outlet property="numVotes" destination="4es-lm-HQr" id="AGY-Mg-31I"/>
                         <outlet property="pollTitle" destination="C1L-Vw-Xhu" id="TAZ-A8-OR5"/>
                         <outlet property="tableView" destination="8XX-3K-eZW" id="brP-RP-3RB"/>
