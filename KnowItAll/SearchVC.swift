@@ -8,9 +8,11 @@
 
 import UIKit
 import SwiftyJSON
+import DropDown
 
 class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
+    @IBOutlet var mainView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var noResultsView: UIView!
@@ -261,7 +263,6 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     }
     
     @IBAction func tagButtonPressed(_ sender: UIButton) {
-        print("pressed")
         if(sender.title(for: .normal) == tags[0]) {
             searchBar.text = tags[0]
             search(param: tags[0])

@@ -337,6 +337,7 @@
                     <navigationItem key="navigationItem" id="NMV-D4-7Yz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="mainView" destination="Tem-yI-FIq" id="lGf-d4-sTc"/>
                         <outlet property="noResultsView" destination="UFh-K6-SNa" id="Tug-rm-rZu"/>
                         <outlet property="searchBar" destination="OOP-Lg-5Z5" id="iS8-Ws-pG3"/>
                         <outlet property="tableView" destination="sFq-pZ-aId" id="E6t-xF-pJK"/>
