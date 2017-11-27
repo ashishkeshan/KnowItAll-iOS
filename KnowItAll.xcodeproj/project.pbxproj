@@ -48,7 +48,7 @@
 		758A32C31F870B4E00838DDA /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32C21F870B4E00838DDA /* SearchVC.swift */; };
 		758A32C51F870BE500838DDA /* CreateNewPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32C41F870BE500838DDA /* CreateNewPost.storyboard */; };
 		758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */; };
-		758A32CD1F8836FA00838DDA /* (null) in Sources */ = {isa = PBXBuildFile; };
+		758A32CD1F8836FA00838DDA /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		758A32D11F8B326E00838DDA /* TopicReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32D01F8B326E00838DDA /* TopicReviewCell.swift */; };
 		75C838391FA16D5000643EFF /* KnowItAllUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C838381FA16D5000643EFF /* KnowItAllUITests.swift */; };
 		75D59E411F8C3A3C00F3C854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75D59E401F8C3A3C00F3C854 /* Assets.xcassets */; };
@@ -420,12 +420,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-KnowItAll/Pods-KnowItAll-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BCryptSwift/BCryptSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BCryptSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,7 +494,7 @@
 				026E11A51F9058A50075FF7D /* FeedbackVC.swift in Sources */,
 				75F1353D1F92C81300C07A0F /* PollVC.swift in Sources */,
 				02E31B751F90494000B4AAF2 /* rateVC.swift in Sources */,
-				758A32CD1F8836FA00838DDA /* (null) in Sources */,
+				758A32CD1F8836FA00838DDA /* BuildFile in Sources */,
 				0245DD801F902916000B26F5 /* User.swift in Sources */,
 				028273C51FBFA70E00346AEC /* ReportVC.swift in Sources */,
 				02F2CB181F8804540013F88D /* SettingsVC.swift in Sources */,
