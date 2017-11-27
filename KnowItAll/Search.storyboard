@@ -253,7 +253,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="gLa-AN-DIB"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="tagButtonPressed:" destination="XIp-QC-Y7u" eventType="touchUpInside" id="1Zz-mR-dMh"/>
                                         </connections>
@@ -263,7 +265,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="EJH-Uc-g9V"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="tagButtonPressed:" destination="XIp-QC-Y7u" eventType="touchUpInside" id="Mhw-LJ-nH9"/>
                                         </connections>
@@ -273,7 +277,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="nWU-uf-UOF"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="tagButtonPressed:" destination="XIp-QC-Y7u" eventType="touchUpInside" id="Uro-co-PfB"/>
                                         </connections>
@@ -283,7 +289,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="DCM-sf-3Ra"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="tagButtonPressed:" destination="XIp-QC-Y7u" eventType="touchUpInside" id="nJe-N8-yer"/>
                                         </connections>
