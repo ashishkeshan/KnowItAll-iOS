@@ -23,7 +23,6 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     var topics = [Topic]()
     var polls = [Poll]()
-    var searchActive:Bool = false
     var index = 0
     private let refreshControl = UIRefreshControl()
     var tags = [String]()
@@ -177,30 +176,22 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
      * SEARCHBAR DELEGATE FUNCTIONS
      */
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchActive = true;
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchActive = false;
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false;
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false;
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         //function used to send search queries whenever the text in searchbar has been edited
         //can probably be optimized a bit to improve search speed
         search(param: searchBar.text!)
-        if(topics.count + polls.count == 0){
-            searchActive = false;
-        } else {
-            searchActive = true;
-        }
+
     }
     
     func search(param:String) {
@@ -266,38 +257,18 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         if(sender.title(for: .normal) == tags[0]) {
             searchBar.text = tags[0]
             search(param: tags[0])
-            if(topics.count + polls.count == 0){
-                searchActive = false;
-            } else {
-                searchActive = true;
-            }
         }
         else if(sender.title(for: .normal) == tags[1]) {
             searchBar.text = tags[1]
             search(param: tags[1])
-            if(topics.count + polls.count == 0){
-                searchActive = false;
-            } else {
-                searchActive = true;
-            }
         }
         else if(sender.title(for: .normal) == tags[2]) {
             searchBar.text = tags[2]
             search(param: tags[2])
-            if(topics.count + polls.count == 0){
-                searchActive = false;
-            } else {
-                searchActive = true;
-            }
         }
         else if(sender.title(for: .normal) == tags[3]) {
             searchBar.text = tags[3]
             search(param: tags[3])
-            if(topics.count + polls.count == 0){
-                searchActive = false;
-            } else {
-                searchActive = true;
-            }
         }
     }
     
