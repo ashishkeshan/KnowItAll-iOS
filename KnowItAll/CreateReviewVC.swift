@@ -8,7 +8,7 @@
 import UIKit
 import Cosmos
 
-class CreateReviewVC: UIViewController, UITextViewDelegate {
+class CreateReviewVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // make a button pressed function for each category (refer to createNewPostVC for info)
     @IBOutlet weak var createButton: UIButton!
@@ -23,15 +23,35 @@ class CreateReviewVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var foodView: UIView!
     @IBOutlet weak var locationsView: UIView!
     @IBOutlet weak var entertainmentView: UIView!
+    @IBOutlet weak var optionalImage: UIImageView!
     
     //fields to send to backend
     var category:Int = -1
     var anonymous:Int = 0
     var topicName = ""
+    let imagePicker = UIImagePickerController()
     
     // set alpha for all non-selected views as .5
     // fill in topicField with title of review and make it non-editable
     
+    @IBAction func addImagePressed(_ sender: Any) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+        optionalImage.contentMode = .scaleAspectFit //3
+        optionalImage.image = chosenImage //4
+        dismiss(animated:true, completion: nil) //5
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+
     @IBAction func cancelPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -92,6 +112,7 @@ class CreateReviewVC: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imagePicker.delegate = self
         commentsView.delegate = self
         commentsView.text = "Optional Comments"
         commentsView.textColor = UIColor.lightGray
