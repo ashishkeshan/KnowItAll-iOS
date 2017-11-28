@@ -248,7 +248,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
                 return
             }
             let urlString = "/vote?username=\(email)&pollText=" + (poll?.title)! + "&pollChoiceText=\(optionsList[indexPath.row])&deleteVote=0"
-            let json = getJSONFromURL(urlString, "POST")
+            _ = getJSONFromURL(urlString, "POST")
             if prevSelected != nil {
                 flag = false
                 let urlString = "/vote?username=\(email)&pollText=" + (poll?.title)! + "&pollChoiceText=\(optionsList[(prevSelected?.row)!])&deleteVote=1"

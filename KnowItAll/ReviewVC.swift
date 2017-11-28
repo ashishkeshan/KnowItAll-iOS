@@ -144,15 +144,30 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Re
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! TopicPageReviewCell
-        cell.comment.text = comments[indexPath.row]
-        cell.rating.rating = ratings[indexPath.row]
-        cell.author.text = displayUsernames[indexPath.row]
-        cell.reviewTitle = (topic?.title)!
-        cell.reviewUsername = usernames[indexPath.row]
-        return cell
+        if (indexPath.row % 2 == 0) { // this if will determine whether to show image or not
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! TopicPageReviewCell
+            cell.comment.text = comments[indexPath.row]
+            cell.rating.rating = ratings[indexPath.row]
+            cell.author.text = displayUsernames[indexPath.row]
+            cell.reviewTitle = (topic?.title)!
+            cell.reviewUsername = usernames[indexPath.row]
+            // set the image here
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCellNoImage", for: indexPath) as! TopicPageReviewCell
+            cell.comment.text = comments[indexPath.row]
+            cell.rating.rating = ratings[indexPath.row]
+            cell.author.text = displayUsernames[indexPath.row]
+            cell.reviewTitle = (topic?.title)!
+            cell.reviewUsername = usernames[indexPath.row]
+            return cell
+        }
+        
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
 
     /*

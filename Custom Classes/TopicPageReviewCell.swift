@@ -17,6 +17,7 @@ class TopicPageReviewCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var upvoteButton: UIButton!
     @IBOutlet weak var downvoteButton: UIButton!
+    @IBOutlet weak var optionalImage: UIImageView!
     var reviewUsername = ""
     var reviewTitle = ""
     var upvoteSelected = false

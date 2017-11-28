@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sdl-3O-ep4">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="235" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sdl-3O-ep4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="X1q-AO-P9c">
@@ -128,16 +129,15 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="100" id="zGa-YY-YEj" customClass="TopicPageReviewCell" customModule="KnowItAll" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="168" width="375" height="100"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="235" id="zGa-YY-YEj" customClass="TopicPageReviewCell" customModule="KnowItAll" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="168" width="375" height="235"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zGa-YY-YEj" id="eDG-ld-lXk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="234.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktF-DM-rOg">
-                                                    <rect key="frame" x="8" y="42" width="300" height="50"/>
-                                                    <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. </string>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktF-DM-rOg">
+                                                    <rect key="frame" x="8" y="42" width="300" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -150,7 +150,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XZ-Ij-4qR">
-                                                    <rect key="frame" x="135" y="11" width="100" height="21"/>
+                                                    <rect key="frame" x="135" y="11" width="173" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="vj9-gQ-TOw"/>
                                                     </constraints>
@@ -194,23 +194,32 @@
                                                         <action selector="downvotePressed:" destination="zGa-YY-YEj" eventType="touchUpInside" id="3Kw-lh-rvM"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="VpX-ku-OHj">
+                                                    <rect key="frame" x="67" y="91" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="128" id="8HL-5p-Euu"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="6bu-7i-APA" secondAttribute="trailing" constant="10" id="26F-87-A3U"/>
-                                                <constraint firstItem="ktF-DM-rOg" firstAttribute="top" secondItem="T9C-1I-Mwy" secondAttribute="bottom" constant="11" id="8Th-w6-MBG"/>
+                                                <constraint firstItem="ktF-DM-rOg" firstAttribute="leading" secondItem="eDG-ld-lXk" secondAttribute="leading" constant="8" id="5CL-Ev-rWO"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="VpX-ku-OHj" secondAttribute="trailing" constant="53" id="6cT-7g-V4D"/>
+                                                <constraint firstItem="VpX-ku-OHj" firstAttribute="leading" secondItem="eDG-ld-lXk" secondAttribute="leadingMargin" constant="52" id="AeQ-Aw-7i1"/>
                                                 <constraint firstItem="T9C-1I-Mwy" firstAttribute="leading" secondItem="eDG-ld-lXk" secondAttribute="leading" constant="7" id="EZb-uq-jRV"/>
-                                                <constraint firstItem="ktF-DM-rOg" firstAttribute="leading" secondItem="eDG-ld-lXk" secondAttribute="leading" constant="8" id="LEd-6J-tv0"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="VpX-ku-OHj" secondAttribute="bottom" constant="5" id="MuV-zw-Gwe"/>
                                                 <constraint firstItem="6bu-7i-APA" firstAttribute="top" secondItem="eDG-ld-lXk" secondAttribute="top" constant="-3" id="RGK-Fo-Ths"/>
                                                 <constraint firstItem="uCE-Iw-48H" firstAttribute="top" secondItem="eDG-ld-lXk" secondAttribute="top" constant="24" id="TX7-GC-Guc"/>
+                                                <constraint firstItem="P7g-xc-n4V" firstAttribute="leading" secondItem="ktF-DM-rOg" secondAttribute="trailing" constant="24" id="Zfb-ko-FBu"/>
+                                                <constraint firstItem="ktF-DM-rOg" firstAttribute="top" secondItem="8XZ-Ij-4qR" secondAttribute="bottom" constant="10" id="ZzH-un-hQ4"/>
+                                                <constraint firstItem="VpX-ku-OHj" firstAttribute="top" secondItem="ktF-DM-rOg" secondAttribute="bottom" constant="8" id="bSV-fg-2dX"/>
                                                 <constraint firstItem="8XZ-Ij-4qR" firstAttribute="leading" secondItem="eDG-ld-lXk" secondAttribute="leading" constant="135" id="ftU-HA-RQH"/>
                                                 <constraint firstItem="P7g-xc-n4V" firstAttribute="top" secondItem="6bu-7i-APA" secondAttribute="bottom" constant="8" id="g7s-10-pSP"/>
                                                 <constraint firstItem="T9C-1I-Mwy" firstAttribute="top" secondItem="eDG-ld-lXk" secondAttribute="top" constant="11" id="h3l-5a-6K3"/>
-                                                <constraint firstAttribute="trailing" secondItem="8XZ-Ij-4qR" secondAttribute="trailing" constant="140" id="jNo-9J-pqp"/>
-                                                <constraint firstAttribute="trailing" secondItem="ktF-DM-rOg" secondAttribute="trailing" constant="67" id="ojT-H0-Ide"/>
+                                                <constraint firstAttribute="trailing" secondItem="8XZ-Ij-4qR" secondAttribute="trailing" constant="67" id="jNo-9J-pqp"/>
                                                 <constraint firstItem="8XZ-Ij-4qR" firstAttribute="top" secondItem="eDG-ld-lXk" secondAttribute="top" constant="11" id="p75-Bl-UcP"/>
                                                 <constraint firstAttribute="trailing" secondItem="uCE-Iw-48H" secondAttribute="trailing" constant="6" id="pOy-WO-tsJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="P7g-xc-n4V" secondAttribute="trailing" constant="10" id="yad-bO-mD5"/>
-                                                <constraint firstAttribute="bottom" secondItem="ktF-DM-rOg" secondAttribute="bottom" constant="7.5" id="ylm-FH-Ix8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <viewLayoutGuide key="safeArea" id="gew-If-Zdb"/>
@@ -218,9 +227,104 @@
                                             <outlet property="author" destination="8XZ-Ij-4qR" id="n7X-mM-u72"/>
                                             <outlet property="comment" destination="ktF-DM-rOg" id="Sax-8Q-na2"/>
                                             <outlet property="downvoteButton" destination="P7g-xc-n4V" id="f43-Xu-5W7"/>
+                                            <outlet property="optionalImage" destination="VpX-ku-OHj" id="7Ht-w2-yel"/>
                                             <outlet property="rating" destination="T9C-1I-Mwy" id="bHr-Oc-EF3"/>
                                             <outlet property="ratingLabel" destination="uCE-Iw-48H" id="HgS-9F-kaM"/>
                                             <outlet property="upvoteButton" destination="6bu-7i-APA" id="kTh-cV-Rru"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCellNoImage" rowHeight="100" id="CDx-Bd-vUi" customClass="TopicPageReviewCell" customModule="KnowItAll" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="403" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CDx-Bd-vUi" id="AFR-lO-94h">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKB-Xi-GHp">
+                                                    <rect key="frame" x="8" y="42" width="300" height="49.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKj-Zk-l7r" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="7" y="11" width="120" height="20"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="LHL-Ip-exz"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlT-wb-ogY">
+                                                    <rect key="frame" x="135" y="11" width="173" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="MsB-F5-xFd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ug8-mS-GwU">
+                                                    <rect key="frame" x="327" y="24" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="Iaz-Dc-Q6i"/>
+                                                        <constraint firstAttribute="height" constant="21" id="rHt-hD-b3V"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNo-uI-QlR">
+                                                    <rect key="frame" x="332" y="-3" width="33" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="7eO-Pc-NG4"/>
+                                                        <constraint firstAttribute="width" constant="33" id="sma-kj-3s9"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="Upvote"/>
+                                                    <state key="selected" image="UpvotePressed"/>
+                                                    <state key="highlighted" image="UpvotePressed"/>
+                                                    <connections>
+                                                        <action selector="upvotePressed:" destination="CDx-Bd-vUi" eventType="touchUpInside" id="rei-mg-POw"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBq-Eb-Xqb">
+                                                    <rect key="frame" x="332" y="38" width="33" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="0pT-s7-8PH"/>
+                                                        <constraint firstAttribute="width" constant="33" id="3R9-UV-W3v"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="Downvote"/>
+                                                    <state key="selected" image="DownvotePressed"/>
+                                                    <state key="highlighted" image="DownvotePressed"/>
+                                                    <connections>
+                                                        <action selector="downvotePressed:" destination="CDx-Bd-vUi" eventType="touchUpInside" id="cOX-lQ-h7A"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="VNo-uI-QlR" secondAttribute="trailing" constant="10" id="2sN-F4-N0W"/>
+                                                <constraint firstItem="VNo-uI-QlR" firstAttribute="top" secondItem="AFR-lO-94h" secondAttribute="top" constant="-3" id="2v9-IQ-Ffa"/>
+                                                <constraint firstAttribute="bottom" secondItem="jKB-Xi-GHp" secondAttribute="bottom" constant="8" id="33v-9H-vmH"/>
+                                                <constraint firstItem="jKB-Xi-GHp" firstAttribute="leading" secondItem="AFR-lO-94h" secondAttribute="leading" constant="8" id="Eyl-X7-zV9"/>
+                                                <constraint firstItem="jKB-Xi-GHp" firstAttribute="top" secondItem="NlT-wb-ogY" secondAttribute="bottom" constant="10" id="Ioi-HN-zfc"/>
+                                                <constraint firstItem="CBq-Eb-Xqb" firstAttribute="top" secondItem="VNo-uI-QlR" secondAttribute="bottom" constant="8" id="Law-78-k8V"/>
+                                                <constraint firstItem="ug8-mS-GwU" firstAttribute="top" secondItem="AFR-lO-94h" secondAttribute="top" constant="24" id="NCq-vg-5uL"/>
+                                                <constraint firstAttribute="trailing" secondItem="CBq-Eb-Xqb" secondAttribute="trailing" constant="10" id="Oif-ZW-07d"/>
+                                                <constraint firstItem="NlT-wb-ogY" firstAttribute="top" secondItem="AFR-lO-94h" secondAttribute="top" constant="11" id="Oz8-aS-bt9"/>
+                                                <constraint firstAttribute="trailing" secondItem="ug8-mS-GwU" secondAttribute="trailing" constant="6" id="QH0-gR-ubM"/>
+                                                <constraint firstAttribute="trailing" secondItem="NlT-wb-ogY" secondAttribute="trailing" constant="67" id="SC4-je-duN"/>
+                                                <constraint firstItem="OKj-Zk-l7r" firstAttribute="leading" secondItem="AFR-lO-94h" secondAttribute="leading" constant="7" id="akg-ig-U3I"/>
+                                                <constraint firstItem="OKj-Zk-l7r" firstAttribute="top" secondItem="AFR-lO-94h" secondAttribute="top" constant="11" id="gSF-Gx-kf2"/>
+                                                <constraint firstItem="CBq-Eb-Xqb" firstAttribute="leading" secondItem="jKB-Xi-GHp" secondAttribute="trailing" constant="24" id="har-rH-DQi"/>
+                                                <constraint firstItem="NlT-wb-ogY" firstAttribute="leading" secondItem="AFR-lO-94h" secondAttribute="leading" constant="135" id="lh5-xS-BXI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <viewLayoutGuide key="safeArea" id="6ne-8O-sMD"/>
+                                        <connections>
+                                            <outlet property="author" destination="NlT-wb-ogY" id="62J-UD-DJ5"/>
+                                            <outlet property="comment" destination="jKB-Xi-GHp" id="06R-gE-X5A"/>
+                                            <outlet property="downvoteButton" destination="CBq-Eb-Xqb" id="Puz-8m-fsO"/>
+                                            <outlet property="rating" destination="OKj-Zk-l7r" id="QvA-VC-sbg"/>
+                                            <outlet property="ratingLabel" destination="ug8-mS-GwU" id="VYa-Vi-uIC"/>
+                                            <outlet property="upvoteButton" destination="VNo-uI-QlR" id="sUX-7O-ERc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -248,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4C-Lt-OtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="170.40000000000001" y="-80.50974512743629"/>
+            <point key="canvasLocation" x="168.80000000000001" y="-82.3088455772114"/>
         </scene>
         <!--Create ReviewVC-->
         <scene sceneID="RaG-9w-UQq">
