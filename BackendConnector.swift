@@ -25,7 +25,7 @@ func getJSONFromURL(_ urlString: String, _ type: String) -> JSON {
         if error != nil {
             return
         }
-        json = JSON(data: data!)
+        json = try! JSON(data: data!)
         print(json)
         queryFinished = true
     }
