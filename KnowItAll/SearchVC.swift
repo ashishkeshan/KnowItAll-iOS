@@ -342,7 +342,6 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             options.append(String(x))
         }
         
-        print(trendingTag)
         return options
     }
 }
