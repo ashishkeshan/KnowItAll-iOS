@@ -1,6 +1,0 @@
-framework module JYDropDownMenu {
-  umbrella header "JYDropDownMenu-umbrella.h"
-
-  export *
-  module * { export * }
-}
