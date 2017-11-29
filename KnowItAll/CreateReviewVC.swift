@@ -41,7 +41,7 @@ class CreateReviewVC: UIViewController, UITextViewDelegate, UIImagePickerControl
         present(imagePicker, animated: true, completion: nil)
     }
     
-    private func imagePickerController(_ picker: UIImagePickerController,
+    @objc func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         optionalImage.contentMode = .scaleAspectFit //3
