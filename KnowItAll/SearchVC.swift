@@ -203,12 +203,9 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
      * SEARCHBAR DELEGATE FUNCTIONS
      */
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        tagOptions = dropDownSetUp()
-        dropDown.isHidden = false
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        dropDown.isHidden = true
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -225,8 +222,12 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         search(param: searchBar.text!)
         tagOptions = dropDownSetUp()
         dropDown.reloadData()
-        dropDown.isHidden = false
-
+        if searchBar.text != "" {
+            dropDown.isHidden = false
+        }
+        else {
+            dropDown.isHidden = true
+        }
     }
     
     func search(param:String) {
