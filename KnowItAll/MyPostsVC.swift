@@ -106,6 +106,7 @@ class MyPostsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         //create function to populate reviews and polls
         email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
         loadFromDB()
+        segmentedControl.tintColor = UIColor(red: (209/255), green: (52/255), blue: (74/255), alpha:1.0)
     }
     
     @objc private func refreshPage() {

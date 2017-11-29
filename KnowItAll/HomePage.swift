@@ -53,6 +53,7 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         loadTrending()
         loadTrendingTags()
         buttonSetup()
+        segmentedControl.tintColor = UIColor(red: (209/255), green: (52/255), blue: (74/255), alpha:1.0)
     }
     
     @objc private func refreshPage() {
@@ -267,18 +268,24 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     func buttonSetup() {
         trendingButton1.layer.cornerRadius = 15
         trendingButton1.layer.borderWidth = 1
-        trendingButton1.layer.borderColor = UIColor.blue.cgColor
+        trendingButton1.layer.borderColor = UIColor(red: (209/255), green: (52/255), blue: (74/255), alpha:1.0).cgColor
+        trendingButton1.setTitleColor(UIColor(red: (209/255), green: (52/255), blue: (74/255), alpha:1.0), for: .normal)
         
         trendingButton2.layer.cornerRadius = 15
         trendingButton2.layer.borderWidth = 1
-        trendingButton2.layer.borderColor = UIColor.blue.cgColor
+        trendingButton2.layer.borderColor = UIColor(red: (209/255), green: (52/255), blue: (74/255), alpha:1.0).cgColor
+        trendingButton2.setTitleColor(UIColor(red: (209/255), green: (52/255), blue: (74/255), alpha:1.0), for: .normal)
+
         
         trendingButton3.layer.cornerRadius = 15
         trendingButton3.layer.borderWidth = 1
-        trendingButton3.layer.borderColor = UIColor.blue.cgColor
-        
+        trendingButton3.layer.borderColor = UIColor(red: (209/255), green: (52/255), blue: (74/255), alpha:1.0).cgColor
+        trendingButton3.setTitleColor(UIColor(red: (209/255), green: (52/255), blue: (74/255), alpha:1.0), for: .normal)
+
         trendingButton4.layer.cornerRadius = 15
         trendingButton4.layer.borderWidth = 1
-        trendingButton4.layer.borderColor = UIColor.blue.cgColor
+        trendingButton4.layer.borderColor = UIColor(red: (209/255), green: (52/255), blue: (74/255), alpha:1.0).cgColor
+        trendingButton4.setTitleColor(UIColor(red: (209/255), green: (52/255), blue: (74/255), alpha:1.0), for: .normal)
+
     }
 }
