@@ -371,7 +371,7 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <state key="normal" title="Forever">
-                                                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="foreverButtonPressed:" destination="dYq-fy-PKg" eventType="touchUpInside" id="HAk-hp-TjS"/>
@@ -408,7 +408,7 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <state key="normal" title="Add">
-                                                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="addButtonPressed:" destination="dYq-fy-PKg" eventType="touchUpInside" id="cSF-r0-yeT"/>
@@ -510,7 +510,7 @@
                                     <constraint firstAttribute="width" constant="120" id="2bY-S3-Tts"/>
                                 </constraints>
                                 <state key="normal" title="Create">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="createPressed:" destination="dYq-fy-PKg" eventType="touchUpInside" id="e9m-Jr-WEW"/>
@@ -524,7 +524,7 @@
                                     <constraint firstAttribute="height" constant="30" id="DhE-5e-AIb"/>
                                 </constraints>
                                 <state key="normal" title="Anonymous">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="anonymousButtonPressed:" destination="dYq-fy-PKg" eventType="touchUpInside" id="kuO-I3-nAr"/>

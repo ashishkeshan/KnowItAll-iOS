@@ -77,6 +77,7 @@ class CreateNewPostVC: UIViewController {
         foreverButton.layer.cornerRadius = 15
         foreverButton.layer.borderWidth = 1
         foreverButton.layer.borderColor = UIColor.red.cgColor
+        foreverButton.alpha = 0.5
         addButton.layer.cornerRadius = 15
         addButton.layer.borderWidth = 1
         addButton.layer.borderColor = UIColor.red.cgColor
@@ -98,6 +99,10 @@ class CreateNewPostVC: UIViewController {
         
         //prompting a selection of category for review
         typeField.text = "Please select a category first"
+        
+        //segmentedControl color change
+        segementedControl.tintColor = UIColor(red: (209/255), green: (52/255), blue: (74/255), alpha:1.0)
+            //UIColor(red: 0.82, green: 0.2, blue: 0.29, alpha: 1.0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -375,25 +380,21 @@ class CreateNewPostVC: UIViewController {
         if(forever == false) {
             forever = true
             time.text = "Forever Selected"
-            foreverButton.backgroundColor = UIColor.blue
-            foreverButton.layer.borderColor = UIColor.blue.cgColor
-        } else {
+            foreverButton.alpha = 1.0
+        } else if(forever == true){
             forever = false
             time.text = ""
-            foreverButton.backgroundColor = create.backgroundColor
-            foreverButton.layer.borderColor = create.backgroundColor?.cgColor
+            foreverButton.alpha = 0.5
         }
     }
     
     @IBAction func anonymousButtonPressed(_ sender: Any) {
         if(anonymous == 0) {
-            anonymousButton.backgroundColor = UIColor.blue
-            anonymousButton.layer.borderColor = UIColor.blue.cgColor
+            anonymousButton.alpha = 1
             anonymous = 1
         }
-        else {
-            anonymousButton.backgroundColor = create.backgroundColor
-            anonymousButton.layer.borderColor = create.backgroundColor?.cgColor
+        else if (anonymous == 1){
+            anonymousButton.alpha = 0.5
             anonymous = 0
         }
     }
