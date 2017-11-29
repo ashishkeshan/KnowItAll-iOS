@@ -179,6 +179,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             let cell = tableView.cellForRow(at: indexPath) as! tagCell
             searchBar.text = cell.option.text
             dropDown.isHidden = true
+            search(param: searchBar.text!)
         }
     }
     
