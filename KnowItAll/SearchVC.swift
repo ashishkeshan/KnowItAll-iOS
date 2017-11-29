@@ -26,6 +26,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     var index = 0
     private let refreshControl = UIRefreshControl()
     var tags = [String]()
+    var tagOptions = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,11 +52,13 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         
         loadTrendingTags()
         buttonSetup()
+        tagOptions = dropDownSetUp()
     }
     
     @objc private func refreshPage() {
         search(param: searchBar.text!)
         tableView.reloadData()
+        tagOptions = dropDownSetUp()
         dropDown.reloadData()
         self.refreshControl.endRefreshing()
     }
@@ -157,8 +160,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! tagCell
-            let options:[String] = dropDownSetUp()
-            cell.option.setTitle(options[indexPath.row], for: UIControlState.normal)
+            cell.option.text = tagOptions[indexPath.row]
             return cell
         }
     }
@@ -175,7 +177,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         }
         else {
             let cell = tableView.cellForRow(at: indexPath) as! tagCell
-            searchBar.text = cell.option.titleLabel?.text
+            searchBar.text = cell.option.text
             dropDown.isHidden = true
         }
     }
@@ -200,7 +202,6 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
      * SEARCHBAR DELEGATE FUNCTIONS
      */
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        dropDown.reloadData()
         dropDown.isHidden = false
     }
     
