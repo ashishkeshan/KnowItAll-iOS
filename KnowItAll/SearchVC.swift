@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftyJSON
-import DropDown
 
 class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
@@ -20,6 +19,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     @IBOutlet weak var trendingButton2: UIButton!
     @IBOutlet weak var trendingButton3: UIButton!
     @IBOutlet weak var trendingButton4: UIButton!
+    @IBOutlet weak var dropDown: UITableView!
     
     var topics = [Topic]()
     var polls = [Poll]()
@@ -31,6 +31,8 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        dropDown.delegate = self
+        dropDown.dataSource = self
         searchBar.delegate = self
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshControl
@@ -54,6 +56,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     @objc private func refreshPage() {
         search(param: searchBar.text!)
         tableView.reloadData()
+        dropDown.reloadData()
         self.refreshControl.endRefreshing()
     }
     
@@ -90,69 +93,90 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
      * TABLE DELEGATE/DATASOURCE FUNCTIONS
      */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if polls.count + topics.count == 0 {
-            tableView.backgroundView?.isHidden = false
-        } else {
-            tableView.backgroundView?.isHidden = true
+        if tableView == self.tableView {
+            if polls.count + topics.count == 0 {
+                tableView.backgroundView?.isHidden = false
+            } else {
+                tableView.backgroundView?.isHidden = true
+            }
+            return polls.count + topics.count
         }
-        return polls.count + topics.count
+        else {
+            let options:[String] = dropDownSetUp()
+            return options.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //determining which cell to use (poll vs topic)
-        if indexPath.row < (topics.count) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TopicReviewCell", for: indexPath) as! TopicReviewCell
-            cell.starRating.rating = topics[indexPath.row].rating
-            cell.postTitle.text = topics[indexPath.row].title
-            cell.numReviews.text = "Reviews: " + String(topics[indexPath.row].numReviews)
-            switch topics[indexPath.row].category {
-            case 1:
-                cell.categoryImage.image = UIImage(named: "Academic")
-                break
-            case 2:
-                cell.categoryImage.image = UIImage(named: "Food")
-                break
-            case 3:
-                cell.categoryImage.image = UIImage(named: "Entertainment")
-                break
-            case 4:
-                cell.categoryImage.image = UIImage(named: "Locations")
-                break
-            default:
-                break
+        if tableView == self.tableView {
+            if indexPath.row < (topics.count) {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TopicReviewCell", for: indexPath) as! TopicReviewCell
+                cell.starRating.rating = topics[indexPath.row].rating
+                cell.postTitle.text = topics[indexPath.row].title
+                cell.numReviews.text = "Reviews: " + String(topics[indexPath.row].numReviews)
+                switch topics[indexPath.row].category {
+                case 1:
+                    cell.categoryImage.image = UIImage(named: "Academic")
+                    break
+                case 2:
+                    cell.categoryImage.image = UIImage(named: "Food")
+                    break
+                case 3:
+                    cell.categoryImage.image = UIImage(named: "Entertainment")
+                    break
+                case 4:
+                    cell.categoryImage.image = UIImage(named: "Locations")
+                    break
+                default:
+                    break
+                }
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TopicPollCell", for: indexPath) as! TopicPollCell
+                cell.pollName.text = polls[indexPath.row-topics.count].title
+                cell.numVotesLabel.text = "Votes: " + String(polls[indexPath.row-topics.count].numVotes)
+                switch polls[indexPath.row-topics.count].category {
+                case 1:
+                    cell.pollCategoryImage.image = UIImage(named: "Academic")
+                    break
+                case 2:
+                    cell.pollCategoryImage.image = UIImage(named: "Food")
+                    break
+                case 3:
+                    cell.pollCategoryImage.image = UIImage(named: "Entertainment")
+                    break
+                case 4:
+                    cell.pollCategoryImage.image = UIImage(named: "Locations")
+                    break
+                default:
+                    break
+                }
+                return cell
             }
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TopicPollCell", for: indexPath) as! TopicPollCell
-            cell.pollName.text = polls[indexPath.row-topics.count].title
-            cell.numVotesLabel.text = "Votes: " + String(polls[indexPath.row-topics.count].numVotes)
-            switch polls[indexPath.row-topics.count].category {
-            case 1:
-                cell.pollCategoryImage.image = UIImage(named: "Academic")
-                break
-            case 2:
-                cell.pollCategoryImage.image = UIImage(named: "Food")
-                break
-            case 3:
-                cell.pollCategoryImage.image = UIImage(named: "Entertainment")
-                break
-            case 4:
-                cell.pollCategoryImage.image = UIImage(named: "Locations")
-                break
-            default:
-                break
-            }
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! tagCell
+            let options:[String] = dropDownSetUp()
+            cell.option.setTitle(options[indexPath.row], for: UIControlState.normal)
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.index = indexPath.row
-        let cell = tableView.cellForRow(at: indexPath)
-        if (cell?.isKind(of: TopicReviewCell.self))! {
-            performSegue(withIdentifier: "showReviewPage", sender: self)
-        } else {
-            performSegue(withIdentifier: "showPollPage", sender: self)
+        if tableView == self.tableView {
+            self.index = indexPath.row
+            let cell = tableView.cellForRow(at: indexPath)
+            if (cell?.isKind(of: TopicReviewCell.self))! {
+                performSegue(withIdentifier: "showReviewPage", sender: self)
+            } else {
+                performSegue(withIdentifier: "showPollPage", sender: self)
+            }
+        }
+        else {
+            let cell = tableView.cellForRow(at: indexPath) as! tagCell
+            searchBar.text = cell.option.titleLabel?.text
+            dropDown.isHidden = true
         }
     }
     
@@ -176,15 +200,20 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
      * SEARCHBAR DELEGATE FUNCTIONS
      */
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        dropDown.reloadData()
+        dropDown.isHidden = false
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        dropDown.isHidden = true
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        dropDown.isHidden = true
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        dropDown.isHidden = true
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -288,4 +317,25 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         trendingButton4.layer.cornerRadius = 15
         trendingButton4.layer.borderWidth = 1
         trendingButton4.layer.borderColor = UIColor.white.cgColor
-    }}
+    }
+    
+    func dropDownSetUp() -> [String] {
+        let trendingTag = "/getTags?startsWith=" + searchBar.text!
+        var json = getJSONFromURL(trendingTag, "GET")
+        
+        var options = [String]()
+        if json["status"] != 200 {
+            options.append("Error, status != 200")
+            return options
+        }
+        
+        let temp = json["tags"].stringValue
+        let temparray = temp.split(separator: ",")
+        
+        for x in temparray {
+            options.append(String(x))
+        }
+        
+        return options
+    }
+}

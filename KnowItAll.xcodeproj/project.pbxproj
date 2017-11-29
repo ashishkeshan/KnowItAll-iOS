@@ -15,6 +15,7 @@
 		0245DD841F902A5F000B26F5 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0245DD831F902A5F000B26F5 /* Review.swift */; };
 		024FA0291F918C9A0088EABB /* SpecificReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024FA0271F918C9A0088EABB /* SpecificReviewCell.swift */; };
 		024FA02A1F918C9A0088EABB /* SpecificReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024FA0281F918C9A0088EABB /* SpecificReviewCell.xib */; };
+		025F45521FCF62C800669EE9 /* tagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F45511FCF62C800669EE9 /* tagCell.swift */; };
 		026E11A51F9058A50075FF7D /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11A41F9058A50075FF7D /* FeedbackVC.swift */; };
 		026E11A71F9061E70075FF7D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11A61F9061E70075FF7D /* Post.swift */; };
 		026E11B41F90722F0075FF7D /* SpecificPollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E11B21F90722F0075FF7D /* SpecificPollCell.swift */; };
@@ -48,7 +49,7 @@
 		758A32C31F870B4E00838DDA /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32C21F870B4E00838DDA /* SearchVC.swift */; };
 		758A32C51F870BE500838DDA /* CreateNewPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758A32C41F870BE500838DDA /* CreateNewPost.storyboard */; };
 		758A32C71F870BFE00838DDA /* CreateNewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32C61F870BFE00838DDA /* CreateNewPostVC.swift */; };
-		758A32CD1F8836FA00838DDA /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		758A32CD1F8836FA00838DDA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		758A32D11F8B326E00838DDA /* TopicReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A32D01F8B326E00838DDA /* TopicReviewCell.swift */; };
 		75C838391FA16D5000643EFF /* KnowItAllUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C838381FA16D5000643EFF /* KnowItAllUITests.swift */; };
 		75D59E411F8C3A3C00F3C854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75D59E401F8C3A3C00F3C854 /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		0245DD831F902A5F000B26F5 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		024FA0271F918C9A0088EABB /* SpecificReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificReviewCell.swift; sourceTree = "<group>"; };
 		024FA0281F918C9A0088EABB /* SpecificReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecificReviewCell.xib; sourceTree = "<group>"; };
+		025F45511FCF62C800669EE9 /* tagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tagCell.swift; sourceTree = "<group>"; };
 		026E11A41F9058A50075FF7D /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		026E11A61F9061E70075FF7D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		026E11B21F90722F0075FF7D /* SpecificPollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificPollCell.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		0245DD861F9035A5000B26F5 /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
+				025F45511FCF62C800669EE9 /* tagCell.swift */,
 				02B0BF691F92D0FF007A159F /* AnswerCell.swift */,
 				024FA0271F918C9A0088EABB /* SpecificReviewCell.swift */,
 				024FA0281F918C9A0088EABB /* SpecificReviewCell.xib */,
@@ -492,7 +495,8 @@
 				026E11A51F9058A50075FF7D /* FeedbackVC.swift in Sources */,
 				75F1353D1F92C81300C07A0F /* PollVC.swift in Sources */,
 				02E31B751F90494000B4AAF2 /* rateVC.swift in Sources */,
-				758A32CD1F8836FA00838DDA /* BuildFile in Sources */,
+				025F45521FCF62C800669EE9 /* tagCell.swift in Sources */,
+				758A32CD1F8836FA00838DDA /* (null) in Sources */,
 				0245DD801F902916000B26F5 /* User.swift in Sources */,
 				028273C51FBFA70E00346AEC /* ReportVC.swift in Sources */,
 				02F2CB181F8804540013F88D /* SettingsVC.swift in Sources */,
