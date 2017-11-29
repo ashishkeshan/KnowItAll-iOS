@@ -202,6 +202,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
      * SEARCHBAR DELEGATE FUNCTIONS
      */
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        tagOptions = dropDownSetUp()
         dropDown.isHidden = false
     }
     
@@ -221,6 +222,9 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         //function used to send search queries whenever the text in searchbar has been edited
         //can probably be optimized a bit to improve search speed
         search(param: searchBar.text!)
+        tagOptions = dropDownSetUp()
+        dropDown.reloadData()
+        dropDown.isHidden = false
 
     }
     
@@ -337,6 +341,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             options.append(String(x))
         }
         
+        print(trendingTag)
         return options
     }
 }
