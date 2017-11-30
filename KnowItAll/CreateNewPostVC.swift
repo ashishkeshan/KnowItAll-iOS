@@ -380,12 +380,12 @@ class CreateNewPostVC: UIViewController {
         if(forever == false) {
             forever = true
             time.text = "Forever Selected"
-            textField.isUserInteractionEnabled = false
+            time.isUserInteractionEnabled = false
             foreverButton.alpha = 1.0
         } else if(forever == true){
             forever = false
             time.text = ""
-            textField.isUserInteractionEnabled = true
+            time.isUserInteractionEnabled = true
             foreverButton.alpha = 0.5
         }
     }
