@@ -64,9 +64,9 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Re
         numReviews.text = String(describing: (topic?.numReviews)!) + " review(s)"
         stars.rating = (topic?.rating)!
         stars.settings.fillMode = .half
-        let image = UIImage(named: "Academic")
+        let image = UIImage(named: "TommyTrojan")
         imgArray.append(image!)
-        let image2 = UIImage(named: "Food")
+        let image2 = UIImage(named: "A+")
         imgArray.append(image2!)
         switch (topic?.category)! {
         case 1:

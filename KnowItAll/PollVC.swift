@@ -88,7 +88,7 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
     
     func setupPollTimeRemaining() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         let currDate = Date()
         let datePublished = dateFormatter.date(from: dateString)
         print(datePublished!)
@@ -147,10 +147,10 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
         if status == 200 {
             for poll in json["poll"].arrayValue {
                 dateString = poll["dateCreated"].stringValue
-                let dateArr = dateString.components(separatedBy: "T")
+//                let dateArr = dateString.components(separatedBy: "T")
                 dayLimit = poll["dayLimit"].intValue
-                print("DATE CREATED: ", dateArr[0])
-                dateString = dateArr[0]
+//                print("DATE CREATED: ", dateArr[0])
+//                dateString = dateArr[0]
             }
             for option in json["pc"].arrayValue {
                 optionsList.append(option["text"].stringValue)
