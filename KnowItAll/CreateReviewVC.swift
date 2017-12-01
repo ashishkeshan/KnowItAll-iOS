@@ -60,13 +60,11 @@ class CreateReviewVC: UIViewController, UITextViewDelegate, UIImagePickerControl
     }
     @IBAction func anonymousTapped(_ sender: Any) {
         if(anonymous == 0) {
-            anonButton.backgroundColor = UIColor.blue
-            anonButton.layer.borderColor = UIColor.blue.cgColor
+            anonButton.alpha = 1.0
             anonymous = 1
         }
         else {
-            anonButton.backgroundColor = createButton.backgroundColor
-            anonButton.layer.borderColor = createButton.backgroundColor?.cgColor
+            anonButton.alpha = 0.5
             anonymous = 0
         }
     }
