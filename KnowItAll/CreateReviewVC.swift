@@ -7,6 +7,7 @@
 
 import UIKit
 import Cosmos
+import SwiftyJSON
 
 class CreateReviewVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -30,6 +31,7 @@ class CreateReviewVC: UIViewController, UITextViewDelegate, UIImagePickerControl
     var anonymous:Int = 0
     var topicName = ""
     let imagePicker = UIImagePickerController()
+    var pictureSelected = 0
     
     // set alpha for all non-selected views as .5
     // fill in topicField with title of review and make it non-editable
@@ -43,6 +45,7 @@ class CreateReviewVC: UIViewController, UITextViewDelegate, UIImagePickerControl
     
     @objc func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        pictureSelected = 1
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         optionalImage.contentMode = .scaleAspectFit //3
         optionalImage.image = chosenImage //4
@@ -80,11 +83,14 @@ class CreateReviewVC: UIViewController, UITextViewDelegate, UIImagePickerControl
             return
         }
         let stringAnon = String(anonymous)
-        let urlString = "/createReview?username=\(email)&topicTitle=\(t)&rating=\(r)&comment=\(c)&anonymous=\(stringAnon)"
-        
-        let json = getJSONFromURL(urlString, "POST")
-        let status = json["status"]
-        
+        let urlString = "/createReview?username=\(email)&topicTitle=\(t)&rating=\(r)&comment=\(c)&anonymous=\(stringAnon)&image=0"
+//        let base64String = imageData!.base64EncodedString()
+//        let param : [String : Any] = ["image":base64String]
+//        let jsonData = try? JSONSerialization.data(withJSONObject : param)
+        var json = JSON.null
+        var status = 0
+        json = getJSONFromURL(urlString, "POST")
+        status = json["status"].intValue
         // Check if status is good
         if status == 200 {
             let alert = UIAlertController(title: "Success", message: "Your review has been successfully submitted", preferredStyle: .alert)
