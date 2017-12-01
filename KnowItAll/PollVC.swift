@@ -88,9 +88,10 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
     
     func setupPollTimeRemaining() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         let currDate = Date()
         let datePublished = dateFormatter.date(from: dateString)
+        print(datePublished!)
         let timeInterval = currDate.timeIntervalSince(datePublished!)
         if (poll?.timeLeft == 0) {
             timeLeft.text = "Lasts forever"
@@ -146,8 +147,10 @@ class PollVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Poll
         if status == 200 {
             for poll in json["poll"].arrayValue {
                 dateString = poll["dateCreated"].stringValue
+                let dateArr = dateString.components(separatedBy: "T")
                 dayLimit = poll["dayLimit"].intValue
-                print("DATE CREATED: ", dateString)
+                print("DATE CREATED: ", dateArr[0])
+                dateString = dateArr[0]
             }
             for option in json["pc"].arrayValue {
                 optionsList.append(option["text"].stringValue)
