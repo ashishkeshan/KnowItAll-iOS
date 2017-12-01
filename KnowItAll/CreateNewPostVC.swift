@@ -198,7 +198,7 @@ class CreateNewPostVC: UIViewController {
             }
             
             //making query call to create review
-            let urlString = "/createReview?username="+email+"&topicTitle="+t+"&rating="+r+"&comment="+c+"&anonymous="+String(anonymous)
+            let urlString = "/createReview?username="+email+"&topicTitle="+t+"&rating="+r+"&comment="+c+"&anonymous="+String(anonymous)+"&image=0"
             
             let json = getJSONFromURL(urlString, "POST")
             let status = json["status"]

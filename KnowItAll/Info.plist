@@ -37,8 +37,8 @@
 			</dict>
 		</dict>
 	</dict>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>Review Image</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Review Image</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

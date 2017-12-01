@@ -11,6 +11,7 @@ import SwiftyJSON
 //var host = "https://0a79ab09.ngrok.io/api"
 //var host = "https://4f3fe20d.ngrok.io/api"
 var host = "http://knowitalllive2.xxs9rzfmhq.us-west-1.elasticbeanstalk.com/api"
+//var host = "http://127.0.0.1:8000/api"
 
 func getJSONFromURL(_ urlString: String, _ type: String) -> JSON {
     var url = host + urlString
@@ -26,6 +27,7 @@ func getJSONFromURL(_ urlString: String, _ type: String) -> JSON {
         if error != nil {
             return
         }
+        print(data)
         json = try! JSON(data: data!)
         print(json)
         queryFinished = true
