@@ -23,10 +23,12 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Re
     var topic : Topic? = nil
     var comments = [String]()
     var ratings = [Double]()
+    var imgArray = [UIImage]()
     var displayUsernames = [String]()
     var usernames = [String]()
     var segueFlag = false
     var category = -1
+    var counter = 0
     let nc = NotificationCenter.default
     @IBAction func addReview(_ sender: Any) {
         let email = UserDefaults.standard.object(forKey: Login.emailKey) as! String
@@ -62,6 +64,10 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Re
         numReviews.text = String(describing: (topic?.numReviews)!) + " review(s)"
         stars.rating = (topic?.rating)!
         stars.settings.fillMode = .half
+        let image = UIImage(named: "Academic")
+        imgArray.append(image!)
+        let image2 = UIImage(named: "Food")
+        imgArray.append(image2!)
         switch (topic?.category)! {
         case 1:
             category = 1
@@ -144,14 +150,15 @@ class ReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Re
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (indexPath.row % 2 == 0) { // this if will determine whether to show image or not
+        if (indexPath.row % 2 == 1) { // this if will determine whether to show image or not
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! TopicPageReviewCell
             cell.comment.text = comments[indexPath.row]
             cell.rating.rating = ratings[indexPath.row]
             cell.author.text = displayUsernames[indexPath.row]
             cell.reviewTitle = (topic?.title)!
             cell.reviewUsername = usernames[indexPath.row]
-            // set the image here
+            cell.optionalImage.image = imgArray[counter]
+            counter += 1
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCellNoImage", for: indexPath) as! TopicPageReviewCell
